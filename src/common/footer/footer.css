@@ -1,0 +1,87 @@
+
+.footer {
+  background-color: #f98d00 !important;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+.hr {
+  margin-top: 2rem;
+  border: none;
+  height: 1px;
+  color: #141312 !important;
+  background-color: #141312 !important;
+  opacity: 0.5;
+}
+
+.social-network-icon{
+  color: #141312 !important;
+  font-size: 15px;
+}
+@media (max-width: 990px) {
+  .social-network-icon{
+    color: #FFF !important;
+    margin-left: 10px;
+  }
+}
+
+
+
+
+.signup-modal-text{
+  color: #d7d7d6;
+}
+.cuntactus-input:-webkit-autofill {
+  -webkit-box-shadow: inset 0 0 0px 9999px #42424284;
+}
+.cuntactus-input::placeholder{
+  color: #42424280;
+}
+.cuntactus-input{
+  color: #424242;
+  border-color: #d7d7d650;
+  background-color: #d7d7d650 !important;
+  resize: none;
+  /* color: #f98d00; */
+}
+.cuntactus-email-input{
+  border-right-style: solid !important;
+  border-right-color: #42424230 !important;
+  border-right-width: 1px !important;
+}
+.cuntactus-input:focus{
+  color: #424242;
+}
+.cuntactus-input:focus::placeholder{
+  color: #42424280;
+}
+.contactus-form .input-group-text{
+  background-color: #d7d7d650 !important;
+  color:  #42424280;
+}
+
+.signup-form input:-webkit-autofill,
+.signup-form input:-webkit-autofill:hover,
+.signup-form input:-webkit-autofill:focus,
+.signup-form input:-webkit-autofill:active {
+    -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+    -webkit-transition-delay: 9999s;
+}
+
+
+
+
+.footer-logo{
+  margin: 0px;
+  height: 45px;
+  background-color: #f3f3f1;
+  display: flex;
+  justify-content: center;
+}
+.logo{
+  margin-top: -2vw;
+    width: 130px;
+    border-style: solid;
+    border-color: #f3f3f1;
+    border-width: 2px;
+    background-color: #f3f3f1;
+}

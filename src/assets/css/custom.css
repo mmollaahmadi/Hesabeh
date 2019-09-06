@@ -1,0 +1,361 @@
+/* ============================== FONTS ===================================== */
+/* ========================================================================== */
+@font-face {
+  font-family: "Lalezar";
+  src: url("../fonts/Lalezar-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Yekan";
+  src: url("../fonts/Yekan.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Samim";
+  src: url("../fonts/Samim.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Samim-Bold";
+  src: url("../fonts/Samim-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* ============================== FONTS ===================================== */
+/* ========================================================================== */
+h1 {
+  font-family: Lalezar, Tahoma;
+}
+
+h2 {
+  font-family: Samim-Bold;
+  color: #141312;
+}
+h4 {
+  margin: -5px;
+  font-family: Lalezar;
+  color: #141312;
+}
+.h1-hesabeh {
+  display: inline;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  font-size: 4rem;
+  color: #141312;
+}
+
+body {
+  font-family: Samim, Tahoma;
+  background-color: #f3f3f1;
+  color: #141312;
+  /* background-image: linear-gradient(to top, #d7d7d6, #dededd, #e5e5e3, #ececea, #f3f3f1); */
+}
+
+
+
+/* ============================== MODALS ==================================== */
+/* ========================================================================== */
+
+
+
+/* baraye in ke ba zadan ruye modal navbar tekun nakhore */
+body.modal-open {
+  overflow: inherit;
+  padding-right: inherit !important;
+}
+
+/* ============================== FONTS ===================================== */
+/* ========================================================================== */
+
+.landing-position-relative {
+  height: auto;
+  /* height: 50vw; */
+}
+
+
+
+.finance-button {
+  border-radius: 25px;
+}
+
+
+
+.social-network-link {
+  font-size: x-large;
+}
+
+.profile-image {
+  border-style: solid;
+  border-width: medium;
+  border-color: #f6f6f6;
+}
+
+.signup-button {
+  border-radius: 3rem;
+}
+
+.bg-gradient-default {
+  background-color: #141312 !important;
+  /* background: linear-gradient(87deg, #5f5851 0, #141312 100%) !important; } */
+}
+
+
+
+
+/* ============================== BUTTONS =================================== */
+/* ========================================================================== */
+.btn-primary {
+  color: #fff;
+  background-color: #f98d00;
+  border-color: #f98d00;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.btn-primary:hover {
+  color: #fff;
+  background-color: #f98d00;
+  border-color: #f98d00;
+}
+.btn-primary:focus,
+.btn-primary.focus {
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08),
+    0 0 0 0 rgba(94, 114, 228, 0.5);
+}
+.btn-primary.disabled,
+.btn-primary:disabled {
+  color: #fff;
+  background-color: #f98d00;
+  border-color: #f98d00;
+}
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+  color: #fff;
+  background-color: #db4a08;
+  border-color: #db4a08;
+}
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+  box-shadow: none, 0 0 0 0 rgba(94, 114, 228, 0.5);
+}
+
+/* --------------------- */
+
+.btn-default {
+  color: #fff;
+  background-color: #141312;
+  border-color: #141312;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.btn-default:hover {
+  color: #fff;
+  background-color: #141312;
+  border-color: #141312;
+}
+.btn-default:focus,
+.btn-default.focus {
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08),
+    0 0 0 0 rgba(23, 43, 77, 0.5);
+}
+.btn-default.disabled,
+.btn-default:disabled {
+  color: #fff;
+  background-color: #141312;
+  border-color: #141312;
+}
+.btn-default:not(:disabled):not(.disabled):active,
+.btn-default:not(:disabled):not(.disabled).active,
+.show > .btn-default.dropdown-toggle {
+  color: #fff;
+  background-color: #0b1526;
+  border-color: #141312;
+}
+.btn-default:not(:disabled):not(.disabled):active:focus,
+.btn-default:not(:disabled):not(.disabled).active:focus,
+.show > .btn-default.dropdown-toggle:focus {
+  box-shadow: none, 0 0 0 0 rgba(23, 43, 77, 0.5);
+}
+
+
+/* ------------------------ */
+.btn-secondary {
+  color: #424242;
+  background-color: #d7d7d6;
+  border-color: #d7d7d6;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.btn-secondary:hover {
+  color: #424242;
+  background-color: #d7d7d6;
+  border-color: #d7d7d6;
+}
+.btn-secondary:focus,
+.btn-secondary.focus {
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08),
+    0 0 0 0 rgba(23, 43, 77, 0.5);
+}
+.btn-secondary.disabled,
+.btn-secondary:disabled {
+  color: #424242;
+  background-color: #d7d7d6;
+  border-color: #d7d7d6;
+}
+.btn-secondary:not(:disabled):not(.disabled):active,
+.btn-secondary:not(:disabled):not(.disabled).active,
+.show > .btn-default.dropdown-toggle {
+  color: #424242;
+  background-color: #d7d7d6;
+  border-color: #d7d7d6;
+}
+.btn-secondary:not(:disabled):not(.disabled):active:focus,
+.btn-secondary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-default.dropdown-toggle:focus {
+  box-shadow: none, 0 0 0 0 rgba(23, 43, 77, 0.5);
+}
+
+
+
+
+
+
+/* ============================== SECTIONS ================================== */
+/* ========================================================================== */
+.section-shaped .shape-style-1 span {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+}
+.section-shaped .shape-style-1 .span-200 {
+  height: 200px;
+  width: 200px;
+}
+.section-shaped .shape-style-1 .span-170 {
+  height: 170px;
+  width: 170px;
+}
+.section-shaped .shape-style-1 .span-150 {
+  height: 150px;
+  width: 150px;
+}
+.section-shaped .shape-style-1 .span-100 {
+  height: 100px;
+  width: 100px;
+}
+.section-shaped .shape-style-1 .span-75 {
+  height: 75px;
+  width: 75px;
+}
+.section-shaped .shape-style-1 .span-50 {
+  height: 50px;
+  width: 50px;
+}
+.section-shaped .shape-style-1 :nth-child(1) {
+  left: 4%;
+  top: 12%;
+  bottom: auto;
+  background: rgba(249, 141, 0, 0.1);
+}
+.section-shaped .shape-style-1 :nth-child(2) {
+  right: 4%;
+  top: 10%;
+  background: rgba(249, 141, 0, 0.1);
+}
+.section-shaped .shape-style-1 :nth-child(3) {
+  top: 25%;
+  right: 25%;
+  background: rgba(249, 141, 0, 0.3);
+}
+.section-shaped .shape-style-1 :nth-child(4) {
+  top: 40%;
+  right: 12%;
+  background: rgba(249, 141, 0, 0.1);
+}
+.section-shaped .shape-style-1 :nth-child(5) {
+  top: 38%;
+  left: 1%;
+  right: auto;
+  background: rgba(249, 141, 0, 0.05);
+}
+.section-shaped .shape-style-1 :nth-child(6) {
+  width: 200px;
+  height: 200px;
+  top: 44%;
+  left: 10%;
+  right: auto;
+  background: rgba(249, 141, 0, 0.15);
+}
+.section-shaped .shape-style-1 :nth-child(7) {
+  bottom: 60%;
+  right: 50%;
+  background: rgba(249, 141, 0, 0.27);
+}
+.section-shaped .shape-style-1 :nth-child(8) {
+  bottom: 70px;
+  right: 32%;
+  background: rgba(249, 141, 0, 0.2);
+}
+.section-shaped .shape-style-1 :nth-child(9) {
+  bottom: 12%;
+  right: 2%;
+  background: rgba(249, 141, 0, 0.3);
+}
+.section-shaped .shape-style-1 :nth-child(10) {
+  bottom: 10%;
+  left: 30%;
+  right: auto;
+  background: rgba(249, 141, 0, 0.25);
+}
+@media (max-width: 991.98px) {
+  .section-shaped .shape-style-1 span {
+    height: 120px;
+  }
+}
+@media (max-width: 767.98px) {
+  .section-shaped .shape-style-1 span {
+    height: 90px;
+  }
+}
+.section-shaped .shape-style-1.shape-primary {
+  background: linear-gradient(150deg, #281483 15%, #8f6ed5 70%, #d782d9 94%);
+}
+.section-shaped .shape-style-1.shape-default {
+  /* background: linear-gradient(150deg, #7795f8 15%, #6772e5 70%, #555abf 94%);  */
+}
+.section-shaped .shape-style-1.shape-light {
+  background: linear-gradient(
+    150deg,
+    shapes-light-color("step-1-gradient-bg") 15%,
+    shapes-light-color("step-2-gradient-bg") 70%,
+    shapes-light-color("step-3-gradient-bg") 94%
+  );
+}
+.section-shaped .shape-style-1.shape-dark {
+  background: linear-gradient(150deg, #32325d 15%, #32325d 70%, #32325d 94%);
+}
+
+
+
+/* @media (max-width: 576px) {
+.onboard{
+  margin-top: -50%;
+}
+}
+
+@media (min-width: 900px) {
+  .onboard{
+    margin-top: -20%;
+  }
+}
+
+@media (max-width: 900px) {
+  .onboard{
+    margin-top: -20%;
+  }
+} */

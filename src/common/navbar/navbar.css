@@ -1,0 +1,38 @@
+/* ============================== NAVBAR ==================================== */
+/* ========================================================================== */
+.nav-link {
+  font-family: Samim-Bold, Tahoma !important;
+}
+
+.my-nav-link {
+  color: #141312 !important;
+  cursor: pointer;  
+}
+
+.navbar-toggler {
+  color: #fff !important;
+}
+
+/* copy kardam az argon-syste.css */
+.headroom--not-top {
+  /* background-color: #424242 !important; */
+  padding: 0;
+}
+
+.phone-number{
+  font-family: Samim;
+  color: #141312;
+}
+
+.headroom--not-top .social-network-icon{
+  color: #fff !important;
+}
+.social-network-icon{
+  color: #141312 !important;
+}
+@media (max-width: 990px) {
+  .social-network-icon{
+    color: #FFF !important;
+    margin-left: 10px;
+  }
+}

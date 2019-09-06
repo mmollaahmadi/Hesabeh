@@ -1,0 +1,115 @@
+.signup-modal, .signin-modal{
+  background-color: transparent !important;
+}
+
+
+
+
+
+.signup-modal .modal-content{
+  background-color: #141312df !important;
+}
+.signup-modal-header {
+  border-bottom: solid;
+  border-color: #d7d7d615;
+  border-bottom-width: thin;
+}
+.signup-modal-header h5{
+  font-family: Samim-Bold;
+  border: 0ch;
+  text-align: center !important;
+  color: #dfdfd6;
+}
+.signup-modal-text{
+  color: #d7d7d6;
+}
+.signup-modal-input:-webkit-autofill {
+  -webkit-box-shadow: inset 0 0 0px 9999px #42424284;
+}
+.signup-modal-input::placeholder{
+  color: #d7d7d650;
+}
+.signup-modal-input{
+  background-color: #42424280 !important;
+  /* color: #f98d00; */
+}
+.signup-form .input-group-text{
+  background-color: #42424280 !important;
+}
+.signup-form input:-webkit-autofill,
+.signup-form input:-webkit-autofill:hover,
+.signup-form input:-webkit-autofill:focus,
+.signup-form input:-webkit-autofill:active {
+    -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+    -webkit-transition-delay: 9999s;
+}
+
+
+
+
+
+
+.signin-modal .modal-content{
+  background-color: #d7d7d6df !important;
+}
+.signin-modal-header{
+  border-bottom: solid;
+  border-color: #42424250;
+  border-bottom-width: thin;
+}
+.signin-modal-header h5{
+  font-family: Samim-Bold;
+  border: 0ch;
+  text-align: center !important;
+  color: #424242;
+}
+.signin-modal-text{
+  color: #424242;
+}
+.signin-modal-input:-webkit-autofill {
+  -webkit-box-shadow: inset 0 0 0px 9999px #d7d7d6df;
+}
+.signin-modal-input{
+  background-color: #d7d7d6df !important;
+  color: #424242 !important;
+  border-right-style: solid !important;
+  border-right-color: #42424230 !important;
+  border-right-width: 1px !important;
+}
+.signin-modal-input::placeholder{
+  color: #42424280;
+}
+.signin-form .input-group-text{
+  background-color: #d7d7d6df !important;
+  color: #42424280 !important;
+}
+.signin-form .form-control::placeholder {
+  color: #42424280;
+  opacity: 1;
+}
+.signin-form .form-control:focus::placeholder {
+  color: #42424280;
+}
+.signin-form input:-webkit-autofill,
+.signin-form input:-webkit-autofill:hover,
+.signin-form input:-webkit-autofill:focus,
+.signin-form input:-webkit-autofill:active {
+    -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+    -webkit-transition-delay: 9999s;
+}
+
+
+
+
+.custom-checkbox .custom-control-label::before {
+  border-radius: 0.2rem;
+}
+.custom-checkbox .custom-control-input ~ .custom-control-label::before {
+  background-color: #d7d7d6;
+}
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #f98d00;
+}
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
+}
