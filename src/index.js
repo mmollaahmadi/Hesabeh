@@ -23,7 +23,7 @@ import './assets/css/custom.css';
 import MainPage from './main-page/MainPage';
 import UserDashboardPage from './user-dashboard-page/UserDashboardPage.js';
 import GroupDashboardPage from './group-dashboard-page/GroupDashboardPage.js';
-import MyGroupsPage from './my-groups-page/MyGroupsPage.js'
+import MyGroupsPage from './groups-page/MyGroupsPage.js'
 
 ReactDOM.render(
   <BrowserRouter>
