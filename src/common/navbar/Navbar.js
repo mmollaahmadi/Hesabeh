@@ -9,7 +9,8 @@ import {
   Row,
   Col,
   Button,
-  NavLink
+  NavLink,
+  Badge
 } from "reactstrap";
 
 import { Link } from "react-router-dom";
@@ -35,11 +36,21 @@ class MyNavbar extends React.Component {
   }
   render() {
     let buttonsOrProfile;
-    let myGroups;
+    let links;
     if (this.props.isLogin === "true") {
       buttonsOrProfile = <NavbarProfile />;
-      myGroups = (
+      links = (
         <div className="d-flex justify-content-center align-items-center">
+
+        
+        <Button
+          className="text-secondary"
+          color="link"
+          to="/mygroups"
+          tag={Link}
+        >
+          حساب من
+        </Button>
           <Button
             className="text-secondary"
             color="link"
@@ -48,11 +59,19 @@ class MyNavbar extends React.Component {
           >
             گروه‌های من
           </Button>
+          <Button
+            className="text-secondary"
+            color="link"
+            to="/mygroups"
+            tag={Link}
+          >
+            گزارش
+          </Button>
         </div>
       );
     } else {
       buttonsOrProfile = <NavbarButtons />;
-      myGroups = null;
+      links = null;
     }
     return (
       <header className="header-global">
@@ -97,7 +116,9 @@ class MyNavbar extends React.Component {
                 </Row>
               </div>
               <Nav className="align-items-lg-center ml-lg-auto" navbar>
-                {myGroups}
+
+                {links}
+
               </Nav>
               <Nav className="align-items-lg-center mr-lg-auto" navbar>
               <div className="d-flex justify-content-center align-items-center">

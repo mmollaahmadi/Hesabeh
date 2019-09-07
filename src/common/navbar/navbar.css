@@ -8,7 +8,7 @@
   color: #141312 !important;
   cursor: pointer;
 }
-.username{  
+.username{
   font-size: 12px !important;
 }
 .headroom--not-top .my-nav-link{
@@ -47,4 +47,8 @@
     color: #FFF !important;
     margin-left: 10px;
   }
+}
+
+.counter.counter-lg {
+    top: -24px !important;
 }
