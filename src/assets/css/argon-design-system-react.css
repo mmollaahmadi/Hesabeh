@@ -36,7 +36,7 @@
   --success: #2dce89;
   --info: #11cdef;
   --warning: #fb6340;
-  --danger: #f5365c;
+  --danger: #f5365c;  
   --light: #adb5bd;
   --dark: #212529;
   --default: #141312;
@@ -8764,7 +8764,7 @@ a.btn-icon-only {
   box-shadow: 0 1px 3px rgba(50, 50, 93, 0.15), 0 1px 0 rgba(0, 0, 0, 0.02); }
 
 .custom-checkbox .custom-control-input ~ .custom-control-label {
-  cursor: pointer;  
+  cursor: pointer;
   font-size: 0.875rem; }
 
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {

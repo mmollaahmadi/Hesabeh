@@ -8,18 +8,19 @@ import {
   DropdownItem
 } from "reactstrap";
 import { Link } from "react-router-dom";
+import './navbar.css'
 class NavbarProfile extends React.Component {
   render() {
     return (
       <div>
         <Nav className="navbar-nav-hover align-items-lg-center" navbar>
           <UncontrolledDropdown nav>
-            <DropdownToggle nav>
+            <DropdownToggle nav className="p-0">
               <div className="d-flex justify-content-center align-items-center">
-                <span className="nav-link-inner--text ml-2 ">Mollaahmadi</span>
+                <span className="nav-link my-nav-link username ml-1 pl-1 ">Mollaahmadi</span>
                 <img
                   alt="..."
-                  className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
+                  className="rounded-circle img-center img-fluid"
                   src={require("../../assets/img/users/user01.jpg")}
                   style={{ width: "40px" }}
                 />

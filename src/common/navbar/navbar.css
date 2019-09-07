@@ -6,11 +6,23 @@
 
 .my-nav-link {
   color: #141312 !important;
-  cursor: pointer;  
+  cursor: pointer;
 }
-
+.username{  
+  font-size: 12px !important;
+}
+.headroom--not-top .my-nav-link{
+  color: #fff !important;
+}
 .navbar-toggler {
   color: #fff !important;
+}
+.headroom{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all .2s ease-in-out;
 }
 
 /* copy kardam az argon-syste.css */

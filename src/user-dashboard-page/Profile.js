@@ -8,9 +8,10 @@ import {
   Input,
   InputGroupAddon,
   InputGroupText,
-  InputGroup,
+  InputGroup
   //UncontrolledAlert
 } from "reactstrap";
+import ProfileAtt from './ProfileAtt.js'
 import { Link } from "react-router-dom";
 class Profile extends React.Component {
   state = {};
@@ -39,13 +40,12 @@ class Profile extends React.Component {
                   </div>
                 </Col>
                 <Col
-                  className="order-lg-3 text-lg-right align-self-lg-center"
+                  className="order-lg-3 text-lg-right d-flex justify-content-center p-0"
                   lg="4"
                 >
-                  <div className="card-profile-actions py-4 mt-lg-0">
+                  <div className="card-profile-actions py-4 px-0 mt-lg-0">
                     <Button
-                      className="mr-4"
-                      color="danger"
+                      className="mr-4 delete-account-btn"
                       href="#pablo"
                       onClick={() => this.toggleModal("notificationModal")}
                       size="sm"
@@ -79,7 +79,8 @@ class Profile extends React.Component {
                         <div className="py-3 text-center">
                           <i className="ni ni-bell-55 ni-3x" />
                           <p>
-                    در صورت حذف حساب کاربری اطلاعات شما حذف و غیرقابل بازیابی می‌شوند.
+                            در صورت حذف حساب کاربری اطلاعات شما حذف و غیرقابل
+                            بازیابی می‌شوند.
                           </p>
                         </div>
                       </div>
@@ -104,7 +105,7 @@ class Profile extends React.Component {
                     </Modal>
 
                     <Button
-                      className="float-right"
+                      className="float-right btn-primary"
                       color="info"
                       href="#pablo"
                       onClick={() => this.toggleModal("defaultModal")}
@@ -117,73 +118,90 @@ class Profile extends React.Component {
                       isOpen={this.state.defaultModal}
                       toggle={() => this.toggleModal("defaultModal")}
                     >
-                    <div className="modal-body p-0">
-                      <Card className="bg-secondary shadow border-0">
-                        <CardHeader className="bg-transparent p-1">
-                          {/* <Row className="justify-content-center"> */}
-                          <div className="text-muted  mt-3 mb-2">
-                            <h5 className="my-modal-header">تغییر رمز عبور
-                            </h5>
-                          </div>
-                          {/* </Row> */}
-                        </CardHeader>
-                        <CardBody className="px-lg-5 py-lg-3">
-
-                          <Form role="form">
-                          <FormGroup className="mb-2">
-                            <InputGroup className="input-group-alternative">
-                              <InputGroupAddon addonType="prepend">
-                                <InputGroupText>
-                                  <i className="ni ni-lock-circle-open" />
-                                </InputGroupText>
-                              </InputGroupAddon>
-
-                              <Input className="my-input" placeholder="رمز عبور فعلی" type="password" value="" />
-                            </InputGroup>
-                          </FormGroup>
-                            <FormGroup className="mb-2">
-                              <InputGroup className="input-group-alternative">
-                                <InputGroupAddon addonType="prepend">
-                                  <InputGroupText>
-                                    <i className="ni ni-lock-circle-open" />
-                                  </InputGroupText>
-                                </InputGroupAddon>
-
-                                <Input className="my-input" placeholder="رمز عبور جدید" type="password" value="" />
-                              </InputGroup>
-                            </FormGroup>
-                            <FormGroup className="mb-2">
-                              <InputGroup className="input-group-alternative">
-                                <InputGroupAddon addonType="prepend">
-                                  <InputGroupText>
-                                    <i className="ni ni-lock-circle-open" />
-                                  </InputGroupText>
-                                </InputGroupAddon>
-
-                                <Input placeholder="تایید رمز عبور جدید" type="password" className="my-input"/>
-                              </InputGroup>
-                            </FormGroup>
-                            <div class="text-muted font-italic justify-content-center d-flex mt-0">
-                              <small>
-کیفیت رمز عبور جدید:                                <span class="text-success font-weight-700 mr-2">قوی</span>
-                              </small>
+                      <div className="modal-body p-0">
+                        <Card className="bg-secondary shadow border-0">
+                          <CardHeader className="bg-transparent p-1">
+                            {/* <Row className="justify-content-center"> */}
+                            <div className="text-muted  mt-3 mb-2">
+                              <h5 className="my-modal-header">
+                                تغییر رمز عبور
+                              </h5>
                             </div>
-                            <Row className="text-center">
-                              <Col>
-                                <Button
-                                  className="my-4"
-                                  color="primary"
-                                  to="/dashboard"
-                                  tag={Link}
-                                >
-                                  تغییر رمز عبور
-                                </Button>
-                              </Col>
-                            </Row>
-                          </Form>
-                        </CardBody>
-                      </Card>
-                    </div>
+                            {/* </Row> */}
+                          </CardHeader>
+                          <CardBody className="px-lg-5 py-lg-3">
+                            <Form role="form">
+                              <FormGroup className="mb-2">
+                                <InputGroup className="input-group-alternative">
+                                  <InputGroupAddon addonType="prepend">
+                                    <InputGroupText>
+                                      <i className="ni ni-lock-circle-open" />
+                                    </InputGroupText>
+                                  </InputGroupAddon>
+
+                                  <Input
+                                    className="my-input"
+                                    placeholder="رمز عبور فعلی"
+                                    type="password"
+                                    value=""
+                                  />
+                                </InputGroup>
+                              </FormGroup>
+                              <FormGroup className="mb-2">
+                                <InputGroup className="input-group-alternative">
+                                  <InputGroupAddon addonType="prepend">
+                                    <InputGroupText>
+                                      <i className="ni ni-lock-circle-open" />
+                                    </InputGroupText>
+                                  </InputGroupAddon>
+
+                                  <Input
+                                    className="my-input"
+                                    placeholder="رمز عبور جدید"
+                                    type="password"
+                                    value=""
+                                  />
+                                </InputGroup>
+                              </FormGroup>
+                              <FormGroup className="mb-2">
+                                <InputGroup className="input-group-alternative">
+                                  <InputGroupAddon addonType="prepend">
+                                    <InputGroupText>
+                                      <i className="ni ni-lock-circle-open" />
+                                    </InputGroupText>
+                                  </InputGroupAddon>
+
+                                  <Input
+                                    placeholder="تایید رمز عبور جدید"
+                                    type="password"
+                                    className="my-input"
+                                  />
+                                </InputGroup>
+                              </FormGroup>
+                              <div class="text-muted font-italic justify-content-center d-flex mt-0">
+                                <small>
+                                  کیفیت رمز عبور جدید:{" "}
+                                  <span class="text-success font-weight-700 mr-2">
+                                    قوی
+                                  </span>
+                                </small>
+                              </div>
+                              <Row className="text-center">
+                                <Col>
+                                  <Button
+                                    className="my-4"
+                                    color="primary"
+                                    to="/dashboard"
+                                    tag={Link}
+                                  >
+                                    تغییر رمز عبور
+                                  </Button>
+                                </Col>
+                              </Row>
+                            </Form>
+                          </CardBody>
+                        </Card>
+                      </div>
                     </Modal>
                   </div>
                 </Col>
@@ -201,27 +219,14 @@ class Profile extends React.Component {
                 </Col>
               </Row>
               <div className="text-center mt-5 pb-5">
-                <h3>Mollaahmadi</h3>
-                <div className="h6 font-weight-300">
-                  <i className="ni location_pin mr-2" />
-                  mollaahmadimohammad@gmail.com
-                </div>
-                <div className="h6 font-weight-300">
-                  <i className="ni location_pin mr-2" />
-                  محمد ملااحمدی
-                </div>
-                <div className="h6 font-weight-300">
-                  <i className="ni location_pin mr-2" />
-                  09183694858
-                </div>
-                <div className="h6 mt-4">
-                  <i className="ni business_briefcase-24 mr-2" />
-                  Solution Manager - Creative Tim Officer
-                </div>
-                <div>
-                  <i className="ni education_hat mr-2" />
-                  University of Computer Science
-                </div>
+                <Form role="form" className="profile-form">
+                  <Row>
+                    <ProfileAtt value="mollaahmadi" isDisabled="true"/>
+                    <ProfileAtt type="email" value="mollaahmadimohammad@gmail.com" isDisabled="false"/>
+                    <ProfileAtt value="محمد ملااحمدی" isDisabled="false"/>
+                    <ProfileAtt value="09183694858" isDisabled="false"/>
+                  </Row>
+                </Form>
               </div>
             </div>
           </Card>

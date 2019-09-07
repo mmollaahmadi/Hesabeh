@@ -12,6 +12,7 @@ import {
 
 import Requests from "./requests/Requests.js";
 import Reports from "./reports/Reports.js";
+import './UserDashboard.css';
 
 class RequestsAndReposts extends React.Component {
   state = {

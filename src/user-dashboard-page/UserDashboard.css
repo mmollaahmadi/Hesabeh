@@ -1,0 +1,29 @@
+.nav-pills .nav-link.active{
+  background-color:  #141312 !important;
+  color: #f98d00 !important;
+}
+
+.nav-pills .nav-link{
+  color: #141312 !important;
+}
+
+.delete-account-btn{
+  background-color: #8f7d80;
+  color: #fff;
+}
+
+.profile-input,
+.profile-input:focus,
+.profile-input:disabled{
+  background-color: #8f7d80;
+  text-align: center;
+  color: #fff;
+  border-right-style: solid !important;
+  border-right-width: 1px !important;
+  border-color: #fff !important;
+}
+.profile-form .input-group-text{
+  background-color: #8f7d80;
+  text-align: center;
+  color: #fff;
+}
