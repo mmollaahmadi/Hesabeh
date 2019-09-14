@@ -238,10 +238,10 @@ class SignupButton extends React.Component {
       };
     }
 
-    if (email.length > EMAIL_MAX_LENGTH) {
+    if (email.length > 15) {
       return {
         validateStatus: "error",
-        errorMsg: `Email is too long (Maximum ${EMAIL_MAX_LENGTH} characters allowed)`
+        errorMsg: `Email is too long (Maximum ${15} characters allowed)`
       };
     }
 

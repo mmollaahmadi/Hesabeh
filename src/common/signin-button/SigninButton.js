@@ -13,7 +13,8 @@ import {
   InputGroupText,
   InputGroup,
   Row,
-  Col
+  Col,
+  Link
 } from "reactstrap";
 
 class SigninButton extends React.Component {
@@ -31,7 +32,7 @@ class SigninButton extends React.Component {
     if (this.props.buttonOrLink === "button") {
       _buttonOrLink = (
         <Button
-        className="signup-button"
+          className="signup-button"
           color="primary"
           type="button"
           onClick={() => this.toggleModal("loginFormModal")}
@@ -101,9 +102,10 @@ class SigninButton extends React.Component {
                       </InputGroupAddon>
 
                       <Input
-                      className="signin-modal-input"
-                      placeholder="ایمیل / نام کاربری"
-                      type="email" />
+                        className="signin-modal-input"
+                        placeholder="ایمیل / نام کاربری"
+                        type="email"
+                      />
                     </InputGroup>
                   </FormGroup>
                   <FormGroup>
@@ -115,9 +117,10 @@ class SigninButton extends React.Component {
                       </InputGroupAddon>
 
                       <Input
-                      className="signin-modal-input"
-                      placeholder="رمز عبور"
-                      type="password" />
+                        className="signin-modal-input"
+                        placeholder="رمز عبور"
+                        type="password"
+                      />
                     </InputGroup>
                   </FormGroup>
                   <div className="custom-control custom-control-alternative custom-checkbox">
@@ -135,9 +138,20 @@ class SigninButton extends React.Component {
                       </span>
                     </label>
                   </div>
-                  <Row className="text-center">
-                    <Col>
-                      <Button className="my-4" color="primary" type="button">
+                  <Row className="justify-item-center d-flex">
+                    <Col className="lg-9 m-0 text-center">
+                      <Button
+                        className="ml-1 my-4"
+                        color="secondary"
+                        type="button"
+                      >
+                        <small>رمز عبور را فراموش کردم</small>
+                      </Button>
+                      <Button
+                        className="mr-1 my-4"
+                        color="primary"
+                        type="button"
+                      >
                         ورود
                       </Button>
                     </Col>
