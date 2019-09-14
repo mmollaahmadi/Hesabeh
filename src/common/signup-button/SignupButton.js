@@ -14,14 +14,50 @@ import {
   InputGroupText,
   InputGroup,
   Row,
-  Col
+  Col,
+  Collapse
 } from "reactstrap";
 import '../modal.css';
 
 class SignupButton extends React.Component {
-  state = {
-    signupFormModal: false
+  constructor(props){
+    super(props);
+    this.state = {
+        signupFormModal: false,
+        email:{
+          value: "",
+          valid: false,
+          collapse: false
+        },
+        password:{
+          value:"",
+          valid: false,
+          collapse: false
+        },
+        confirmPassword:{
+          value:"",
+          valid: false,
+          collapse: false
+        }
+    };
+  }
+  changeHandler = event => {
+    this.setState(
+      {
+        [event.target.name]: {
+          value:event.target.value,
+          valid:event.target.valid,
+          collapse:event.target.collapse
+        }
+      }
+    );
   };
+  toggle = state => {
+    this.setState({
+          [state]: {collapse: !this.state[state].collapse}
+        }
+    );
+  }
   toggleModal = state => {
     this.setState({
       [state]: !this.state[state]
@@ -75,7 +111,8 @@ class SignupButton extends React.Component {
                   <Button
                     className="btn-secondary btn-icon"
                     href="#pablo"
-                    onClick={e => e.preventDefault()}
+                    onClick={() => this.toggle("password")}
+                    name="email"
                   >
                     <span className="btn-inner--icon">
                       <img
@@ -104,8 +141,20 @@ class SignupButton extends React.Component {
                         className="signup-modal-input"
                         placeholder="ایمیل"
                         type="email"
+                        onChange={this.changeHandler}
+                        name="email"
+                        value={this.state.email.value}
+                        onBlur={this.validateEmailAvailability}
+                        onChange={event =>
+                            this.handleInputChange(event, this.validateEmail)
+                }
                       />
                     </InputGroup>
+                    <Collapse isOpen={this.state.email.collapse}>
+                      <p className="errorCollapseText">
+                        ایمیل نادرست است.
+                      </p>
+                    </Collapse>
                   </FormGroup>
                   <FormGroup className="mb-2">
                     <InputGroup className="input-group-alternative">
@@ -118,8 +167,14 @@ class SignupButton extends React.Component {
                       <Input
                       className="signup-modal-input"
                       placeholder="رمز عبور"
+                      name="password"
                       type="password" />
                     </InputGroup>
+                    <Collapse isOpen={this.state.password.collapse}>
+                      <p className="errorCollapseText">
+                        ایمیل نادرست است.
+                      </p>
+                    </Collapse>
                   </FormGroup>
                   <FormGroup className="mb-2">
                     <InputGroup className="input-group-alternative">
@@ -134,6 +189,11 @@ class SignupButton extends React.Component {
                       type="password"
                       className="signup-modal-input"/>
                     </InputGroup>
+                    <Collapse isOpen={this.state.confirmPasswordCollapse}>
+                      <p className="errorCollapseText">
+                        ایمیل نادرست است.
+                      </p>
+                    </Collapse>
                   </FormGroup>
                   <div class="text-muted font-italic justify-content-center d-flex mt-0">
                     <small className="signup-modal-text">
@@ -161,6 +221,35 @@ class SignupButton extends React.Component {
       </div>
     );
   }
+
+  validateEmail = email => {
+    if (!email) {
+      return {
+        validateStatus: "error",
+        errorMsg: "Email may not be empty"
+      };
+    }
+
+    const EMAIL_REGEX = RegExp("[^@ ]+@[^@ ]+\\.[^@ ]+");
+    if (!EMAIL_REGEX.test(email)) {
+      return {
+        validateStatus: "error",
+        errorMsg: "Email not valid"
+      };
+    }
+
+    if (email.length > EMAIL_MAX_LENGTH) {
+      return {
+        validateStatus: "error",
+        errorMsg: `Email is too long (Maximum ${EMAIL_MAX_LENGTH} characters allowed)`
+      };
+    }
+
+    return {
+      validateStatus: null,
+      errorMsg: null
+    };
+  };
 }
 
 export default SignupButton;

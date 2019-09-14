@@ -9,13 +9,12 @@ import {
   Row,
   Col,
   Button,
-  NavLink,
-  Badge
+  NavLink  
 } from "reactstrap";
 
 import { Link } from "react-router-dom";
 
-import NavbarOurSocialNetworks from "./NavbarOurSocialNetworks.js";
+// import NavbarOurSocialNetworks from "./NavbarOurSocialNetworks.js";
 import NavbarProfile from "./NavbarProfile.js";
 import NavbarButtons from "./NavbarButtons.js";
 import './navbar.css';
@@ -42,7 +41,7 @@ class MyNavbar extends React.Component {
       links = (
         <div className="d-flex justify-content-center align-items-center">
 
-        
+
         <Button
           className="text-secondary"
           color="link"

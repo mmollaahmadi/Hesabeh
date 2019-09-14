@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Card, CardBody, CardImg, CardText, Row } from "reactstrap";
+import { Col, Row } from "reactstrap";
 class ServiceCard extends React.Component {
   render() {
     let content = null;
