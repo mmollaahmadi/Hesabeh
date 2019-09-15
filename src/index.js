@@ -23,12 +23,18 @@ import './assets/css/custom.css';
 import MainPage from './main-page/MainPage';
 import UserDashboardPage from './user-dashboard-page/UserDashboardPage.js';
 import GroupDashboardPage from './group-dashboard-page/GroupDashboardPage.js';
-import MyGroupsPage from './groups-page/MyGroupsPage.js'
+import MyGroupsPage from './groups-page/MyGroupsPage.js';
+import NewPasswordRequestPage from './forgot-password-pages/new-password-request-page.js';
 
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
       <Route path="/" exact render={props => <MainPage isLogin='false' />} />
+      <Route
+        path="/forgot-password"
+        exact
+        render={props => <NewPasswordRequestPage {...props} />}
+      />
       <Route
         path="/dashboard"
         exact

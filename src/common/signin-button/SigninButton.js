@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   NavLink,
   Modal,
@@ -13,8 +14,7 @@ import {
   InputGroupText,
   InputGroup,
   Row,
-  Col,
-  Link
+  Col
 } from "reactstrap";
 
 class SigninButton extends React.Component {
@@ -143,7 +143,8 @@ class SigninButton extends React.Component {
                       <Button
                         className="ml-1 my-4"
                         color="secondary"
-                        type="button"
+                        to="/forgot-password"
+                        tag={Link}
                       >
                         <small>رمز عبور را فراموش کردم</small>
                       </Button>

@@ -145,9 +145,7 @@ class SignupButton extends React.Component {
                         name="email"
                         value={this.state.email.value}
                         onBlur={this.validateEmailAvailability}
-                        onChange={event =>
-                            this.handleInputChange(event, this.validateEmail)
-                }
+                        // onChange={event =>this.handleInputChange(event, this.validateEmail)}
                       />
                     </InputGroup>
                     <Collapse isOpen={this.state.email.collapse}>
