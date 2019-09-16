@@ -9,7 +9,7 @@ import {
   Row,
   Col,
   Button,
-  NavLink  
+  NavLink
 } from "reactstrap";
 
 import { Link } from "react-router-dom";
@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
 // import NavbarOurSocialNetworks from "./NavbarOurSocialNetworks.js";
 import NavbarProfile from "./NavbarProfile.js";
 import NavbarButtons from "./NavbarButtons.js";
-import './navbar.css';
+import "./navbar.css";
 
 class MyNavbar extends React.Component {
   state = {
@@ -40,16 +40,14 @@ class MyNavbar extends React.Component {
       buttonsOrProfile = <NavbarProfile />;
       links = (
         <div className="d-flex justify-content-center align-items-center">
-
-
-        <Button
-          className="text-secondary"
-          color="link"
-          to="/mygroups"
-          tag={Link}
-        >
-          حساب من
-        </Button>
+          <Button
+            className="text-secondary"
+            color="link"
+            to="/mygroups"
+            tag={Link}
+          >
+            حساب من
+          </Button>
           <Button
             className="text-secondary"
             color="link"
@@ -86,7 +84,7 @@ class MyNavbar extends React.Component {
                   alt="..."
                   src={require("../../assets/img/brand/argon-react-white.png")}
               /> */}
-              <h1 style={{color: "#f98b00"}}>حسابِه</h1>
+              <h1 style={{ color: "#f98b00" }}>حسابِه</h1>
             </NavbarBrand>
             {/* TOGGLER */}
             <button className="navbar-toggler" id="navbar_global">
@@ -97,12 +95,16 @@ class MyNavbar extends React.Component {
                 <Row>
                   <Col className="collapse-brand" xs="6">
                     <Link to="/">
-
                       <img
                         alt="..."
                         src={require("../../assets/img/brand/hesabeh-white.png")}
                       />
-                      <p className="h1-hesabeh" style={{color: "#fff" , fontSize:"29px"}}>حسابِه</p>
+                      <p
+                        className="h1-hesabeh"
+                        style={{ color: "#fff", fontSize: "29px" }}
+                      >
+                        حسابِه
+                      </p>
                     </Link>
                   </Col>
 
@@ -115,21 +117,20 @@ class MyNavbar extends React.Component {
                 </Row>
               </div>
               <Nav className="align-items-lg-center ml-lg-auto" navbar>
-
                 {links}
-
               </Nav>
               <Nav className="align-items-lg-center mr-lg-auto" navbar>
-              <div className="d-flex justify-content-center align-items-center">
-              <NavLink
-                className="nav-link pl-3 pr-3 my-nav-link"
-                color="primary"
-                id="navbar-signin"
-                onClick={() => this.toggleModal("loginFormModal")}
-              >
-                پشتیبانی
-              </NavLink>
-              </div>
+                <div className="d-flex justify-content-center align-items-center">
+                  <NavLink
+                    to="/support"
+                    tag={Link}
+                    activeClassName="link-active"
+                    className="nav-link pl-3 pr-3 my-nav-link"
+                    color="primary"
+                  >
+                    پشتیبانی
+                  </NavLink>
+                </div>
                 {/*<NavbarOurSocialNetworks />*/}
                 {buttonsOrProfile}
               </Nav>

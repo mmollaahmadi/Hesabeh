@@ -21,7 +21,7 @@ import {
   Collapse,
   Alert
 } from "reactstrap";
-class NewPasswordRequestPage extends React.Component {
+class SetNewPasswordPage extends React.Component {
   render() {
     return (
       <div className="new-password-request-section">
@@ -85,4 +85,4 @@ class NewPasswordRequestPage extends React.Component {
   }
 }
 
-export default NewPasswordRequestPage;
+export default SetNewPasswordPage;

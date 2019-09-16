@@ -25,6 +25,7 @@ import UserDashboardPage from './user-dashboard-page/UserDashboardPage.js';
 import GroupDashboardPage from './group-dashboard-page/GroupDashboardPage.js';
 import MyGroupsPage from './groups-page/MyGroupsPage.js';
 import NewPasswordRequestPage from './forgot-password-pages/new-password-request-page.js';
+import SupportPage from './support-page/support-page.js';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -34,6 +35,11 @@ ReactDOM.render(
         path="/forgot-password"
         exact
         render={props => <NewPasswordRequestPage {...props} />}
+      />
+      <Route
+        path="/support"
+        exact
+        render={props => <SupportPage {...props} />}
       />
       <Route
         path="/dashboard"
