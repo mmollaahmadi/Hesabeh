@@ -67,10 +67,16 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
-### recreate project
-## windows:
-RD node_modules
+# recreate project after cloned it from git
 npm install
 npm start
 
+But not realy work and first you should delete node_modules folder then run above commands after it run following command to complete this folder.
+
 npm install 'module_name' --save
+
+### windows:
+RD node_modules
+
+### linux:
+rm -rf node_modules

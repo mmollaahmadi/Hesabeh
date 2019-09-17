@@ -41,7 +41,7 @@ class MyNavbar extends React.Component {
       links = (
         <div className="d-flex justify-content-center align-items-center">
           <Button
-            className="text-secondary"
+            className="text-secondary my-nav-link"
             color="link"
             to="/mygroups"
             tag={Link}
@@ -49,7 +49,7 @@ class MyNavbar extends React.Component {
             حساب من
           </Button>
           <Button
-            className="text-secondary"
+            className="text-secondary my-nav-link"
             color="link"
             to="/mygroups"
             tag={Link}
@@ -57,7 +57,7 @@ class MyNavbar extends React.Component {
             گروه‌های من
           </Button>
           <Button
-            className="text-secondary"
+            className="text-secondary my-nav-link"
             color="link"
             to="/mygroups"
             tag={Link}

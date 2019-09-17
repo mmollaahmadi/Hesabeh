@@ -1,16 +1,11 @@
 import React from "react";
 
-import Navbar from "../common/navbar/Navbar";
-import Footer from "../common/footer/Footer";
-import { Container, Row, Col } from "reactstrap";
 import "./forgot-password.css";
 import { Link } from "react-router-dom";
 import {
-  NavLink,
-  Modal,
-  Card,
-  CardHeader,
-  CardBody,
+  Container,
+  Row,
+  Col,
   Button,
   FormGroup,
   Form,
@@ -19,12 +14,26 @@ import {
   InputGroupText,
   InputGroup,
   Collapse,
+  NavLink,
   Alert
 } from "reactstrap";
+import "../assets/css/custom.css";
 class NewPasswordRequestPage extends React.Component {
   render() {
     return (
-      <div className="new-password-request-section">
+      <div className="forgot-password-section section section-lg section-shaped">
+        <div className="shape shape-style-1 shape-default">
+          <span />
+          <span />
+          <span className="span-50" />
+          <span className="span-170" />
+          <span />
+          <span />
+          <span className="span-200" />
+          <span />
+          <span className="span-150" />
+          <span />
+        </div>
         <Container className="pt-30 pb-30  h-100">
           <Row className="text-center justify-content-center">
             <Col lg="5">
@@ -44,39 +53,45 @@ class NewPasswordRequestPage extends React.Component {
                     />
                   </InputGroup>
                 </FormGroup>
-                <Row className="text-center">
-                  <Col>
+
+                <FormGroup className="text-center">
+                  <Col className="p-0">
                     <Button
                       className="new-password-button my-1"
                       color="primary"
                     >
-                      ارسال لینک تغییر رمز عبور
+                      ارسال
                     </Button>
                   </Col>
-                </Row>
-                <Row className="text-center justify-content-center mt-4">
-                  <Col>
-                    <Button
-                      className="new-password-button my-1"
-                      color="secondary"
+                </FormGroup>
+              </Form>
+
+              <Row className="text-center justify-content-center">
+
+                <Col lg="12">
+                <hr className="mt-5 mb-1" />
+                  <Row className="text-center justify-content-between px-4">
+                    <NavLink
                       to="/"
                       tag={Link}
+                      activeClassName="link-active"
+                      className="forgot-password-footer-nav-link"
+                      color="primary"
                     >
-                      بازگشت
-                    </Button>
-                  </Col>
-                </Row>
-              </Form>
-            </Col>
-          </Row>
-
-          <Row className="text-center justify-content-center mt-4">
-            <Col lg="5">
-              <Alert className="p-2 alert" color="success" fade={true}>
-                <span className="alert-inner--text">
-                  <strong>لینک تغییر رمز عبور به ایمیل شما ارسال شد </strong>
-                </span>
-              </Alert>
+                      حسابه
+                    </NavLink>
+                    <NavLink
+                      to="/support"
+                      tag={Link}
+                      activeClassName="link-active"
+                      className="forgot-password-footer-nav-link"
+                      color="primary"
+                    >
+                      پشتیبانی
+                    </NavLink>
+                  </Row>
+                </Col>
+              </Row>
             </Col>
           </Row>
         </Container>
