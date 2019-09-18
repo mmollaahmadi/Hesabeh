@@ -8,7 +8,7 @@ import {
   InputGroupText,
   InputGroup
 } from "reactstrap";
-import './footer.css';
+import './contact-us.css';
 
 class ContactUs extends React.Component {
   state = {};

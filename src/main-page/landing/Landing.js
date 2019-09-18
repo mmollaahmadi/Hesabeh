@@ -17,95 +17,24 @@ class Landing extends React.Component {
   };
   render() {
     return (
-      <div>
       <div className="landing-position-relative">
         {/* shape Hero */}
-        <section className="section section-lg section-shaped pb-200">
-          <div className="shape shape-style-1 shape-default">
-            <span />
-            <span />
-            <span className="span-50" />
-            <span className="span-170" />
-            <span />
-            <span />
-            <span className="span-200" />
-            <span />
-            <span className="span-150" />
-            <span />
-          </div>
-          <Container className="py-lg-md d-flex">
-            <div className="px-0 ">
-              <Row className="text-center">
+        <section className="section section-lg pb-200">
+          <Container className="py-lg-md d-flex justify-content-center">
+
+              <Row className="d-flex justify-items-center text-center">
                 <Col className="pb-5">
                   <h2 className="display-3">
                     حساب،
                     <h1 className="h1-hesabeh">حسابِه</h1>
                     ...
                   </h2>
-                  <p className="lead">
-                  اگه میخوای حساب و کتاب هزینه‌هایی که روزانه برای خودت، خونوادت، دوستات، محل کارت و ... انجام میدی، دستت باشه توی حسابِه ثبت‌نام کن، گروه ایجاد کن، دوستات، خونوادت، همکارات رو دعوت کن، هزینه‌هاتو ثبت کن، بدهی‌هات رو تسویه کن و از کلی امکان دیگه که به زودی به حسابِه اضافه میشن با خیال راحت استفاده کن.
-                  </p>
-                  {/*<div className="btn-wrapper">
-                    <SigninButton title="شروع" buttonOrLink="button"
-                  </div>*/}
+                  <p className="lead">حسابدار شخصی شما</p>
                 </Col>
-              {/*  <Col lg="12" className="">
-
-                  <Row className="mt--3">
-                  <Onboarding
-                    _text="ثبت نام و ورود به حساب کاربری"
-                    imageUri={require("../assets/img/theme/team-1-800x800.jpg")}
-                  />
-                  <Onboarding
-                    _text="افزودن خرج و مخارج"
-                    imageUri={require("../assets/img/theme/team-1-800x800.jpg")}
-                  />
-                  <Onboarding
-                    _text="بررسی وضعیت مالی"
-                    imageUri={require("../assets/img/theme/team-1-800x800.jpg")}
-                  />
-                  <Onboarding
-                    _text="پرداخت هزینه‌ها"
-                    imageUri={require("../assets/img/theme/team-1-800x800.jpg")}
-                  />
-                  </Row>
-
-
-
-
-                </Col>*/}
               </Row>
-            </div>
+
           </Container>
-
         </section>
-
-
-
-
-      </div>
-      {/* 1st Hero Variation
-      <Container className="onboard">
-      <Row >
-      <Onboarding
-        _text="ثبت نام و ورود به حساب کاربری"
-        imageUri={require("../assets/img/theme/team-1-800x800.jpg")}
-      />
-      <Onboarding
-        _text="افزودن خرج و مخارج"
-        imageUri={require("../assets/img/theme/team-1-800x800.jpg")}
-      />
-      <Onboarding
-        _text="بررسی وضعیت مالی"
-        imageUri={require("../assets/img/theme/team-1-800x800.jpg")}
-      />
-      <Onboarding
-        _text="پرداخت هزینه‌ها"
-        imageUri={require("../assets/img/theme/team-1-800x800.jpg")}
-      />
-      </Row>
-
-      </Container>*/}
       </div>
     );
   }

@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import './index.css';
 //import App from './App';
 
-import './assets/css/argon-dashboard-react.css';
+// import './assets/css/argon-dashboard-react.css';
 
 import './assets/css/argon-design-system-react.css';
 // import './assets/scss/argon-design-system-react.scss'

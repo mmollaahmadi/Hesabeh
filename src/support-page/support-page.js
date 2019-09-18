@@ -19,7 +19,7 @@ import {
   Alert
 } from "reactstrap";
 import "../assets/css/custom.css";
-import ContactUs from "../common/footer/ContactUs.js";
+import ContactUs from "../common/contact-us/ContactUs.js";
 
 class SupportPage extends React.Component {
   render() {

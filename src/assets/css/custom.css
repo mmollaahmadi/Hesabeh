@@ -8,16 +8,10 @@
 }
 
 @font-face {
-  font-family: "Yekan";
-  src: url("../fonts/Yekan.ttf") format("truetype");
-  font-style: normal;
-  font-weight: normal;
-}
-
-@font-face {
   font-family: "Samim";
-  src: url("../fonts/Samim.ttf") format("truetype");
-  font-style: normal;
+  src: url("../fonts/Samim-FD.eot");
+  src: url("../fonts/Samim-FD.woff") format("woff"),
+    url("../fonts/Samim-FD.ttf") format("truetype");
   font-weight: normal;
 }
 
@@ -30,9 +24,7 @@
 
 /* ============================== FONTS ===================================== */
 /* ========================================================================== */
-h1 {
-  font-family: Lalezar, Tahoma;
-}
+
 
 h2 {
   font-family: Samim-Bold;
@@ -44,26 +36,23 @@ h4 {
   color: #141312;
 }
 .h1-hesabeh {
+  font-family: Lalezar, Tahoma;
   display: inline;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
   font-size: 4rem;
-  color: #00E5AC;
+  color: #00e5ac;
 }
 
 body {
   font-family: Samim, Tahoma;
   background-color: #f3f3f1;
-  color: #141312;
+  color: #33393f;
   /* background-image: linear-gradient(to top, #d7d7d6, #dededd, #e5e5e3, #ececea, #f3f3f1); */
 }
 
-
-
 /* ============================== MODALS ==================================== */
 /* ========================================================================== */
-
-
 
 /* baraye in ke ba zadan ruye modal navbar tekun nakhore */
 body.modal-open {
@@ -79,13 +68,9 @@ body.modal-open {
   /* height: 50vw; */
 }
 
-
-
 .finance-button {
   border-radius: 25px;
 }
-
-
 
 .social-network-link {
   font-size: x-large;
@@ -97,30 +82,25 @@ body.modal-open {
   border-color: #f6f6f6;
 }
 
-.signup-button {
-  border-radius: 3rem;
-}
+
 
 .bg-gradient-default {
   background-color: #141312 !important;
   /* background: linear-gradient(87deg, #5f5851 0, #141312 100%) !important; } */
 }
 
-
-
-
 /* ============================== BUTTONS =================================== */
 /* ========================================================================== */
 .btn-primary {
   color: #fff;
-  background-color: #f98d00;
-  border-color: #f98d00;
+  background-color: #00e5ac;
+  border-color: #00e5ac;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 .btn-primary:hover {
   color: #fff;
-  background-color: #f98d00;
-  border-color: #f98d00;
+  background-color: #00e5ac;
+  border-color: #00e5ac;
 }
 .btn-primary:focus,
 .btn-primary.focus {
@@ -130,15 +110,15 @@ body.modal-open {
 .btn-primary.disabled,
 .btn-primary:disabled {
   color: #fff;
-  background-color: #f98d00;
-  border-color: #f98d00;
+  background-color: #00e5ac;
+  border-color: #00e5ac;
 }
 .btn-primary:not(:disabled):not(.disabled):active,
 .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: #db4a08;
-  border-color: #db4a08;
+  background-color: #01cd9a;
+  border-color: #01cd9a;
 }
 .btn-primary:not(:disabled):not(.disabled):active:focus,
 .btn-primary:not(:disabled):not(.disabled).active:focus,
@@ -183,7 +163,6 @@ body.modal-open {
   box-shadow: none, 0 0 0 0 rgba(23, 43, 77, 0.5);
 }
 
-
 /* ------------------------ */
 .btn-secondary {
   color: #424242;
@@ -219,11 +198,6 @@ body.modal-open {
 .show > .btn-default.dropdown-toggle:focus {
   box-shadow: none, 0 0 0 0 rgba(23, 43, 77, 0.5);
 }
-
-
-
-
-
 
 /* ============================== SECTIONS ================================== */
 /* ========================================================================== */
@@ -339,8 +313,6 @@ body.modal-open {
 .section-shaped .shape-style-1.shape-dark {
   background: linear-gradient(150deg, #32325d 15%, #32325d 70%, #32325d 94%);
 }
-
-
 
 /* @media (max-width: 576px) {
 .onboard{

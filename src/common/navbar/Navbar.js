@@ -11,18 +11,32 @@ import {
   Button,
   NavLink
 } from "reactstrap";
+import { Collapse, NavbarToggler,   NavItem } from 'reactstrap';
 
 import { Link } from "react-router-dom";
 
-// import NavbarOurSocialNetworks from "./NavbarOurSocialNetworks.js";
 import NavbarProfile from "./NavbarProfile.js";
 import NavbarButtons from "./NavbarButtons.js";
 import "./navbar.css";
 
 class MyNavbar extends React.Component {
-  state = {
-    formModal: false
-  };
+
+  constructor(props) {
+    super(props);
+
+    this.toggleNavbar = this.toggleNavbar.bind(this);
+    this.state = {
+      formModal: false,
+      collapsed: true
+    };
+  }
+
+  toggleNavbar() {
+   this.setState({
+     collapsed: !this.state.collapsed
+   });
+ }
+
   toggleModal = state => {
     this.setState({
       [state]: !this.state[state]
@@ -73,7 +87,7 @@ class MyNavbar extends React.Component {
     return (
       <header className="header-global">
         <Navbar
-          className="navbar-main navbar-transparent navbar-light headroom"
+          className="navbar-main navbar-light navbar-transparent  headroom pb-0 "
           expand="lg"
           id="navbar-main"
         >
@@ -84,10 +98,12 @@ class MyNavbar extends React.Component {
                   alt="..."
                   src={require("../../assets/img/brand/argon-react-white.png")}
               /> */}
-              <h1 style={{ color: "#f98b00" }}>حسابِه</h1>
+              <p className="navbar-brand-title">حسابِه</p>
             </NavbarBrand>
             {/* TOGGLER */}
-            <button className="navbar-toggler" id="navbar_global">
+
+
+           <button className="navbar-toggler" id="navbar_global">
               <span className="navbar-toggler-icon" />
             </button>
             <UncontrolledCollapse navbar toggler="#navbar_global">
@@ -124,14 +140,14 @@ class MyNavbar extends React.Component {
                   <NavLink
                     to="/support"
                     tag={Link}
-                    activeClassName="link-active"
-                    className="nav-link pl-3 pr-3 my-nav-link"
+                    className="navbar-link nav-link pl-3 pr-3 my-nav-link"
                     color="primary"
                   >
                     پشتیبانی
+
                   </NavLink>
                 </div>
-                {/*<NavbarOurSocialNetworks />*/}
+
                 {buttonsOrProfile}
               </Nav>
             </UncontrolledCollapse>

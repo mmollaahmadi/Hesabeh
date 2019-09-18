@@ -1,13 +1,32 @@
 /* ============================== NAVBAR ==================================== */
 /* ========================================================================== */
-.nav-link {
-  font-family: Samim-Bold, Tahoma !important;
+.navbar-toggler-icon
+{
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important; 
+}
+.navbar-brand-title {
+  font-family: Lalezar, Tahoma;
+  color: #33393f;
+  font-size: 2rem;
+  margin-bottom: 0px !important;
+}
+.slash{
+  font-size: 1.5rem;
 }
 
-.my-nav-link {
-  color: #141312 !important;
+.navbar-link{
+  font-family: Samim-Bold, Tahoma !important;
+  color: #33393f !important;
   cursor: pointer;
+  font-size: 0.75rem !important;
 }
+
+.signup-button {
+  border-radius: 3rem;
+  font-size: 0.75rem !important;
+  padding: 0.7rem 1rem;
+}
+
 .username{
   font-size: 12px !important;
 }

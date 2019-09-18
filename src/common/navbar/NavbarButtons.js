@@ -1,18 +1,21 @@
-import React from 'react';
-import {NavItem} from "reactstrap";
+import React from "react";
+import { NavItem } from "reactstrap";
 
 import SigninButton from "../signin-button/SigninButton.js";
 import SignupButton from "../signup-button/SignupButton.js";
 
 class NavbarButtons extends React.Component {
-  render(){
-    return(
+  render() {
+    return (
       <div className="d-flex">
-        <NavItem className="d-none d-lg-inline mr-lg-4">
-          <SigninButton title="ورود" buttonOrLink="link"></SigninButton>
+        <NavItem className="d-none d-lg-inline mr-lg-4 ml-lg--1">
+          <SigninButton />
+        </NavItem>
+        <NavItem className="d-none d-lg-inline m-0 mt-2">
+          <p className="m-0 slash">/</p>
         </NavItem>
         <NavItem className="d-none d-lg-inline p-1 ">
-          <SignupButton title="ثبت نام" buttonOrLink="button" />
+          <SignupButton />
         </NavItem>
       </div>
     );

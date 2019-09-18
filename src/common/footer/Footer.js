@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Container, Row, Col, UncontrolledTooltip } from "reactstrap";
 
-import ContactUs from "./ContactUs.js";
+import ContactUs from "../contact-us/ContactUs.js";
 
 import "./footer.css";
 
