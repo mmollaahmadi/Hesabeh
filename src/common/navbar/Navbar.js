@@ -11,7 +11,6 @@ import {
   Button,
   NavLink
 } from "reactstrap";
-import { Collapse, NavbarToggler,   NavItem } from 'reactstrap';
 
 import { Link } from "react-router-dom";
 
@@ -45,7 +44,7 @@ class MyNavbar extends React.Component {
   componentDidMount() {
     let headroom = new Headroom(document.getElementById("navbar-main"));
     // initialise
-    headroom.init();
+    // headroom.init();
   }
   render() {
     let buttonsOrProfile;
@@ -85,9 +84,9 @@ class MyNavbar extends React.Component {
       links = null;
     }
     return (
-      <header className="header-global">
+      // <header className="header-global">
         <Navbar
-          className="navbar-main navbar-light navbar-transparent  headroom pb-0 "
+          className="navbar-main navbar-light navbar-transparent  pb-0 "
           expand="lg"
           id="navbar-main"
         >
@@ -153,7 +152,7 @@ class MyNavbar extends React.Component {
             </UncontrolledCollapse>
           </Container>
         </Navbar>
-      </header>
+      // </header>
     );
   }
 }

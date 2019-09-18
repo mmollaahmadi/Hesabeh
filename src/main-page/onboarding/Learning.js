@@ -11,8 +11,8 @@ class Learning extends React.Component {
         <Container className="pt-30 pb-30">
           <Row className="text-center justify-content-center">
             <Col lg="10">
-            <h2 className="display-3 text-white mb-5">همین حالا شروع کنید
-            </h2>
+            <p className="section-title">همین حالا شروع کنید
+            </p>
               <Row className="d-flex justify-content-center">
                 <Onboarding
                   _text="ثبت نام و ورود به حساب کاربری"

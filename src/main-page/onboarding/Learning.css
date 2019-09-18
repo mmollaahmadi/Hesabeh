@@ -1,4 +1,11 @@
 .bg {
-  background-color: #8f7d8090 !important;
+  background-color: #f9f9f9 !important;
   /* background: radial-gradient(circle, #424242, #454545, #494949, #4c4c4c, #505050) !important; */
+}
+
+.section-title{
+  font-family: Samim-Bold !important;
+  color: #33393f !important;
+  font-size: 2rem;
+  margin-bottom: 4rem;
 }

@@ -26,11 +26,22 @@ import GroupDashboardPage from './group-dashboard-page/GroupDashboardPage.js';
 import MyGroupsPage from './groups-page/MyGroupsPage.js';
 import NewPasswordRequestPage from './forgot-password-pages/new-password-request-page.js';
 import SupportPage from './support-page/support-page.js';
-
+import SigninPage from './signin-page/signin-page.js';
+import RegisterPage from './register-page/register-page.js';
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
       <Route path="/" exact render={props => <MainPage isLogin='false' />} />
+      <Route
+        path="/register"
+        exact
+        render={props => <RegisterPage {...props} />}
+      />
+      <Route
+        path="/signin"
+        exact
+        render={props => <SigninPage {...props} />}
+      />
       <Route
         path="/forgot-password"
         exact

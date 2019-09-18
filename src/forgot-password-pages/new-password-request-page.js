@@ -10,12 +10,8 @@ import {
   FormGroup,
   Form,
   Input,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroup,
-  Collapse,
-  NavLink,
-  Alert
+  InputGroup,  
+  NavLink
 } from "reactstrap";
 import "../assets/css/custom.css";
 class NewPasswordRequestPage extends React.Component {

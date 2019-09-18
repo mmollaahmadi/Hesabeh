@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {
-  NavLink,
   Modal,
   Card,
   CardHeader,
@@ -18,6 +17,7 @@ import {
   Collapse
 } from "reactstrap";
 import "../modal.css";
+import "../navbar/navbar.css";
 
 class SignupButton extends React.Component {
   constructor(props) {
@@ -68,8 +68,10 @@ class SignupButton extends React.Component {
           <Button
             className="signup-button"
             color="primary"
-            type="button"
-            onClick={() => this.toggleModal("signupFormModal")}
+            
+            // onClick={() => this.toggleModal("signupFormModal")}
+            to="/register"
+            tag={Link}
           >
             ثبت نام
           </Button>

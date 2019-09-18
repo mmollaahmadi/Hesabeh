@@ -1,22 +1,12 @@
 import React from "react";
 
 import "../forgot-password-pages/forgot-password.css";
-import { Link } from "react-router-dom";
 import {
   Container,
   Row,
   Col,
   Button,
-  FormGroup,
-  Form,
-  Input,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroup,
-  Collapse,
-  NavLink,
   UncontrolledTooltip,
-  Alert
 } from "reactstrap";
 import "../assets/css/custom.css";
 import ContactUs from "../common/contact-us/ContactUs.js";
