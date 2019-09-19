@@ -5,12 +5,13 @@ import { Container, Row, Col } from "reactstrap";
 class AboutUs extends React.Component {
   render() {
     return (
-      <section className="section section-lg bg-gradient-default pb-6 pt-5">
+      <section className="section bg pb-6 pt-5">
         <Container className="pt-30 pb-30">
           <Row className="text-center justify-content-center">
             <Col lg="10">
-              <h2 className="display-3 text-white">درباره‌ی ما</h2>
-              <p className="lead text-white">
+              <p className="section-title">درباره‌ی ما
+              </p>
+              <p className="lead">
                 همه چیز از دوران دانشجویی شروع شد و این‌که حساب و کتاب خرج و
                 مخارج گروهی زمان‌بر و پیچیده بود. تصمیم گرفتیم راه حلی که این
                 چند سال برای این مشکل استفاده کردیم رو با شما به اشتراک بزاریم.
@@ -18,7 +19,7 @@ class AboutUs extends React.Component {
             </Col>
           </Row>
         </Container>
-        {/* SVG separator 
+        {/* SVG separator
             <div className="separator separator-bottom separator-skew">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

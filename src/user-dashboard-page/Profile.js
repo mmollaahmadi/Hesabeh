@@ -3,6 +3,7 @@ import { Button, Modal, Card, Container, Row, Col } from "reactstrap";
 import {
   CardHeader,
   CardBody,
+  NavLink,
   FormGroup,
   Form,
   Input,
@@ -11,7 +12,8 @@ import {
   InputGroup
   //UncontrolledAlert
 } from "reactstrap";
-import ProfileAtt from './ProfileAtt.js'
+import ProfileAtt from "./ProfileAtt.js";
+import "./profile.css";
 import { Link } from "react-router-dom";
 class Profile extends React.Component {
   state = {};
@@ -44,75 +46,6 @@ class Profile extends React.Component {
                   lg="4"
                 >
                   <div className="card-profile-actions py-4 px-0 mt-lg-0">
-                    <Button
-                      className="mr-4 delete-account-btn"
-                      href="#pablo"
-                      onClick={() => this.toggleModal("notificationModal")}
-                      size="sm"
-                    >
-                      حذف حساب کاربری
-                    </Button>
-                    <Modal
-                      className="modal-dialog-centered modal-danger"
-                      contentClassName="bg-gradient-danger"
-                      isOpen={this.state.notificationModal}
-                      toggle={() => this.toggleModal("notificationModal")}
-                    >
-                      <div className="modal-header d-flex justify-content-center">
-                        <h6
-                          className="modal-title"
-                          id="modal-title-notification"
-                        >
-                          توجه کنید
-                        </h6>
-                        {/*<button
-                          aria-label="Close"
-                          className="close d-flex justify-left"
-                          data-dismiss="modal"
-                          type="button"
-                          onClick={() => this.toggleModal("notificationModal")}
-                        >
-                          <span aria-hidden={true}>×</span>
-                        </button>*/}
-                      </div>
-                      <div className="modal-body">
-                        <div className="py-3 text-center">
-                          <i className="ni ni-bell-55 ni-3x" />
-                          <p>
-                            در صورت حذف حساب کاربری اطلاعات شما حذف و غیرقابل
-                            بازیابی می‌شوند.
-                          </p>
-                        </div>
-                      </div>
-                      <div className="modal-footer">
-                        <Button
-                          className="btn-white"
-                          color="default"
-                          type="button"
-                        >
-                          انجامش بده
-                        </Button>
-                        <Button
-                          className="text-white ml-auto"
-                          color="link"
-                          data-dismiss="modal"
-                          type="button"
-                          onClick={() => this.toggleModal("notificationModal")}
-                        >
-                          بیخیال
-                        </Button>
-                      </div>
-                    </Modal>
-
-                    <Button
-                      className="float-right btn-primary"
-                      color="info"
-                      href="#pablo"
-                      onClick={() => this.toggleModal("defaultModal")}
-                      size="sm"
-                    >
-                      تغییر رمز عبور
-                    </Button>
                     <Modal
                       className="modal-dialog-centered"
                       isOpen={this.state.defaultModal}
@@ -203,6 +136,74 @@ class Profile extends React.Component {
                         </Card>
                       </div>
                     </Modal>
+                    <Button
+                      className="float-right btn-primary"
+                      color="info"
+                      href="#pablo"
+                      onClick={() => this.toggleModal("defaultModal")}
+                      size="sm"
+                    >
+                      خروج
+                    </Button>
+                    <Button
+                      className="mr-4 delete-account-btn"
+                      href="#pablo"
+                      onClick={() => this.toggleModal("notificationModal")}
+                      size="sm"
+                    >
+                      حذف حساب کاربری
+                    </Button>
+                    <Modal
+                      className="modal-dialog-centered modal-danger"
+                      contentClassName="bg-gradient-danger"
+                      isOpen={this.state.notificationModal}
+                      toggle={() => this.toggleModal("notificationModal")}
+                    >
+                      <div className="modal-header d-flex justify-content-center">
+                        <h6
+                          className="modal-title"
+                          id="modal-title-notification"
+                        >
+                          توجه کنید
+                        </h6>
+                        {/*<button
+                          aria-label="Close"
+                          className="close d-flex justify-left"
+                          data-dismiss="modal"
+                          type="button"
+                          onClick={() => this.toggleModal("notificationModal")}
+                        >
+                          <span aria-hidden={true}>×</span>
+                        </button>*/}
+                      </div>
+                      <div className="modal-body">
+                        <div className="py-3 text-center">
+                          <i className="ni ni-bell-55 ni-3x" />
+                          <p>
+                            در صورت حذف حساب کاربری اطلاعات شما حذف و غیرقابل
+                            بازیابی می‌شوند.
+                          </p>
+                        </div>
+                      </div>
+                      <div className="modal-footer">
+                        <Button
+                          className="btn-white"
+                          color="default"
+                          type="button"
+                        >
+                          انجامش بده
+                        </Button>
+                        <Button
+                          className="text-white ml-auto"
+                          color="link"
+                          data-dismiss="modal"
+                          type="button"
+                          onClick={() => this.toggleModal("notificationModal")}
+                        >
+                          بیخیال
+                        </Button>
+                      </div>
+                    </Modal>
                   </div>
                 </Col>
                 <Col className="order-lg-1" lg="4">
@@ -220,11 +221,146 @@ class Profile extends React.Component {
               </Row>
               <div className="text-center mt-5 pb-5">
                 <Form role="form" className="profile-form">
-                  <Row>
-                    <ProfileAtt value="mollaahmadi" isDisabled="true"/>
-                    <ProfileAtt type="email" value="mollaahmadimohammad@gmail.com" isDisabled="false"/>
-                    <ProfileAtt value="محمد ملااحمدی" isDisabled="false"/>
-                    <ProfileAtt value="09183694858" isDisabled="false"/>
+                  <Row className="text-center justify-content-center">
+                    <Col lg="5">
+                      <FormGroup className="mb-3">
+                        <InputGroup className="input-group-alternative">
+                          <InputGroupAddon addonType="prepend">
+                            <InputGroupText>
+                              <i className="ni ni-email-83" />
+                            </InputGroupText>
+                          </InputGroupAddon>
+
+                          <Input
+                            className="profile-input"
+                            value="mollaahmadi@"
+                          />
+                        </InputGroup>
+                      </FormGroup>
+
+                      <FormGroup className="mb-3">
+                        <InputGroup className="input-group-alternative">
+                          <InputGroupAddon addonType="prepend">
+                            <InputGroupText>
+                              <i className="ni ni-email-83" />
+                            </InputGroupText>
+                          </InputGroupAddon>
+
+                          <Input
+                            className="profile-input"
+                            value="mollaahmadimohammad@gmail.com"
+                            type="email"
+                          />
+                        </InputGroup>
+                      </FormGroup>
+
+                      <FormGroup className="mb-3">
+                        <InputGroup className="input-group-alternative">
+                          <InputGroupAddon addonType="prepend">
+                            <InputGroupText>
+                              <i className="ni ni-email-83" />
+                            </InputGroupText>
+                          </InputGroupAddon>
+
+                          <Input
+                            className="profile-input"
+                            value="محمد ملااحمدی"
+                            type="email"
+                          />
+                        </InputGroup>
+                      </FormGroup>
+
+                      <FormGroup className="mb-3">
+                        <InputGroup className="input-group-alternative">
+                          <InputGroupAddon addonType="prepend">
+                            <InputGroupText>
+                              <i className="ni ni-email-83" />
+                            </InputGroupText>
+                          </InputGroupAddon>
+
+                          <Input
+                            className="profile-input"
+                            value="۰۹۱۸۳۶۹۴۸۵۸"
+                          />
+                        </InputGroup>
+                      </FormGroup>
+
+                      <FormGroup className="mb-3">
+                        <InputGroup className="input-group-alternative">
+                          <InputGroupAddon addonType="prepend">
+                            <InputGroupText>
+                              <i className="ni ni-email-83" />
+                            </InputGroupText>
+                          </InputGroupAddon>
+
+                          <Input
+                            className="profile-input"
+                            value="30000 تومان"
+                          />
+
+                          <InputGroupAddon addonType="append">
+                            <InputGroupText>
+                              <i className="ni ni-email-83" />
+                            </InputGroupText>
+                          </InputGroupAddon>
+                        </InputGroup>
+                      </FormGroup>
+
+                      <FormGroup>
+                        <InputGroup className="input-group-alternative">
+                          <InputGroupAddon addonType="prepend">
+                            <InputGroupText>
+                              <i className="ni ni-lock-circle-open" />
+                            </InputGroupText>
+                          </InputGroupAddon>
+
+                          <Input
+                            className="profile-input"
+                            value="mohammad1372"
+                            type="password"
+                          />
+                        </InputGroup>
+                        <Row className="d-flex justify-content-end mb-2 ml-1">
+                          <NavLink
+                            tag={Link}
+                            className="forgot-password-link"
+                            color="primary"
+                            onClick={() => this.toggleModal("defaultModal")}
+                          >
+                            تغییر رمز عبور
+                          </NavLink>
+                        </Row>
+                      </FormGroup>
+                      <FormGroup>
+                        {/*<div className="custom-control custom-control-alternative custom-checkbox">
+                        <input
+                          className="custom-control-input"
+                          id=" customCheckLogin"
+                          type="checkbox"
+                        />
+                        <label
+                          className="custom-control-label pr-1"
+                          htmlFor=" customCheckLogin"
+                        >
+                          <span className="signin-modal-text mr-4">
+                            مرا به خاطر بسپار
+                          </span>
+                        </label>
+                      </div>*/}
+                        <Row className="justify-item-center d-flex">
+                          <Col className="lg-9 m-0 text-center">
+                            <Button
+                              className="signin-button"
+                              color="primary"
+                              to="/payments"
+                              tag={Link}
+                            >
+                              اعمال تغییرات
+                            </Button>
+                          </Col>
+                        </Row>
+                      </FormGroup>
+                    </Col>
                   </Row>
                 </Form>
               </div>

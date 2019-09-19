@@ -13,13 +13,40 @@ import {
   Form,
   Input,
   InputGroup,
-  NavLink
+  NavLink,
+  Collapse
 } from "reactstrap";
 import "../assets/css/custom.css";
 class RegisterPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      signupFormModal: false,
+      email: {
+        value: "",
+        valid: false,
+        collapse: false
+      },
+      password: {
+        value: "",
+        valid: false,
+        collapse: false
+      },
+      confirmPassword: {
+        value: "",
+        valid: false,
+        collapse: false
+      }
+    };
+  }
+  toggle = state => {
+    this.setState({
+      [state]: { collapse: !this.state[state].collapse }
+    });
+  };
   render() {
     return (
-      <div className="forgot-password-section section section-lg section-shaped">
+      <div className="register-section section-lg">
         <Container className="pt-10 pb-30  h-100">
           <Row className="text-center justify-content-center">
             <Col lg="5">
@@ -32,7 +59,7 @@ class RegisterPage extends React.Component {
 
               <p className="title-text"> ایجاد حساب کاربری</p>
 
-              <Form role="form" className="signin-form">
+              <Form role="form" className="signup-form">
                 <FormGroup className="mb-3">
                   <InputGroup className="input-group-alternative">
                     <InputGroupAddon addonType="prepend">
@@ -42,7 +69,7 @@ class RegisterPage extends React.Component {
                     </InputGroupAddon>
 
                     <Input
-                      className="signin-input"
+                      className="signup-input"
                       placeholder="ایمیل"
                       type="email"
                     />
@@ -57,7 +84,7 @@ class RegisterPage extends React.Component {
                     </InputGroupAddon>
 
                     <Input
-                      className="signin-input"
+                      className="signup-input"
                       placeholder="رمز عبور"
                       type="password"
                     />
@@ -72,12 +99,13 @@ class RegisterPage extends React.Component {
                     </InputGroupAddon>
 
                     <Input
-                      className="signin-input"
+                      className="signup-input"
                       placeholder="تایید رمز عبور"
                       type="password"
                     />
                   </InputGroup>
                 </FormGroup>
+                <Collapse isOpen={this.state.password.collapse}>
                 <Row className="d-flex justify-content-center text-center px-9 pb-4">
                   <Col lg="2" className="p-0">
                     <i className=" fa fa-twitter password-condition-icon" />
@@ -110,6 +138,7 @@ class RegisterPage extends React.Component {
                     </p>
                   </Col>
                 </Row>
+                </Collapse>
                 <FormGroup>
                   <Row className="justify-item-center d-flex">
                     <Col className="lg-9 m-0 text-center">

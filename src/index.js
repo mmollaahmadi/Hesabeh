@@ -28,6 +28,8 @@ import NewPasswordRequestPage from './forgot-password-pages/new-password-request
 import SupportPage from './support-page/support-page.js';
 import SigninPage from './signin-page/signin-page.js';
 import RegisterPage from './register-page/register-page.js';
+import PaymentsPage from './payments-page/payments-page.js';
+
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
@@ -51,6 +53,11 @@ ReactDOM.render(
         path="/support"
         exact
         render={props => <SupportPage {...props} />}
+      />
+      <Route
+        path="/payments"
+        exact
+        render={props => <PaymentsPage {...props} />}
       />
       <Route
         path="/dashboard"

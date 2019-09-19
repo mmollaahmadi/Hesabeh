@@ -54,7 +54,7 @@ class MyNavbar extends React.Component {
       links = (
         <div className="d-flex justify-content-center align-items-center">
           <Button
-            className="text-secondary my-nav-link"
+            className="navbar-link"
             color="link"
             to="/mygroups"
             tag={Link}
@@ -62,7 +62,7 @@ class MyNavbar extends React.Component {
             حساب من
           </Button>
           <Button
-            className="text-secondary my-nav-link"
+            className="navbar-link"
             color="link"
             to="/mygroups"
             tag={Link}
@@ -70,7 +70,7 @@ class MyNavbar extends React.Component {
             گروه‌های من
           </Button>
           <Button
-            className="text-secondary my-nav-link"
+            className="navbar-link"
             color="link"
             to="/mygroups"
             tag={Link}
@@ -139,7 +139,7 @@ class MyNavbar extends React.Component {
                   <NavLink
                     to="/support"
                     tag={Link}
-                    className="navbar-link nav-link pl-3 pr-3 my-nav-link"
+                    className="navbar-link pl-3 pr-3"
                     color="primary"
                   >
                     پشتیبانی

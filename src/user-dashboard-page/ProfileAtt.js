@@ -1,6 +1,6 @@
 import React from 'react';
 import './UserDashboard.css';
-import {  
+import {
   FormGroup,
   Col,
   Input,
@@ -12,12 +12,12 @@ import {
 class ProfileAtt extends React.Component{
   render() {
     return(
-      <Col lg="6" md="12" className="px-6">
+
         <FormGroup>
           <InputGroup className="input-group-alternative ">
             <InputGroupAddon addonType="prepend">
               <InputGroupText>
-                <i className="ni ni-email-83" />
+                <i className="ni ni-email-83" />                
               </InputGroupText>
             </InputGroupAddon>
 
@@ -29,7 +29,7 @@ class ProfileAtt extends React.Component{
             />
           </InputGroup>
         </FormGroup>
-      </Col>
+
     );
   }
 }

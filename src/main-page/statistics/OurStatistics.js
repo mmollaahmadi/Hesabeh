@@ -6,10 +6,12 @@ import './statistics.css';
 class OurStatistics extends React.Component {
   render() {
     return (
-      <div className="statistics-body">
+      <div className="section">
       <Container >
         <Row className="mx-0 mt-5 d-flex justify-content-center">
-          <h2 className="display-3 mb-5">به حسابِه بپیوندید</h2>
+          <p className="section-title">
+          به حسابِه بپیوندید
+          </p>
         </Row>
         <Row className="mx-0 my-1">
           <StatisticUnit

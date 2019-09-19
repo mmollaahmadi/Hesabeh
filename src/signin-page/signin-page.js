@@ -19,7 +19,7 @@ import "../assets/css/custom.css";
 class SigninPage extends React.Component {
   render() {
     return (
-      <div className="forgot-password-section section section-lg section-shaped">
+      <div className="section-lg">
         <Container className="pt-10 pb-30  h-100">
           <Row className="text-center justify-content-center">
             <Col lg="5">
@@ -62,15 +62,16 @@ class SigninPage extends React.Component {
                       type="password"
                     />
                   </InputGroup>
+                  <Row className="d-flex justify-content-end mb-2">
                   <NavLink
                     to="/forgot-password"
                     tag={Link}
-                    activeClassName="link-active"
-                    className="forgot-password-footer-nav-link forgot-password-link"
+                    className="forgot-password-link"
                     color="primary"
                   >
                     رمز عبور را فراموش کردم!
                   </NavLink>
+                  </Row>
                 </FormGroup>
                 <FormGroup>
                   {/*<div className="custom-control custom-control-alternative custom-checkbox">
@@ -92,8 +93,9 @@ class SigninPage extends React.Component {
                     <Col className="lg-9 m-0 text-center">
                       <Button
                         className="signin-button"
-                        color="primary"
-                        type="button"
+                        color="primary"                        
+                        to="/payments"
+                        tag={Link}
                       >
                         ورود
                       </Button>
