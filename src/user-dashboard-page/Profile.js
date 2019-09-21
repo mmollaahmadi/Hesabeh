@@ -12,7 +12,7 @@ import {
   InputGroup
   //UncontrolledAlert
 } from "reactstrap";
-import ProfileAtt from "./ProfileAtt.js";
+// import ProfileAtt from "./ProfileAtt.js";
 import "./profile.css";
 import { Link } from "react-router-dom";
 class Profile extends React.Component {

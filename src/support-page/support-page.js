@@ -14,8 +14,7 @@ import {
   Input,
   UncontrolledTooltip,
   InputGroup,
-  NavLink,
-  Collapse
+  NavLink
 } from "reactstrap";
 import "../assets/css/custom.css";
 class SupportPage extends React.Component {

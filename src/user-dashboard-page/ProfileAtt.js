@@ -2,7 +2,6 @@ import React from 'react';
 import './UserDashboard.css';
 import {
   FormGroup,
-  Col,
   Input,
   InputGroupAddon,
   InputGroupText,
@@ -17,7 +16,7 @@ class ProfileAtt extends React.Component{
           <InputGroup className="input-group-alternative ">
             <InputGroupAddon addonType="prepend">
               <InputGroupText>
-                <i className="ni ni-email-83" />                
+                <i className="ni ni-email-83" />
               </InputGroupText>
             </InputGroupAddon>
 

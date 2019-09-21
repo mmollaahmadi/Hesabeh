@@ -1,5 +1,5 @@
 import React from "react";
-import Headroom from "./headroom/Headroom.js";
+// import Headroom from "./headroom/Headroom.js";
 import {
   UncontrolledCollapse,
   NavbarBrand,
@@ -42,7 +42,7 @@ class MyNavbar extends React.Component {
     });
   };
   componentDidMount() {
-    let headroom = new Headroom(document.getElementById("navbar-main"));
+    // let headroom = new Headroom(document.getElementById("navbar-main"));
     // initialise
     // headroom.init();
   }
