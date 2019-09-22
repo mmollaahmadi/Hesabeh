@@ -1,31 +1,52 @@
 import React from "react";
 
-import Navbar from "../common/navbar/Navbar";
-import Footer from "../common/footer/Footer";
-import { Container, Row, Col } from "reactstrap";
 import "./forgot-password.css";
 import { Link } from "react-router-dom";
 import {
-  NavLink,
-  Modal,
-  Card,
-  CardHeader,
-  CardBody,
+  Container,
+  Row,
+  Col,
+  InputGroupAddon,
+  InputGroupText,
   Button,
   FormGroup,
   Form,
   Input,
-  InputGroupAddon,
-  InputGroupText,
   InputGroup,
-  Collapse,
-  Alert
+  NavLink
 } from "reactstrap";
+import "../assets/css/custom.css";
 class SetNewPasswordPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      signupFormModal: false,
+      email: {
+        value: "",
+        valid: false,
+        collapse: false
+      },
+      password: {
+        value: "",
+        valid: false,
+        collapse: false
+      },
+      confirmPassword: {
+        value: "",
+        valid: false,
+        collapse: false
+      }
+    };
+  }
+  toggle = state => {
+    this.setState({
+      [state]: { collapse: !this.state[state].collapse }
+    });
+  };
   render() {
     return (
-      <div className="new-password-request-section">
-        <Container className="pt-30 pb-30  h-100">
+      <div className="section-lg">
+        <Container className="pt-10 pb-30  h-100">
           <Row className="text-center justify-content-center">
             <Col lg="5">
               <img
@@ -33,50 +54,136 @@ class SetNewPasswordPage extends React.Component {
                 className="rounded-circle logo"
                 src={require("../assets/img/users/user01.jpg")}
               />
-              <h1 className="brand-title">حسابه</h1>
+              <p className="brand-title">حسابِه</p>
 
-              <Form role="form" className="new-password-forms">
-                <FormGroup>
-                  <InputGroup className="input-group-alternative ">
-                    <Input
-                      className="new-password-input"
-                      placeholder="ایمیل / نام کاربری / شماره همراه"
-                    />
-                  </InputGroup>
+              <p className="title-text">
+              تعیین رمز عبور جدید
+               </p>
+
+              <Form role="form" className="signin-form">
+              <FormGroup>
+                <InputGroup className="input-group-alternative">
+                  <InputGroupAddon addonType="prepend">
+                    <InputGroupText>
+                      <i className="ni ni-lock-circle-open" />
+                    </InputGroupText>
+                  </InputGroupAddon>
+
+                  <Input
+                    className="signup-input"
+                    placeholder="رمز عبور"
+                    type="password"
+                  />
+                </InputGroup>
+              </FormGroup>
+              <FormGroup>
+                <InputGroup className="input-group-alternative">
+                  <InputGroupAddon addonType="prepend">
+                    <InputGroupText>
+                      <i className="ni ni-lock-circle-open" />
+                    </InputGroupText>
+                  </InputGroupAddon>
+
+                  <Input
+                    className="signup-input"
+                    placeholder="تایید رمز عبور"
+                    type="password"
+                  />
+                </InputGroup>
+              </FormGroup>
+              <Collapse isOpen={this.state.password.collapse}>
+              <Row className="d-flex justify-content-center text-center px-9 pb-4">
+                <Col lg="2" className="p-0">
+                  <i className=" fa fa-twitter password-condition-icon" />
+                  <p className="password-condition-text">
+                  حروف کوچک
+                  </p>
+                </Col>
+                <Col lg="2" className="p-0">
+                  <i className=" fa fa-twitter password-condition-icon" />
+                  <p className="password-condition-text">
+                حروف بزرگ
+                  </p>
+                </Col>
+                <Col lg="2" className="p-0">
+                  <i className=" fa fa-twitter password-condition-icon" />
+                  <p className="password-condition-text">
+                  عدد
+                  </p>
+                </Col>
+                <Col lg="2" className="p-0">
+                  <i className=" fa fa-twitter password-condition-icon" />
+                  <p className="password-condition-text">
+                  نشانه خاص
+                  </p>
+                </Col>
+                <Col lg="2" className="p-0">
+                  <i className=" fa fa-twitter password-condition-icon" />
+                  <p className="password-condition-text">
+                  تطابق دو رمز عبور
+                  </p>
+                </Col>
+              </Row>
+              </Collapse>
+
+                  <Row className="justify-item-center d-flex">
+                    <Col className="lg-9 m-0 text-center">
+                      <Button
+                        className="signin-button"
+                        color="primary"
+                        to="/payments"
+                        tag={Link}
+                      >
+                        تایید
+                      </Button>
+                    </Col>
+                  </Row>
                 </FormGroup>
-                <Row className="text-center">
-                  <Col>
-                    <Button
-                      className="new-password-button my-1"
-                      color="primary"
-                    >
-                      ارسال لینک تغییر رمز عبور
-                    </Button>
-                  </Col>
-                </Row>
-                <Row className="text-center justify-content-center mt-4">
-                  <Col>
-                    <Button
-                      className="new-password-button my-1"
-                      color="secondary"
+
+
+              </Form>
+              <Row className="text-center justify-content-center">
+                <Col lg="12">
+                  <hr className="mt-5 mb-1" />
+                  <Row className="text-center justify-content-between px-4">
+                    <NavLink
                       to="/"
                       tag={Link}
+                      activeClassName="link-active"
+                      className="forgot-password-footer-nav-link"
+                      color="primary"
                     >
-                      بازگشت
-                    </Button>
-                  </Col>
-                </Row>
-              </Form>
-            </Col>
-          </Row>
-
-          <Row className="text-center justify-content-center mt-4">
-            <Col lg="5">
-              <Alert className="p-2 alert" color="success" fade={true}>
-                <span className="alert-inner--text">
-                  <strong>لینک تغییر رمز عبور به ایمیل شما ارسال شد </strong>
-                </span>
-              </Alert>
+                      حسابه
+                    </NavLink>
+                    <NavLink
+                      to="/register"
+                      tag={Link}
+                      activeClassName="link-active"
+                      className="forgot-password-footer-nav-link"
+                      color="primary"
+                    >
+                      ثبت نام
+                    </NavLink>
+                    <NavLink
+                      to="/signin"
+                      tag={Link}
+                      activeClassName="link-active"
+                      className="forgot-password-footer-nav-link"
+                      color="primary"
+                    >
+                      ورود                 </NavLink>
+                    <NavLink
+                      to="/support"
+                      tag={Link}
+                      activeClassName="link-active"
+                      className="forgot-password-footer-nav-link"
+                      color="primary"
+                    >
+                      پشتیبانی
+                    </NavLink>
+                  </Row>
+                </Col>
+              </Row>
             </Col>
           </Row>
         </Container>

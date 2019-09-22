@@ -6,31 +6,21 @@ import {
   Container,
   Row,
   Col,
+  InputGroupAddon,
+  InputGroupText,
   Button,
   FormGroup,
   Form,
   Input,
-  InputGroup,  
+  InputGroup,
   NavLink
 } from "reactstrap";
 import "../assets/css/custom.css";
 class NewPasswordRequestPage extends React.Component {
   render() {
     return (
-      <div className="forgot-password-section section section-lg section-shaped">
-        <div className="shape shape-style-1 shape-default">
-          <span />
-          <span />
-          <span className="span-50" />
-          <span className="span-170" />
-          <span />
-          <span />
-          <span className="span-200" />
-          <span />
-          <span className="span-150" />
-          <span />
-        </div>
-        <Container className="pt-30 pb-30  h-100">
+      <div className="section-lg">
+        <Container className="pt-10 pb-30  h-100">
           <Row className="text-center justify-content-center">
             <Col lg="5">
               <img
@@ -38,34 +28,50 @@ class NewPasswordRequestPage extends React.Component {
                 className="rounded-circle logo"
                 src={require("../assets/img/users/user01.jpg")}
               />
-              <h1 className="brand-title">حسابه</h1>
+              <p className="brand-title">حسابِه</p>
 
-              <Form role="form" className="new-password-forms">
-                <FormGroup>
-                  <InputGroup className="input-group-alternative ">
+              <p className="title-text">
+              ارسال در خواست رمز عبور جدید
+               </p>
+
+              <Form role="form" className="signin-form">
+                <FormGroup className="mb-3">
+                  <InputGroup className="input-group-alternative">
+                    <InputGroupAddon addonType="prepend">
+                      <InputGroupText>
+                        <i className="fa fa-user" />
+                      </InputGroupText>
+                    </InputGroupAddon>
+
                     <Input
-                      className="new-password-input"
+                      className="signin-input"
                       placeholder="ایمیل / نام کاربری / شماره همراه"
+                      type="email"
                     />
                   </InputGroup>
                 </FormGroup>
 
-                <FormGroup className="text-center">
-                  <Col className="p-0">
-                    <Button
-                      className="new-password-button my-1"
-                      color="primary"
-                    >
-                      ارسال
-                    </Button>
-                  </Col>
+                <FormGroup>
+
+                  <Row className="justify-item-center d-flex">
+                    <Col className="lg-9 m-0 text-center">
+                      <Button
+                        className="signin-button"
+                        color="primary"
+                        to="/payments"
+                        tag={Link}
+                      >
+                        ارسال
+                      </Button>
+                    </Col>
+                  </Row>
                 </FormGroup>
+
+
               </Form>
-
               <Row className="text-center justify-content-center">
-
                 <Col lg="12">
-                <hr className="mt-5 mb-1" />
+                  <hr className="mt-5 mb-1" />
                   <Row className="text-center justify-content-between px-4">
                     <NavLink
                       to="/"
@@ -76,6 +82,23 @@ class NewPasswordRequestPage extends React.Component {
                     >
                       حسابه
                     </NavLink>
+                    <NavLink
+                      to="/register"
+                      tag={Link}
+                      activeClassName="link-active"
+                      className="forgot-password-footer-nav-link"
+                      color="primary"
+                    >
+                      ثبت نام
+                    </NavLink>
+                    <NavLink
+                      to="/signin"
+                      tag={Link}
+                      activeClassName="link-active"
+                      className="forgot-password-footer-nav-link"
+                      color="primary"
+                    >
+                      ورود                 </NavLink>
                     <NavLink
                       to="/support"
                       tag={Link}

@@ -23,9 +23,9 @@ import {
   DropdownItem,
   DropdownMenu
 } from "reactstrap";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { GithubPicker } from "react-color";
-import './UserDashboard.css'
+import "./UserDashboard.css";
 class UserDashboardPage extends React.Component {
   render() {
     return (
@@ -40,7 +40,7 @@ class UserDashboardPage extends React.Component {
 
             <Container>
               <div className="landing-position-relative">
-                <section className="section section-lg pb-200">
+                <section className="section pt-0 pb-200">
                   <Accordion open={1}>
                     <Accordion.Item>
                       <Accordion.Header>
@@ -122,15 +122,9 @@ class UserDashboardPage extends React.Component {
                       <Accordion.Header>برچسب‌ها</Accordion.Header>
                       <Accordion.Body>
                         <Form role="form" className="signup-form">
-                          <Row className="justify-content-center d-flex">
-
-
-
-
-
-
-                            <Col lg="4">
-                              <FormGroup className="mb-3">
+                          <Row className="justify-content-center mb-3">
+                            <Col lg="auto">
+                              <FormGroup className="m-0">
                                 <InputGroup className="input-group-alternative">
                                   <Input
                                     className="signup-input"
@@ -140,63 +134,33 @@ class UserDashboardPage extends React.Component {
                               </FormGroup>
                             </Col>
 
-                            <Col lg="1">
-                            <UncontrolledDropdown nav>
-                              <DropdownToggle  className="p-0">
-
-                                  <span className="nav-link color-picker-btn "> </span>
-
-
-                              </DropdownToggle>
-                              <DropdownMenu className="p-0">
-                                <DropdownItem className="p-0">
-                                  <GithubPicker/>
-                                </DropdownItem>
-
-                              </DropdownMenu>
-                            </UncontrolledDropdown>
+                            <Col lg="auto" className="d-flex align-items-center">
+                              <UncontrolledDropdown nav>
+                                <DropdownToggle className="p-0 btn-circle m-0">
+                                  <i className="fa fa-paint-brush"></i>
+                                </DropdownToggle>
+                                <DropdownMenu className="p-0">
+                                  <DropdownItem className="p-0">
+                                    <GithubPicker />
+                                  </DropdownItem>
+                                </DropdownMenu>
+                              </UncontrolledDropdown>
                             </Col>
 
-
-                            <Col className="lg-2 m-0">
-                              <FormGroup>
-                                <Button
-
-                                  color="primary"
-                                  type="button"
-                                >
+                            <Col lg="auto" className="">
+                              <FormGroup className="m-0">
+                                <Button color="primary" type="button">
                                   ایجاد برچسب
                                 </Button>
                               </FormGroup>
                             </Col>
-
                           </Row>
                         </Form>
 
-                        <Row className="justify-content-end">
+                        <Row className="justify-content-start">
                           <Badge href="#" color="primary">
-                            Primary
-                          </Badge>
-                          <Badge href="#" color="secondary">
-                            Secondary
-                          </Badge>
-                          <Badge href="#" color="success">
-                            Success
-                          </Badge>
-                          <Badge href="#" color="danger">
-                            Danger
-                          </Badge>
-                          <Badge href="#" color="warning">
-                            Warning
-                          </Badge>
-                          <Badge href="#" color="info">
-                            Info
-                          </Badge>
-                          <Badge href="#" color="light">
-                            Light
-                          </Badge>
-                          <Badge href="#" color="dark">
-                            Dark
+                            برچسب 1
+                            <i className="fa fa-close mr-2"></i>
                           </Badge>
                         </Row>
                       </Accordion.Body>

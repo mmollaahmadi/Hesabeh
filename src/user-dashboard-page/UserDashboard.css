@@ -28,10 +28,19 @@
   color: #fff;
 }
 .color-picker-btn{
-  padding: 10px;
+  padding: 7px;
+  border-radius: 50%;
 background-color: #123 !important;
 }
-
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+}
 
 
 
