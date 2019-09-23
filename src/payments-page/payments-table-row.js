@@ -1,22 +1,11 @@
 import React from 'react';
-import {
-  Badge,
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
-  DropdownToggle,
-  Media,
-  Progress,
-  Button,
-  UncontrolledTooltip
-} from "reactstrap";
-import { Link } from "react-router-dom";
+
 class PaymentsTableRow extends React.Component {
   render(){
     return(
       <tr>
       <td>1</td>
-        <td scope="row">
+        <td>
           شامپو صحت
         </td>
         <td>5000 تومان</td>

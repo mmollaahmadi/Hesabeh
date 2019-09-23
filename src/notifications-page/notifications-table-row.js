@@ -1,13 +1,11 @@
 import React from 'react';
 import {
-  Badge,
   DropdownMenu,
   DropdownItem,
   UncontrolledDropdown,
   DropdownToggle,
   Media,
-  Button,
-  UncontrolledTooltip
+  Button
 } from "reactstrap";
 import { Link } from "react-router-dom";
 class NotificationsTableRow extends React.Component {
@@ -15,7 +13,7 @@ class NotificationsTableRow extends React.Component {
     return(
       <tr>
       <td>1</td>
-        <td scope="row">
+        <td>
 
         <Media className="align-items-center">
 

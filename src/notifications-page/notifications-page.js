@@ -1,8 +1,8 @@
 import React from "react";
 
-import Navbar from "../common/navbar/Navbar";
-import Footer from "../common/footer/Footer";
-import Cover from "../common/cover/Cover.js";
+import Navbar from "../common/navbar/navbar";
+import Footer from "../common/footer/footer";
+import Cover from "../common/cover/cover.js";
 import NotificationsTable from './notifications-table.js';
 
 class NotificationsPage extends React.Component {

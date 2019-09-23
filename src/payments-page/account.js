@@ -1,9 +1,10 @@
 import React from "react";
-import { Button, Modal, Card, Container, Row, Col } from "reactstrap";
 import {
-  CardHeader,
-  CardBody,
-  NavLink,
+  Button,
+  Card,
+  Container,
+  Row,
+  Col,
   FormGroup,
   Form,
   Input,
@@ -27,9 +28,6 @@ class Profile extends React.Component {
         <Container>
           <Card className="card-profile shadow mt--300">
             <div className="px-4">
-
-
-
               <div className="text-center mt-5 pb-5">
                 <Form role="form" className="profile-form">
                   <Row className="text-center justify-content-center">
@@ -85,12 +83,9 @@ class Profile extends React.Component {
                     </Col>
                   </Row>
                 </Form>
-
               </div>
             </div>
           </Card>
-
-          
         </Container>
       </section>
     );

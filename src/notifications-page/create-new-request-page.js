@@ -1,15 +1,14 @@
 import React from "react";
 
-import Navbar from "../common/navbar/Navbar";
-import Footer from "../common/footer/Footer";
-import Cover from "../common/cover/Cover.js";
+import Navbar from "../common/navbar/navbar.js";
+import Footer from "../common/footer/footer.js";
+import Cover from "../common/cover/cover.js";
 import Accordion from "../common/accordion/accordion.js";
 import {
   Container,
   Form,
   FormGroup,
   InputGroup,
-  Label,
   Input,
   Button,
   Row,

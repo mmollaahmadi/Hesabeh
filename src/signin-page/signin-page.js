@@ -63,38 +63,23 @@ class SigninPage extends React.Component {
                     />
                   </InputGroup>
                   <Row className="d-flex justify-content-end mb-2">
-                  <NavLink
-                    to="/forgot-password"
-                    tag={Link}
-                    className="forgot-password-link"
-                    color="primary"
-                  >
-                    رمز عبور را فراموش کردم!
-                  </NavLink>
+                    <NavLink
+                      to="/forgot-password"
+                      tag={Link}
+                      className="forgot-password-link"
+                      color="primary"
+                    >
+                      رمز عبور را فراموش کردم!
+                    </NavLink>
                   </Row>
                 </FormGroup>
                 <FormGroup>
-                  {/*<div className="custom-control custom-control-alternative custom-checkbox">
-                  <input
-                    className="custom-control-input"
-                    id=" customCheckLogin"
-                    type="checkbox"
-                  />
-                  <label
-                    className="custom-control-label pr-1"
-                    htmlFor=" customCheckLogin"
-                  >
-                    <span className="signin-modal-text mr-4">
-                      مرا به خاطر بسپار
-                    </span>
-                  </label>
-                </div>*/}
                   <Row className="justify-item-center d-flex">
                     <Col className="lg-9 m-0 text-center">
                       <Button
                         className="signin-button"
-                        color="primary"                        
-                        to="/payments"
+                        color="primary"
+                        to="/my-account"
                         tag={Link}
                       >
                         ورود

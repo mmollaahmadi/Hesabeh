@@ -12,8 +12,7 @@ import {
   FormGroup,
   Form,
   Input,
-  InputGroup,
-  NavLink
+  InputGroup  
 } from "reactstrap";
 import "../assets/css/custom.css";
 class CreateNewGroupPage extends React.Component {

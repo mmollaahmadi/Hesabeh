@@ -1,9 +1,9 @@
 import React from "react";
 
-import Navbar from "../common/navbar/Navbar";
-import Footer from "../common/footer/Footer";
+import Navbar from "../common/navbar/navbar";
+import Footer from "../common/footer/footer";
 import Account from "./account.js";
-import Cover from "../common/cover/Cover.js";
+import Cover from "../common/cover/cover.js";
 import PaimentsTable from "./payments-table.js";
 
 class PaymentsPage extends React.Component {

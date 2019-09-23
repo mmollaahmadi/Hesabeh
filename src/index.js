@@ -6,7 +6,6 @@ import './index.css';
 //import App from './App';
 
 // import './assets/css/argon-dashboard-react.css';
-
 import './assets/css/argon-design-system-react.css';
 // import './assets/scss/argon-design-system-react.scss'
 
@@ -20,10 +19,10 @@ import './assets/css/bootstrap-rtl.css';
 
 import './assets/css/custom.css';
 
-import MainPage from './main-page/MainPage';
-import UserDashboardPage from './user-dashboard-page/UserDashboardPage.js';
-import GroupDashboardPage from './group-dashboard-page/GroupDashboardPage.js';
-import MyGroupsPage from './groups-page/MyGroupsPage.js';
+import MainPage from './main-page/main-page';
+import UserDashboardPage from './user-dashboard-page/user-dashboard-page.js';
+import GroupDashboardPage from './group-dashboard-page/group-dashboard-page.js';
+import MyGroupsPage from './groups-page/my-groups-page.js';
 import NewPasswordRequestPage from './forgot-password-pages/new-password-request-page.js';
 import SupportPage from './support-page/support-page.js';
 import SigninPage from './signin-page/signin-page.js';
@@ -32,7 +31,8 @@ import PaymentsPage from './payments-page/payments-page.js';
 import CreateNewGroupPage from './groups-page/create-new-group-page.js';
 import NotificationsPage from './notifications-page/notifications-page.js';
 import CreateNewRequestPage from './notifications-page/create-new-request-page.js'
-import AddPaymentPage from './payments-page/add-new-payment.js'
+import AddPaymentPage from './payments-page/add-new-payment.js';
+
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
