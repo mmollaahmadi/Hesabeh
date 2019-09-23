@@ -64,7 +64,7 @@ class MyNavbar extends React.Component {
           <Button
             className="navbar-link"
             color="link"
-            to="/mygroups"
+            to="/my-account"
             tag={Link}
           >
             حساب من
@@ -80,7 +80,6 @@ class MyNavbar extends React.Component {
           <Button
             className="navbar-link"
             color="link"
-            to="/mygroups"
             tag={Link}
           >
             گزارش

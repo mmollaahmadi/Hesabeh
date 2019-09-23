@@ -2,11 +2,10 @@ import React from "react";
 
 import Navbar from "../common/navbar/Navbar";
 import Footer from "../common/footer/Footer";
-import Account from "./account.js";
 import Cover from "../common/cover/Cover.js";
-import PaimentsTable from "./payments-table.js";
+import NotificationsTable from './notifications-table.js';
 
-class PaymentsPage extends React.Component {
+class NotificationsPage extends React.Component {
   render() {
     return (
       <div>
@@ -15,8 +14,7 @@ class PaymentsPage extends React.Component {
         <div className="">
           <main className="profile-page pb-5" ref="main">
             <Cover />
-            <Account />
-            <PaimentsTable />
+            <NotificationsTable />
           </main>
         </div>
 
@@ -26,4 +24,4 @@ class PaymentsPage extends React.Component {
   }
 }
 
-export default PaymentsPage;
+export default NotificationsPage;

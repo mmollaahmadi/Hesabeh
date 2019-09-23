@@ -6,7 +6,7 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   Media,
-  Progress,  
+  Progress,
   Button,
   UncontrolledTooltip
 } from "reactstrap";
@@ -15,7 +15,8 @@ class GroupTableRow extends React.Component {
   render(){
     return(
       <tr>
-        <th scope="row">
+      <td>1</td>
+        <td scope="row">
           <Media className="align-items-center">
             <a
               className="avatar rounded-circle mr-3"
@@ -34,18 +35,12 @@ class GroupTableRow extends React.Component {
               to="/group-dashboard"
               tag={Link}
             >
-              Argon Design System
+              بچه های اتاق 406
             </Button>
             </Media>
           </Media>
-        </th>
-        <td>$2,500 USD</td>
-        <td>
-          <Badge color="" className="badge-dot mr-4">
-            <i className="bg-warning" />
-            pending
-          </Badge>
         </td>
+        <td>$2,500 USD</td>
         <td>
           <div className="avatar-group">
             <a
@@ -123,16 +118,10 @@ class GroupTableRow extends React.Component {
           </div>
         </td>
         <td>
-          <div className="d-flex align-items-center">
-            <span className="mr-2">60%</span>
-            <div>
-              <Progress
-                max="100"
-                value="60"
-                barClassName="bg-danger"
-              />
-            </div>
-          </div>
+          <Badge color="" className="badge-dot mr-4">
+            <i className="bg-warning" />
+            30000 تومان بدهکار
+          </Badge>
         </td>
         <td className="text-right">
           <UncontrolledDropdown>
@@ -149,21 +138,15 @@ class GroupTableRow extends React.Component {
             <DropdownMenu className="dropdown-menu-arrow" right>
               <DropdownItem
                 href="#pablo"
-                onClick={e => e.preventDefault()}
+                onClick={e => e.preventDefault()}                
               >
-                Action
+              پرداخت بدهی
               </DropdownItem>
               <DropdownItem
                 href="#pablo"
                 onClick={e => e.preventDefault()}
               >
-                Another action
-              </DropdownItem>
-              <DropdownItem
-                href="#pablo"
-                onClick={e => e.preventDefault()}
-              >
-                Something else here
+                ارسال درخواست
               </DropdownItem>
             </DropdownMenu>
           </UncontrolledDropdown>

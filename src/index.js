@@ -30,6 +30,9 @@ import SigninPage from './signin-page/signin-page.js';
 import RegisterPage from './register-page/register-page.js';
 import PaymentsPage from './payments-page/payments-page.js';
 import CreateNewGroupPage from './groups-page/create-new-group-page.js';
+import NotificationsPage from './notifications-page/notifications-page.js';
+import CreateNewRequestPage from './notifications-page/create-new-request-page.js'
+import AddPaymentPage from './payments-page/add-new-payment.js'
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
@@ -55,14 +58,29 @@ ReactDOM.render(
         render={props => <SupportPage {...props} />}
       />
       <Route
-        path="/payments"
+        path="/my-account"
         exact
         render={props => <PaymentsPage {...props} />}
+      />
+      <Route
+        path="/add-new-payment"
+        exact
+        render={props => <AddPaymentPage {...props} />}
       />
       <Route
         path="/dashboard"
         exact
         render={props => <UserDashboardPage {...props} />}
+      />
+      <Route
+        path="/notifications"
+        exact
+        render={props => <NotificationsPage {...props} />}
+      />
+      <Route
+        path="/create-new-request"
+        exact
+        render={props => <CreateNewRequestPage {...props} />}
       />
       <Route
         path="/mygroups"

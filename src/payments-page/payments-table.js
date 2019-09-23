@@ -2,9 +2,10 @@ import React from "react";
 import { Table, Card, Container, Row, Col, Button, Form, FormGroup,
 InputGroup, InputGroupAddon, InputGroupText, Input } from "reactstrap";
 
-import GroupTableRow from "./GroupTableRow.js";
+import PaymentsTableRow from "./payments-table-row.js";
 import {Link} from 'react-router-dom';
-class GroupsTable extends React.Component {
+
+class PaymentsTable extends React.Component {
   state = {};
   toggleModal = state => {
     this.setState({
@@ -19,7 +20,7 @@ class GroupsTable extends React.Component {
         <Row className="border-0 p-3 d-block">
           <h3 className="mb-0">گروه‌های من</h3>
         </Row>
-          <Card className="card-profile shadow mt--300">
+          <Card className="card-profile shadow mt-6">
             <div className="px-4">
               <Row className="justify-content-center p-5">
 
@@ -48,8 +49,11 @@ class GroupsTable extends React.Component {
                     </Form>
                   </Col>
                   <Col lg="auto">
-                    <Button color="primary" className="p-2" tag={Link} to="/create-new-group">
-                    ایجاد گروه جدید
+                    <Button color="primary"
+                    className="p-2" 
+                    tag={Link}
+                    to="/add-new-payment">
+                    افزودن هزینه
                     </Button>
                   </Col>
                 </Row>
@@ -57,17 +61,17 @@ class GroupsTable extends React.Component {
                   <thead className="thead-light">
                     <tr>
                     <th scope="col">ردیف</th>
-                      <th scope="col">نام گروه</th>
-                      <th scope="col">بودجه</th>
-                      <th scope="col">کاربران</th>
-                      <th scope="col">وضعیت</th>
+                      <th scope="col">نام هزینه</th>
+                      <th scope="col">میزان هزینه</th>
+                      <th scope="col">شخصی / گروهی</th>
+                      <th scope="col">سهم ها</th>
                       <th scope="col">عملیات</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <GroupTableRow />
-                    <GroupTableRow />
-                    <GroupTableRow />
+                    <PaymentsTableRow />
+                    <PaymentsTableRow />
+                    <PaymentsTableRow />
                   </tbody>
                 </Table>
               </Row>
@@ -79,4 +83,4 @@ class GroupsTable extends React.Component {
   }
 }
 
-export default GroupsTable;
+export default PaymentsTable;
