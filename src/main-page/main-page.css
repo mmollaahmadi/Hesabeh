@@ -1,0 +1,32 @@
+.h1-hesabeh {
+  font-family: Lalezar, Tahoma;
+  display: inline;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  font-size: 4rem;
+  color: #00e5ac;
+}
+.landing-position-relative {
+  height: auto;
+  /* height: 50vw; */
+}
+
+/* section */
+.statistics-body{
+background-color: #f3f3f1;
+}
+
+
+/* learning */
+.bg {
+  background-color: #f9f9f9 !important;
+  /* #E9EDF0 */
+  /* background: radial-gradient(circle, #424242, #454545, #494949, #4c4c4c, #505050) !important; */
+}
+
+.section-title{
+  font-family: Samim-Bold !important;
+  color: #33393f !important;
+  font-size: 2rem;
+  margin-bottom: 4rem;
+}

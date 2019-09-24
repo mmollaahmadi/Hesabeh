@@ -21,54 +21,65 @@ class MyNavbar extends React.Component {
   constructor(props) {
     super(props);
 
-    this.toggleNavbar = this.toggleNavbar.bind(this);
     this.state = {
-      formModal: false,
-      collapsed: true
+      pageSelection: "my-account"
     };
   }
 
-  toggleNavbar() {
+  togglePage = state => {
     this.setState({
-      collapsed: !this.state.collapsed
-    });
-  }
-
-  toggleModal = state => {
-    this.setState({
-      [state]: !this.state[state]
+      pageSelection: state
     });
   };
+
   componentDidMount() {
     // let headroom = new Headroom(document.getElementById("navbar-main"));
     // initialise
     // headroom.init();
   }
   render() {
+    const pageSelection = this.state.pageSelection;
+
     let buttonsOrProfile;
     let links;
     if (this.props.isLogin === "true") {
       buttonsOrProfile = <NavbarProfile />;
       links = (
         <div className="d-flex justify-content-center align-items-center">
-          <Button
+        <Button
           color="link"
-          className="navbar-link"
-          to="/notifications"
+          className={
+            pageSelection === "my-account"
+              ? "navbar-link-active"
+              : "navbar-link"
+          }
+          to="/my-account"
           tag={Link}
+          onClick={() => this.togglePage("my-account")}
+        >
+          حساب من
+        </Button>
+          <Button
+            className={
+              pageSelection === "notifications"
+                ? "navbar-link-active"
+                : "navbar-link"
+            }
+            onClick={() => this.togglePage("notifications")}
+            color="link"
+            to="/notifications"
+            tag={Link}
           >
             اعلام‌ها <Badge color="warning">4</Badge>
           </Button>
+
           <Button
-            className="navbar-link"
-            color="link"
-            to="/my-account"
-            tag={Link}
-          >
-            حساب من
-          </Button>
-          <Button
-            className="navbar-link"
+            className={
+              pageSelection === "my-groups"
+                ? "navbar-link-active"
+                : "navbar-link"
+            }
+            onClick={() => this.togglePage("my-groups")}
             color="link"
             to="/mygroups"
             tag={Link}
@@ -76,10 +87,9 @@ class MyNavbar extends React.Component {
             گروه‌های من
           </Button>
           <Button
-            className="navbar-link"
-            color="link"
-            tag={Link}
-          >
+          className="navbar-link"
+          color="link"
+          tag={Link}>
             گزارش
           </Button>
         </div>
@@ -137,8 +147,6 @@ class MyNavbar extends React.Component {
             </div>
             <Nav className="align-items-lg-center ml-lg-auto" navbar>
               {links}
-            </Nav>
-            <Nav className="align-items-lg-center mr-lg-auto" navbar>
               <div className="d-flex justify-content-center align-items-center">
                 <NavLink
                   to="/support"
@@ -149,6 +157,9 @@ class MyNavbar extends React.Component {
                   پشتیبانی
                 </NavLink>
               </div>
+            </Nav>
+            <Nav className="align-items-lg-center mr-lg-auto" navbar>
+
 
               {buttonsOrProfile}
             </Nav>

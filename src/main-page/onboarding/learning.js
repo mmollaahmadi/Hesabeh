@@ -1,7 +1,6 @@
 import React from "react";
 import { Row, Col, Container } from "reactstrap";
 import Onboarding from "./onboarding.js";
-import './learning.css';
 
 class Learning extends React.Component {
   render() {

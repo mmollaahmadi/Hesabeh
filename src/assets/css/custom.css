@@ -25,25 +25,6 @@
 /* ============================== FONTS ===================================== */
 /* ========================================================================== */
 
-
-h2 {
-  font-family: Samim-Bold;
-  color: #141312;
-}
-h4 {
-  margin: -5px;
-  font-family: Lalezar;
-  color: #141312;
-}
-.h1-hesabeh {
-  font-family: Lalezar, Tahoma;
-  display: inline;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  font-size: 4rem;
-  color: #00e5ac;
-}
-
 body {
   font-family: Samim, Tahoma;
   background-color: #fff;
@@ -63,15 +44,6 @@ body.modal-open {
 /* ============================== FONTS ===================================== */
 /* ========================================================================== */
 
-.landing-position-relative {
-  height: auto;
-  /* height: 50vw; */
-}
-
-.finance-button {
-  border-radius: 25px;
-}
-
 .social-network-link {
   font-size: x-large;
 }
@@ -81,8 +53,6 @@ body.modal-open {
   border-width: medium;
   border-color: #f6f6f6;
 }
-
-
 
 .bg-gradient-default {
   background-color: #141312 !important;
@@ -313,21 +283,3 @@ body.modal-open {
 .section-shaped .shape-style-1.shape-dark {
   background: linear-gradient(150deg, #32325d 15%, #32325d 70%, #32325d 94%);
 }
-
-/* @media (max-width: 576px) {
-.onboard{
-  margin-top: -50%;
-}
-}
-
-@media (min-width: 900px) {
-  .onboard{
-    margin-top: -20%;
-  }
-}
-
-@media (max-width: 900px) {
-  .onboard{
-    margin-top: -20%;
-  }
-} */

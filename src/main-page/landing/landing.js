@@ -21,18 +21,17 @@ class Landing extends React.Component {
         {/* shape Hero */}
         <section className="section section-lg pb-200">
           <Container className="py-lg-md d-flex justify-content-center">
-
-              <Row className="d-flex justify-items-center text-center">
-                <Col className="pb-5">
-                  <h2 className="display-3">
-                    حساب،
-                    <h1 className="h1-hesabeh">حسابِه</h1>
-                    ...
-                  </h2>
-                  <p className="lead">حسابدار شخصی شما</p>
-                </Col>
-              </Row>
-
+            <Row className="d-flex justify-items-center text-center">
+              <Col className="pb-5">
+                <h2 className="display-3">
+                  حساب،
+                  <h1 className="h1-hesabeh">حسابِه</h1>
+                  ...
+                </h2>
+                <h4>مدیریت هزینه‌هاتو به حسابِه بسپار</h4>
+                <p>هزینه‌های روزمره رو اینجا ثبت کن و به راحتی مدیریتشون کن</p>
+              </Col>
+            </Row>
           </Container>
         </section>
       </div>

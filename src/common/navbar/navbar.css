@@ -19,6 +19,12 @@
   cursor: pointer;
   font-size: 0.75rem !important;
 }
+.navbar-link-active{
+  color: #00e5ac !important;
+  font-family: Samim-Bold, Tahoma !important;
+  cursor: pointer;
+  font-size: 0.75rem !important;
+}
 
 .signup-button {
   border-radius: 3rem;
@@ -28,11 +34,8 @@
 }
 .notification-btn{
   padding: 0.25rem;
+}
 
-}
-.username {
-  font-size: 12px !important;
-}
 .headroom--not-top .my-nav-link {
   color: #fff !important;
 }
@@ -73,4 +76,11 @@
 
 .counter.counter-lg {
   top: -24px !important;
+}
+
+.navbar-profile-img{
+  border-style: solid;
+  border-color: #00e5ac;
+  border-width: 3px;
+  width: 45px;
 }

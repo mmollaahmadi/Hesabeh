@@ -1,7 +1,7 @@
 import React from "react";
 import { Row, Container } from "reactstrap";
 import StatisticUnit from "./StatisticUnit.js";
-import './statistics.css';
+
 
 class OurStatistics extends React.Component {
   render() {

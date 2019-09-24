@@ -8,6 +8,8 @@ import Footer from "../common/footer/footer.js";
 import OurStatistics from "./statistics/OurStatistics.js";
 import Learning from "./onboarding/learning.js";
 
+import './main-page.css';
+
 class MainPage extends React.Component {
   render() {
     let mainPage = null;

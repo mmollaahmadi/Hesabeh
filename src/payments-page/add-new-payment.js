@@ -1,6 +1,5 @@
 import React from "react";
-
-// import "./my-groups.css";
+import "../assets/css/custom.css";
 import { Link } from "react-router-dom";
 import {
   Container,
@@ -12,10 +11,10 @@ import {
   FormGroup,
   Form,
   Input,
-  InputGroup,  
+  InputGroup,
   Badge
 } from "reactstrap";
-import "../assets/css/custom.css";
+
 class AddPaymentPage extends React.Component {
   render() {
     return (
