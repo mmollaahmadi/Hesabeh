@@ -3,7 +3,7 @@ import React from "react";
 import Navbar from "../common/navbar/navbar";
 import Landing from "./landing/landing";
 import AboutUs from "./about-us";
-import OurServices from "./our-services/our-services";
+import Features from "./features.js";
 import Footer from "../common/footer/footer.js";
 import OurStatistics from "./statistics/OurStatistics.js";
 import Learning from "./onboarding/learning.js";
@@ -11,14 +11,17 @@ import Learning from "./onboarding/learning.js";
 import './main-page.css';
 
 class MainPage extends React.Component {
+
   render() {
+
+
     let mainPage = null;
     if (this.props.isLogin === "false") {
       mainPage = (
         <div>
           <Landing />
           <Learning />
-          <OurServices />
+          <Features />
           <AboutUs />
           <OurStatistics />
         </div>

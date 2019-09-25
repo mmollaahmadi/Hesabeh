@@ -17,11 +17,11 @@ class Learning extends React.Component {
                   imageUri={require("../../assets/img/theme/1.png")}
                 />
                 <Onboarding
-                  _text="افزودن خرج و مخارج"
+                  _text="ثبت هزینه‌های شخصی و گروهی"
                   imageUri={require("../../assets/img/theme/1.png")}
                 />
                 <Onboarding
-                  _text="بررسی وضعیت مالی"
+                  _text="استفاده از امکانات حسابه"
                   imageUri={require("../../assets/img/theme/1.png")}
                 />
               </Row>

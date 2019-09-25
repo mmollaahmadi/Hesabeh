@@ -1,18 +1,24 @@
 /* ============================== NAVBAR ==================================== */
 /* ========================================================================== */
+
+/* ------------------------------ toggler ----------------------------------- */
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
 }
+.navbar-toggler {
+  color: #fff !important;
+}
+
+/* ------------------------------ brand ----------------------------------- */
 .navbar-brand-title {
   font-family: Lalezar, Tahoma;
   color: #33393f;
   font-size: 2rem;
   margin-bottom: 0px !important;
 }
-.slash {
-  font-size: 1.5rem;
-}
 
+
+/* --------------------------- links and buttons --------------------------- */
 .navbar-link {
   font-family: Samim-Bold, Tahoma !important;
   color: #33393f !important;
@@ -25,59 +31,20 @@
   cursor: pointer;
   font-size: 0.75rem !important;
 }
-
 .signup-button {
-  border-radius: 3rem;
+  /* border-radius: 3rem; */
   font-size: 0.75rem !important;
   font-family: Samim-Bold, Tahoma !important;
-  padding: 0.6rem 1rem;
+  padding: 0.5rem 0.7rem;
 }
 .notification-btn{
   padding: 0.25rem;
 }
-
-.headroom--not-top .my-nav-link {
-  color: #fff !important;
-}
-.navbar-toggler {
-  color: #fff !important;
-}
-.headroom {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  transition: all 0.2s ease-in-out;
+.slash {
+  font-size: 1.5rem;
 }
 
-/* copy kardam az argon-syste.css */
-.headroom--not-top {
-  /* background-color: #424242 !important; */
-  padding: 0;
-}
-
-.phone-number {
-  font-family: Samim;
-  color: #141312;
-}
-
-.headroom--not-top .social-network-icon {
-  color: #fff !important;
-}
-.social-network-icon {
-  color: #141312 !important;
-}
-@media (max-width: 990px) {
-  .social-network-icon {
-    color: #fff !important;
-    margin-left: 10px;
-  }
-}
-
-.counter.counter-lg {
-  top: -24px !important;
-}
-
+/* ------------------------------ profile ----------------------------------- */
 .navbar-profile-img{
   border-style: solid;
   border-color: #00e5ac;

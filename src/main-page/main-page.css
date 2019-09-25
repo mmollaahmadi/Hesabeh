@@ -30,3 +30,16 @@ background-color: #f3f3f1;
   font-size: 2rem;
   margin-bottom: 4rem;
 }
+
+
+.features-btn{
+  color: #33393f60;
+  margin: 1.5rem 0.5rem !important;
+}
+.features-btn-active{
+  color: #141312;
+    margin: 1.5rem 0.5rem !important;
+}
+.features-img{
+  width: 100%;
+}

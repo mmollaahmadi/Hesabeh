@@ -1,25 +1,21 @@
 import React from "react";
-import { Col } from "reactstrap";
+import { Col, Card, CardImg, CardBody, CardTitle } from "reactstrap";
 
 class Onboarding extends React.Component {
   render() {
     return (
       <Col lg="4" sm="6" xs="12" className="m-0 d-flex justify-content-center">
-        <div className="px-0">
-          <img
-            alt="..."
-            className="rounded img-center img-fluid m-0"
+        <Card>
+          <CardImg
+            top
+            width="100%"
             src={this.props.imageUri}
-            style={{
-              width: "fill"
-            }}
+            alt="Card image cap"
           />
-          <div className="pt-4 text-center">
-            <p className="title">
-              <span className="d-block mb-1">{this.props._text}</span>
-            </p>
-          </div>
-        </div>
+          <CardBody>
+            <CardTitle>{this.props._text}</CardTitle>
+          </CardBody>
+        </Card>
       </Col>
     );
   }

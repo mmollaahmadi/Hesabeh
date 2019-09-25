@@ -46,19 +46,19 @@ class MyNavbar extends React.Component {
       buttonsOrProfile = <NavbarProfile />;
       links = (
         <div className="d-flex justify-content-center align-items-center">
-        <Button
-          color="link"
-          className={
-            pageSelection === "my-account"
-              ? "navbar-link-active"
-              : "navbar-link"
-          }
-          to="/my-account"
-          tag={Link}
-          onClick={() => this.togglePage("my-account")}
-        >
-          حساب من
-        </Button>
+          <Button
+            color="link"
+            className={
+              pageSelection === "my-account"
+                ? "navbar-link-active"
+                : "navbar-link"
+            }
+            to="/my-account"
+            tag={Link}
+            onClick={() => this.togglePage("my-account")}
+          >
+            حساب من
+          </Button>
           <Button
             className={
               pageSelection === "notifications"
@@ -87,9 +87,13 @@ class MyNavbar extends React.Component {
             گروه‌های من
           </Button>
           <Button
-          className="navbar-link"
-          color="link"
-          tag={Link}>
+            className={
+              pageSelection === "report" ? "navbar-link-active" : "navbar-link"
+            }
+            onClick={() => this.togglePage("report")}
+            color="link"
+            tag={Link}
+          >
             گزارش
           </Button>
         </div>
@@ -156,11 +160,17 @@ class MyNavbar extends React.Component {
                 >
                   پشتیبانی
                 </NavLink>
+                <NavLink
+                  to="/contact-us"
+                  tag={Link}
+                  className="navbar-link pl-3 pr-3"
+                  color="primary"
+                >
+                  ارتباط با ما
+                </NavLink>
               </div>
             </Nav>
             <Nav className="align-items-lg-center mr-lg-auto" navbar>
-
-
               {buttonsOrProfile}
             </Nav>
           </UncontrolledCollapse>
