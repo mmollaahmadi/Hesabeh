@@ -23,11 +23,11 @@ class SigninPage extends React.Component {
         <Container className="pt-10 pb-30  h-100">
           <Row className="text-center justify-content-center">
             <Col lg="5">
-              <img
-                alt="..."
-                className="rounded-circle logo"
-                src={require("../assets/img/users/user01.jpg")}
-              />
+            <img
+              alt="..."
+              className="rounded-circle  logo"
+              src={require("../assets/img/theme/logo01.png")}
+            />
               <p className="brand-title">حسابِه</p>
 
               <p className="title-text"> ورود به حساب کاربری</p>
@@ -92,8 +92,7 @@ class SigninPage extends React.Component {
                   className="btn-icon signin-button"
                   color="default"
                   href="#pablo"
-                  onClick={() => this.toggle("password")}
-                  name="email"
+                  name="google-account"
                 >
                   <span className="btn-inner--icon">
                     <img

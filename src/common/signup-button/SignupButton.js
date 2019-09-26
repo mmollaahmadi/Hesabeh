@@ -66,9 +66,9 @@ class SignupButton extends React.Component {
       <div>
         <div>
           <Button
-            className="signup-button"
+            className="signup-button px-3 py-1"
             color="primary"
-            
+
             // onClick={() => this.toggleModal("signupFormModal")}
             to="/register"
             tag={Link}

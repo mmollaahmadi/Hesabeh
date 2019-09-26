@@ -5,13 +5,13 @@ import { Container, Row, Col } from "reactstrap";
 class AboutUs extends React.Component {
   render() {
     return (
-      <section className="section bg pb-6 pt-5">
+      <section className="section dark-section bg pb-6 pt-5">
         <Container className="pt-30 pb-30">
           <Row className="text-center justify-content-center">
             <Col lg="10">
               <p className="section-title">درباره‌ی ما
               </p>
-              <p className="lead">
+              <p className="lead text-justify">
               خریدهای منزل، پرداخت قبوض، اجاره‌بها، تعمیرات منزل، سفر با دوستان، خریدهای مشترک هم‌خانه‌ای‌ها،
               رفتن به سینما و... تنها تعداد کمی از هزینه‌هایی هستند که در طول ماه انجام می‌دهیم.
               یادداشت این هزینه‌ها و تقسیم‌بندی هزینه‌های گروهی و بررسی آنها می‌تواند کمک کند تا با مدیریت صحیح هزینه‌ها،
@@ -20,9 +20,6 @@ class AboutUs extends React.Component {
               شما در حسابه میتوانید هزینهها را ثبت کنید، سهم هر فرد رادر هزینه‌های گروهی مشخص کنید، لیست خرید تهیه و ارسال کنید، گزارش
               ماهانه دریافت کنید.
 
-                همه چیز از دوران دانشجویی شروع شد و این‌که حساب و کتاب خرج و
-                مخارج گروهی زمان‌بر و پیچیده بود. تصمیم گرفتیم راه حلی که این
-                چند سال برای این مشکل استفاده کردیم رو با شما به اشتراک بزاریم.
               </p>
             </Col>
           </Row>

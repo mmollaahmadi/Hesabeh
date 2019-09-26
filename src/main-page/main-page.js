@@ -20,9 +20,9 @@ class MainPage extends React.Component {
       mainPage = (
         <div>
           <Landing />
-          <Learning />
-          <Features />
           <AboutUs />
+          <Learning />          
+          <Features />
           <OurStatistics />
         </div>
       );

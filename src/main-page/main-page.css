@@ -6,10 +6,57 @@
   font-size: 4rem;
   color: #00e5ac;
 }
-.landing-position-relative {
-  height: auto;
-  /* height: 50vw; */
+
+.land-pic{
+  background: url('../assets/img/theme/cloud01.png') no-repeat left bottom;
+  -webkit-background-size: 45%;
+  -moz-background-size: 45%;
+  -o-background-size: 45%;
+  background-size: 85%;
+
 }
+
+.sec{
+  height: 100vh;
+  width: 100%;
+  margin: 0px;
+}
+/* {<div className="landing-position-relative">
+<div className="d-flex align-items-center">
+    <Container className="d-flex justify-content-start">
+      <Row className="d-flex justify-items-center text-center">
+        <Col className="pb-5">
+          <h2 className="display-3">
+            حساب،
+            <h1 className="h1-hesabeh">حسابِه</h1>
+            ...
+          </h2>
+          <h4>مدیریت هزینه‌هاتو به حسابِه بسپار</h4>
+          <p>هزینه‌های روزمره رو اینجا ثبت کن و به راحتی مدیریتشون کن</p>
+        </Col>
+      </Row>
+    </Container>
+</div>
+
+</div>} */
+
+
+
+{/*  <div className="header">
+
+    <h2 className="display-3">
+      حساب،
+      <h1 className="h1-hesabeh">حسابِه</h1>
+      ...
+    </h2>
+    <h4>مدیریت هزینه‌هاتو به حسابِه بسپار</h4>
+    <p>هزینه‌های روزمره رو اینجا ثبت کن و به راحتی مدیریتشون کن</p>
+
+
+  </div>*/}
+
+
+
 
 /* section */
 .statistics-body{
@@ -18,10 +65,22 @@ background-color: #f3f3f1;
 
 
 /* learning */
-.bg {
-  background-color: #f9f9f9 !important;
-  /* #E9EDF0 */
-  /* background: radial-gradient(circle, #424242, #454545, #494949, #4c4c4c, #505050) !important; */
+.dark-section{
+  background-color: #EFF4F7 !important;
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+}
+.learning-img-card{
+width: 70%;
+height: auto;
+}
+.learning-card{
+  background-color: #fff !important;
+  border-radius: 3%;
+  margin-left: 0.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07) !important;
 }
 
 .section-title{
@@ -33,8 +92,16 @@ background-color: #f3f3f1;
 
 
 .features-btn{
+  background-color: #fff !important;
   color: #33393f60;
+  border-style: dashed;
+  border-color: #33393f60;
   margin: 1.5rem 0.5rem !important;
+  box-shadow: none;
+}
+.features-btn:hover{
+  border-color: #33393f;
+  color: #33393f;
 }
 .features-btn-active{
   color: #141312;

@@ -5,7 +5,7 @@ import Onboarding from "./onboarding.js";
 class Learning extends React.Component {
   render() {
     return (
-      <div className=" bg pb-6 pt-5">
+      <div className="py-5 mb-5">
         <Container className="pt-30 pb-30">
           <Row className="text-center justify-content-center">
             <Col lg="10">
@@ -18,6 +18,10 @@ class Learning extends React.Component {
                 />
                 <Onboarding
                   _text="ثبت هزینه‌های شخصی و گروهی"
+                  imageUri={require("../../assets/img/theme/1.png")}
+                />
+                <Onboarding
+                  _text="استفاده از امکانات حسابه"
                   imageUri={require("../../assets/img/theme/1.png")}
                 />
                 <Onboarding

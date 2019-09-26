@@ -112,11 +112,12 @@ class MyNavbar extends React.Component {
         <Container>
           {/* BRAND */}
           <NavbarBrand className="mr-0 pt-0 pb-0" to="/" tag={Link}>
-            {/* <img
-                  alt="..."
-                  src={require("../../assets/img/brand/argon-react-white.png")}
-              /> */}
-            <p className="navbar-brand-title">حسابِه</p>
+        {/*  <img
+            alt="..."
+            className="rounded-circle  logo brand-logo"
+            src={require("../../assets/img/theme/logo01.png")}
+          />*/}
+          <p className="navbar-brand-title">حسابِه</p>
           </NavbarBrand>
           {/* TOGGLER */}
 
@@ -159,6 +160,14 @@ class MyNavbar extends React.Component {
                   color="primary"
                 >
                   پشتیبانی
+                </NavLink>
+                <NavLink
+                  to="/‌‌help"
+                  tag={Link}
+                  className="navbar-link pl-3 pr-3"
+                  color="primary"
+                >
+                  راهنما
                 </NavLink>
                 <NavLink
                   to="/contact-us"

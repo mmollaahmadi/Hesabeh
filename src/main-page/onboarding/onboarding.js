@@ -1,21 +1,21 @@
 import React from "react";
-import { Col, Card, CardImg, CardBody, CardTitle } from "reactstrap";
+import { Col, Row, Card, CardImg, CardBody, CardTitle } from "reactstrap";
 
 class Onboarding extends React.Component {
   render() {
     return (
-      <Col lg="4" sm="6" xs="12" className="m-0 d-flex justify-content-center">
-        <Card>
-          <CardImg
+      <Col lg="3" sm="6" xs="12" className="m-0 d-flex justify-content-center">
+        <Row className="justify-content-center learning-card">
+          <img
+          className="learning-img-card mx-auto"
             top
-            width="100%"
             src={this.props.imageUri}
             alt="Card image cap"
           />
-          <CardBody>
-            <CardTitle>{this.props._text}</CardTitle>
-          </CardBody>
-        </Card>
+          <span className="p-0 mx-auto mt-4">
+            {this.props._text}
+          </span>
+        </Row>
       </Col>
     );
   }

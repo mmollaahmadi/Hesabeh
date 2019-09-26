@@ -31,7 +31,7 @@ class Features extends React.Component {
     }
 
     return (
-      <section className="section section-lg mt-1 pt-6 pb-6">
+      <section className=" dark-section section section-lg mt-1 pt-6 pb-6">
         <Container>
           <Row className="text-center justify-content-center">
             <p className="section-title">امکانات</p>
@@ -86,34 +86,34 @@ class Features extends React.Component {
             <Row className="d-flex justify-content-center">
               <Button
                 className={
-                  featureSelectedNumber === 1
+                  featureSelectedNumber === 4
                     ? "features-btn-active"
                     : "features-btn"
                 }
                 color="primary"
-                onClick={() => this.toggleFeatureSelection(1)}
+                onClick={() => this.toggleFeatureSelection(4)}
               >
                 01 سریع و آسان
               </Button>
               <Button
                 className={
-                  featureSelectedNumber === 2
+                  featureSelectedNumber === 5
                     ? "features-btn-active"
                     : "features-btn"
                 }
                 color="primary"
-                onClick={() => this.toggleFeatureSelection(2)}
+                onClick={() => this.toggleFeatureSelection(5)}
               >
                 01 سریع و آسان
               </Button>
               <Button
                 className={
-                  featureSelectedNumber === 3
+                  featureSelectedNumber === 6
                     ? "features-btn-active"
                     : "features-btn"
                 }
                 color="primary"
-                onClick={() => this.toggleFeatureSelection(3)}
+                onClick={() => this.toggleFeatureSelection(6)}
               >
                 01 سریع و آسان
               </Button>

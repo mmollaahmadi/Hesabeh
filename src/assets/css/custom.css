@@ -100,14 +100,14 @@ body.modal-open {
 
 .btn-default {
   color: #fff;
-  background-color: #141312;
-  border-color: #141312;
+  background-color: #0b1526;
+  border-color: #0b1526;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 .btn-default:hover {
   color: #fff;
-  background-color: #141312;
-  border-color: #141312;
+  background-color: #0b1526;
+  border-color: #0b1526;
 }
 .btn-default:focus,
 .btn-default.focus {
@@ -117,15 +117,15 @@ body.modal-open {
 .btn-default.disabled,
 .btn-default:disabled {
   color: #fff;
-  background-color: #141312;
-  border-color: #141312;
+  background-color: #0b1526;
+  border-color: #0b1526;
 }
 .btn-default:not(:disabled):not(.disabled):active,
 .btn-default:not(:disabled):not(.disabled).active,
 .show > .btn-default.dropdown-toggle {
   color: #fff;
   background-color: #0b1526;
-  border-color: #141312;
+  border-color: #0b1526;
 }
 .btn-default:not(:disabled):not(.disabled):active:focus,
 .btn-default:not(:disabled):not(.disabled).active:focus,

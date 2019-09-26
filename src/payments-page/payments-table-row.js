@@ -16,9 +16,7 @@ class PaymentsTableRow extends React.Component {
           -
         </td>
         <td className="text-right">
-
           <i className="fa fa-trash mx-1" />
-
           <i className="fa fa-edit mx-1" />
           <i className="fa fa-eye mx-1" />
         </td>

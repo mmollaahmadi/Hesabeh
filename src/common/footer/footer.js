@@ -15,7 +15,7 @@ class Footer extends React.Component {
               <img
                 alt="..."
                 className="rounded-circle  logo"
-                src={require("../../assets/img/theme/team-4-800x800.jpg")}
+                src={require("../../assets/img/theme/logo01.png")}
               />
             </container>
           </Row>
