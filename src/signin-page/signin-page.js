@@ -16,6 +16,8 @@ import {
   NavLink
 } from "reactstrap";
 import "../assets/css/custom.css";
+import Header from "../common/header.js";
+
 class SigninPage extends React.Component {
   render() {
     return (
@@ -23,14 +25,8 @@ class SigninPage extends React.Component {
         <Container className="pt-10 pb-30  h-100">
           <Row className="text-center justify-content-center">
             <Col lg="5">
-            <img
-              alt="..."
-              className="rounded-circle  logo"
-              src={require("../assets/img/theme/logo01.png")}
-            />
-              <p className="brand-title">حسابِه</p>
-
-              <p className="title-text"> ورود به حساب کاربری</p>
+            
+              <Header title="ورود به حساب کاربری" />
 
               <Form role="form" className="signin-form">
                 <FormGroup className="mb-3">

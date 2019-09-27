@@ -21,7 +21,7 @@ class Features extends React.Component {
     const featureSelectedNumber = this.state.featureSelectedNumber;
     var featureSelectedimg = null;
     if (featureSelectedNumber === 1) {
-      featureSelectedimg = require("../assets/img/theme/1.png");
+      featureSelectedimg = require("../assets/img/theme/circle04.png");
     } else if (featureSelectedNumber === 2) {
       featureSelectedimg = require("../assets/img/theme/11.png");
     } else if (featureSelectedNumber === 3) {

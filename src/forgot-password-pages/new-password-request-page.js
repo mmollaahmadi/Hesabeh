@@ -16,6 +16,7 @@ import {
   NavLink
 } from "reactstrap";
 import "../assets/css/custom.css";
+import Header from "../common/header.js";
 class NewPasswordRequestPage extends React.Component {
   render() {
     return (
@@ -23,16 +24,8 @@ class NewPasswordRequestPage extends React.Component {
         <Container className="pt-10 pb-30  h-100">
           <Row className="text-center justify-content-center">
             <Col lg="5">
-              <img
-                alt="..."
-                className="rounded-circle logo"
-                src={require("../assets/img/users/user01.jpg")}
-              />
-              <p className="brand-title">حسابِه</p>
+            <Header title="ارسال در خواست رمز عبور جدید" />
 
-              <p className="title-text">
-              ارسال در خواست رمز عبور جدید
-               </p>
 
               <Form role="form" className="signin-form">
                 <FormGroup className="mb-3">

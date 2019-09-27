@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Row, Card, CardImg, CardBody, CardTitle } from "reactstrap";
+import { Col, Row} from "reactstrap";
 
 class Onboarding extends React.Component {
   render() {
@@ -10,7 +10,7 @@ class Onboarding extends React.Component {
           className="learning-img-card mx-auto"
             top
             src={this.props.imageUri}
-            alt="Card image cap"
+            alt=""
           />
           <span className="p-0 mx-auto mt-4">
             {this.props._text}

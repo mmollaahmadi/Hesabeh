@@ -1,6 +1,13 @@
 import React from "react";
-import { Button, Container, Row, Col, UncontrolledTooltip } from "reactstrap";
-
+import {
+  Button,
+  Container,
+  Row,
+  Col,
+  UncontrolledTooltip,
+  NavLink
+} from "reactstrap";
+import { Link } from "react-router-dom";
 import ContactUs from "../contact-us/contact-us.js";
 
 import "./footer.css";
@@ -22,26 +29,7 @@ class Footer extends React.Component {
         </div>
         <footer className="footer">
           <Container className="pt-6 pt-lg-4">
-            {/*<Row className=" row-grid align-items-center mb-3 justify-content-center">
-            <Col className="text-center p-0" lg="5">
-              <hr className="hr" />
-            </Col>
-            <Col className="text-center pt-3 pb-0" lg="2">
-              <h1 className="m-0" style={{ color: "#141312" }}>
-                حسابِه
-              </h1>
-              <p
-                className=" font-weight-light m--2"
-                style={{ fontSize: "13px" }}
-              >
-                سامانه جامع حساب و کتاب
-              </p>
-            </Col>
-            <Col className="text-center p-0" lg="5">
-              <hr className="hr" />
-            </Col>
-          </Row>
-*/}
+
             <Row className=" row-grid align-items-center mb-1 mt-1 ">
               {/* CONTACT US */}
               <Col
@@ -52,14 +40,79 @@ class Footer extends React.Component {
               </Col>
 
               {/* LINKS */}
-              <Col className=" text-center btn-wrapper mt-2" lg="5"></Col>
+              <Col className=" text-center btn-wrapper mt-2" lg="5">
+                <Row className="pr-5">
+                  <Col className="lg-auto">
+                    <NavLink
+                      to="/‌‌help"
+                      tag={Link}
+                      className=" pl-3 pr-3"
+                      color="default"
+                    >
+                      پشتیبانی
+                    </NavLink>
+                    <NavLink
+                      to="/‌‌help"
+                      tag={Link}
+                      className=" pl-3 pr-3"
+                      color="default"
+                    >
+                      ارتباط با ما
+                    </NavLink>
+                    <NavLink
+                      to="/‌‌help"
+                      tag={Link}
+                      className=" pl-3 pr-3"
+                      color="default"
+                    >
+                      راهنما
+                    </NavLink>
+                  </Col>
+                  <Col className="lg-auto">
+                    <NavLink
+                      to="/‌‌help"
+                      tag={Link}
+                      className=" pl-3 pr-3"
+                      color="default"
+                    >
+                      ثبت نام
+                    </NavLink>
+                    <NavLink
+                      to="/‌‌help"
+                      tag={Link}
+                      className=" pl-3 pr-3"
+                      color="default"
+                    >
+                      ورود
+                    </NavLink>
+                  </Col>
+                  <Col className="lg-auto">
+                    <NavLink
+                      to="/‌‌help"
+                      tag={Link}
+                      className=" pl-3 pr-3"
+                      color="default"
+                    >
+                      امکانات
+                    </NavLink>
+                    <NavLink
+                      to="/‌‌help"
+                      tag={Link}
+                      className=" pl-3 pr-3"
+                      color="default"
+                    >
+                      درباره ما
+                    </NavLink>
+                  </Col>
+                </Row>
+              </Col>
 
               {/* LOGO */}
               <Col className=" text-center btn-wrapper mt-2" lg="2">
                 <img
-                  style={{ width: "50px" }}
+                  className="footer-logo-2"
                   alt="..."
-                  src={require("../../assets/img/brand/hesabeh-black.png")}
+                  src={require("../../assets/img/theme/logo01.png")}
                 />
                 <h4>حسابِه</h4>
                 <div>

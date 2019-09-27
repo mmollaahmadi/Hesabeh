@@ -17,6 +17,8 @@ import {
   Collapse
 } from "reactstrap";
 import "../assets/css/custom.css";
+import Header from "../common/header.js";
+
 class RegisterPage extends React.Component {
   constructor(props) {
     super(props);
@@ -50,15 +52,7 @@ class RegisterPage extends React.Component {
         <Container className="pt-10 pb-30  h-100">
           <Row className="text-center justify-content-center">
             <Col lg="5">
-              <img
-                alt="..."
-                className="rounded-circle logo"
-                src={require("../assets/img/users/user01.jpg")}
-              />
-              <p className="brand-title">حسابِه</p>
-
-              <p className="title-text"> ایجاد حساب کاربری</p>
-
+              <Header title=" ایجاد حساب کاربری" />
               <Form role="form" className="signup-form">
                 <FormGroup className="mb-3">
                   <InputGroup className="input-group-alternative">

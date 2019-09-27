@@ -1,7 +1,7 @@
 import React from "react";
 
 // reactstrap components
-import { Container, Row, Button, Col } from "reactstrap";
+import { Row, Button, Col } from "reactstrap";
 // import SignupButton from '../common/signup-button/SignupButton.js';
 // import SigninButton from "../../common/signin-button/SigninButton.js";
 // import Onboarding from "./Onboarding.js";

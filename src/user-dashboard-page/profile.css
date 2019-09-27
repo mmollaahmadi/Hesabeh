@@ -1,3 +1,23 @@
+.profile-data-title{
+  font-size: 0.7rem;
+  text-align: right;
+  margin: 0px;
+}
+.profile-data-value{
+  padding-top: 0px;
+  font-size: 1.3rem;
+  text-align: right;
+}
+
+
+.hr{
+  border-top: solid 2px;
+  border-color: #E9ECEF !important;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+
 
 .profile-input{
   background-color: #33393f10 !important;
@@ -31,4 +51,23 @@
 .profile-form input:-webkit-autofill:active {
     -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
     -webkit-transition-delay: 9999s;
+}
+
+.profile-btn{
+  width: 120px;
+  text-align: center;
+  padding: 0.2rem 0rem;
+  color: #fff !important;
+  font-size: 0.8rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+}
+
+.profile-modal-btn{
+  padding: 0.2rem 1rem;
+  margin: auto 0.5rem;
+}
+.profile-modal-text{
+  margin: auto 0.5rem;
+  padding: 0px;
 }

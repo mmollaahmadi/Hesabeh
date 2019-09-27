@@ -99,13 +99,20 @@ height: auto;
   margin: 1.5rem 0.5rem !important;
   box-shadow: none;
 }
-.features-btn:hover{
-  border-color: #33393f;
-  color: #33393f;
+.features-btn:hover, .features-btn:focus{
+  border-color: #33393f !important;
+  color: #33393f !important;
 }
 .features-btn-active{
-  color: #141312;
+  border-color: #33393f;
+  color: #33393f;
+  background-color: #fff !important;
+  border-style: dashed;
     margin: 1.5rem 0.5rem !important;
+}
+.features-btn-active:hover{
+  border-color: #33393f;
+  color: #33393f;
 }
 .features-img{
   width: 100%;

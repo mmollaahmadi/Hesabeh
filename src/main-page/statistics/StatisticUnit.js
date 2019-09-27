@@ -11,7 +11,7 @@ class StatisticUnit extends React.Component {
             className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
             src={this.props.img_url}
             style={{
-              width: "140px",
+              width: "100px",
               borderStyle: "solid",
               borderColor: "#fff",
               borderWidth: "2px"

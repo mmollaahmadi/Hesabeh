@@ -31,7 +31,10 @@ body {
   color: #33393f;
   /* background-image: linear-gradient(to top, #d7d7d6, #dededd, #e5e5e3, #ececea, #f3f3f1); */
 }
-
+.header-logo{
+  background-color: #fff !important;
+  border-style: none !important;
+}
 /* ============================== MODALS ==================================== */
 /* ========================================================================== */
 
@@ -49,9 +52,9 @@ body.modal-open {
 }
 
 .profile-image {
-  border-style: solid;
-  border-width: medium;
-  border-color: #f6f6f6;
+  /* border-style: solid; */
+  /* border-width: medium; */
+  /* border-color: #f6f6f6; */
 }
 
 .bg-gradient-default {

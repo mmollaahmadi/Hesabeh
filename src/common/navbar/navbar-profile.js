@@ -16,7 +16,7 @@ class NavbarProfile extends React.Component {
         <Nav className="navbar-nav-hover align-items-lg-center" navbar>
           <UncontrolledDropdown nav>
             <DropdownToggle nav className="p-0">
-              <div className="d-flex justify-content-center align-items-center">                
+              <div className="d-flex justify-content-center align-items-center">
                 <img
                   alt="..."
                   className="rounded-circle img-center img-fluid navbar-profile-img"
@@ -25,10 +25,10 @@ class NavbarProfile extends React.Component {
               </div>
             </DropdownToggle>
             <DropdownMenu>
-              <DropdownItem to="/dashboard" tag={Link}>
-                حساب کاربری
+              <DropdownItem className="profile-item" to="/dashboard" tag={Link}>
+                تنظیمات حساب کاربری
               </DropdownItem>
-              <DropdownItem to="/" tag={Link}>
+              <DropdownItem className="text-right" to="/" tag={Link}>
                 خروج
               </DropdownItem>
             </DropdownMenu>

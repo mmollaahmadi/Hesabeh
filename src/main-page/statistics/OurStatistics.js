@@ -16,19 +16,19 @@ class OurStatistics extends React.Component {
         <Row className="mx-0 my-1">
           <StatisticUnit
             text="۱۲۳ کاربر"
-            img_url={require("../../assets/img/theme/team-1-800x800.jpg")}
+            img_url={require("../../assets/img/theme/icons8-team-64.png")}
           />
           <StatisticUnit
             text="۴۰ گروه"
-            img_url={require("../../assets/img/theme/team-1-800x800.jpg")}
+            img_url={require("../../assets/img/theme/icons8-team-64.png")}
           />
           <StatisticUnit
             text="۴۰۰ تراکنش"
-            img_url={require("../../assets/img/theme/team-1-800x800.jpg")}
+            img_url={require("../../assets/img/theme/icons8-team-64.png")}
           />
           <StatisticUnit
             text="۱۰۰ کاربر فعال"
-            img_url={require("../../assets/img/theme/team-1-800x800.jpg")}
+            img_url={require("../../assets/img/theme/icons8-team-64.png")}
           />
         </Row>
       </Container>

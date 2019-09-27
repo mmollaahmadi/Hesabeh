@@ -14,19 +14,19 @@ class Learning extends React.Component {
               <Row className="d-flex justify-content-center">
                 <Onboarding
                   _text="ثبت نام و ورود به حساب کاربری"
-                  imageUri={require("../../assets/img/theme/1.png")}
+                  imageUri={require("../../assets/img/theme/circle01.png")}
                 />
                 <Onboarding
                   _text="ثبت هزینه‌های شخصی و گروهی"
-                  imageUri={require("../../assets/img/theme/1.png")}
+                  imageUri={require("../../assets/img/theme/circle02.png")}
                 />
                 <Onboarding
                   _text="استفاده از امکانات حسابه"
-                  imageUri={require("../../assets/img/theme/1.png")}
+                  imageUri={require("../../assets/img/theme/circle03.png")}
                 />
                 <Onboarding
                   _text="استفاده از امکانات حسابه"
-                  imageUri={require("../../assets/img/theme/1.png")}
+                  imageUri={require("../../assets/img/theme/circle01.png")}
                 />
               </Row>
             </Col>

@@ -54,3 +54,11 @@
   border-width: 3px;
   width: 45px;
 }
+
+.profile-item{
+  text-align: right;
+  width: 100%;
+}
+.profile-item:focus{
+  background-color: #00e5ac !important;
+}
