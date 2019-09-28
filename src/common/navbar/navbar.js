@@ -93,6 +93,7 @@ class MyNavbar extends React.Component {
             onClick={() => this.togglePage("report")}
             color="link"
             tag={Link}
+            disabled
           >
             گزارش
           </Button>
@@ -169,14 +170,7 @@ class MyNavbar extends React.Component {
                 >
                   راهنما
                 </NavLink>
-                <NavLink
-                  to="/contact-us"
-                  tag={Link}
-                  className="navbar-link pl-3 pr-3"
-                  color="primary"
-                >
-                  ارتباط با ما
-                </NavLink>
+              
               </div>
             </Nav>
             <Nav className="align-items-lg-center mr-lg-auto" navbar>

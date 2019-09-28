@@ -8,7 +8,6 @@ import {
   Col,
   CardHeader,
   CardBody,
-  NavLink,
   FormGroup,
   Form,
   Input,
@@ -151,8 +150,11 @@ class Profile extends React.Component {
                   </div>
                 </Col>
 
-                <Col className="order-lg-1" lg="4">
-                  <div className="card-profile-stats d-flex justify-content-center">
+                <Col
+                  className="order-lg-1 text-lg-right d-flex justify-content-center p-0"
+                  lg="4"
+                >
+                  <div className="card-profile-actions py-4 px-0 mt-lg-0">
                     <Modal
                       className="modal-dialog-centered"
                       isOpen={this.state.changePasswordModal}

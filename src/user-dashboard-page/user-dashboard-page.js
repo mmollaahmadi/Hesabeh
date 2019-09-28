@@ -25,8 +25,6 @@ import {
   DropdownMenu
 } from "reactstrap";
 
-
-
 class UserDashboardPage extends React.Component {
   render() {
     return (
@@ -49,78 +47,83 @@ class UserDashboardPage extends React.Component {
                       </Accordion.Header>
                       <Accordion.Body>
                         <Form>
-                          <FormGroup>
-                            <Row className="justify-content-center">
-                              <Col lg="2" className="mt-auto mb-auto">
-                                <Label for="exampleSelect">
-                                  ترتیب نمایش گروه‌ها
-                                </Label>
-                              </Col>
-                              <Col lg="5">
-                                <Input
-                                  type="select"
-                                  name="select"
-                                  id="exampleSelect"
-                                >
-                                  <option>1</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                  <option>5</option>
-                                </Input>
-                              </Col>
-                            </Row>
-                          </FormGroup>
-                          <FormGroup>
-                            <Row className="justify-content-center">
-                              <Col lg="2" className="mt-auto mb-auto">
-                                <Label for="exampleSelect">
-                                  ترتیب نمایش خرج‌ها
-                                </Label>
-                              </Col>
-                              <Col lg="5">
-                                <Input
-                                  type="select"
-                                  name="select"
-                                  id="exampleSelect"
-                                >
-                                  <option>1</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                  <option>5</option>
-                                </Input>
-                              </Col>
-                            </Row>
-                          </FormGroup>
-                          <FormGroup>
-                            <Row className="justify-content-center">
-                              <Col lg="2" className="mt-auto mb-auto">
-                                <Label for="exampleSelect">
-                                  ترتیب نمایش اعلام‌ها
-                                </Label>
-                              </Col>
-                              <Col lg="5">
-                                <Input
-                                  type="select"
-                                  name="select"
-                                  id="exampleSelect"
-                                >
-                                  <option>1</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                  <option>5</option>
-                                </Input>
-                              </Col>
-                            </Row>
-                          </FormGroup>
+                          <Row className="px-2">
+                            <Col lg="4" className="px-4">
+                              <FormGroup>
+                                <Row className=" d-flex justify-content-center">
+
+                                    <Label for="exampleSelect">
+                                      ترتیب نمایش گروه‌ها
+                                    </Label>
+
+                                    <Input
+                                      type="select"
+                                      name="select"
+                                      id="exampleSelect"
+                                    >
+                                      <option>1</option>
+                                      <option>2</option>
+                                      <option>3</option>
+                                      <option>4</option>
+                                      <option>5</option>
+                                    </Input>
+
+                                </Row>
+                              </FormGroup>
+                            </Col>
+                          <Col lg="4" className="px-4">
+                              <FormGroup>
+                                <Row className="justify-content-center">
+
+                                    <Label for="exampleSelect">
+                                      ترتیب نمایش خرج‌ها
+                                    </Label>
+
+                                    <Input
+                                      type="select"
+                                      name="select"
+                                      id="exampleSelect"
+                                    >
+                                      <option>1</option>
+                                      <option>2</option>
+                                      <option>3</option>
+                                      <option>4</option>
+                                      <option>5</option>
+                                    </Input>
+
+                                </Row>
+                              </FormGroup>
+                            </Col>
+                            <Col lg="4" className="px-4">
+                              <FormGroup>
+                                <Row className="justify-content-center">
+
+                                    <Label for="exampleSelect">
+                                      ترتیب نمایش اعلام‌ها
+                                    </Label>
+
+                                    <Input
+                                      type="select"
+                                      name="select"
+                                      id="exampleSelect"
+                                    >
+                                      <option>1</option>
+                                      <option>2</option>
+                                      <option>3</option>
+                                      <option>4</option>
+                                      <option>5</option>
+                                    </Input>
+
+                                </Row>
+                              </FormGroup>
+                            </Col>
+                          </Row>
                         </Form>
                       </Accordion.Body>
                     </Accordion.Item>
 
                     <Accordion.Item>
-                      <Accordion.Header>برچسب‌ها</Accordion.Header>
+                      <Accordion.Header>مدیریت برچسب‌ها</Accordion.Header>
                       <Accordion.Body>
                         <Form role="form" className="signup-form">
                           <Row className="justify-content-center mb-3">
@@ -135,14 +138,17 @@ class UserDashboardPage extends React.Component {
                               </FormGroup>
                             </Col>
 
-                            <Col lg="auto" className="d-flex align-items-center">
+                            <Col
+                              lg="auto"
+                              className="d-flex align-items-center"
+                            >
                               <UncontrolledDropdown nav>
                                 <DropdownToggle className="p-0 btn-circle m-0">
                                   <i className="fa fa-paint-brush"></i>
                                 </DropdownToggle>
                                 <DropdownMenu className="p-0">
                                   <DropdownItem className="p-0">
-                                    <GithubPicker />
+                                    <GithubPicker className="color-picker"/>
                                   </DropdownItem>
                                 </DropdownMenu>
                               </UncontrolledDropdown>
@@ -159,9 +165,13 @@ class UserDashboardPage extends React.Component {
                         </Form>
 
                         <Row className="justify-content-start">
-                          <Badge href="#" color="primary">
+                        <h6 className="m-0"> برچسبها:</h6>
+                          <Badge color="primary" className="profile-label align-self-center">
                             برچسب 1
                             <i className="fa fa-close mr-2"></i>
+                          </Badge>
+                          <Badge color="primary" className="profile-label align-self-center">
+                            برچسب 1<i className="fa fa-close mr-2"></i>
                           </Badge>
                         </Row>
                       </Accordion.Body>

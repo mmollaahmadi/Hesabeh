@@ -13,22 +13,28 @@ class NavbarProfile extends React.Component {
   render() {
     return (
       <div>
-        <Nav className="navbar-nav-hover align-items-lg-center" navbar>
+        <Nav className="navbar-nav-hover align-items-lg-center p-0" navbar>
           <UncontrolledDropdown nav>
             <DropdownToggle nav className="p-0">
               <div className="d-flex justify-content-center align-items-center">
+              {/*<p className="id">mollaahmadi@</p>*/}
                 <img
                   alt="..."
                   className="rounded-circle img-center img-fluid navbar-profile-img"
                   src={require("../../assets/img/users/user01.jpg")}
                 />
+
               </div>
             </DropdownToggle>
-            <DropdownMenu>
+            <DropdownMenu className="profile-menu">
+            <DropdownItem className="profile-item pb-0 text-center" disabled>
+              mollaahmadi@
+            </DropdownItem>
+            <DropdownItem divider/>
               <DropdownItem className="profile-item" to="/dashboard" tag={Link}>
-                تنظیمات حساب کاربری
+                حساب کاربری
               </DropdownItem>
-              <DropdownItem className="text-right" to="/" tag={Link}>
+              <DropdownItem className="profile-item" to="/" tag={Link}>
                 خروج
               </DropdownItem>
             </DropdownMenu>
