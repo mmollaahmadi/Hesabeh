@@ -28,7 +28,7 @@
 body {
   font-family: Samim, Tahoma;
   background-color: #fff;
-  color: #33393f;
+  color: #0b1526;
   /* background-image: linear-gradient(to top, #d7d7d6, #dededd, #e5e5e3, #ececea, #f3f3f1); */
 }
 
@@ -321,6 +321,7 @@ body.modal-open {
 }
 .audit-button{
   width: 100%;
+  border-style: none;
 }
 
 .header-logo{

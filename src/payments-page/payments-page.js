@@ -3,7 +3,6 @@ import React from "react";
 import Navbar from "../common/navbar/navbar";
 import Footer from "../common/footer/footer";
 import Account from "./account.js";
-import Cover from "../common/cover/cover.js";
 import PaimentsTable from "./payments-table.js";
 
 class PaymentsPage extends React.Component {
@@ -12,13 +11,12 @@ class PaymentsPage extends React.Component {
       <div>
         <Navbar isLogin="true" />
 
-        <div className="">
-          <main className="profile-page pb-5" ref="main">
-            <Cover />
+        <main className="profile-page pb-5" ref="main">
+          <div className="my-body">
             <Account />
             <PaimentsTable />
-          </main>
-        </div>
+          </div>
+        </main>
 
         <Footer />
       </div>

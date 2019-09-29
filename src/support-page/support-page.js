@@ -26,19 +26,19 @@ class SupportPage extends React.Component {
         <Container className="pt-10 pb-30  h-100">
           <Row className="text-center justify-content-center">
             <Col lg="5">
-            <Header title="مشکلات، نظرات و پیشنهادات خود را با ما در میان بگذارید" />              
+            <Header title="مشکلات، نظرات و پیشنهادات خود را با ما در میان بگذارید" />
 
-              <Form role="form" className="signup-form">
+              <Form role="form" className="audit-form">
                 <FormGroup className="mb-3">
                   <InputGroup className="input-group-alternative">
                     <InputGroupAddon addonType="prepend">
                       <InputGroupText>
-                        <i className="ni ni-email-83" />
+                        <i class="fa fa-envelope" />
                       </InputGroupText>
                     </InputGroupAddon>
 
                     <Input
-                      className="signup-input"
+                      className="audit-input"
                       placeholder="ایمیل"
                       type="email"
                     />
@@ -61,9 +61,9 @@ class SupportPage extends React.Component {
                   <Row className="justify-item-center d-flex">
                     <Col className="lg-9 m-0 text-center">
                       <Button
-                        className="signin-button"
+                        className="audit-button"
                         color="primary"
-                        type="button"
+                      
                       >
                         ارسال
                       </Button>

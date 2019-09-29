@@ -12,7 +12,7 @@
 /* ------------------------------ brand ----------------------------------- */
 .navbar-brand-title {
   font-family: Lalezar, Tahoma;
-  color: #33393f;
+  color: #0b1526 !important;
   font-size: 2rem;
   margin-bottom: 0px !important;
 }
@@ -24,7 +24,7 @@
 /* --------------------------- links and buttons --------------------------- */
 .navbar-link {
   font-family: Samim-Bold, Tahoma !important;
-  color: #33393f !important;
+  color: #0b1526 !important;
   cursor: pointer;
   font-size: 0.75rem !important;
 }
@@ -39,6 +39,7 @@
   font-size: 0.75rem !important;
   font-family: Samim-Bold, Tahoma !important;
   padding: 0.5rem 0.7rem;
+  border-style: none;
 }
 .notification-btn{
   padding: 0.25rem;
