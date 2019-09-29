@@ -31,10 +31,7 @@ body {
   color: #33393f;
   /* background-image: linear-gradient(to top, #d7d7d6, #dededd, #e5e5e3, #ececea, #f3f3f1); */
 }
-.header-logo{
-  background-color: #fff !important;
-  border-style: none !important;
-}
+
 /* ============================== MODALS ==================================== */
 /* ========================================================================== */
 
@@ -285,4 +282,99 @@ body.modal-open {
 }
 .section-shaped .shape-style-1.shape-dark {
   background: linear-gradient(150deg, #32325d 15%, #32325d 70%, #32325d 94%);
+}
+
+/* ============================== AUDIT ================================== */
+/* ========================================================================== */
+.audit-input{
+  background-color: #33393f10 !important;
+  color: #424242 !important;
+  padding: 0rem 1rem;
+  height: calc(2.5rem + 2px) !important;
+  border-right-style: solid !important;
+  border-right-color: #42424230 !important;
+  border-right-width: 1px !important;
+}
+.audit-input:-webkit-autofill {
+  -webkit-box-shadow: inset 0 0 0px 9999px #d7d7d6df;
+}
+.audit-input::placeholder{
+  color: #42424280;
+}
+.audit-form .input-group-text{
+  background-color: #33393f10 !important;
+  color: #42424280 !important;
+}
+.audit-form .form-control::placeholder {
+  color: #42424280;
+  opacity: 1;
+}
+.audit-form .form-control:focus::placeholder {
+  color: #42424280;
+}
+.audit-form input:-webkit-autofill,
+.audit-form input:-webkit-autofill:hover,
+.audit-form input:-webkit-autofill:focus,
+.audit-form input:-webkit-autofill:active {
+    -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+    -webkit-transition-delay: 9999s;
+}
+.audit-button{
+  width: 100%;
+}
+
+.header-logo{
+  background-color: #fff !important;
+  border-style: none !important;
+  width: 100px !important;
+  height: 100px !important;
+}
+.brand-title{
+  font-family: Lalezar !important;
+  font-size: 2rem;
+  color: #33393f !important;
+  margin: 0px;
+}
+
+.title-text{
+  margin: 0rem 0rem 1rem 0rem;
+}
+.alert-icon{
+  color: #ff0000 !important;
+}
+.audit-alert{
+  padding: 0.5rem 0rem;
+  font-size: 0.7rem;
+  color: #B67B81 !important;
+  background-color: #F8D7DA !important;
+}
+.audit-alert > button {
+  right: 0;
+}
+.audit-alert > button > span{
+  visibility: hidden;
+}
+
+
+
+
+
+
+/* ============================== TABLE ================================== */
+/* ========================================================================== */
+
+.table-header{
+  text-align: center;
+  font-size: 0.8rem;
+  font-family: Samim;
+}
+
+
+
+
+
+
+
+.my-body{
+  margin-top: 12rem;
 }

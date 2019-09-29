@@ -16,6 +16,7 @@ import {
 
 import GroupTableRow from "./group-table-row.js";
 import { Link } from "react-router-dom";
+
 class GroupsTable extends React.Component {
   state = {};
   toggleModal = state => {
@@ -69,8 +70,9 @@ class GroupsTable extends React.Component {
                     </Button>
                   </Col>
                 </Row>
+
                 <Table className="align-items-center" responsive>
-                  <thead className="thead-light">
+                  <thead className="thead-light table-header">
                     <tr>
                       <th scope="col">ردیف</th>
                       <th scope="col">نام گروه</th>

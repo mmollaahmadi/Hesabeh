@@ -1,4 +1,4 @@
-
+/* #----------------------------------- BODY ------------------------------ */
 .footer {
   background-color: #00e5ac !important;
   padding-top: 1rem !important;
@@ -13,6 +13,7 @@
   opacity: 0.5;
 }
 
+/* #----------------------------------- LINKS ----------------------------- */
 .social-network-icon{
   color: #33393f !important;
   font-size: 15px;
@@ -23,39 +24,38 @@
     margin-left: 10px;
   }
 }
+.footer-links{
+  font-size: 0.8rem;
+  font-family: Samim;
+  color: #33393faa !important;
+}
+.footer-links:hover{
+  color: #33393f !important;
+}
 
+/* #----------------------------------- LOGO ----------------------------- */
 .footer-logo-2{
   width: 50px !important;
-  
+
+}
+.footer-hesabeh{
+  padding: 0px;
+  margin: 0px;
+  font-family: Lalezar;
+  font-size: 1.5rem;
+  color: #33393f !important;
 }
 
-
-.signup-modal-text{
-  color: #d7d7d6;
-}
-
-
-.signup-form input:-webkit-autofill,
-.signup-form input:-webkit-autofill:hover,
-.signup-form input:-webkit-autofill:focus,
-.signup-form input:-webkit-autofill:active {
-    -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
-    -webkit-transition-delay: 9999s;
-}
-
-
-
-
-.footer-logo{
+.footer-logo-row{
   margin: 0px;
   height: 45px;
   background-color: #f3f3f1;
   display: flex;
   justify-content: center;
 }
-.logo{
+.footer-logo-1{
   margin-top: -2vw;
-    width: 130px;
+    width: 110px !important;
     border-style: solid;
     border-color: #f3f3f1;
     border-width: 2px;

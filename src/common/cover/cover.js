@@ -3,7 +3,7 @@ import React from 'react';
 class Cover extends React.Component {
   render(){
     return(
-      <section className="section-profile-cover section-shaped my-0">
+      <section className="section-profile-cover my-0">
         {/* Circles background */}
         <div className="shape shape-style-1 shape-default alpha-4"></div>
         {/* SVG separator

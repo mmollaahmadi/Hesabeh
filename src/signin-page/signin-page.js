@@ -13,22 +13,36 @@ import {
   Form,
   Input,
   InputGroup,
-  NavLink
+  NavLink,
+  Collapse,
+  Alert
 } from "reactstrap";
 import "../assets/css/custom.css";
 import Header from "../common/header.js";
 
 class SigninPage extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      emailCollapse: false,
+      passwordCollapse: false
+    };
+  }
+  toggle = (which) => {
+    this.setState({
+      [which]: !this.state[which]
+    });
+  };
   render() {
     return (
       <div className="section-lg">
         <Container className="pt-10 pb-30  h-100">
           <Row className="text-center justify-content-center">
             <Col lg="5">
-            
               <Header title="ورود به حساب کاربری" />
 
-              <Form role="form" className="signin-form">
+              <Form role="form" className="audit-form">
                 <FormGroup className="mb-3">
                   <InputGroup className="input-group-alternative">
                     <InputGroupAddon addonType="prepend">
@@ -38,11 +52,19 @@ class SigninPage extends React.Component {
                     </InputGroupAddon>
 
                     <Input
-                      className="signin-input"
+                      className="audit-input"
                       placeholder="ایمیل / نام کاربری"
                       type="email"
                     />
                   </InputGroup>
+                  <Collapse isOpen={this.state.emailCollapse}>
+                    <Alert
+                      color="danger"
+                      className="audit-alert"
+                    >
+                      کاربری با این مشخصات وجود ندارد
+                    </Alert>
+                  </Collapse>
                 </FormGroup>
                 <FormGroup>
                   <InputGroup className="input-group-alternative">
@@ -53,7 +75,7 @@ class SigninPage extends React.Component {
                     </InputGroupAddon>
 
                     <Input
-                      className="signin-input"
+                      className="audit-input"
                       placeholder="رمز عبور"
                       type="password"
                     />
@@ -68,12 +90,20 @@ class SigninPage extends React.Component {
                       رمز عبور را فراموش کردم!
                     </NavLink>
                   </Row>
+                  <Collapse isOpen={this.state.passwordCollapse}>
+                    <Alert
+                      color="danger"
+                      className="audit-alert"
+                    >
+                      کاربری با این مشخصات وجود ندارد
+                    </Alert>
+                  </Collapse>
                 </FormGroup>
                 <FormGroup>
                   <Row className="justify-item-center d-flex">
                     <Col className="lg-9 m-0 text-center">
                       <Button
-                        className="signin-button"
+                        className="audit-button"
                         color="primary"
                         to="/my-account"
                         tag={Link}
@@ -85,10 +115,11 @@ class SigninPage extends React.Component {
                 </FormGroup>
 
                 <Button
-                  className="btn-icon signin-button"
+                  className="btn-icon audit-button"
                   color="default"
                   href="#pablo"
                   name="google-account"
+                  onClick={() => this.toggle("passwordCollapse")}                    
                 >
                   <span className="btn-inner--icon">
                     <img

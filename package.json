@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.4.3",
     "classnames": "^2.2.6",
     "headroom.js": "^0.9.4",
     "js-beautify": "^1.10.2",

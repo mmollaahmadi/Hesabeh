@@ -38,7 +38,12 @@ class RegisterPage extends React.Component {
         value: "",
         valid: false,
         collapse: false
-      }
+      },
+      uppercaseCondition: false,
+      lowercaseCondition: true,
+      numberCondition: false,
+      signCondition: false,
+      confirmPasswordCondition: false,
     };
   }
   toggle = state => {
@@ -47,13 +52,14 @@ class RegisterPage extends React.Component {
     });
   };
   render() {
+    const {uppercaseCondition, lowercaseCondition, numberCondition, signCondition, confirmPasswordCondition} = this.state;
     return (
       <div className="register-section section-lg">
         <Container className="pt-10 pb-30  h-100">
           <Row className="text-center justify-content-center">
             <Col lg="5">
               <Header title=" ایجاد حساب کاربری" />
-              <Form role="form" className="signup-form">
+              <Form role="form" className="audit-form">
                 <FormGroup className="mb-3">
                   <InputGroup className="input-group-alternative">
                     <InputGroupAddon addonType="prepend">
@@ -63,7 +69,7 @@ class RegisterPage extends React.Component {
                     </InputGroupAddon>
 
                     <Input
-                      className="signup-input"
+                      className="audit-input"
                       placeholder="ایمیل"
                       type="email"
                     />
@@ -78,7 +84,7 @@ class RegisterPage extends React.Component {
                     </InputGroupAddon>
 
                     <Input
-                      className="signup-input"
+                      className="audit-input"
                       placeholder="رمز عبور"
                       type="password"
                     />
@@ -93,7 +99,7 @@ class RegisterPage extends React.Component {
                     </InputGroupAddon>
 
                     <Input
-                      className="signup-input"
+                      className="audit-input"
                       placeholder="تایید رمز عبور"
                       type="password"
                     />
@@ -101,31 +107,39 @@ class RegisterPage extends React.Component {
                 </FormGroup>
                 <Collapse isOpen={this.state.password.collapse}>
                 <Row className="d-flex justify-content-center text-center px-9 pb-4">
-                  <Col lg="2" className="p-0">
+                  <Col lg="2"
+                  className = {lowercaseCondition ? "condition-satisfied" : "condition-unsatisfied"}>
                     <i className=" fa fa-twitter password-condition-icon" />
                     <p className="password-condition-text">
                     حروف کوچک
                     </p>
                   </Col>
-                  <Col lg="2" className="p-0">
+                  <Col lg="2"
+                  className={uppercaseCondition ? "condition-satisfied" : "condition-unsatisfied"}>
                     <i className=" fa fa-twitter password-condition-icon" />
                     <p className="password-condition-text">
                   حروف بزرگ
                     </p>
                   </Col>
-                  <Col lg="2" className="p-0">
+                  <Col lg="2"
+                  className={numberCondition ? "condition-satisfied" : "condition-unsatisfied"}
+                  >
                     <i className=" fa fa-twitter password-condition-icon" />
                     <p className="password-condition-text">
                     عدد
                     </p>
                   </Col>
-                  <Col lg="2" className="p-0">
+                  <Col lg="2"
+                  className={signCondition ? "condition-satisfied" : "condition-unsatisfied"}
+                  >
                     <i className=" fa fa-twitter password-condition-icon" />
                     <p className="password-condition-text">
                     نشانه خاص
                     </p>
                   </Col>
-                  <Col lg="2" className="p-0">
+                  <Col lg="2"
+                  className={confirmPasswordCondition ? "condition-satisfied" : "condition-unsatisfied"}
+                  >
                     <i className=" fa fa-twitter password-condition-icon" />
                     <p className="password-condition-text">
                     تطابق دو رمز عبور
@@ -137,7 +151,7 @@ class RegisterPage extends React.Component {
                   <Row className="justify-item-center d-flex">
                     <Col className="lg-9 m-0 text-center">
                       <Button
-                        className="signin-button"
+                        className="audit-button"
                         color="primary"
                         type="button"
                       >
@@ -148,7 +162,7 @@ class RegisterPage extends React.Component {
                 </FormGroup>
 
                 <Button
-                  className="btn-icon signin-button"
+                  className="btn-icon audit-button"
                   color="default"
                   href="#pablo"
                   onClick={() => this.toggle("password")}

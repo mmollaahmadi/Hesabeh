@@ -27,7 +27,7 @@ class NewPasswordRequestPage extends React.Component {
             <Header title="ارسال در خواست رمز عبور جدید" />
 
 
-              <Form role="form" className="signin-form">
+              <Form role="form" className="audit-form">
                 <FormGroup className="mb-3">
                   <InputGroup className="input-group-alternative">
                     <InputGroupAddon addonType="prepend">
@@ -37,7 +37,7 @@ class NewPasswordRequestPage extends React.Component {
                     </InputGroupAddon>
 
                     <Input
-                      className="signin-input"
+                      className="audit-input"
                       placeholder="ایمیل / نام کاربری / شماره همراه"
                       type="email"
                     />
@@ -49,7 +49,7 @@ class NewPasswordRequestPage extends React.Component {
                   <Row className="justify-item-center d-flex">
                     <Col className="lg-9 m-0 text-center">
                       <Button
-                        className="signin-button"
+                        className="audit-button"
                         color="primary"
                         to="/payments"
                         tag={Link}

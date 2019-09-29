@@ -17,11 +17,11 @@ class Footer extends React.Component {
     return (
       <div>
         <div>
-          <Row className="footer-logo">
+          <Row className="footer-logo-row">
             <container>
               <img
                 alt="..."
-                className="rounded-circle  logo"
+                className="rounded-circle  footer-logo-1"
                 src={require("../../assets/img/theme/logo01.png")}
               />
             </container>
@@ -40,48 +40,36 @@ class Footer extends React.Component {
               </Col>
 
               {/* LINKS */}
-              <Col className=" text-center btn-wrapper mt-2" lg="5">
+              <Col className=" text-center mt-2" lg="5">
                 <Row className="pr-5">
                   <Col className="lg-auto">
                     <NavLink
-                      to="/‌‌help"
+                      to="/‌‌support"
                       tag={Link}
-                      className=" pl-3 pr-3"
-                      color="default"
+                      className="footer-links"
                     >
                       پشتیبانی
                     </NavLink>
                     <NavLink
                       to="/‌‌help"
                       tag={Link}
-                      className=" pl-3 pr-3"
-                      color="default"
-                    >
-                      ارتباط با ما
-                    </NavLink>
-                    <NavLink
-                      to="/‌‌help"
-                      tag={Link}
-                      className=" pl-3 pr-3"
-                      color="default"
+                      className="footer-links"
                     >
                       راهنما
                     </NavLink>
                   </Col>
                   <Col className="lg-auto">
                     <NavLink
-                      to="/‌‌help"
+                      to="/‌‌register"
                       tag={Link}
-                      className=" pl-3 pr-3"
-                      color="default"
+                      className="footer-links"
                     >
                       ثبت نام
                     </NavLink>
                     <NavLink
-                      to="/‌‌help"
+                      to="/‌‌sigin"
                       tag={Link}
-                      className=" pl-3 pr-3"
-                      color="default"
+                      className="footer-links"
                     >
                       ورود
                     </NavLink>
@@ -90,16 +78,14 @@ class Footer extends React.Component {
                     <NavLink
                       to="/‌‌help"
                       tag={Link}
-                      className=" pl-3 pr-3"
-                      color="default"
+                      className="footer-links"
                     >
                       امکانات
                     </NavLink>
                     <NavLink
                       to="/‌‌help"
                       tag={Link}
-                      className=" pl-3 pr-3"
-                      color="default"
+                      className="footer-links"
                     >
                       درباره ما
                     </NavLink>
@@ -114,7 +100,7 @@ class Footer extends React.Component {
                   alt="..."
                   src={require("../../assets/img/theme/logo01.png")}
                 />
-                <h4>حسابِه</h4>
+                <p className="footer-hesabeh">حسابِه</p>
                 <div>
                   <Button
                     className=" ml-1 p-0 mr-0 social-network-link"

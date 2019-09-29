@@ -1,10 +1,6 @@
 import React from 'react';
 import {
   Badge,
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
-  DropdownToggle,
   Media,
   Button,
   UncontrolledTooltip
@@ -123,32 +119,9 @@ class GroupTableRow extends React.Component {
           </Badge>
         </td>
         <td className="text-right">
-          <UncontrolledDropdown>
-            <DropdownToggle
-              className="btn-icon-only text-light"
-              href="#pablo"
-              role="button"
-              size="sm"
-              color=""
-              onClick={e => e.preventDefault()}
-            >
-              <i className="fas fa-ellipsis-v" />
-            </DropdownToggle>
-            <DropdownMenu className="dropdown-menu-arrow" right>
-              <DropdownItem
-                href="#pablo"
-                onClick={e => e.preventDefault()}
-              >
-              پرداخت بدهی
-              </DropdownItem>
-              <DropdownItem
-                href="#pablo"
-                onClick={e => e.preventDefault()}
-              >
-                ارسال درخواست
-              </DropdownItem>
-            </DropdownMenu>
-          </UncontrolledDropdown>
+        <i className="fa fa-trash mx-1" />
+        <i className="fa fa-edit mx-1" />
+        <i className="fa fa-eye mx-1" />
         </td>
       </tr>
     );

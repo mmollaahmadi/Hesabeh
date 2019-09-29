@@ -60,7 +60,7 @@ class SetNewPasswordPage extends React.Component {
               تعیین رمز عبور جدید
                </p>
 
-              <Form role="form" className="signin-form">
+              <Form role="form" className="audit-form">
               <FormGroup>
                 <InputGroup className="input-group-alternative">
                   <InputGroupAddon addonType="prepend">
@@ -70,7 +70,7 @@ class SetNewPasswordPage extends React.Component {
                   </InputGroupAddon>
 
                   <Input
-                    className="signup-input"
+                    className="audit-input"
                     placeholder="رمز عبور"
                     type="password"
                   />
@@ -85,12 +85,13 @@ class SetNewPasswordPage extends React.Component {
                   </InputGroupAddon>
 
                   <Input
-                    className="signup-input"
+                    className="audit-input"
                     placeholder="تایید رمز عبور"
                     type="password"
                   />
                 </InputGroup>
               </FormGroup>
+                <FormGroup>
               <Collapse isOpen={this.state.password.collapse}>
               <Row className="d-flex justify-content-center text-center px-9 pb-4">
                 <Col lg="2" className="p-0">
@@ -139,9 +140,8 @@ class SetNewPasswordPage extends React.Component {
                     </Col>
                   </Row>
                 </FormGroup>
-
-
               </Form>
+
               <Row className="text-center justify-content-center">
                 <Col lg="12">
                   <hr className="mt-5 mb-1" />

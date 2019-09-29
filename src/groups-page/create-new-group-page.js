@@ -12,102 +12,102 @@ import {
   FormGroup,
   Form,
   Input,
-  InputGroup  
+  InputGroup
 } from "reactstrap";
 import "../assets/css/custom.css";
+import Navbar from "../common/navbar/navbar.js";
+import Footer from "../common/footer/footer";
+import Chip from '../common/chip/chip.js';
 class CreateNewGroupPage extends React.Component {
   render() {
     return (
-      <div className="section-lg">
-        <Container className="pt-10 pb-30  h-100">
-          <Row className="text-center justify-content-center">
-            <Col lg="5">
-              <img
-                alt="..."
-                className="rounded-circle logo"
-                src={require("../assets/img/users/user01.jpg")}
-              />
-              <p className="brand-title">حسابِه</p>
+      <div>
+        <Navbar isLogin="true" />
+        <div className="section-lg">
+          <Container className="pt-10 pb-30  h-100">
+            <Row className="text-center justify-content-center">
+              <Col lg="5">
+                <img
+                  alt="..."
+                  className="rounded-circle header-logo"
+                  src={require("../assets/img/users/user01.jpg")}
+                />
+                <Form role="form" className="audit-form">
+                  <FormGroup className="mb-3">
+                    <InputGroup className="input-group-alternative">
+                      <InputGroupAddon addonType="prepend">
+                        <InputGroupText>
+                          <i class="fa fa-users" />
+                        </InputGroupText>
+                      </InputGroupAddon>
 
-              <p className="title-text"> ورود به حساب کاربری</p>
+                      <Input className="audit-input" placeholder="نام گروه" />
+                    </InputGroup>
+                  </FormGroup>
 
-              <Form role="form" className="signin-form">
-                <FormGroup className="mb-3">
-                  <InputGroup className="input-group-alternative">
-                    <InputGroupAddon addonType="prepend">
-                      <InputGroupText>
-                        <i className="ni ni-email-83" />
-                      </InputGroupText>
-                    </InputGroupAddon>
+                  <FormGroup className="mb-3">
+                    <InputGroup className="input-group-alternative">
+                      <InputGroupAddon addonType="prepend">
+                        <InputGroupText>
+                          <i class="fa fa-user-plus" />
+                        </InputGroupText>
+                      </InputGroupAddon>
 
-                    <Input
-                      className="signin-input"
-                      placeholder="نام گروه"
+                      <Input
+                        className="audit-input"
+                        placeholder="ایمیل/ نام کاربری / شماره همراه اعضا"
+                        type="email"
+                      />
+                    </InputGroup>
+                  </FormGroup>
+                  <Row className="m-0 d-flex justify-content-center">
+                    <Chip
+                      avatarSrc={require("../assets/img/users/user01.jpg")}
+                      label="محمد ملااحمدی"
+                      // onDelete={() => this.deleteUser()}
                     />
-                  </InputGroup>
-                </FormGroup>
-                <FormGroup className="mb-3">
-                  <InputGroup className="input-group-alternative">
-                    <InputGroupAddon addonType="prepend">
-                      <InputGroupText>
-                        <i className="ni ni-email-83" />
-                      </InputGroupText>
-                    </InputGroupAddon>
-
-                    <Input
-                      className="signin-input"
-                      placeholder="نام کاربری گروه"
+                    <Chip
+                      avatarSrc={require("../assets/img/users/user01.jpg")}
+                      label="محمد ملااحمدی"
+                      // onDelete={() => this.deleteUser()}
                     />
-                  </InputGroup>
-                </FormGroup>
-
-                <FormGroup className="mb-3">
-                  <InputGroup className="input-group-alternative">
-                    <InputGroupAddon addonType="prepend">
-                      <InputGroupText>
-                        <i className="ni ni-email-83" />
-                      </InputGroupText>
-                    </InputGroupAddon>
-
-                    <Input
-                      className="signin-input"
-                      placeholder="ایمیل/ نام کاربری / شماره همراه اعضا"
-                      type="email"
+                    <Chip
+                      avatarSrc={require("../assets/img/users/user01.jpg")}
+                      label="محمد ملااحمدی"
+                      // onDelete={() => this.deleteUser()}
                     />
-                  </InputGroup>
-                </FormGroup>
-
-
-                <FormGroup>
-
-                  <Row className="justify-item-center d-flex">
-                    <Col className="lg-9 m-0 text-center">
-                      <Button
-                        className="signin-button"
-                        color="primary"
-                        to="/payments"
-                        tag={Link}
-                      >
-              ایجاد گروه
-                      </Button>
-                    </Col>
                   </Row>
-                </FormGroup>
 
-                <Button
-                  className="btn-icon signin-button"
-                  color="default"
-                  href="#pablo"
-                  onClick={() => this.toggle("password")}
-                  name="email"
-                >
-                  بازگشت
-                </Button>
-              </Form>
+                  <FormGroup>
+                    <Row className="justify-item-center d-flex">
+                      <Col className="lg-9 m-0 text-center">
+                        <Button
+                          className="audit-button"
+                          color="primary"
+                          to="/payments"
+                          tag={Link}
+                        >
+                          ایجاد گروه
+                        </Button>
+                      </Col>
+                    </Row>
+                  </FormGroup>
 
-            </Col>
-          </Row>
-        </Container>
+                  <Button
+                    className="btn-icon audit-button"
+                    color="default"
+                    href="#pablo"
+                    onClick={() => this.toggle("password")}
+                    name="email"
+                  >
+                    بازگشت
+                  </Button>
+                </Form>
+              </Col>
+            </Row>
+          </Container>
+        </div>
+        <Footer />
       </div>
     );
   }
