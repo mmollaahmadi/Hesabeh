@@ -29,9 +29,6 @@ class NotificationsTable extends React.Component {
     return (
       <section className="section pt-0">
         <Container>
-          <Row className="border-0 p-3 d-block">
-            <h3 className="mb-0">درخواستها</h3>
-          </Row>
           <Card className="card-profile shadow mt-5">
             <div className="px-4">
               <Row className="justify-content-center p-5">

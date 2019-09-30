@@ -4,6 +4,7 @@ import Navbar from "../common/navbar/navbar";
 import Footer from "../common/footer/footer";
 import Account from "./account.js";
 import PaimentsTable from "./payments-table.js";
+import Title from "../common/title/title.js";
 
 class PaymentsPage extends React.Component {
   render() {
@@ -11,12 +12,11 @@ class PaymentsPage extends React.Component {
       <div>
         <Navbar isLogin="true" />
 
-        <main className="profile-page pb-5" ref="main">
-          <div className="my-body">
-            <Account />
-            <PaimentsTable />
-          </div>
-        </main>
+        <div className="my-body">
+          <Title text="حساب من" />
+          <Account />
+          <PaimentsTable />
+        </div>
 
         <Footer />
       </div>

@@ -27,8 +27,9 @@
 
 body {
   font-family: Samim, Tahoma;
-  background-color: #fff;
+  /* background-color: #fff; */
   color: #0b1526;
+  background-color: #F9F9F9 !important;
   /* background-image: linear-gradient(to top, #d7d7d6, #dededd, #e5e5e3, #ececea, #f3f3f1); */
 }
 
@@ -377,5 +378,6 @@ body.modal-open {
 
 
 .my-body{
-  margin-top: 12rem;
+  margin-top: 8rem;
+  margin-bottom: 5rem;
 }
