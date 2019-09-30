@@ -15,12 +15,12 @@ class PaymentsTable extends React.Component {
 
   render() {
     return (
-      <section className="section">
+      <section className="section pt-0">
         <Container>
         <Row className="border-0 p-3 d-block">
           <h3 className="mb-0">گروه‌های من</h3>
         </Row>
-          <Card className="card-profile shadow mt-6">
+          <Card className="card-profile shadow mt-4">
             <div className="px-4">
               <Row className="justify-content-center p-5">
 
@@ -50,7 +50,7 @@ class PaymentsTable extends React.Component {
                   </Col>
                   <Col lg="auto">
                     <Button color="primary"
-                    className="p-2" 
+                    className="p-2"
                     tag={Link}
                     to="/add-new-payment">
                     افزودن هزینه

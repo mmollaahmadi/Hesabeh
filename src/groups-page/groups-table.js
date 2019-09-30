@@ -27,12 +27,12 @@ class GroupsTable extends React.Component {
 
   render() {
     return (
-      <section className="section">
+      <section className="section pt-0">
         <Container>
           <Row className="border-0 p-3 d-block">
             <h3 className="mb-0">گروه‌های من</h3>
           </Row>
-          <Card className="card-profile shadow mt--300">
+          <Card className="card-profile shadow mt-1">
             <div className="px-4">
               <Row className="justify-content-center p-5">
                 <Row className="justify-content-center">

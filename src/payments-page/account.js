@@ -1,8 +1,5 @@
 import React from "react";
-import {
-  Container
-} from "reactstrap";
-import Accordion from "../common/accordion/accordion.js";
+import { Container, Row, Col, Card, CardHeader, CardBody } from "reactstrap";
 
 class Profile extends React.Component {
   state = {};
@@ -14,39 +11,53 @@ class Profile extends React.Component {
 
   render() {
     return (
-      <section className="section">
-      <Container>
-        <div className="landing-position-relative">
-          <section className="section pt-0 pb-200">
-            <Accordion open={1}>
-              <Accordion.Item>
-                <Accordion.Header>
-                  30000 تومان بدهکاری در 1 گروه
-                </Accordion.Header>
-                <Accordion.Body>
+      <section className="section pt-0">
+        <Container>
+          <div className="landing-position-relative">
+            <section className="section pt-0 pb-2">
+              <Row>
+                <Col lg="12">
+                  <Card className="card-profile shadow mt-5">
+                    <CardHeader>وضعیت کلی</CardHeader>
+                    <CardBody>
+                      <Row>
+                        <Col lg="4" className="pr-5">
+                          <p className="profile-data-title">
+                            میزان هزینه شخصی:
+                          </p>
+                          <h3 className="profile-data-value">20000 تومان</h3>
+                        </Col>
+                        <Col lg="4" className="pr-5">
+                          <p className="profile-data-title">
+                            میزان هزینه گروهی
+                          </p>
+                          <h3 className="profile-data-value">20000 تومان</h3>
+                        </Col>
+                        <Col lg="4" className="pr-5">
+                          <p className="profile-data-title">
+                            میزان مصرف گروهی:
+                          </p>
+                          <h3 className="profile-data-value">10000 تومان</h3>
+                        </Col>
+                      </Row>
 
-                </Accordion.Body>
-              </Accordion.Item>
-
-              <Accordion.Item>
-                <Accordion.Header>
-                450000 تومان طلبکاری از 7 گروه
-                </Accordion.Header>
-                <Accordion.Body>
-
-                </Accordion.Body>
-              </Accordion.Item>
-
-              <Accordion.Item>
-                <Accordion.Header>
-                وضعیت فعلی 2000 تومان بدهکاری
-                </Accordion.Header>
-                <Accordion.Body>some body</Accordion.Body>
-              </Accordion.Item>
-            </Accordion>
-          </section>
-        </div>
-      </Container>
+                      <Row className="hr"></Row>
+                      
+                      <Row>
+                        <Col lg="4" className="pr-5">
+                          <p className="profile-data-title">وضعیت نهایی:</p>
+                          <h3 className="profile-data-value">
+                            10000 تومان طلبکار
+                          </h3>
+                        </Col>
+                      </Row>
+                    </CardBody>
+                  </Card>
+                </Col>
+              </Row>
+            </section>
+          </div>
+        </Container>
       </section>
     );
   }

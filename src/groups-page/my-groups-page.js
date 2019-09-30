@@ -2,7 +2,6 @@ import React from "react";
 
 import Navbar from "../common/navbar/navbar";
 import Footer from "../common/footer/footer";
-import Cover from "../common/cover/cover.js";
 import GroupsTable from './groups-table.js';
 
 class MyGroupsPage extends React.Component {
@@ -11,12 +10,13 @@ class MyGroupsPage extends React.Component {
       <div>
         <Navbar isLogin="true" />
 
-        <div className="">
+
           <main className="profile-page pb-5" ref="main">
-            <Cover />
+        <div className="my-body">
             <GroupsTable />
+            </div>
           </main>
-        </div>
+
 
         <Footer />
       </div>

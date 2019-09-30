@@ -30,7 +30,7 @@ class Profile extends React.Component {
     return (
       <section className="section">
         <Container>
-          <Card className="card-profile shadow mt--300">
+          <Card className="card-profile shadow mt-0">
             <div className="px-4">
               <Row className="justify-content-center">
                 <Col className="order-lg-2" lg="3">

@@ -14,115 +14,123 @@ import {
   InputGroup,
   Badge
 } from "reactstrap";
+import Navbar from "../common/navbar/navbar.js";
+import Footer from "../common/footer/footer.js";
 
 class AddPaymentPage extends React.Component {
   render() {
     return (
-      <div className="section-lg">
-        <Container className="pt-10 pb-30  h-100">
-          <Row className="text-center justify-content-center">
-            <Col lg="5">
-              <img
-                alt="..."
-                className="rounded-circle logo"
-                src={require("../assets/img/users/user01.jpg")}
-              />
-              <p className="brand-title">حسابِه</p>
+      <div>
+        <Navbar isLogin="true" />
 
-              <p className="title-text"> ورود به حساب کاربری</p>
+        <main className="profile-page pb-5" ref="main">
+          <div className="my-body">
+          <Container>
+            <Row className="text-center justify-content-center">
 
-              <Form role="form" className="signin-form">
-                <FormGroup className="mb-3">
-                  <InputGroup className="input-group-alternative">
-                    <InputGroupAddon addonType="prepend">
-                      <InputGroupText>
-                        <i className="ni ni-email-83" />
-                      </InputGroupText>
-                    </InputGroupAddon>
 
-                    <Input
-                      className="signin-input"
-                      placeholder="نام هزینه"
-                    />
-                  </InputGroup>
-                </FormGroup>
-                <FormGroup className="mb-3">
-                  <InputGroup className="input-group-alternative">
-                    <InputGroupAddon addonType="prepend">
-                      <InputGroupText>
-                        <i className="ni ni-email-83" />
-                      </InputGroupText>
-                    </InputGroupAddon>
+                <Form role="form" className="signin-form">
+                <Row>
+                <Col lg="4">
+                  <FormGroup className="mb-3">
+                    <InputGroup className="input-group-alternative">
+                      <InputGroupAddon addonType="prepend">
+                        <InputGroupText>
+                          <i className="ni ni-email-83" />
+                        </InputGroupText>
+                      </InputGroupAddon>
 
-                    <Input
-                      className="signin-input"
-                      placeholder="میزان هزینه"
-                    />
-                  </InputGroup>
-                </FormGroup>
+                      <Input className="signin-input" placeholder="نام هزینه" />
+                    </InputGroup>
+                  </FormGroup>
+                  </Col>
+                    <Col lg="4">
+                  <FormGroup className="mb-3">
+                    <InputGroup className="input-group-alternative">
+                      <InputGroupAddon addonType="prepend">
+                        <InputGroupText>
+                          <i className="ni ni-email-83" />
+                        </InputGroupText>
+                      </InputGroupAddon>
 
-                <FormGroup className="mb-3">
-                  <InputGroup className="input-group-alternative">
-                    <InputGroupAddon addonType="prepend">
-                      <InputGroupText>
-                        <i className="ni ni-email-83" />
-                      </InputGroupText>
-                    </InputGroupAddon>
+                      <Input
+                        className="signin-input"
+                        placeholder="میزان هزینه"
+                      />
+                    </InputGroup>
+                  </FormGroup>
+                  </Col>
+                    <Col lg="4">
+                  <FormGroup className="mb-3">
+                    <InputGroup className="input-group-alternative">
+                      <InputGroupAddon addonType="prepend">
+                        <InputGroupText>
+                          <i className="ni ni-email-83" />
+                        </InputGroupText>
+                      </InputGroupAddon>
 
-                    <Input
-                      className="signin-input"
-                      placeholder="1398/07/01 دوشنبه"
-                      type="email"
-                    />
-                  </InputGroup>
-                </FormGroup>
-                <Row className="justify-content-start">
-                  <Badge href="#" color="primary">
-                    برچسب 1<i className="fa fa-close mr-2"></i>
-                  </Badge>
-                </Row>
-                <FormGroup className="mb-2 p-0">
-                  <Input
-                    className="form-control-alternative cuntactus-input"
-                    cols="80"
-                    name="name"
-                    placeholder="توضیحات"
-                    rows="2"
-                    size="md"
-                    type="textarea"
-                  />
-                </FormGroup>
-
-                <FormGroup>
-
-                  <Row className="justify-item-center d-flex">
-                    <Col className="lg-9 m-0 text-center">
-                      <Button
-                        className="signin-button"
-                        color="primary"
-                        to="/payments"
-                        tag={Link}
-                      >
-              ثبت و ذخیره
-                      </Button>
-                    </Col>
+                      <Input
+                        className="signin-input"
+                        placeholder="1398/07/01 دوشنبه"
+                        type="email"
+                      />
+                    </InputGroup>
+                  </FormGroup>
+                  <Row className="justify-content-start">
+                    <Badge href="#" color="primary">
+                      برچسب 1<i className="fa fa-close mr-2"></i>
+                    </Badge>
                   </Row>
-                </FormGroup>
+                  </Col>
+                    <Col lg="4">
+                  <FormGroup className="mb-2 p-0">
+                    <Input
+                      className="form-control-alternative cuntactus-input"
+                      cols="80"
+                      name="name"
+                      placeholder="توضیحات"
+                      rows="2"
+                      size="md"
+                      type="textarea"
+                    />
+                  </FormGroup>
+                  </Col>
+                    <Col lg="4">
+                  <FormGroup>
+                    <Row className="justify-item-center d-flex">
+                      <Col className="lg-9 m-0 text-center">
+                        <Button
+                          className="signin-button"
+                          color="primary"
+                          to="/payments"
+                          tag={Link}
+                        >
+                          ثبت و ذخیره
+                        </Button>
+                      </Col>
+                    </Row>
+                  </FormGroup>
 
-                <Button
-                  className="btn-icon signin-button"
-                  color="default"
-                  href="#pablo"
-                  onClick={() => this.toggle("password")}
-                  name="email"
-                >
-                  بازگشت
-                </Button>
-              </Form>
+                  <Button
+                    className="btn-icon signin-button"
+                    color="default"
+                    href="#pablo"
+                    onClick={() => this.toggle("password")}
+                    name="email"
+                  >
+                    بازگشت
+                  </Button>
+                  </Col>
+                  
+                  </Row>
+                </Form>
 
-            </Col>
-          </Row>
-        </Container>
+            </Row>
+            </Container>
+          </div>
+        </main>
+
+        <Footer />
       </div>
     );
   }
