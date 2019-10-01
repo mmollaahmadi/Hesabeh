@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Card, CardHeader, CardBody } from "reactstrap";
+import TextBox from "../common/textbox/textbox.js";
 
 class Profile extends React.Component {
   state = {};
@@ -20,35 +21,35 @@ class Profile extends React.Component {
                   <Card className="card-profile shadow mt-5">
                     <CardHeader>وضعیت کلی</CardHeader>
                     <CardBody>
-                      <Row>
-                        <Col lg="4" className="pr-5">
-                          <p className="profile-data-title">
-                            میزان هزینه شخصی:
-                          </p>
-                          <h3 className="profile-data-value">20000 تومان</h3>
+                      <Row className="d-flex justify-content-between">
+                        <Col sm="auto" className="mt-1">
+                          <TextBox
+                            title="میزان هزینه شخصی"
+                            content="20000 تومان"
+                          />
                         </Col>
-                        <Col lg="4" className="pr-5">
-                          <p className="profile-data-title">
-                            میزان هزینه گروهی
-                          </p>
-                          <h3 className="profile-data-value">20000 تومان</h3>
+                        <Col sm="auto" className="mt-1">
+                          <TextBox
+                            title="میزان هزینه گروهی"
+                            content="20000 تومان"
+                          />
                         </Col>
-                        <Col lg="4" className="pr-5">
-                          <p className="profile-data-title">
-                            میزان مصرف گروهی:
-                          </p>
-                          <h3 className="profile-data-value">10000 تومان</h3>
+                        <Col sm="auto" className="mt-1">
+                          <TextBox
+                            title="میزان مصرف گروهی:"
+                            content="10000 تومان"
+                          />
                         </Col>
                       </Row>
 
                       <Row className="hr"></Row>
-                      
-                      <Row>
-                        <Col lg="4" className="pr-5">
-                          <p className="profile-data-title">وضعیت نهایی:</p>
-                          <h3 className="profile-data-value">
-                            10000 تومان طلبکار
-                          </h3>
+
+                      <Row className="p-0 d-flex justify-content-center">
+                        <Col sm="auto" className="mt-1">
+                          <TextBox
+                            title="وضعیت نهایی:"
+                            content="10000 تومان طلبکار"
+                          />
                         </Col>
                       </Row>
                     </CardBody>

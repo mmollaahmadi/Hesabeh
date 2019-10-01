@@ -16,7 +16,55 @@ import {
 
 import NotificationsTableRow from "./notifications-table-row.js";
 import { Link } from "react-router-dom";
-
+import NotificationTable from './notification-table/notification-table.js';
+const DATA = [
+  {
+    id: "1",
+    sender: "mollaahmadi",
+    type: "buy-list",
+    "targetGroup": "mollaahmadi-family",
+    "buy-list": [
+      {
+        id: "1",
+        name: "شامپو تخم مرغی صحت",
+        description: "نداشت نگیر"
+      },
+      {
+        id: "2",
+        name: "سس گوجه فرنگی",
+        description: "فقط دلپذیر باشه ها"
+      }
+    ]
+  },
+  {
+    id: "2",
+    sender: "mahlagha",
+    type: "join-to-my-group",
+    "targetGroup": "hamsayeha",
+    "buy-list": []
+  },
+  {
+    id: "3",
+    sender: "ali",
+    type: "join-me-to-other-group",
+    "targetGroup": "itc",
+    "buy-list": []
+  },
+  {
+    id: "4",
+    sender: "sepanta",
+    type: "disjoin-from-my-group",
+    "targetGroup": "khabgah",
+    "buy-list": []
+  },
+  {
+    id: "5",
+    sender: "mahlagha",
+    type: "disjoin-me-from-other-group",
+    "targetGroup": "غضنفر و دوستان",
+    "buy-list": []
+  }
+];
 class NotificationsTable extends React.Component {
   state = {};
   toggleModal = state => {
@@ -38,6 +86,7 @@ class NotificationsTable extends React.Component {
                     <i className="fa fa-filter fa-2x mx-2 d-inline" />
                   </Col>
                   <Col>
+
                     <Form className="d-inline">
                       <FormGroup>
                         <InputGroup className="input-group-alternative">
@@ -67,6 +116,7 @@ class NotificationsTable extends React.Component {
                     </Button>
                   </Col>
                 </Row>
+                <NotificationTable data={DATA} />
                 <Table className="align-items-center" responsive>
                   <thead className="thead-light">
                     <tr>

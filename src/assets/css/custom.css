@@ -29,7 +29,7 @@ body {
   font-family: Samim, Tahoma;
   /* background-color: #fff; */
   color: #0b1526;
-  background-color: #F9F9F9 !important;
+  background-color: #f9f9f9 !important;
   /* background-image: linear-gradient(to top, #d7d7d6, #dededd, #e5e5e3, #ececea, #f3f3f1); */
 }
 
@@ -287,7 +287,7 @@ body.modal-open {
 
 /* ============================== AUDIT ================================== */
 /* ========================================================================== */
-.audit-input{
+.audit-input {
   background-color: #33393f10 !important;
   color: #424242 !important;
   padding: 0rem 1rem;
@@ -299,10 +299,10 @@ body.modal-open {
 .audit-input:-webkit-autofill {
   -webkit-box-shadow: inset 0 0 0px 9999px #d7d7d6df;
 }
-.audit-input::placeholder{
+.audit-input::placeholder {
   color: #42424280;
 }
-.audit-form .input-group-text{
+.audit-form .input-group-text {
   background-color: #33393f10 !important;
   color: #42424280 !important;
 }
@@ -317,67 +317,76 @@ body.modal-open {
 .audit-form input:-webkit-autofill:hover,
 .audit-form input:-webkit-autofill:focus,
 .audit-form input:-webkit-autofill:active {
-    -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
-    -webkit-transition-delay: 9999s;
+  -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+  -webkit-transition-delay: 9999s;
 }
-.audit-button{
+.audit-button {
   width: 100%;
   border-style: none;
 }
 
-.header-logo{
+.header-logo {
   background-color: #fff !important;
   border-style: none !important;
   width: 100px !important;
   height: 100px !important;
 }
-.brand-title{
+.brand-title {
   font-family: Lalezar !important;
   font-size: 2rem;
   color: #33393f !important;
   margin: 0px;
 }
 
-.title-text{
+.title-text {
   margin: 0rem 0rem 1rem 0rem;
 }
-.alert-icon{
+.alert-icon {
   color: #ff0000 !important;
 }
-.audit-alert{
+.audit-alert {
   padding: 0.5rem 0rem;
   font-size: 0.7rem;
-  color: #B67B81 !important;
-  background-color: #F8D7DA !important;
+  color: #b67b81 !important;
+  background-color: #f8d7da !important;
 }
 .audit-alert > button {
   right: 0;
 }
-.audit-alert > button > span{
+.audit-alert > button > span {
   visibility: hidden;
 }
-
-
-
-
-
 
 /* ============================== TABLE ================================== */
 /* ========================================================================== */
 
-.table-header{
+.table-header {
   text-align: center;
   font-size: 0.8rem;
   font-family: Samim;
 }
 
-
-
-
-
-
-
-.my-body{
+.my-body {
   margin-top: 8rem;
   margin-bottom: 5rem;
+}
+
+.textbox {
+
+}
+.textbox-title {
+  background-color: #01cd9a !important;
+  font-size: 12px;
+  border-radius: 0px 5px 5px 0px;
+  display: flex;
+  vertical-align: middle;
+}
+.textbox-content {
+  border-radius: 5px 0px 0px 5px;
+}
+
+.card-header{
+  text-align: center;
+  font-size: 1.2rem;
+  font-family: Samim-Bold;
 }
