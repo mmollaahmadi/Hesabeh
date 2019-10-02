@@ -95,12 +95,8 @@ class Footer extends React.Component {
 
               {/* LOGO */}
               <Col className=" text-center btn-wrapper mt-2" lg="2">
-                <img
-                  className="footer-logo-2"
-                  alt="..."
-                  src={require("../../assets/img/theme/logo01.png")}
-                />
                 <p className="footer-hesabeh">حسابِه</p>
+                <span className="footer-heabeh-latin">HeabeH.ir</span>
                 <div>
                   <Button
                     className=" ml-1 p-0 mr-0 social-network-link"

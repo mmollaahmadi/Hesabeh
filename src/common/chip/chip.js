@@ -4,8 +4,20 @@ import "./chip.css";
 
 class Chip extends React.Component {
   render() {
+    let closeButton = null;
+    if(this.props.haveCloseButton === 'true'){
+      closeButton = (
+        <Button
+          className="chip-close-btn"
+          color="link"
+          onClick={this.props.onDelete}
+        >
+          <i class="fa fa-times chip-close-icon" />
+        </Button>
+      );
+    }
     return (
-      <div>
+      
         <Badge className="chip-body" color="default" pill>
           <Row className="m-0 d-flex align-items-center">
             <img
@@ -14,16 +26,10 @@ class Chip extends React.Component {
               src={this.props.avatarSrc}
             />
             <p className="chip-label">{this.props.label}</p>
-            <Button
-              className="chip-close-btn"
-              color="link"
-              onClick={this.props.onDelete}
-            >
-              <i class="fa fa-times chip-close-icon" />
-            </Button>
+          {closeButton}
           </Row>
         </Badge>
-      </div>
+
     );
   }
 }

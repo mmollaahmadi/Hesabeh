@@ -21,7 +21,12 @@
   font-style: normal;
   font-weight: normal;
 }
-
+@font-face {
+  font-family: "Baloo";
+  src: url("../fonts/Baloo-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
 /* ============================== FONTS ===================================== */
 /* ========================================================================== */
 
@@ -389,4 +394,64 @@ body.modal-open {
   text-align: center;
   font-size: 1.2rem;
   font-family: Samim-Bold;
+  background-image: url('../img/theme/card-header-bg-01.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-shadow:
+      -1px -1px 0 #fff,
+       1px -1px 0 #fff,
+      -1px  1px 0 #fff,
+       1px  1px 0 #fff;
+}
+
+
+
+.notifications-table{
+  margin: 0px;
+  padding: 0rem 1rem;
+}
+.notifications-table-row{
+  padding: 0.8rem 0rem 0.1rem 0rem;
+  justify-content: center;
+}
+.user-sender{
+  margin: 0rem 0.5rem;
+  height: auto;
+  position: relative;
+  bottom: -9px;
+}
+.target-group{
+  margin: 0rem 0.5rem;
+  position: relative;
+  bottom: -9px;
+}
+.ntr-hr{
+  padding: 0px;
+  border-bottom: dashed 1px ;
+  margin: 0.4rem 4rem;
+}
+.notification-table-row-btn{
+  padding: 0.1rem 1rem;
+  margin: 0rem 0.2rem;
+}
+.date-request{
+  margin: auto 0px;
+  font-size: 0.9rem;
+  padding-left: 0px;
+  text-align: center;
+}
+
+
+
+
+
+
+
+.user-group-account-image{
+  width: 70px;
+  height: 70px;
+}
+.user-group-account-username{
+display: flex;
+justify-content: center;
 }

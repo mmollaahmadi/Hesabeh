@@ -15,7 +15,7 @@
 
 /* #----------------------------------- LINKS ----------------------------- */
 .social-network-icon{
-  color: #33393f !important;
+  color: #03091e !important;
   font-size: 15px;
 }
 @media (max-width: 990px) {
@@ -43,9 +43,20 @@
   margin: 0px;
   font-family: Lalezar;
   font-size: 1.5rem;
-  color: #33393f !important;
-}
+  position: relative;
+  bottom:  -20px;
+  color: #03091e !important;
 
+}
+.footer-heabeh-latin{
+font-family: Baloo;
+font-size: 1.5rem;
+margin: 0px;
+padding: 0px;
+position: relative;
+bottom:  -10px;
+color: #03091e !important;
+}
 .footer-logo-row{
   margin: 0px;
   height: 45px;

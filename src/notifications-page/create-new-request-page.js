@@ -21,7 +21,33 @@ import {
   DropdownMenu,
   Table
 } from "reactstrap";
-import BuyListTableRow from "./buy-list-table-row.js";
+import RequirementsListRequest from "./requirements-list-request.js";
+const GROUPS = [
+  {
+    id: "1",
+    username: "ahmaghha",
+    users: [
+      {
+        id: "1",
+        username: "mollaahmadi"
+      },
+      {
+        id: "2",
+        username: "fatemi"
+      }
+    ]
+  },
+  {
+    id: "2",
+    username: "khabgah",
+    users: [
+      {
+        id: "1",
+        username: "hossein"
+      }
+    ]
+  }
+];
 class CreateNewRequestPage extends React.Component {
   constructor(props) {
     super(props);
@@ -49,79 +75,7 @@ class CreateNewRequestPage extends React.Component {
             <Container>
               <Row>
                 <Col lg="12">
-                  <Card className="card-profile shadow m-0">
-                    <CardHeader>ایجاد لیست نیازمندی</CardHeader>
-                    <CardBody>
-                      <Row className="pt-5 d-flex justify-content-center">
-                        <Form role="form" className="signup-form">
-                          <Row className="justify-content-center mb-3">
-                            <Col lg="auto">
-                              <FormGroup className="m-0">
-                                <InputGroup className="input-group-alternative">
-                                  <Input
-                                    className="signup-input"
-                                    placeholder="نام گروه"
-                                  />
-                                </InputGroup>
-                              </FormGroup>
-                            </Col>
-                            <Col lg="2">
-                              <UncontrolledDropdown>
-                                <DropdownToggle
-                                  className="p-1 text-light"
-                                  href="#pablo"
-                                  role="button"
-                                  color=""
-                                  onClick={e => e.preventDefault()}
-                                >
-                                  <p className="m-0">مخاطب</p>
-                                </DropdownToggle>
-                                <DropdownMenu
-                                  className="dropdown-menu-arrow"
-                                  right
-                                >
-                                  <DropdownItem
-                                    href="#pablo"
-                                    onClick={e => e.preventDefault()}
-                                  >
-                                    پرداخت بدهی
-                                  </DropdownItem>
-                                  <DropdownItem
-                                    href="#pablo"
-                                    onClick={e => e.preventDefault()}
-                                  >
-                                    ارسال درخواست
-                                  </DropdownItem>
-                                </DropdownMenu>
-                              </UncontrolledDropdown>
-                            </Col>
-                            <Col lg="auto" className="">
-                              <FormGroup className="m-0">
-                                <Button color="primary" type="button">
-                                  ارسال لیست
-                                </Button>
-                              </FormGroup>
-                            </Col>
-                          </Row>
-                        </Form>
-
-                        <Row className="justify-content-center">
-                          <Table className="align-items-center" responsive>
-                            <thead className="thead-light">
-                              <tr>
-                                <th scope="col">ردیف</th>
-                                <th scope="col">کالا</th>
-                                <th scope="col">توضیحات</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <BuyListTableRow />
-                            </tbody>
-                          </Table>
-                        </Row>
-                      </Row>
-                    </CardBody>
-                  </Card>
+                  <RequirementsListRequest groups={GROUPS}/>
                 </Col>
                 <Col lg="12">
               <Card className="card-profile shadow mt-5">

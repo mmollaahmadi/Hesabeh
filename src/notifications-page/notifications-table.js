@@ -13,58 +13,9 @@ import {
   InputGroupText,
   Input
 } from "reactstrap";
-
-import NotificationsTableRow from "./notifications-table-row.js";
 import { Link } from "react-router-dom";
-import NotificationTable from './notification-table/notification-table.js';
-const DATA = [
-  {
-    id: "1",
-    sender: "mollaahmadi",
-    type: "buy-list",
-    "targetGroup": "mollaahmadi-family",
-    "buy-list": [
-      {
-        id: "1",
-        name: "شامپو تخم مرغی صحت",
-        description: "نداشت نگیر"
-      },
-      {
-        id: "2",
-        name: "سس گوجه فرنگی",
-        description: "فقط دلپذیر باشه ها"
-      }
-    ]
-  },
-  {
-    id: "2",
-    sender: "mahlagha",
-    type: "join-to-my-group",
-    "targetGroup": "hamsayeha",
-    "buy-list": []
-  },
-  {
-    id: "3",
-    sender: "ali",
-    type: "join-me-to-other-group",
-    "targetGroup": "itc",
-    "buy-list": []
-  },
-  {
-    id: "4",
-    sender: "sepanta",
-    type: "disjoin-from-my-group",
-    "targetGroup": "khabgah",
-    "buy-list": []
-  },
-  {
-    id: "5",
-    sender: "mahlagha",
-    type: "disjoin-me-from-other-group",
-    "targetGroup": "غضنفر و دوستان",
-    "buy-list": []
-  }
-];
+import NotificationsTableRow from "./notifications-table-row.js";
+
 class NotificationsTable extends React.Component {
   state = {};
   toggleModal = state => {
@@ -74,19 +25,24 @@ class NotificationsTable extends React.Component {
   };
 
   render() {
+    const rows = [];
+    this.props.data.forEach(row => {
+      rows.push(<NotificationsTableRow rowData={row} />);
+    });
+
     return (
       <section className="section pt-0">
         <Container>
           <Card className="card-profile shadow mt-5">
             <div className="px-4">
-              <Row className="justify-content-center p-5">
+              <Row className="justify-content-center py-5">
+                {/*HEADER*/}
                 <Row className="justify-content-center">
                   <Col lg="auto">
                     <i className="fa fa-sort fa-2x mx-2 d-inline-block" />
                     <i className="fa fa-filter fa-2x mx-2 d-inline" />
                   </Col>
                   <Col>
-
                     <Form className="d-inline">
                       <FormGroup>
                         <InputGroup className="input-group-alternative">
@@ -116,22 +72,10 @@ class NotificationsTable extends React.Component {
                     </Button>
                   </Col>
                 </Row>
-                <NotificationTable data={DATA} />
-                <Table className="align-items-center" responsive>
-                  <thead className="thead-light">
-                    <tr>
-                      <th scope="col">ردیف</th>
-                      <th scope="col">فرستنده</th>
-                      <th scope="col">درخواست</th>
-                      <th scope="col">عملیات</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <NotificationsTableRow />
-                    <NotificationsTableRow />
-                    <NotificationsTableRow />
-                  </tbody>
-                </Table>
+
+                {/*TABLE*/}
+                <Col sm="12" className="notifications-table">{rows}</Col>
+
               </Row>
             </div>
           </Card>

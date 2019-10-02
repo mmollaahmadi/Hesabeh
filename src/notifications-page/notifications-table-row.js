@@ -1,105 +1,189 @@
-import React from 'react';
-import {
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
-  DropdownToggle,
-  Media,
-  Button
-} from "reactstrap";
-import { Link } from "react-router-dom";
+import React from "react";
+import { Row, Col, Button } from "reactstrap";
+import Chip from "../common/chip/chip.js";
+
 class NotificationsTableRow extends React.Component {
-  render(){
-    return(
-      <tr>
-      <td>1</td>
-        <td>
+  render() {
+    let dateCol = null;
+    let requestCol = null;
+    let actionCol = null;
+    const rowData = this.props.rowData;
 
-        <Media className="align-items-center">
-
-          <a
-            className="avatar rounded-circle mr-3"
-            href="#pablo"
-            onClick={e => e.preventDefault()}
-          >
-            <img
-              alt="..."
-              src={require("../assets/img/theme/bootstrap.jpg")}
+    if (rowData.type === "buy-list") {
+      dateCol = <span>{rowData.dateRequest}</span>;
+      requestCol = (
+        <>
+          <span className="user-sender">
+            <Chip
+              haveCloseButton="false"
+              avatarSrc={require("../assets/img/users/user01.jpg")}
+              label={rowData.sender}
+              // onDelete={() => this.deleteUser()}
             />
-          </a>
-          <Media>
-          <Button
-            className="text-primary"
-            color="link"
-            to="/group-dashboard"
-            tag={Link}
-          >
-            mollaahmadi@
-          </Button>
-
-          </Media>
-
-        </Media>
-
-        </td>
-        <td>
-        <Media className="align-items-center">
-        به گروه
-          <a
-            className="avatar rounded-circle mr-3"
-            href="#pablo"
-            onClick={e => e.preventDefault()}
-          >
-            <img
-              alt="..."
-              src={require("../assets/img/theme/bootstrap.jpg")}
+          </span>
+          یک لیست نیازمندی در گروه
+          <span className="target-group">
+            <Chip
+              haveCloseButton="false"
+              avatarSrc={require("../assets/img/users/user01.jpg")}
+              label={rowData.targetGroup}
+              // onDelete={() => this.deleteUser()}
             />
-          </a>
-          <Media>
-          <Button
-            className="text-primary"
-            color="link"
-            to="/group-dashboard"
-            tag={Link}
-          >
-            بچه های اتاق 406
+          </span>
+          ایجاد کرده است.
+        </>
+      );
+      actionCol = (
+        <Button className="notification-table-row-btn" color="primary">
+          مشاهده لیست
+        </Button>
+      );
+    } else if (rowData.type === "join-to-my-group") {
+      dateCol = <span>{rowData.dateRequest}</span>;
+      requestCol = (
+        <>
+          <span className="user-sender">
+            <Chip
+              haveCloseButton="false"
+              avatarSrc={require("../assets/img/users/user01.jpg")}
+              label={rowData.sender}
+              // onDelete={() => this.deleteUser()}
+            />
+          </span>
+          درخواست پیوستن به گروه
+          <span className="target-group">
+            <Chip
+              haveCloseButton="false"
+              avatarSrc={require("../assets/img/users/user01.jpg")}
+              label={rowData.targetGroup}
+              // onDelete={() => this.deleteUser()}
+            />
+          </span>
+          را دارد.
+        </>
+      );
+      actionCol = (
+        <>
+          <Button className="notification-table-row-btn" color="primary">
+            قبول
           </Button>
+          <Button className="notification-table-row-btn" color="default">
+            رد
+          </Button>
+        </>
+      );
+    } else if (rowData.type === "join-me-to-other-group") {
+      dateCol = <span>{rowData.dateRequest}</span>;
+      requestCol = (
+        <>
+          شما درخواست پیوستن به گروه
+          <span className="target-group">
+            <Chip
+              haveCloseButton="false"
+              avatarSrc={require("../assets/img/users/user01.jpg")}
+              label={rowData.targetGroup}
+              // onDelete={() => this.deleteUser()}
+            />
+          </span>
+          را از
+          <span className="user-sender">
+            <Chip
+              haveCloseButton="false"
+              avatarSrc={require("../assets/img/users/user01.jpg")}
+              label={rowData.sender}
+              // onDelete={() => this.deleteUser()}
+            />
+          </span>
+          دارید.
+        </>
+      );
+      actionCol = (
+        <Button className="notification-table-row-btn" color="default">
+          لغو درخواست
+        </Button>
+      );
+    } else if (rowData.type === "disjoin-from-my-group") {
+      dateCol = <span className="date-request">{rowData.dateRequest}</span>;
+      requestCol = (
+        <>
+          <span className="user-sender">
+            <Chip
+              haveCloseButton="false"
+              avatarSrc={require("../assets/img/users/user01.jpg")}
+              label={rowData.sender}
+              // onDelete={() => this.deleteUser()}
+            />
+          </span>
+          درخواست تسویه حساب و خروج از گروه
+          <span className="target-group">
+            <Chip
+              haveCloseButton="false"
+              avatarSrc={require("../assets/img/users/user01.jpg")}
+              label={rowData.targetGroup}
+              // onDelete={() => this.deleteUser()}
+            />
+          </span>
+          را دارد.
+        </>
+      );
+      actionCol = (
+        <>
+          <Button className="notification-table-row-btn" color="primary">
+            قبول
+          </Button>
+          <Button className="notification-table-row-btn" color="default">
+            رد
+          </Button>
+        </>
+      );
+    } else if (rowData.type === "disjoin-me-from-other-group") {
+      dateCol = <span className="date-request">{rowData.dateRequest}</span>;
+      requestCol = (
+        <>
+          شما درخواست تسویه حساب و خروج از گروه
+          <span className="target-group">
+            <Chip
+              haveCloseButton="false"
+              avatarSrc={require("../assets/img/users/user01.jpg")}
+              label={rowData.targetGroup}
+              // onDelete={() => this.deleteUser()}
+            />
+          </span>
+          را از
+          <span className="user-sender">
+            <Chip
+              haveCloseButton="false"
+              avatarSrc={require("../assets/img/users/user01.jpg")}
+              label={rowData.sender}
+              // onDelete={() => this.deleteUser()}
+            />
+          </span>
+          دارید.
+        </>
+      );
+      actionCol = (
+        <Button className="notification-table-row-btn" color="default">
+          لغو درخواست
+        </Button>
+      );
+    } else {
+      requestCol = <Col lg="8"></Col>;
+      actionCol = <Col lg="4"></Col>;
+    }
 
-          </Media>
-          بپیوندید.
-        </Media>
-
-        </td>
-
-        <td className="text-right">
-          <UncontrolledDropdown>
-            <DropdownToggle
-              className="btn-icon-only text-light"
-              href="#pablo"
-              role="button"
-              size="sm"
-              color=""
-              onClick={e => e.preventDefault()}
-            >
-              <i className="fas fa-ellipsis-v" />
-            </DropdownToggle>
-            <DropdownMenu className="dropdown-menu-arrow" right>
-              <DropdownItem
-                href="#pablo"
-                onClick={e => e.preventDefault()}
-              >
-              پرداخت بدهی
-              </DropdownItem>
-              <DropdownItem
-                href="#pablo"
-                onClick={e => e.preventDefault()}
-              >
-                ارسال درخواست
-              </DropdownItem>
-            </DropdownMenu>
-          </UncontrolledDropdown>
-        </td>
-      </tr>
+    return (
+      <Row className="notifications-table-row">
+        <Col lg="1" className="date-request">
+          {dateCol}
+        </Col>
+        <Col lg="9" className="">
+          {requestCol}
+        </Col>
+        <Col lg="2" className="justify-content-center d-flex my-auto">
+          {actionCol}
+        </Col>
+        <Col sm="11" className="ntr-hr"></Col>
+      </Row>
     );
   }
 }

@@ -62,16 +62,19 @@ class CreateNewGroupPage extends React.Component {
                   </FormGroup>
                   <Row className="m-0 d-flex justify-content-center">
                     <Chip
+                    haveCloseButton="true"
                       avatarSrc={require("../assets/img/users/user01.jpg")}
                       label="محمد ملااحمدی"
                       // onDelete={() => this.deleteUser()}
                     />
                     <Chip
+                    haveCloseButton="true"
                       avatarSrc={require("../assets/img/users/user01.jpg")}
                       label="محمد ملااحمدی"
                       // onDelete={() => this.deleteUser()}
                     />
                     <Chip
+                    haveCloseButton="true"
                       avatarSrc={require("../assets/img/users/user01.jpg")}
                       label="محمد ملااحمدی"
                       // onDelete={() => this.deleteUser()}
