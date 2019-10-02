@@ -329,12 +329,26 @@ body.modal-open {
   width: 100%;
   border-style: none;
 }
-
+.audit-button-outline {
+  width: 100%;
+  border-style: solid;
+}
 .header-logo {
   background-color: #fff !important;
   border-style: none !important;
   width: 100px !important;
   height: 100px !important;
+}
+.empty-group{
+  border-style: dashed !important;
+  border-color: #989898;
+  border-width: 2px;
+  width: 100px !important;
+  height: 100px !important;
+  margin-bottom: 1rem;
+}
+.empty-group:hover{
+  border-color: #03091e;  
 }
 .brand-title {
   font-family: Lalezar !important;

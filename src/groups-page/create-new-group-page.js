@@ -27,10 +27,11 @@ class CreateNewGroupPage extends React.Component {
           <Container className="pt-10 pb-30  h-100">
             <Row className="text-center justify-content-center">
               <Col lg="5">
+
                 <img
                   alt="..."
-                  className="rounded-circle header-logo"
-                  src={require("../assets/img/users/user01.jpg")}
+                  className="rounded-circle empty-group"
+                  src={require("../assets/img/users/empty-group.png")}
                 />
                 <Form role="form" className="audit-form">
                   <FormGroup className="mb-3">
@@ -69,7 +70,7 @@ class CreateNewGroupPage extends React.Component {
                       // onDelete={() => this.deleteUser()}
                     />
                     <Chip
-                    class="mb-2 ml-2"                    
+                    class="mb-2 ml-2"
                     haveCloseButton="true"
                       avatarSrc={require("../assets/img/users/user01.jpg")}
                       label="محمد ملااحمدی"
