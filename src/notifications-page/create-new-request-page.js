@@ -14,12 +14,7 @@ import {
   Col,
   Card,
   CardHeader,
-  CardBody,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownItem,
-  DropdownMenu,
-  Table
+  CardBody
 } from "reactstrap";
 import RequirementsListRequest from "./requirements-list-request.js";
 const GROUPS = [

@@ -427,7 +427,7 @@ body.modal-open {
 }
 .ntr-hr{
   padding: 0px;
-  border-bottom: dashed 1px ;
+  border-bottom: dashed 1px #03091e88;
   margin: 0.4rem 4rem;
 }
 .notification-table-row-btn{
@@ -437,8 +437,10 @@ body.modal-open {
 .date-request{
   margin: auto 0px;
   font-size: 0.9rem;
-  padding-left: 0px;
+  padding: 0.1rem 0.5rem;
   text-align: center;
+  background-color: #ffaa11;
+  border-radius: 0px 5px 5px 0px;
 }
 
 

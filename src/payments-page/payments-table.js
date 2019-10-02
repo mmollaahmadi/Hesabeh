@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Table,
   Card,
   Container,
   CardHeader,
@@ -27,6 +26,10 @@ class PaymentsTable extends React.Component {
   };
 
   render() {
+    let payments = [];
+    this.props.payments.forEach(payment => {
+      payments.push(<PaymentsTableRow data={payment} />);
+    });
     return (
       <section className="section pt-0">
         <Container>
@@ -69,23 +72,7 @@ class PaymentsTable extends React.Component {
                     </Button>
                   </Col>
                 </Row>
-                <Table className="align-items-center" responsive>
-                  <thead className="thead-light">
-                    <tr>
-                      <th scope="col">ردیف</th>
-                      <th scope="col">نام هزینه</th>
-                      <th scope="col">میزان هزینه</th>
-                      <th scope="col">شخصی / گروهی</th>
-                      <th scope="col">سهم ها</th>
-                      <th scope="col">عملیات</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <PaymentsTableRow />
-                    <PaymentsTableRow />
-                    <PaymentsTableRow />
-                  </tbody>
-                </Table>
+                  <Col sm="12" className="notifications-table">{payments}</Col>
               </Row>
             </div>
           </Card>

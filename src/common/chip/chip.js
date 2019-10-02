@@ -5,6 +5,7 @@ import "./chip.css";
 class Chip extends React.Component {
   render() {
     let closeButton = null;
+    let label = null;
     if(this.props.haveCloseButton === 'true'){
       closeButton = (
         <Button
@@ -16,16 +17,23 @@ class Chip extends React.Component {
         </Button>
       );
     }
+    if(this.props.link)
+    {
+      label = (<Button className="chip-label-link" color="link" to={this.props.link}>{this.props.label}</Button>);
+    }else{
+      label =(  <p className="chip-label">{this.props.label}</p>);
+    }
+    const chipClassName = this.props.class;
     return (
-      
-        <Badge className="chip-body" color="default" pill>
+
+        <Badge className={`chip-body ${chipClassName}`} color="default" pill>
           <Row className="m-0 d-flex align-items-center">
             <img
               alt=""
               className="rounded-circle chip-avatar"
               src={this.props.avatarSrc}
             />
-            <p className="chip-label">{this.props.label}</p>
+          {label}
           {closeButton}
           </Row>
         </Badge>

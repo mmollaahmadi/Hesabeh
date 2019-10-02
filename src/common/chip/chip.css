@@ -19,6 +19,11 @@
   align-items: center;
   display: flex;
 }
+.chip-label-link{
+  padding: 0rem;
+  margin: 0rem 0.3rem 0rem 0.1rem;
+  font-size: 0.7rem;
+}
 .chip-close-btn{
   padding: 0px;
   border-style: none;

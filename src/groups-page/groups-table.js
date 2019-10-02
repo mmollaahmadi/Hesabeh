@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Table,
   Card,
   Container,
   Row,
@@ -14,7 +13,7 @@ import {
   Input
 } from "reactstrap";
 
-import GroupTableRow from "./group-table-row.js";
+import GroupsTableRow from "./my-groups-table-row.js";
 import { Link } from "react-router-dom";
 
 class GroupsTable extends React.Component {
@@ -26,6 +25,10 @@ class GroupsTable extends React.Component {
   };
 
   render() {
+    let myGroups =[];
+    this.props.myGroups.forEach(group => {
+      myGroups.push(<GroupsTableRow dataGroup={group}/>);
+    });
     return (
       <section className="section pt-0">
         <Container>
@@ -69,23 +72,10 @@ class GroupsTable extends React.Component {
                   </Col>
                 </Row>
 
-                <Table className="align-items-center" responsive>
-                  <thead className="thead-light table-header">
-                    <tr>
-                      <th scope="col">ردیف</th>
-                      <th scope="col">نام گروه</th>
-                      <th scope="col">بودجه</th>
-                      <th scope="col">کاربران</th>
-                      <th scope="col">وضعیت</th>
-                      <th scope="col">عملیات</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <GroupTableRow />
-                    <GroupTableRow />
-                    <GroupTableRow />
-                  </tbody>
-                </Table>
+                {/*TABLE*/}
+                <Col sm="12" className="notifications-table">{myGroups}</Col>
+
+
               </Row>
             </div>
           </Card>

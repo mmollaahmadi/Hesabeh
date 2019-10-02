@@ -4,17 +4,20 @@ import Chip from "../common/chip/chip.js";
 
 class NotificationsTableRow extends React.Component {
   render() {
-    let dateCol = null;
+
     let requestCol = null;
     let actionCol = null;
     const rowData = this.props.rowData;
 
+let dateCol = <span>{rowData.dateRequest}</span>;
+
     if (rowData.type === "buy-list") {
-      dateCol = <span>{rowData.dateRequest}</span>;
+
       requestCol = (
         <>
           <span className="user-sender">
             <Chip
+            link="/mollaahmadi.ir"
               haveCloseButton="false"
               avatarSrc={require("../assets/img/users/user01.jpg")}
               label={rowData.sender}
@@ -39,7 +42,7 @@ class NotificationsTableRow extends React.Component {
         </Button>
       );
     } else if (rowData.type === "join-to-my-group") {
-      dateCol = <span>{rowData.dateRequest}</span>;
+
       requestCol = (
         <>
           <span className="user-sender">
@@ -73,7 +76,7 @@ class NotificationsTableRow extends React.Component {
         </>
       );
     } else if (rowData.type === "join-me-to-other-group") {
-      dateCol = <span>{rowData.dateRequest}</span>;
+
       requestCol = (
         <>
           شما درخواست پیوستن به گروه
@@ -103,7 +106,7 @@ class NotificationsTableRow extends React.Component {
         </Button>
       );
     } else if (rowData.type === "disjoin-from-my-group") {
-      dateCol = <span className="date-request">{rowData.dateRequest}</span>;
+
       requestCol = (
         <>
           <span className="user-sender">
@@ -137,7 +140,7 @@ class NotificationsTableRow extends React.Component {
         </>
       );
     } else if (rowData.type === "disjoin-me-from-other-group") {
-      dateCol = <span className="date-request">{rowData.dateRequest}</span>;
+
       requestCol = (
         <>
           شما درخواست تسویه حساب و خروج از گروه
