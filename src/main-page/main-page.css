@@ -8,12 +8,14 @@
 }
 
 .land-pic{
-  background: url('../assets/img/theme/cloud01.png') no-repeat left bottom;
-  -webkit-background-size: 45%;
-  -moz-background-size: 45%;
-  -o-background-size: 45%;
-  background-size: 85%;
-
+  background: url('../assets/img/theme/cloud01.png') no-repeat center;
+  -webkit-background-size: 60%;
+  -moz-background-size: 60%;
+  -o-background-size: 60%;
+  background-size: 60%;
+padding: auto;
+display: flex;
+align-items: center;
 }
 
 .sec{
@@ -78,14 +80,14 @@ height: auto;
   background-color: #fff !important;
   border-radius: 3%;
   margin-left: 0.5rem;
-  padding-top: 1rem;
+  padding-top: 1.2rem;
   padding-bottom: 1rem;
   box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07) !important;
 }
 
 .section-title{
   font-family: Samim-Bold !important;
-  color: #33393f !important;
+  color: #03091e !important;
   font-size: 2rem;
   margin-bottom: 4rem;
 }
@@ -116,4 +118,21 @@ height: auto;
 }
 .features-img{
   width: 100%;
+}
+
+
+
+.statistic-circle-image{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 130px;
+  /* border-style: dashed;
+  border-color: #03091e;
+  border-width: 2px; */
+}
+
+.landing-logo{
+  width: 120px;
+  height: 120px;
 }

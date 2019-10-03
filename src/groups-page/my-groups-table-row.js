@@ -21,7 +21,7 @@ class MyGroupsTableRow extends React.Component {
         <Col lg="1" className="date-request">
           <span>{this.props.dataGroup.dateCreation}</span>
         </Col>
-        <Col lg="4" className="">
+        <Col lg="3" className="justify-content-center d-flex my-auto">
           <span className="user-sender">
             <Chip
               link="/mollaahmadi.ir"
@@ -32,8 +32,8 @@ class MyGroupsTableRow extends React.Component {
             />
           </span>
         </Col>
-        <Col lg="1" className="justify-content-center d-flex my-auto">
-          <span>{this.props.dataGroup.budget}</span>;
+        <Col lg="2" className="justify-content-center d-flex my-auto">
+          <span>{this.props.dataGroup.budget}</span>
         </Col>
         <Col lg="4" className="justify-content-center d-flex my-auto">
           <span className="user-sender">{members}</span>

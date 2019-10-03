@@ -27,17 +27,24 @@
   font-style: normal;
   font-weight: normal;
 }
-/* ============================== FONTS ===================================== */
+/* ============================== BODY ===================================== */
 /* ========================================================================== */
 
 body {
   font-family: Samim, Tahoma;
   /* background-color: #fff; */
-  color: #0b1526;
+  color: #03091e;
   background-color: #f9f9f9 !important;
   /* background-image: linear-gradient(to top, #d7d7d6, #dededd, #e5e5e3, #ececea, #f3f3f1); */
 }
+h1, h2, h3, h4, h5, h6{
+  color: #03091e ;
+}
 
+.my-body {
+  margin-top: 8rem;
+  margin-bottom: 5rem;
+}
 /* ============================== MODALS ==================================== */
 /* ========================================================================== */
 
@@ -45,24 +52,6 @@ body {
 body.modal-open {
   overflow: inherit;
   padding-right: inherit !important;
-}
-
-/* ============================== FONTS ===================================== */
-/* ========================================================================== */
-
-.social-network-link {
-  font-size: x-large;
-}
-
-.profile-image {
-  /* border-style: solid; */
-  /* border-width: medium; */
-  /* border-color: #f6f6f6; */
-}
-
-.bg-gradient-default {
-  background-color: #141312 !important;
-  /* background: linear-gradient(87deg, #5f5851 0, #141312 100%) !important; } */
 }
 
 /* ============================== BUTTONS =================================== */
@@ -106,14 +95,14 @@ body.modal-open {
 
 .btn-default {
   color: #fff;
-  background-color: #0b1526;
-  border-color: #0b1526;
+  background-color: #03091e;
+  border-color: #03091e;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 .btn-default:hover {
   color: #fff;
-  background-color: #0b1526;
-  border-color: #0b1526;
+  background-color: #03091e;
+  border-color: #03091e;
 }
 .btn-default:focus,
 .btn-default.focus {
@@ -123,15 +112,15 @@ body.modal-open {
 .btn-default.disabled,
 .btn-default:disabled {
   color: #fff;
-  background-color: #0b1526;
-  border-color: #0b1526;
+  background-color: #03091e;
+  border-color: #03091e;
 }
 .btn-default:not(:disabled):not(.disabled):active,
 .btn-default:not(:disabled):not(.disabled).active,
 .show > .btn-default.dropdown-toggle {
   color: #fff;
-  background-color: #0b1526;
-  border-color: #0b1526;
+  background-color: #03091e;
+  border-color: #03091e;
 }
 .btn-default:not(:disabled):not(.disabled):active:focus,
 .btn-default:not(:disabled):not(.disabled).active:focus,
@@ -333,6 +322,22 @@ body.modal-open {
   width: 100%;
   border-style: solid;
 }
+.audit-alert {
+  padding: 0.5rem 0rem;
+  font-size: 0.7rem;
+  color: #b67b81 !important;
+  background-color: #f8d7da !important;
+}
+.audit-alert > button {
+  right: 0;
+}
+.audit-alert > button > span {
+  visibility: hidden;
+}
+.alert-icon {
+  color: #ff0000 !important;
+}
+/* ------------------------------ AUDIT-HEADER ---------------------------- */
 .header-logo {
   background-color: #fff !important;
   border-style: none !important;
@@ -348,50 +353,23 @@ body.modal-open {
   margin-bottom: 1rem;
 }
 .empty-group:hover{
-  border-color: #03091e;  
+  border-color: #03091e;
 }
 .brand-title {
   font-family: Lalezar !important;
   font-size: 2rem;
-  color: #33393f !important;
+  color: #03091e !important;
   margin: 0px;
 }
-
 .title-text {
   margin: 0rem 0rem 1rem 0rem;
 }
-.alert-icon {
-  color: #ff0000 !important;
-}
-.audit-alert {
-  padding: 0.5rem 0rem;
-  font-size: 0.7rem;
-  color: #b67b81 !important;
-  background-color: #f8d7da !important;
-}
-.audit-alert > button {
-  right: 0;
-}
-.audit-alert > button > span {
-  visibility: hidden;
-}
 
-/* ============================== TABLE ================================== */
+/* ============================== TEXTBOX ================================== */
 /* ========================================================================== */
-
-.table-header {
-  text-align: center;
-  font-size: 0.8rem;
-  font-family: Samim;
-}
-
-.my-body {
-  margin-top: 8rem;
-  margin-bottom: 5rem;
-}
-
-.textbox {
-
+.textbox{
+  border-radius: 5px;
+  border: dashed 1px;
 }
 .textbox-title {
   background-color: #01cd9a !important;
@@ -401,25 +379,35 @@ body.modal-open {
   vertical-align: middle;
 }
 .textbox-content {
+  background-color: #cbcdaa !important;
   border-radius: 5px 0px 0px 5px;
 }
 
+/* ============================== CARD ================================== */
+/* ========================================================================== */
+.card{
+  border-radius: 10px;
+}
 .card-header{
+border-radius: 10px 10px 0px 0px !important;
   text-align: center;
   font-size: 1.2rem;
   font-family: Samim-Bold;
-  background-image: url('../img/theme/card-header-bg-01.png');
+  background-color: #f0f1f1 !important;
+  /* background-image: url('../img/theme/card-header-bg-01.png');
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: #a7ddcd !important;
   text-shadow:
       -1px -1px 0 #fff,
        1px -1px 0 #fff,
       -1px  1px 0 #fff,
-       1px  1px 0 #fff;
+       1px  1px 0 #fff; */
 }
 
 
-
+/* ============================== TABLE ================================== */
+/* ========================================================================== */
 .notifications-table{
   margin: 0px;
   padding: 0rem 1rem;
@@ -458,7 +446,11 @@ body.modal-open {
 }
 
 
-
+.payments-table-row-btn{
+  width: 100%;
+  margin: 0px 0px 0.25rem 0px !important;
+  padding: 0px;
+}
 
 
 

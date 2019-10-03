@@ -27,14 +27,17 @@ class NavbarProfile extends React.Component {
               </div>
             </DropdownToggle>
             <DropdownMenu className="profile-menu">
-            <DropdownItem className="profile-item pb-0 text-center" disabled>
+            <DropdownItem className="profile-item pb-0" disabled>
+            <i class="fa fa-user mr-0 ml-2"/>
               mollaahmadi@
             </DropdownItem>
             <DropdownItem divider/>
               <DropdownItem className="profile-item" to="/dashboard" tag={Link}>
+              <i class="fa fa-cog mr-0 ml-2"/>
                 حساب کاربری
               </DropdownItem>
               <DropdownItem className="profile-item" to="/" tag={Link}>
+              <i class="fa fa-sign-out mr-0 ml-2"/>
                 خروج
               </DropdownItem>
             </DropdownMenu>

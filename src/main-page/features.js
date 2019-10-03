@@ -21,13 +21,13 @@ class Features extends React.Component {
     const featureSelectedNumber = this.state.featureSelectedNumber;
     var featureSelectedimg = null;
     if (featureSelectedNumber === 1) {
-      featureSelectedimg = require("../assets/img/theme/circle04.png");
+      featureSelectedimg = require("../assets/img/theme/team-4-800x800.jpg");
     } else if (featureSelectedNumber === 2) {
-      featureSelectedimg = require("../assets/img/theme/11.png");
+      featureSelectedimg = require("../assets/img/theme/team-2-800x800.jpg");
     } else if (featureSelectedNumber === 3) {
-      featureSelectedimg = require("../assets/img/theme/111.png");
+      featureSelectedimg = require("../assets/img/theme/team-3-800x800.jpg");
     } else {
-      featureSelectedimg = require("../assets/img/theme/1.png");
+      featureSelectedimg = require("../assets/img/theme/team-4-800x800.jpg");
     }
 
     return (
@@ -77,7 +77,7 @@ class Features extends React.Component {
 
             <Col lg="6">
               <img
-              className="features-img"
+              className="features-img rounded-circle"
               alt="..."
               src={featureSelectedimg} />
             </Col>

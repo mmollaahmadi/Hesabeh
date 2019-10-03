@@ -44,14 +44,14 @@ class Footer extends React.Component {
                 <Row className="pr-5">
                   <Col className="lg-auto">
                     <NavLink
-                      to="/‌‌support"
+                      to="/support"
                       tag={Link}
                       className="footer-links"
                     >
                       پشتیبانی
                     </NavLink>
                     <NavLink
-                      to="/‌‌help"
+                      to="/‌help"
                       tag={Link}
                       className="footer-links"
                     >
@@ -60,14 +60,16 @@ class Footer extends React.Component {
                   </Col>
                   <Col className="lg-auto">
                     <NavLink
-                      to="/‌‌register"
+
+                      to="/register"
                       tag={Link}
                       className="footer-links"
                     >
                       ثبت نام
                     </NavLink>
                     <NavLink
-                      to="/‌‌sigin"
+
+                      to="/signin"
                       tag={Link}
                       className="footer-links"
                     >
@@ -96,7 +98,7 @@ class Footer extends React.Component {
               {/* LOGO */}
               <Col className=" text-center btn-wrapper mt-2" lg="2">
                 <p className="footer-hesabeh">حسابِه</p>
-                <span className="footer-heabeh-latin">HeabeH.ir</span>
+                <p className="footer-heabeh-latin">HesabeH</p>
                 <div>
                   <Button
                     className=" ml-1 p-0 mr-0 social-network-link"

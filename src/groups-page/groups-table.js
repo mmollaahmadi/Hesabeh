@@ -1,6 +1,8 @@
 import React from "react";
 import {
   Card,
+  CardBody,
+  CardHeader,
   Container,
   Row,
   Col,
@@ -25,59 +27,58 @@ class GroupsTable extends React.Component {
   };
 
   render() {
-    let myGroups =[];
+    let myGroups = [];
     this.props.myGroups.forEach(group => {
-      myGroups.push(<GroupsTableRow dataGroup={group}/>);
+      myGroups.push(<GroupsTableRow dataGroup={group} />);
     });
     return (
       <section className="section pt-0">
         <Container>
-
           <Card className="card-profile shadow mt-5">
-            <div className="px-4">
-              <Row className="justify-content-center p-5">
-                <Row className="justify-content-center">
-                  <Col lg="auto">
-                    <i className="fa fa-sort fa-2x mx-2 d-inline-block" />
-                    <i className="fa fa-filter fa-2x mx-2 d-inline" />
-                  </Col>
-                  <Col>
-                    <Form className="d-inline">
-                      <FormGroup>
-                        <InputGroup className="input-group-alternative">
-                          <InputGroupAddon addonType="prepend">
-                            <InputGroupText>
-                              <i className="fa fa-search" />
-                            </InputGroupText>
-                          </InputGroupAddon>
+            <CardHeader>
+              <Row className="justify-content-center">
+                <Col lg="auto">
+                  <i className="fa fa-sort fa-2x mx-2 d-inline-block" />
+                  <i className="fa fa-filter fa-2x mx-2 d-inline" />
+                </Col>
+                <Col>
+                  <Form className="d-inline">
+                    <FormGroup>
+                      <InputGroup className="input-group-alternative">
+                        <InputGroupAddon addonType="prepend">
+                          <InputGroupText>
+                            <i className="fa fa-search" />
+                          </InputGroupText>
+                        </InputGroupAddon>
 
-                          <Input
-                            className="signin-input"
-                            placeholder="جستجو ..."
-                            type="email"
-                          />
-                        </InputGroup>
-                      </FormGroup>
-                    </Form>
-                  </Col>
-                  <Col lg="auto">
-                    <Button
-                      color="primary"
-                      className="p-2"
-                      tag={Link}
-                      to="/create-new-group"
-                    >
-                      ایجاد گروه جدید
-                    </Button>
-                  </Col>
-                </Row>
-
-                {/*TABLE*/}
-                <Col sm="12" className="notifications-table">{myGroups}</Col>
-
-
+                        <Input
+                          className="signin-input"
+                          placeholder="جستجو ..."
+                          type="email"
+                        />
+                      </InputGroup>
+                    </FormGroup>
+                  </Form>
+                </Col>
+                <Col lg="auto">
+                  <Button
+                    color="primary"
+                    className="p-2"
+                    tag={Link}
+                    to="/create-new-group"
+                  >
+                    ایجاد گروه جدید
+                  </Button>
+                </Col>
               </Row>
-            </div>
+            </CardHeader>
+            <CardBody>
+              <Row className="justify-content-center p-5">
+                <Col sm="12" className="notifications-table">
+                  {myGroups}
+                </Col>
+              </Row>
+            </CardBody>
           </Card>
         </Container>
       </section>

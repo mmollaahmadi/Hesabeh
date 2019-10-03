@@ -8,14 +8,8 @@ class StatisticUnit extends React.Component {
         <div className="px-0">
           <img
             alt="..."
-            className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-            src={this.props.img_url}
-            style={{
-              width: "100px",
-              borderStyle: "solid",
-              borderColor: "#fff",
-              borderWidth: "2px"
-            }}
+            className="rounded-circle statistic-circle-image"
+            src={this.props.img_url}            
           />
           <div className="pt-4 text-center">
             <p className="title">

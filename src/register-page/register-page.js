@@ -109,14 +109,18 @@ class RegisterPage extends React.Component {
                 <Row className="d-flex justify-content-center text-center px-9 pb-4">
                   <Col lg="2"
                   className = {lowercaseCondition ? "condition-satisfied" : "condition-unsatisfied"}>
-                    <i className=" fa fa-twitter password-condition-icon" />
+                  <p className="password-condition-fake-icon">
+                  a-z
+                  </p>
                     <p className="password-condition-text">
                     حروف کوچک
                     </p>
                   </Col>
                   <Col lg="2"
                   className={uppercaseCondition ? "condition-satisfied" : "condition-unsatisfied"}>
-                    <i className=" fa fa-twitter password-condition-icon" />
+                  <p className="password-condition-fake-icon">
+                  A-Z
+                  </p>
                     <p className="password-condition-text">
                   حروف بزرگ
                     </p>
@@ -124,7 +128,9 @@ class RegisterPage extends React.Component {
                   <Col lg="2"
                   className={numberCondition ? "condition-satisfied" : "condition-unsatisfied"}
                   >
-                    <i className=" fa fa-twitter password-condition-icon" />
+                  <p className="password-condition-fake-icon">
+                  123
+                  </p>
                     <p className="password-condition-text">
                     عدد
                     </p>
@@ -132,7 +138,7 @@ class RegisterPage extends React.Component {
                   <Col lg="2"
                   className={signCondition ? "condition-satisfied" : "condition-unsatisfied"}
                   >
-                    <i className=" fa fa-twitter password-condition-icon" />
+                    <i className=" fa fa-hashtag password-condition-icon" />
                     <p className="password-condition-text">
                     نشانه خاص
                     </p>
@@ -140,9 +146,17 @@ class RegisterPage extends React.Component {
                   <Col lg="2"
                   className={confirmPasswordCondition ? "condition-satisfied" : "condition-unsatisfied"}
                   >
-                    <i className=" fa fa-twitter password-condition-icon" />
+                    <i className=" fa fa-check password-condition-icon" />
                     <p className="password-condition-text">
-                    تطابق دو رمز عبور
+                    تایید رمز عبور
+                    </p>
+                  </Col>
+                  <Col lg="2"
+                  className={confirmPasswordCondition ? "condition-satisfied" : "condition-unsatisfied"}
+                  >
+                    <i className=" fa fa-at password-condition-icon" />
+                    <p className="password-condition-text">
+                    ایمیل صحیح
                     </p>
                   </Col>
                 </Row>

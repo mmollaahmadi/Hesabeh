@@ -69,11 +69,13 @@ class CreateNewRequestPage extends React.Component {
           <div className="my-body">
             <Container>
               <Row>
-                <Col lg="12">
-                  <RequirementsListRequest groups={GROUPS}/>
+                <Col lg="7">
+                  <RequirementsListRequest groups={GROUPS} />
                 </Col>
-                <Col lg="12">
-              <Card className="card-profile shadow mt-5">
+                <Col lg="5"></Col>
+                <Col lg="5"></Col>
+                <Col lg="7">
+                  <Card className="card-profile shadow mt-5">
                     <CardHeader>دعوت به گروه</CardHeader>
                     <CardBody>
                       <Form role="form" className="pt-5 pb-4 w-100">
@@ -100,8 +102,8 @@ class CreateNewRequestPage extends React.Component {
                     </CardBody>
                   </Card>
                 </Col>
-                <Col lg="12">
-              <Card className="card-profile shadow mt-5">
+                <Col lg="7">
+                  <Card className="card-profile shadow mt-5">
                     <CardHeader>پیوستن به گروه</CardHeader>
                     <CardBody>
                       <Form role="form" className="w-100 pt-5 pb-4">
@@ -128,8 +130,10 @@ class CreateNewRequestPage extends React.Component {
                     </CardBody>
                   </Card>
                 </Col>
-                <Col lg="12">
-              <Card className="card-profile shadow mt-5">
+                <Col lg="5"></Col>
+                <Col lg="5"></Col>
+                <Col lg="7">
+                  <Card className="card-profile shadow mt-5">
                     <CardHeader>تسویه و خروج از گروه</CardHeader>
                     <CardBody>
                       <Form role="form" className="pb-4 pt-5 w-100">

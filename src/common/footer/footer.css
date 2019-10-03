@@ -27,10 +27,10 @@
 .footer-links{
   font-size: 0.8rem;
   font-family: Samim-Bold;
-  color: #33393faa !important;
+  color: #03091e !important;
 }
 .footer-links:hover{
-  color: #33393f !important;
+  color: #03091e !important;
 }
 
 /* #----------------------------------- LOGO ----------------------------- */
@@ -53,8 +53,9 @@ font-family: Baloo;
 font-size: 1.5rem;
 margin: 0px;
 padding: 0px;
+padding-left: 0.3rem;
 position: relative;
-bottom:  -10px;
+bottom:  -5px;
 color: #03091e !important;
 }
 .footer-logo-row{

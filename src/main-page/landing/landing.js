@@ -20,6 +20,11 @@ class Landing extends React.Component {
       <Row className="sec">
         <Col lg="4" className="d-flex align-items-center px-auto offset-lg-1">
           <div className="d-block text-center">
+            <img
+              alt=""
+              className="rounded-circle landing-logo"
+              src={require("../../assets/img/theme/logo01.png")}
+            />
             <h2 className="display-3">
               حساب،
               <h1 className="h1-hesabeh">حسابِه</h1>
@@ -28,12 +33,11 @@ class Landing extends React.Component {
             <h4>مدیریت هزینه‌هاتو به حسابِه بسپار</h4>
             <p>هزینه‌های روزمره رو اینجا ثبت کن و به راحتی مدیریتشون کن</p>
             <Button color="primary" className="py-1 px-4">
-            بیشتر</Button>
+              بیشتر
+            </Button>
           </div>
         </Col>
-        <Col lg="7" className="p-0 land-pic">
-
-        </Col>
+        <Col lg="7" className="land-pic"></Col>
       </Row>
     );
   }

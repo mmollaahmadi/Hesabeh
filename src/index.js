@@ -32,6 +32,7 @@ import CreateNewGroupPage from './groups-page/create-new-group-page.js';
 import NotificationsPage from './notifications-page/notifications-page.js';
 import CreateNewRequestPage from './notifications-page/create-new-request-page.js'
 import AddPaymentPage from './payments-page/add-new-payment.js';
+import HelpPage from './help-page/help-page'
 
 ReactDOM.render(
   <BrowserRouter>
@@ -56,6 +57,11 @@ ReactDOM.render(
         path="/support"
         exact
         render={props => <SupportPage {...props} />}
+      />
+      <Route
+        path="/help"
+        exact
+        render={props => <HelpPage {...props} />}
       />
       <Route
         path="/my-account"

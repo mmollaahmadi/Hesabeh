@@ -20,16 +20,16 @@ class PaymentsTableRow extends React.Component {
         <Col lg="1" className="date-request">
           <span>{this.props.data.date}</span>
         </Col>
-        <Col lg="3" className="">
+        <Col lg="2" className="justify-content-center d-flex my-auto">
           <span>
             {this.props.data.name}
           </span>
         </Col>
-        <Col lg="1" className="justify-content-center d-flex my-auto">
-          <span>{this.props.data.value}</span>;
+        <Col lg="2" className="justify-content-center d-flex my-auto">
+          <span>{this.props.data.value}</span>
         </Col>
 
-        <Col lg="3" className="">
+        <Col lg="3" className="justify-content-center d-flex my-auto">
           <span className="user-sender">
             <Chip
               link="/mollaahmadi.ir"
@@ -44,12 +44,12 @@ class PaymentsTableRow extends React.Component {
         <Col lg="3" className="justify-content-center d-flex my-auto">
           <span className="user-sender">{consumers}</span>
         </Col>
-        <Col lg="1" className="justify-content-center d-flex my-auto">
-          <Button className="notification-table-row-btn" color="primary">
-            قبول
+        <Col lg="1" className="justify-content-center d-block my-auto">
+          <Button className="payments-table-row-btn" color="primary">
+            <i class="fa fa-eye"/>
           </Button>
-          <Button className="notification-table-row-btn" color="default">
-            رد
+          <Button className="payments-table-row-btn" color="default">
+            <i class="fa fa-pencil"/>
           </Button>
         </Col>
         <Col sm="11" className="ntr-hr"></Col>

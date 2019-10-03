@@ -7,26 +7,25 @@ class Learning extends React.Component {
     return (
       <div className="py-5 mb-5">
         <Container className="pt-30 pb-30">
-          <Row className="text-center justify-content-center">
-            <Col lg="10">
-            <p className="section-title">همین حالا شروع کنید
-            </p>
-              <Row className="d-flex justify-content-center">
+          <Row className="m-0 text-center justify-content-center">
+            <Col lg="12">
+              <p className="section-title">همین حالا شروع کنید</p>
+              <Row className="m-0 d-flex justify-content-center">
                 <Onboarding
-                  _text="ثبت نام و ورود به حساب کاربری"
-                  imageUri={require("../../assets/img/theme/circle05.png")}
+                  _text="ثبت نام و ورود"
+                  imageUri={require("../../assets/img/theme/team-4-800x800.jpg")}
                 />
                 <Onboarding
-                  _text="ثبت هزینه‌های شخصی و گروهی"
-                  imageUri={require("../../assets/img/theme/circle05.png")}
+                  _text="ثبت هزینه‌ها"
+                  imageUri={require("../../assets/img/theme/team-4-800x800.jpg")}
                 />
                 <Onboarding
-                  _text="استفاده از امکانات حسابه"
-                  imageUri={require("../../assets/img/theme/circle05.png")}
+                  _text="مدیریت هزینه ها"
+                  imageUri={require("../../assets/img/theme/team-4-800x800.jpg")}
                 />
                 <Onboarding
-                  _text="استفاده از امکانات حسابه"
-                  imageUri={require("../../assets/img/theme/circle05.png")}
+                  _text="گزارش گیری"
+                  imageUri={require("../../assets/img/theme/team-4-800x800.jpg")}
                 />
               </Row>
             </Col>
