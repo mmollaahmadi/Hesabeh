@@ -13,6 +13,8 @@ import {
 class DefaultOrderValue extends React.Component {
   render() {
     return (
+      <>
+      <Col lg="7">
       <Card className="card-profile shadow m-0">
         <CardBody>
           <Form>
@@ -60,6 +62,10 @@ class DefaultOrderValue extends React.Component {
           </Form>
         </CardBody>
       </Card>
+      </Col>
+      <Col lg="5">
+      </Col>
+      </>
     );
   }
 }
