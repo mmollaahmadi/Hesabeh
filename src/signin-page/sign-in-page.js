@@ -20,20 +20,101 @@ import {
 import "../assets/css/custom.css";
 import Header from "../common/header.js";
 
-class SigninPage extends React.Component {
+class SignInPage extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      emailCollapse: false,
-      passwordCollapse: false
+      emailOrUsername:{
+        placeholder:'رایانامه / نام کاربری',
+        value:'',
+        errorText:'',
+        errorCollapse:false
+      },
+      password:{
+        placeholder:'گذرواژه',
+        value:'',
+        errorText:'',
+        errorCollapse:false
+      }
     };
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.signInHandle = this.signInHandle.bind(this);
   }
-  toggle = (which) => {
-    this.setState({
-      [which]: !this.state[which]
-    });
-  };
+  signInHandle(){
+    let emailOrUsername = this.state.emailOrUsername.value;
+    let password = this.state.password.value;
+
+    if(emailOrUsername !== ''){
+      if(password !== ''){
+        if(emailOrUsername === 'admin'){
+          if(password === 'admin'){
+            this.props.history.push('/my-account');
+          }
+          else {
+            this.setState({
+              password:{
+                ...this.state.password,
+                errorCollapse: true,
+                errorText:'گذرواژه اشتباه است.'
+              }
+            });
+          }
+        }else{
+          this.setState({
+            emailOrUsername:{
+              ...this.state.emailOrUsername,
+              errorCollapse: true,
+              errorText:'کاربری با این مشخصات وجود ندارد.'
+            }
+          });
+        }
+      }else{
+        this.setState({
+          password:{
+            ...this.state.password,
+            errorCollapse: true,
+            errorText:'گذرواژه را وارد کنید.'
+          }
+        });
+      }
+
+    }
+    else{
+      this.setState({
+        emailOrUsername:{
+          ...this.state.emailOrUsername,
+          errorCollapse: true,
+          errorText:'رایانامه یا نام کاربری را وارد کنید.'
+        }
+      });
+    }
+  }
+  handleInputChange(event){
+    if (event.target.name === 'password'){
+      this.setState({
+        password:{
+          ...this.state.password,
+          value: event.target.value,
+          errorCollapse:false
+        }
+      });
+    }
+    else {
+      this.setState({
+        emailOrUsername:{
+          ...this.state.emailOrUsername,
+          value: event.target.value,
+          errorCollapse:false
+        },
+        password:{
+          ...this.state.password,
+          errorCollapse:false
+        }
+      });
+    }
+  }
+
   render() {
     return (
       <div className="section-lg">
@@ -50,19 +131,20 @@ class SigninPage extends React.Component {
                         <i className="ni ni-email-83" />
                       </InputGroupText>
                     </InputGroupAddon>
-
                     <Input
                       className="audit-input"
-                      placeholder="ایمیل / نام کاربری"
-                      type="email"
+                      name="emailOrUsername"
+                      placeholder={this.state.emailOrUsername.placeholder}
+                      value={this.state.emailOrUsername.value}
+                      onChange={this.handleInputChange}
                     />
                   </InputGroup>
-                  <Collapse isOpen={this.state.emailCollapse}>
+                  <Collapse isOpen={this.state.emailOrUsername.errorCollapse}>
                     <Alert
                       color="danger"
                       className="audit-alert"
                     >
-                      کاربری با این مشخصات وجود ندارد
+                      {this.state.emailOrUsername.errorText}
                     </Alert>
                   </Collapse>
                 </FormGroup>
@@ -76,11 +158,14 @@ class SigninPage extends React.Component {
 
                     <Input
                       className="audit-input"
-                      placeholder="رمز عبور"
                       type="password"
+                      name='password'
+                      placeholder={this.state.password.placeholder}
+                      value={this.state.password.value}
+                      onChange={this.handleInputChange}
                     />
                   </InputGroup>
-                  <Row className="d-flex justify-content-end mb-2">
+                  <Row className="d-flex justify-content-end mb-2 mx-0">
                     <NavLink
                       to="/forgot-password"
                       tag={Link}
@@ -90,12 +175,12 @@ class SigninPage extends React.Component {
                       رمز عبور را فراموش کردم!
                     </NavLink>
                   </Row>
-                  <Collapse isOpen={this.state.passwordCollapse}>
+                  <Collapse isOpen={this.state.password.errorCollapse}>
                     <Alert
                       color="danger"
                       className="audit-alert"
                     >
-                      کاربری با این مشخصات وجود ندارد
+                    {this.state.password.errorText}
                     </Alert>
                   </Collapse>
                 </FormGroup>
@@ -105,8 +190,7 @@ class SigninPage extends React.Component {
                       <Button
                         className="audit-button"
                         color="primary"
-                        to="/my-account"
-                        tag={Link}
+                        onClick={this.signInHandle}
                       >
                         ورود
                       </Button>
@@ -116,10 +200,10 @@ class SigninPage extends React.Component {
 
                 <Button
                   className="btn-icon audit-button"
-                  color="default"
+                  color="secondary"
                   href="#pablo"
-                  name="google-account"
-                  onClick={() => this.toggle("passwordCollapse")}                    
+                  name='password'
+                  onClick={this.toggle}
                 >
                   <span className="btn-inner--icon">
                     <img
@@ -174,4 +258,4 @@ class SigninPage extends React.Component {
   }
 }
 
-export default SigninPage;
+export default SignInPage;

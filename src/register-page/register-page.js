@@ -23,36 +23,122 @@ class RegisterPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      signupFormModal: false,
-      email: {
-        value: "",
-        valid: false,
-        collapse: false
+      email:{
+        placeholder:'رایانامه',
+        value:'',
+        collapse: false,
+        validation: false
       },
       password: {
-        value: "",
-        valid: false,
-        collapse: false
+        placeholder:'گذرواژه',
+        value: '',
+        collapse: false,
+        uppercaseValidation: false,
+        lowercaseValidation: false,
+        numberValidation: false,
+        signValidation: false,
       },
       confirmPassword: {
-        value: "",
-        valid: false,
-        collapse: false
+        placeholder:'تایید گذرواژه',
+        value: '',
+        collapse: false,
+        validation: false,
       },
-      uppercaseCondition: false,
-      lowercaseCondition: true,
-      numberCondition: false,
-      signCondition: false,
-      confirmPasswordCondition: false,
     };
+
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.checkEmail = this.checkEmail.bind(this);
   }
-  toggle = state => {
-    this.setState({
-      [state]: { collapse: !this.state[state].collapse }
-    });
-  };
+  checkEmail(email){
+    return email === 'm@g.com';
+  }
+  handleInputChange(event){
+    let name = event.target.name;
+    let _value = event.target.value;
+
+
+    switch(name) {
+      case 'email':
+        if(this.checkEmail(_value)){
+          this.setState({
+            email:{
+              ...this.state.email,
+              value: _value,
+              validation: true
+            }
+          });
+        }else{
+          this.setState({
+            email:{
+              ...this.state.email,
+              value: _value,
+              validation: false
+            }
+          });
+        }
+        break;
+      case 'password':
+        let _uppercaseValidation = false;
+        let _lowercaseValidation = false;
+        let _numberValidation = false;
+        let _signValidation = false;
+
+        let lowerCaseRegexp = /[a-z]/;
+        let upperCaseRegexp = /[A-Z]/;
+        let numberRegExp = /\d/;
+        let signRegExp = /[!@#\$%\^&~.]/;
+
+        if(lowerCaseRegexp.test(_value)){
+          _uppercaseValidation = true;
+        }
+        if(upperCaseRegexp.test(_value)){
+          _lowercaseValidation = true;
+        }
+        // eslint-disable-next-line no-useless-escape
+        if(numberRegExp.test(_value)){
+          _numberValidation = true;
+        }
+        if(signRegExp.test(_value)){
+          _signValidation = true;
+        }
+        this.setState({
+          password: {
+            ...this.state.password,
+            value: _value,
+            uppercaseValidation: _uppercaseValidation,
+            lowercaseValidation: _lowercaseValidation,
+            numberValidation: _numberValidation,
+            signValidation: _signValidation,
+          }
+        });
+        break;
+      case 'confirm-password':
+        if(_value === this.state.password.value){
+          this.setState({
+            confirmPassword:{
+              ...this.state.confirmPassword,
+              value: _value,
+              validation: true
+            }
+          });
+        }else{
+          this.setState({
+            confirmPassword:{
+              ...this.state.confirmPassword,
+              value: _value,
+              validation: false
+            }
+          });
+        }
+        break;
+      default:
+        return null;
+    }
+
+  }
+
   render() {
-    const {uppercaseCondition, lowercaseCondition, numberCondition, signCondition, confirmPasswordCondition} = this.state;
+
     return (
       <div className="register-section section-lg">
         <Container className="pt-10 pb-30  h-100">
@@ -70,7 +156,10 @@ class RegisterPage extends React.Component {
 
                     <Input
                       className="audit-input"
-                      placeholder="ایمیل"
+                      placeholder={this.state.email.placeholder}
+                      value={this.state.email.value}
+                      onChange={this.handleInputChange}
+                      name='email'
                       type="email"
                     />
                   </InputGroup>
@@ -85,7 +174,10 @@ class RegisterPage extends React.Component {
 
                     <Input
                       className="audit-input"
-                      placeholder="رمز عبور"
+                      placeholder={this.state.password.placeholder}
+                      value={this.state.password.value}
+                      onChange={this.handleInputChange}
+                      name='password'
                       type="password"
                     />
                   </InputGroup>
@@ -100,15 +192,18 @@ class RegisterPage extends React.Component {
 
                     <Input
                       className="audit-input"
-                      placeholder="تایید رمز عبور"
+                      placeholder={this.state.confirmPassword.placeholder}
+                      value={this.state.confirmPassword.value}
+                      onChange={this.handleInputChange}
+                      name='confirm-password'
                       type="password"
                     />
                   </InputGroup>
                 </FormGroup>
-                <Collapse isOpen={this.state.password.collapse}>
+                <Collapse isOpen="true">
                 <Row className="d-flex justify-content-center text-center px-9 pb-4">
                   <Col lg="2"
-                  className = {lowercaseCondition ? "condition-satisfied" : "condition-unsatisfied"}>
+                  className = {this.state.password.lowercaseValidation ? "condition-satisfied" : "condition-unsatisfied"}>
                   <p className="password-condition-fake-icon">
                   a-z
                   </p>
@@ -117,7 +212,7 @@ class RegisterPage extends React.Component {
                     </p>
                   </Col>
                   <Col lg="2"
-                  className={uppercaseCondition ? "condition-satisfied" : "condition-unsatisfied"}>
+                  className={this.state.password.uppercaseValidation ? "condition-satisfied" : "condition-unsatisfied"}>
                   <p className="password-condition-fake-icon">
                   A-Z
                   </p>
@@ -126,7 +221,7 @@ class RegisterPage extends React.Component {
                     </p>
                   </Col>
                   <Col lg="2"
-                  className={numberCondition ? "condition-satisfied" : "condition-unsatisfied"}
+                  className={this.state.password.numberValidation ? "condition-satisfied" : "condition-unsatisfied"}
                   >
                   <p className="password-condition-fake-icon">
                   123
@@ -136,7 +231,7 @@ class RegisterPage extends React.Component {
                     </p>
                   </Col>
                   <Col lg="2"
-                  className={signCondition ? "condition-satisfied" : "condition-unsatisfied"}
+                  className={this.state.password.signValidation ? "condition-satisfied" : "condition-unsatisfied"}
                   >
                     <i className=" fa fa-hashtag password-condition-icon" />
                     <p className="password-condition-text">
@@ -144,7 +239,7 @@ class RegisterPage extends React.Component {
                     </p>
                   </Col>
                   <Col lg="2"
-                  className={confirmPasswordCondition ? "condition-satisfied" : "condition-unsatisfied"}
+                  className={this.state.confirmPassword.validation ? "condition-satisfied" : "condition-unsatisfied"}
                   >
                     <i className=" fa fa-check password-condition-icon" />
                     <p className="password-condition-text">
@@ -152,7 +247,7 @@ class RegisterPage extends React.Component {
                     </p>
                   </Col>
                   <Col lg="2"
-                  className={confirmPasswordCondition ? "condition-satisfied" : "condition-unsatisfied"}
+                  className={this.state.email.validation ? "condition-satisfied" : "condition-unsatisfied"}
                   >
                     <i className=" fa fa-at password-condition-icon" />
                     <p className="password-condition-text">

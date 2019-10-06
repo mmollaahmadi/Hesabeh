@@ -163,7 +163,41 @@ body.modal-open {
 .show > .btn-default.dropdown-toggle:focus {
   box-shadow: none, 0 0 0 0 rgba(23, 43, 77, 0.5);
 }
-
+/* ------------------------ */
+.btn-dark-green {
+  color: #424242;
+  background-color: #409a7f;
+  border-color: #409a7f;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.btn-dark-green:hover {
+  color: #424242;
+  background-color: #114b32;
+  border-color: #114b32;
+}
+.btn-dark-green:focus,
+.btn-dark-green.focus {
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08),
+  0 0 0 0 rgba(23, 43, 77, 0.5);
+}
+.btn-dark-green.disabled,
+.btn-dark-green:disabled {
+  color: #424242;
+  background-color: #114b32;
+  border-color: #114b32;
+}
+.btn-dark-green:not(:disabled):not(.disabled):active,
+.btn-dark-green:not(:disabled):not(.disabled).active,
+.show > .btn-default.dropdown-toggle {
+  color: #424242;
+  background-color: #114b32;
+  border-color: #114b32;
+}
+.btn-dark-green:not(:disabled):not(.disabled):active:focus,
+.btn-dark-green:not(:disabled):not(.disabled).active:focus,
+.show > .btn-default.dropdown-toggle:focus {
+  box-shadow: none, 0 0 0 0 rgba(23, 43, 77, 0.5);
+}
 /* ============================== SECTIONS ================================== */
 /* ========================================================================== */
 .section-shaped .shape-style-1 span {
@@ -323,10 +357,18 @@ body.modal-open {
   border-style: solid;
 }
 .audit-alert {
+  margin-top: 0.5rem;
   padding: 0.5rem 0rem;
   font-size: 0.7rem;
   color: #b67b81 !important;
   background-color: #f8d7da !important;
+}
+.audit-success-alert {
+  margin-top: 0.5rem;
+  padding: 0.5rem 0rem;
+  font-size: 0.7rem;
+  color: #2C693A !important;
+  background-color: #D4EDDA !important;
 }
 .audit-alert > button {
   right: 0;
