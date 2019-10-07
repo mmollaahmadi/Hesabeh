@@ -19,6 +19,8 @@ import { GithubPicker } from "react-color";
 class LabelManagement extends React.Component {
   render() {
     return (
+      <>
+      <Col lg="7" className="order-2 mt-3">
       <Card className="card-profile shadow m-0">
         <CardBody>
           <Form role="form" className="signup-form">
@@ -65,6 +67,10 @@ class LabelManagement extends React.Component {
           </Row>
         </CardBody>
       </Card>
+      </Col>
+      <Col lg="5" className="order-1">
+      </Col>
+      </>
     );
   }
 }

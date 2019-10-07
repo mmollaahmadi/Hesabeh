@@ -112,7 +112,7 @@ class SigninButton extends React.Component {
                   </FormGroup>
                   <div className="custom-control custom-control-alternative custom-checkbox">
                     <input
-                      className="custom-control-input"
+                      className="custom-control-input checked"
                       id=" customCheckLogin"
                       type="checkbox"
                     />
