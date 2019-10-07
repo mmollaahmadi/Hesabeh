@@ -7,7 +7,6 @@ import {
   Row,
   Col
 } from "reactstrap";
-
 import PaymentsTableRow from "./payments-table-row.js";
 import TableCardHeader from "../common/table-card-header/table-card-header";
 

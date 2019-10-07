@@ -1,0 +1,21 @@
+.payments-btn-lv2{
+    padding: 0.2rem 0.6rem;
+    margin: 0.5rem  0.5rem;
+}
+.payments-btn-lv2 > .btn-inner--text{
+    font-size: 0.7rem;
+    margin: 0.5rem;
+}
+
+.btn-inner--text{
+    font-size: 0.65rem !important;
+    margin-left: 0 !important;
+}
+.btn-inner--icon {
+    height: 14px !important;
+}
+.custom-control-input:active ~ .custom-control-label::before{
+    background-color: #01cd9a !important;
+}
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #01cd9a; }
