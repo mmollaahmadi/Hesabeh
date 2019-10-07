@@ -29,7 +29,6 @@ class Footer extends React.Component {
         </div>
         <footer className="footer">
           <Container className="pt-6 pt-lg-4">
-
             <Row className=" row-grid align-items-center mb-1 mt-1 ">
               {/* CONTACT US */}
               <Col
@@ -43,52 +42,26 @@ class Footer extends React.Component {
               <Col className=" text-center mt-2" lg="5">
                 <Row className="pr-5">
                   <Col className="lg-auto">
-                    <NavLink
-                      to="/support"
-                      tag={Link}
-                      className="footer-links"
-                    >
+                    <NavLink to="/support" tag={Link} className="footer-links">
                       پشتیبانی
                     </NavLink>
-                    <NavLink
-                      to="/‌help"
-                      tag={Link}
-                      className="footer-links"
-                    >
+                    <NavLink to="/‌help" tag={Link} className="footer-links">
                       راهنما
                     </NavLink>
                   </Col>
                   <Col className="lg-auto">
-                    <NavLink
-
-                      to="/register"
-                      tag={Link}
-                      className="footer-links"
-                    >
+                    <NavLink to="/register" tag={Link} className="footer-links">
                       ثبت نام
                     </NavLink>
-                    <NavLink
-
-                      to="/signin"
-                      tag={Link}
-                      className="footer-links"
-                    >
+                    <NavLink to="/signin" tag={Link} className="footer-links">
                       ورود
                     </NavLink>
                   </Col>
                   <Col className="lg-auto">
-                    <NavLink
-                      to="/‌‌help"
-                      tag={Link}
-                      className="footer-links"
-                    >
+                    <NavLink to="/‌‌help" tag={Link} className="footer-links">
                       امکانات
                     </NavLink>
-                    <NavLink
-                      to="/‌‌help"
-                      tag={Link}
-                      className="footer-links"
-                    >
+                    <NavLink to="/‌‌help" tag={Link} className="footer-links">
                       درباره ما
                     </NavLink>
                   </Col>
