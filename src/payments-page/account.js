@@ -8,17 +8,9 @@ import {
   CardBody,
   Badge
 } from "reactstrap";
-import TextBox from "../common/textbox/textbox.js";
 
 class Profile extends React.Component {
-  state = {};
-  toggleModal = state => {
-    this.setState({
-      [state]: !this.state[state]
-    });
-  };
-
-  render() {
+    render() {
     return (
       <section className="section pt-0">
         <Container>
@@ -56,7 +48,7 @@ class Profile extends React.Component {
                         </Col>
                       </Row>
 
-                      <Row className="hr"></Row>
+                      <Row className="hr"/>
                     </CardBody>
                   </Card>
                 </Col>

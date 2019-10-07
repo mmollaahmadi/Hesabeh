@@ -5,17 +5,11 @@ import {
   CardBody,
   Container,
   Row,
-  Col,
-  Button,
-  Form,
-  FormGroup,
-  InputGroup,
-  InputGroupAddon,
-  InputGroupText,
-  Input
+  Col
 } from "reactstrap";
-import { Link } from "react-router-dom";
+
 import NotificationsTableRow from "./notifications-table-row.js";
+import TableCardHeader from "../common/table-card-header/table-card-header";
 
 class NotificationsTable extends React.Component {
   state = {};
@@ -36,41 +30,7 @@ class NotificationsTable extends React.Component {
         <Container>
           <Card className="card-profile shadow mt-5">
             <CardHeader>
-              <Row className="justify-content-center">
-                <Col lg="auto">
-                  <i className="fa fa-sort fa-2x mx-2 d-inline-block" />
-                  <i className="fa fa-filter fa-2x mx-2 d-inline" />
-                </Col>
-                <Col>
-                  <Form className="d-inline">
-                    <FormGroup>
-                      <InputGroup className="input-group-alternative">
-                        <InputGroupAddon addonType="prepend">
-                          <InputGroupText>
-                            <i className="fa fa-search" />
-                          </InputGroupText>
-                        </InputGroupAddon>
-
-                        <Input
-                          className="signin-input"
-                          placeholder="جستجو ..."
-                          type="email"
-                        />
-                      </InputGroup>
-                    </FormGroup>
-                  </Form>
-                </Col>
-                <Col lg="auto">
-                  <Button
-                    color="primary"
-                    className="p-2"
-                    tag={Link}
-                    to="/create-new-request"
-                  >
-                    ایجاد درخواست
-                  </Button>
-                </Col>
-              </Row>
+              <TableCardHeader title="" buttonTitle="ایجاد درخواست" buttonLink="/create-new-request"/>
             </CardHeader>
             <CardBody>
               <Row className="justify-content-center py-5">

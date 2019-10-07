@@ -2,26 +2,12 @@ import React from "react";
 
 import Navbar from "../common/navbar/navbar";
 import Footer from "../common/footer/footer";
-import Cover from "../common/cover/cover.js";
 import GroupProfile from "./group-profile.js";
-import Accordion from "../common/accordion/accordion.js";
+
 import {
-  Container,
-  Form,
-  FormGroup,
-  InputGroup,
-  Input,
-  Button,
-  Row,
-  Col,
-  Badge,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownItem,
-  DropdownMenu
+  Container
 } from "reactstrap";
-import { GithubPicker } from "react-color";
-import GroupUser from './group-users.js';
+
 class GroupDashboardPage extends React.Component {
   render() {
     return (
@@ -30,78 +16,12 @@ class GroupDashboardPage extends React.Component {
 
         <div className="">
           <main className="profile-page pb-5" ref="main">
-            <Cover />
+
             <GroupProfile />
             <Container>
               <div className="landing-position-relative">
                 <section className="section pt-0 pb-200">
-                  <Accordion open={1}>
-                    <Accordion.Item>
-                      <Accordion.Header>اعضای گروه</Accordion.Header>
-                      <Accordion.Body>
-                          <Row className="justify-content-center">
-                            <GroupUser />
-                            <GroupUser />
-                            <GroupUser />
-                          </Row>
-                      </Accordion.Body>
-                    </Accordion.Item>
 
-                    <Accordion.Item>
-                      <Accordion.Header>هزینه‌ها</Accordion.Header>
-                      <Accordion.Body>
-                        <Form role="form" className="signup-form">
-                          <Row className="justify-content-center mb-3">
-                            <Col lg="auto">
-                              <FormGroup className="m-0">
-                                <InputGroup className="input-group-alternative">
-                                  <Input
-                                    className="signup-input"
-                                    placeholder="نام برچسب"
-                                  />
-                                </InputGroup>
-                              </FormGroup>
-                            </Col>
-
-                            <Col
-                              lg="auto"
-                              className="d-flex align-items-center"
-                            >
-                              <UncontrolledDropdown nav>
-                                <DropdownToggle className="p-0 btn-circle m-0">
-                                  <i className="fa fa-paint-brush"></i>
-                                </DropdownToggle>
-                                <DropdownMenu className="p-0">
-                                  <DropdownItem className="p-0">
-                                    <GithubPicker />
-                                  </DropdownItem>
-                                </DropdownMenu>
-                              </UncontrolledDropdown>
-                            </Col>
-
-                            <Col lg="auto" className="">
-                              <FormGroup className="m-0">
-                                <Button color="primary" type="button">
-                                  ایجاد برچسب
-                                </Button>
-                              </FormGroup>
-                            </Col>
-                          </Row>
-                        </Form>
-
-                        <Row className="justify-content-start">
-                          <Badge href="#" color="primary">
-                            برچسب 1<i className="fa fa-close mr-2"></i>
-                          </Badge>
-                        </Row>
-                      </Accordion.Body>
-                    </Accordion.Item>
-
-                    <Accordion.Item>
-                      <Accordion.Header>مکالمات </Accordion.Header>
-                      <Accordion.Body>some body</Accordion.Body>
-                    </Accordion.Item>
-                  </Accordion>
                 </section>
               </div>
             </Container>
