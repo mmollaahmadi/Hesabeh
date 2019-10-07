@@ -24,7 +24,7 @@ class NewPasswordRequestPage extends React.Component {
         <Container className="pt-10 pb-30  h-100">
           <Row className="text-center justify-content-center">
             <Col lg="5">
-            <Header title="ارسال در خواست رمز عبور جدید" />
+            <Header title="درخواست تغییر رمز عبور" />
 
 
               <Form role="form" className="audit-form">

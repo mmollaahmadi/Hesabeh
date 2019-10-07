@@ -7829,6 +7829,10 @@ button.section-darker:focus {
 .fill-white {
   fill: #fff; }
 
+  .fill-body-bg-color {
+    fill: #f9f9f9; }
+
+
 .stroke-white {
   stroke: #fff; }
 

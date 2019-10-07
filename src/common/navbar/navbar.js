@@ -163,14 +163,14 @@ class MyNavbar extends React.Component {
                   پشتیبانی
                 </NavLink>
                 <NavLink
-                  to="/‌‌help"
+                  to="/help"
                   tag={Link}
                   className="navbar-link pl-3 pr-3"
                   color="primary"
                 >
                   راهنما
                 </NavLink>
-              
+
               </div>
             </Nav>
             <Nav className="align-items-lg-center mr-lg-auto" navbar>
