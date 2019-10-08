@@ -32,7 +32,7 @@ import RegisterPage from './register-page/register-page.js';
 import PaymentsPage from './payments-page/payments-page.js';
 import CreateNewGroupPage from './groups-page/create-new-group-page.js';
 import NotificationsPage from './notifications-page/notifications-page.js';
-import CreateNewRequestPage from './notifications-page/create-new-request-page.js'
+import CreateNewRequestPage from './notifications-page/new-request/create-new-request-page.js'
 import AddPaymentPage from './payments-page/add-new-payment.js';
 import HelpPage from './help-page/help-page'
 

@@ -19,3 +19,10 @@
 }
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
     background-color: #01cd9a; }
+.custom-control-label::before{
+    background-color: #F2F3F3;
+}
+.drag-pic{
+    border: dashed 2px #0b152666;
+    border-radius: 5px;
+}

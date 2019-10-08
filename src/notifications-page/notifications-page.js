@@ -2,7 +2,7 @@ import React from "react";
 
 import Navbar from "../common/navbar/navbar";
 import Footer from "../common/footer/footer";
-import NotificationsTable from "./notifications-table.js";
+import NotificationsTable from "./notification-table/notifications-table.js";
 import Title from "../common/title/title.js";
 
 const DATA = [
