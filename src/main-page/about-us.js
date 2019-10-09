@@ -1,5 +1,4 @@
 import React from "react";
-// reactstrap components
 import { Container, Row, Col } from "reactstrap";
 
 class AboutUs extends React.Component {

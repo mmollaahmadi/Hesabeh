@@ -20,7 +20,7 @@ class Learning extends React.Component {
                   imageUri={require("../../assets/img/theme/team-4-800x800.jpg")}
                 />
                 <Onboarding
-                  _text="مدیریت هزینه ها"
+                  _text="مدیریت هزینهها"
                   imageUri={require("../../assets/img/theme/team-4-800x800.jpg")}
                 />
                 <Onboarding
