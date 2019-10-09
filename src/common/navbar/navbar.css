@@ -1,54 +1,77 @@
 /* ============================== NAVBAR ==================================== */
 /* ========================================================================== */
-.nav-link {
-  font-family: Samim-Bold, Tahoma !important;
-}
 
-.my-nav-link {
-  color: #141312 !important;
-  cursor: pointer;
-}
-.username{
-  font-size: 12px !important;
-}
-.headroom--not-top .my-nav-link{
-  color: #fff !important;
+/* ------------------------------ toggler ----------------------------------- */
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
 }
 .navbar-toggler {
   color: #fff !important;
 }
-.headroom{
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  transition: all .2s ease-in-out;
+
+/* ------------------------------ brand ----------------------------------- */
+.navbar-brand-title {
+  font-family: Lalezar, Tahoma;
+  color: #0b1526 !important;
+  font-size: 2rem;
+  margin-bottom: 0px !important;
 }
 
-/* copy kardam az argon-syste.css */
-.headroom--not-top {
-  /* background-color: #424242 !important; */
-  padding: 0;
+.brand-logo{
+  width: 40px !important;
+  height: 40px !important;
+}
+/* --------------------------- links and buttons --------------------------- */
+.navbar-link {
+  font-family: Samim-Bold, Tahoma !important;
+  color: #0b1526 !important;
+  cursor: pointer;
+  font-size: 0.75rem !important;
+}
+.navbar-link-active{
+  color: #00e5ac !important;
+  font-family: Samim-Bold, Tahoma !important;
+  cursor: pointer;
+  font-size: 0.75rem !important;
+}
+.signup-button {
+  /* border-radius: 3rem; */
+  font-size: 0.75rem !important;
+  font-family: Samim-Bold, Tahoma !important;
+  padding: 0.5rem 0.7rem;
+  border-style: none;
+}
+.notification-btn{
+  padding: 0.25rem;
+}
+.slash {
+  font-size: 1.5rem;
 }
 
-.phone-number{
-  font-family: Samim;
-  color: #141312;
+/* ------------------------------ profile ----------------------------------- */
+.navbar-profile-img{
+  border-style: none;
+  border-color: #00e5ac;
+  border-width: 3px;
+  width: 45px;
+}
+.profile-menu{
+  width: 100px;
+  min-width: 10rem;
+}
+.profile-item{
+  text-align: right;
+  width: 100%;
+}
+.profile-item:focus{
+  background-color: #00e5ac !important;
 }
 
-.headroom--not-top .social-network-icon{
+/* .id{
   color: #fff !important;
-}
-.social-network-icon{
-  color: #141312 !important;
-}
-@media (max-width: 990px) {
-  .social-network-icon{
-    color: #FFF !important;
-    margin-left: 10px;
-  }
-}
-
-.counter.counter-lg {
-    top: -24px !important;
-}
+  margin: 0px 0px 0px -3px;
+  background-color: #00e5ac !important;
+  padding: 1px 6px 1px 3px;
+  font-size: 0.7rem;
+  border-radius: 0px 10px 10px 0px;
+} */

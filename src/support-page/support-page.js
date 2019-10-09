@@ -1,55 +1,76 @@
 import React from "react";
 
-import "../forgot-password-pages/forgot-password.css";
+import "./support-page.css";
 import { Link } from "react-router-dom";
 import {
   Container,
   Row,
   Col,
+  InputGroupAddon,
+  InputGroupText,
   Button,
   FormGroup,
   Form,
   Input,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroup,
-  Collapse,
-  NavLink,
   UncontrolledTooltip,
-  Alert
+  InputGroup,
+  NavLink
 } from "reactstrap";
 import "../assets/css/custom.css";
-import ContactUs from "../common/footer/ContactUs.js";
-
+import Header from "../common/header.js";
 class SupportPage extends React.Component {
+
   render() {
     return (
-      <div className="support-section section section-lg section-shaped">
-        <div className="shape shape-style-1 shape-default">
-          <span />
-          <span />
-          <span className="span-50" />
-          <span className="span-170" />
-          <span />
-          <span />
-          <span className="span-200" />
-          <span />
-          <span className="span-150" />
-          <span />
-        </div>
-        <Container className="pt-20 pb-30  h-100">
+      <div className="register-section section-lg">
+        <Container className="pt-10 pb-30  h-100">
           <Row className="text-center justify-content-center">
-            <Col lg="7">
-              <img
-                alt="..."
-                className="rounded-circle logo"
-                src={require("../assets/img/users/user01.jpg")}
-              />
-              <h1 className="brand-title">حسابه</h1>
+            <Col lg="5">
+            <Header title="مشکلات، نظرات و پیشنهادات خود را با ما در میان بگذارید" />
 
-              <h4 className="mb-3">مشکلات، نظرات و انتقادات خود را با ما در میان بگذارید.</h4>
+              <Form role="form" className="audit-form">
+                <FormGroup className="mb-3">
+                  <InputGroup className="input-group-alternative">
+                    <InputGroupAddon addonType="prepend">
+                      <InputGroupText>
+                        <i class="fa fa-envelope" />
+                      </InputGroupText>
+                    </InputGroupAddon>
 
-              <ContactUs />
+                    <Input
+                      className="audit-input"
+                      placeholder="ایمیل"
+                      type="email"
+                    />
+                  </InputGroup>
+                </FormGroup>
+                <FormGroup className="mb-3 p-0">
+                  <Input
+                    className="form-control-alternative cuntactus-input"
+                    cols="80"
+                    name="name"
+                    placeholder="متن پیام"
+                    rows="2"
+                    size="md"
+                    type="textarea"
+                  />
+                </FormGroup>
+
+
+                <FormGroup>
+                  <Row className="justify-item-center d-flex">
+                    <Col className="lg-9 m-0 text-center">
+                      <Button
+                        className="audit-button"
+                        color="primary"
+                      
+                      >
+                        ارسال
+                      </Button>
+                    </Col>
+                  </Row>
+                </FormGroup>
+              </Form>
 
               <Row className="justify-content-center mt-5">
               <p>021-66843101</p>
@@ -124,6 +145,22 @@ class SupportPage extends React.Component {
               </UncontrolledTooltip>
               </div>
 
+              <Row className="text-center justify-content-center">
+                <Col lg="12">
+                  <hr className="mt-5 mb-1" />
+                  <Row className="text-center justify-content-center px-4">
+                    <NavLink
+                      to="/"
+                      tag={Link}
+                      className="forgot-password-footer-nav-link"
+                      color="primary"
+                    >
+                      حسابه
+                    </NavLink>
+
+                  </Row>
+                </Col>
+              </Row>
             </Col>
           </Row>
         </Container>

@@ -28,33 +28,20 @@ class SigninButton extends React.Component {
   };
 
   render() {
-    let _buttonOrLink;
-    if (this.props.buttonOrLink === "button") {
-      _buttonOrLink = (
-        <Button
-          className="signup-button"
-          color="primary"
-          type="button"
-          onClick={() => this.toggleModal("loginFormModal")}
-        >
-          {this.props.title}
-        </Button>
-      );
-    } else {
-      _buttonOrLink = (
-        <NavLink
-          className="nav-link pl-3 pr-3 my-nav-link"
-          color="primary"
-          id="navbar-signin"
-          onClick={() => this.toggleModal("loginFormModal")}
-        >
-          {this.props.title}
-        </NavLink>
-      );
-    }
     return (
       <div>
-        <div>{_buttonOrLink}</div>
+        <div>
+          <NavLink
+            className="navbar-link pl-3 pr-3"
+            color="primary"
+            id="navbar-signin"
+            // onClick={() => this.toggleModal("loginFormModal")}
+            to="/signin"
+            tag={Link}
+          >
+            ورود
+          </NavLink>
+        </div>
         <Modal
           className="modal-dialog-centered signin-modal"
           size="sm"
@@ -125,7 +112,7 @@ class SigninButton extends React.Component {
                   </FormGroup>
                   <div className="custom-control custom-control-alternative custom-checkbox">
                     <input
-                      className="custom-control-input"
+                      className="custom-control-input checked"
                       id=" customCheckLogin"
                       type="checkbox"
                     />

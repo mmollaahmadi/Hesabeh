@@ -80,3 +80,17 @@ RD node_modules
 
 ### linux:
 rm -rf node_modules
+
+
+# tools
+## animations:
+https://react.mdbootstrap.com/css/animations
+
+## colors:
+https://mycolor.space/gradient3
+
+## template:
+https://www.behance.net/gallery/84972995/MyCab-On-demand-Taxi-Booking-App-Landing-Page
+
+## animation:
+https://daneden.github.io/animate.css/

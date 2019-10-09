@@ -1,0 +1,43 @@
+.chip-body{
+  height: auto;
+  width: auto;
+  padding: 0rem 0rem 0rem 0.5rem;
+  margin: 0rem 0rem 0rem 0rem;
+  background-color: #E0E0E0 !important;
+}
+.chip-avatar{
+  margin: 0rem 0.2rem;
+  width: 32px;
+  height: 32px;
+  margin: 0px -1px 0px 0px;
+}
+.chip-label{
+  margin: 0rem 0.5rem 0rem 0.1rem;
+  font-family: Samim, Tahoma;
+  font-size: 0.8rem;
+  color: #414141 !important;
+  align-items: center;
+  display: flex;
+}
+.chip-label-link{
+  padding: 0rem;
+  margin: 0rem 0.3rem 0rem 0.1rem;
+  font-size: 0.7rem;
+}
+.chip-close-btn{
+  padding: 0px;
+  border-style: none;
+  height: 15px;
+  align-items: center !important;
+  display: flex;
+  margin-right: 0.5rem;
+  margin-left: 0.2rem;
+}
+.chip-close-icon{
+  color: #414141 !important;
+  /* margin-right: 0.5rem; */
+  /* margin-left: 0.2rem; */
+  margin: 0px;
+  align-items: center;
+  display: flex;
+}

@@ -1,0 +1,138 @@
+.h1-hesabeh {
+  font-family: Lalezar, Tahoma;
+  display: inline;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  font-size: 4rem;
+  color: #00e5ac;
+}
+
+.land-pic{
+  background: url('../assets/img/theme/cloud01.png') no-repeat center;
+  -webkit-background-size: 60%;
+  -moz-background-size: 60%;
+  -o-background-size: 60%;
+  background-size: 60%;
+padding: auto;
+display: flex;
+align-items: center;
+}
+
+.sec{
+  height: 100vh;
+  width: 100%;
+  margin: 0px;
+}
+/* {<div className="landing-position-relative">
+<div className="d-flex align-items-center">
+    <Container className="d-flex justify-content-start">
+      <Row className="d-flex justify-items-center text-center">
+        <Col className="pb-5">
+          <h2 className="display-3">
+            حساب،
+            <h1 className="h1-hesabeh">حسابِه</h1>
+            ...
+          </h2>
+          <h4>مدیریت هزینه‌هاتو به حسابِه بسپار</h4>
+          <p>هزینه‌های روزمره رو اینجا ثبت کن و به راحتی مدیریتشون کن</p>
+        </Col>
+      </Row>
+    </Container>
+</div>
+
+</div>} */
+
+
+
+{/*  <div className="header">
+
+    <h2 className="display-3">
+      حساب،
+      <h1 className="h1-hesabeh">حسابِه</h1>
+      ...
+    </h2>
+    <h4>مدیریت هزینه‌هاتو به حسابِه بسپار</h4>
+    <p>هزینه‌های روزمره رو اینجا ثبت کن و به راحتی مدیریتشون کن</p>
+
+
+  </div>*/}
+
+
+
+
+/* section */
+.statistics-body{
+background-color: #f3f3f1;
+}
+
+
+/* learning */
+.dark-section{
+  background-color: #EFF4F7 !important;
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+}
+.learning-img-card{
+width: 70%;
+height: auto;
+}
+.learning-card{
+  background-color: #fff !important;
+  border-radius: 3%;
+  margin-left: 0.5rem;
+  padding-top: 1.2rem;
+  padding-bottom: 1rem;
+  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07) !important;
+}
+
+.section-title{
+  font-family: Samim-Bold !important;
+  color: #03091e !important;
+  font-size: 2rem;
+  margin-bottom: 4rem;
+}
+
+
+.features-btn{
+  background-color: #fff !important;
+  color: #33393f60;
+  border-style: dashed;
+  border-color: #33393f60;
+  margin: 1.5rem 0.5rem !important;
+  box-shadow: none;
+}
+.features-btn:hover, .features-btn:focus{
+  border-color: #33393f !important;
+  color: #33393f !important;
+}
+.features-btn-active{
+  border-color: #33393f;
+  color: #33393f;
+  background-color: #fff !important;
+  border-style: dashed;
+    margin: 1.5rem 0.5rem !important;
+}
+.features-btn-active:hover{
+  border-color: #33393f;
+  color: #33393f;
+}
+.features-img{
+  width: 100%;
+}
+
+
+
+.statistic-circle-image{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 130px;
+  /* border-style: dashed;
+  border-color: #03091e;
+  border-width: 2px; */
+}
+
+.landing-logo{
+  width: 120px;
+  height: 120px;
+}

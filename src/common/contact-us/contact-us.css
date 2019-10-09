@@ -1,0 +1,28 @@
+.cuntactus-input:-webkit-autofill {
+  -webkit-box-shadow: inset 0 0 0px 9999px #42424284;
+}
+.cuntactus-input::placeholder{
+  color: #42424280;
+}
+.cuntactus-input{
+  color: #424242;
+  border-color: #d7d7d650;
+  background-color: #d7d7d650 !important;
+  resize: none;
+  /* color: #f98d00; */
+}
+.cuntactus-email-input{
+  border-right-style: solid !important;
+  border-right-color: #42424230 !important;
+  border-right-width: 1px !important;
+}
+.cuntactus-input:focus{
+  color: #424242;
+}
+.cuntactus-input:focus::placeholder{
+  color: #42424280;
+}
+.contactus-form .input-group-text{
+  background-color: #d7d7d650 !important;
+  color:  #42424280;
+}

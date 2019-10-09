@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {
-  NavLink,
   Modal,
   Card,
   CardHeader,
@@ -17,47 +16,45 @@ import {
   Col,
   Collapse
 } from "reactstrap";
-import '../modal.css';
+import "../modal.css";
+import "../navbar/navbar.css";
 
 class SignupButton extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-        signupFormModal: false,
-        email:{
-          value: "",
-          valid: false,
-          collapse: false
-        },
-        password:{
-          value:"",
-          valid: false,
-          collapse: false
-        },
-        confirmPassword:{
-          value:"",
-          valid: false,
-          collapse: false
-        }
+      signupFormModal: false,
+      email: {
+        value: "",
+        valid: false,
+        collapse: false
+      },
+      password: {
+        value: "",
+        valid: false,
+        collapse: false
+      },
+      confirmPassword: {
+        value: "",
+        valid: false,
+        collapse: false
+      }
     };
   }
   changeHandler = event => {
-    this.setState(
-      {
-        [event.target.name]: {
-          value:event.target.value,
-          valid:event.target.valid,
-          collapse:event.target.collapse
-        }
+    this.setState({
+      [event.target.name]: {
+        value: event.target.value,
+        valid: event.target.valid,
+        collapse: event.target.collapse
       }
-    );
+    });
   };
   toggle = state => {
     this.setState({
-          [state]: {collapse: !this.state[state].collapse}
-        }
-    );
-  }
+      [state]: { collapse: !this.state[state].collapse }
+    });
+  };
   toggleModal = state => {
     this.setState({
       [state]: !this.state[state]
@@ -65,32 +62,19 @@ class SignupButton extends React.Component {
   };
 
   render() {
-    let _buttonOrLink;
-    if (this.props.buttonOrLink === "button") {
-      _buttonOrLink = (
-        <Button
-          className="btn-neutral btn signup-button"
-          color="primary"
-          type="button"
-          onClick={() => this.toggleModal("signupFormModal")}
-        >
-          {this.props.title}
-        </Button>
-      );
-    } else {
-      _buttonOrLink = (
-        <NavLink
-          className="nav-link pl-3 pr-3 "
-          color="default"
-          onClick={() => this.toggleModal("signupFormModal")}
-        >
-          {this.props.title}
-        </NavLink>
-      );
-    }
     return (
       <div>
-        <div>{_buttonOrLink}</div>
+        <div>
+          <Button
+            className="signup-button px-4 py-1"
+            color="primary"
+            // onClick={() => this.toggleModal("signupFormModal")}
+            to="/register"
+            tag={Link}
+          >
+            ثبت نام
+          </Button>
+        </div>
         <Modal
           className="modal-dialog-centered signup-modal"
           size="sm"
@@ -149,9 +133,7 @@ class SignupButton extends React.Component {
                       />
                     </InputGroup>
                     <Collapse isOpen={this.state.email.collapse}>
-                      <p className="errorCollapseText">
-                        ایمیل نادرست است.
-                      </p>
+                      <p className="errorCollapseText">ایمیل نادرست است.</p>
                     </Collapse>
                   </FormGroup>
                   <FormGroup className="mb-2">
@@ -163,15 +145,14 @@ class SignupButton extends React.Component {
                       </InputGroupAddon>
 
                       <Input
-                      className="signup-modal-input"
-                      placeholder="رمز عبور"
-                      name="password"
-                      type="password" />
+                        className="signup-modal-input"
+                        placeholder="رمز عبور"
+                        name="password"
+                        type="password"
+                      />
                     </InputGroup>
                     <Collapse isOpen={this.state.password.collapse}>
-                      <p className="errorCollapseText">
-                        ایمیل نادرست است.
-                      </p>
+                      <p className="errorCollapseText">ایمیل نادرست است.</p>
                     </Collapse>
                   </FormGroup>
                   <FormGroup className="mb-2">
@@ -183,14 +164,13 @@ class SignupButton extends React.Component {
                       </InputGroupAddon>
 
                       <Input
-                      placeholder="تایید رمز عبور"
-                      type="password"
-                      className="signup-modal-input"/>
+                        placeholder="تایید رمز عبور"
+                        type="password"
+                        className="signup-modal-input"
+                      />
                     </InputGroup>
                     <Collapse isOpen={this.state.confirmPasswordCollapse}>
-                      <p className="errorCollapseText">
-                        ایمیل نادرست است.
-                      </p>
+                      <p className="errorCollapseText">ایمیل نادرست است.</p>
                     </Collapse>
                   </FormGroup>
                   <div class="text-muted font-italic justify-content-center d-flex mt-0">

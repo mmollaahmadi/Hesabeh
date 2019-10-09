@@ -1,0 +1,8 @@
+.forgot-password-link{
+  padding: 0.5rem 0rem;
+  font-size: 12px;
+  text-align: left;
+}
+.forgot-password-link:hover{
+  color: #03091e !important;
+}

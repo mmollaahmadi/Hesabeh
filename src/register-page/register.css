@@ -1,0 +1,25 @@
+.password-condition-icon{
+
+}
+
+.password-condition-text{
+font-size: 10px;
+}
+.condition{
+
+  padding: 0px;
+}
+.condition-satisfied{
+  color: #01cd9a !important;
+  padding: 0px;
+}
+.condition-unsatisfied{
+  color: #b67b81 !important;
+  padding: 0px;
+}
+.password-condition-fake-icon{
+  padding: 0px;
+  margin: 0px;
+  font-family: Baloo;
+  font-size: 0.95rem; 
+}

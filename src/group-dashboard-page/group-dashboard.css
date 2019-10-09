@@ -1,0 +1,41 @@
+.card-profile-image{
+    width: 70px;
+}
+
+.user-status{
+  background-color: #fff;
+}
+
+.status-text{
+font-size: 0.6rem;
+padding: 0.1rem;
+  margin-bottom: 0.1rem;
+  margin-top: 0.1rem;
+}
+
+.card-profile-social-network-icon{
+  color: #33393f !important;
+}
+.card-profile-social-network-link{
+  width: 1.5rem;
+  height: 1.5rem;
+margin: 0.1rem !important;
+padding: 0.1rem;
+}
+
+.card-profile-name{
+  font-family: Samim-Bold !important;
+  padding-right: 20px;
+margin-bottom: 2px;
+}
+
+.plus-btn-circle {
+    width: 20px;
+    height: 20px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+    
+}

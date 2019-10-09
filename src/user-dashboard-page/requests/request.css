@@ -1,9 +1,0 @@
-.border-bottom  {
-
-   border-bottom: $border-width solid $border-color !important;
- }
- hr.style5 {
- 		border-top: 1px dashed #8c8b8b;
-    margin-left: 30px;
-    margin-right: 30px;
- }
