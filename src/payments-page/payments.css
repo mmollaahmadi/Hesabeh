@@ -23,6 +23,18 @@
     background-color: #F2F3F3;
 }
 .drag-pic{
-    border: dashed 2px #0b152666;
+    border: dashed 2px #A0A1A1;
     border-radius: 5px;
+}
+
+.consumers-text{
+    color: #A0A1A1;
+}
+
+.add-image-text{
+    color: #A0A1A1;
+}
+.nothing{
+    color: #A0A1A1;
+    font-size: 1rem;
 }

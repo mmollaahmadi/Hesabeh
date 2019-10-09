@@ -4,7 +4,6 @@ import {
     Card,
     CardBody,
     CardHeader,
-    Col,
     Form,
     FormGroup,
     Input,
@@ -13,7 +12,6 @@ import {
     Row
 } from "reactstrap";
 import Chip from "../../common/chip/chip";
-import {Link} from "react-router-dom";
 
 class InviteOthersToMyGroup extends React.Component{
     render(){
