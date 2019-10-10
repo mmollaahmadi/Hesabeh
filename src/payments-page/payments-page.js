@@ -1,9 +1,9 @@
 import React from "react";
 
-import Navbar from "../common/navbar/navbar";
+import NavBar from "../common/navbar/navbar";
 import Footer from "../common/footer/footer";
 import Account from "./account.js";
-import PaimentsTable from "./payments-table.js";
+import PaymentsTable from "./payments-table/payments-table.js";
 import Title from "../common/title/title.js";
 
 const PAYMENTS = [
@@ -50,12 +50,12 @@ class PaymentsPage extends React.Component {
   render() {
     return (
       <div>
-        <Navbar isLogin="true" />
+        <NavBar isLogin="true" />
 
         <div className="my-body">
           <Title text="حساب من" />
           <Account />
-          <PaimentsTable payments={PAYMENTS} />
+          <PaymentsTable payments={PAYMENTS} />
         </div>
 
         <Footer />

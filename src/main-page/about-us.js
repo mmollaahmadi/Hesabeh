@@ -9,7 +9,7 @@ class AboutUs extends React.Component {
           <Row className="text-center justify-content-center">
             <Col lg="10">
               <p className="section-title">درباره‌ی ما</p>
-              <p className="lead text-justify">
+              <p className="main-page-text text-justify">
                 خریدهای منزل، پرداخت قبوض، اجاره‌بها، تعمیرات منزل، سفر با
                 دوستان، خریدهای مشترک هم‌خانه‌ای‌ها، رفتن به سینما و... تنها
                 تعداد کمی از هزینه‌هایی هستند که در طول ماه انجام می‌دهیم.

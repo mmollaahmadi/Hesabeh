@@ -1,12 +1,23 @@
 .h1-hesabeh {
-  font-family: Lalezar, Tahoma;
+  font-family: Lalezar, Tahoma, serif;
   display: inline;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
-  font-size: 4rem;
+  font-size: 12vmin;
   color: #00e5ac;
 }
-
+.h2-hesabeh{
+  font-size: 6vmin;
+}
+.h4-hesabeh{
+  font-size: 4vmin;
+}
+.p-hesabeh{
+  font-size: 3vmin;
+}
+.main-page-text{
+  font-size: 3vmin;
+}
 .land-pic{
   background: url('../assets/img/theme/cloud01.png') no-repeat center;
   -webkit-background-size: 60%;
@@ -19,9 +30,15 @@ align-items: center;
 }
 
 .sec{
+  background: url('../assets/img/theme/cloud01.png') no-repeat left bottom;
+  background-size: 80vmin;
   height: 100vh;
   width: 100%;
-  margin: 0px;
+  margin: 0;
+  padding-top: 80px;
+}
+.section{
+  padding: 8vmin  0 !important;
 }
 /* {<div className="landing-position-relative">
 <div className="d-flex align-items-center">
@@ -86,10 +103,10 @@ height: auto;
 }
 
 .section-title{
-  font-family: Samim-Bold !important;
+  font-family: Samim-Bold, serif !important;
   color: #03091e !important;
-  font-size: 2rem;
-  margin-bottom: 4rem;
+  font-size: 5vmin;
+  margin-bottom: 6vmin;
 }
 
 
@@ -133,6 +150,6 @@ height: auto;
 }
 
 .landing-logo{
-  width: 120px;
-  height: 120px;
+  width: 24vmin;
+  height: 24vmin;
 }

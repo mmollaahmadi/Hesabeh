@@ -7,6 +7,7 @@
     "classnames": "^2.2.6",
     "gh-pages": "^2.1.1",
     "headroom.js": "^0.9.4",
+    "jalali-react-datepicker": "0.0.1-alpha-01",
     "js-beautify": "^1.10.2",
     "mdbreact": "^4.20.0",
     "node-sass": "^4.12.0",
