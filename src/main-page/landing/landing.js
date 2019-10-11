@@ -4,14 +4,16 @@ import React from "react";
 import { Row, Button, Col } from "reactstrap";
 // import SignupButton from '../common/signup-button/SignupButton.js';
 // import SigninButton from "../../common/signin-button/SigninButton.js";
-// import Onboarding from "./Onboarding.js";
+// import OnboardingUnit from "./OnboardingUnit.js";
 
 class Landing extends React.Component {
-
   render() {
     return (
       <Row className="sec">
-        <Col md="5" className="d-flex align-items-center justify-content-lg-end justify-content-sm-center px-auto">
+        <Col
+          md="5"
+          className="d-flex align-items-center justify-content-lg-end justify-content-center px-auto"
+        >
           <div className="d-block text-center">
             <img
               alt=""
@@ -23,14 +25,16 @@ class Landing extends React.Component {
               <h1 className="h1-hesabeh">حسابِه</h1>
               ...
             </h2>
-            <h4 className='h4-hesabeh'>مدیریت هزینه‌هاتو به حسابِه بسپار</h4>
-            <p className='p-hesabeh'>هزینه‌های روزمره رو اینجا ثبت کن و به راحتی مدیریتشون کن</p>
+            <h4 className="h4-hesabeh">مدیریت هزینه‌هاتو به حسابِه بسپار</h4>
+            <p className="p-hesabeh">
+              هزینه‌های روزمره رو اینجا ثبت کن و به راحتی مدیریتشون کن
+            </p>
             <Button color="primary" className="py-1 px-4">
               بیشتر
             </Button>
           </div>
         </Col>
-        <Col md="7" className=""/>
+        <Col md="7" className="" />
       </Row>
     );
   }

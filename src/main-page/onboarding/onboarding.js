@@ -1,22 +1,37 @@
 import React from "react";
-import { Col, Row} from "reactstrap";
+import { Row, Col, Container } from "reactstrap";
+import OnboardingUnit from "./onboarding-unit.js";
 
 class Onboarding extends React.Component {
   render() {
     return (
-      <Col lg="3" sm="6" xs="12" className="m-0 d-flex justify-content-center">
-        <Row className="m-0 justify-content-center learning-card">
-          <img
-          className="rounded-circle statistic-circle-image"
-            top
-            src={this.props.imageUri}
-            alt=""
-          />
-          <span className="p-0 mx-2 mt-4">
-            {this.props._text}
-          </span>
-        </Row>
-      </Col>
+      <div className="py-5 mb-5">
+        <Container className="pt-30 pb-30">
+          <Row className="m-0 text-center justify-content-center">
+            <Col lg="12">
+              <p className="section-title">همین حالا شروع کنید</p>
+              <Row className="m-0 d-flex justify-content-center">
+                <OnboardingUnit
+                  _text="ثبت نام و ورود"
+                  imageUri={require("../../assets/img/theme/team-4-800x800.jpg")}
+                />
+                <OnboardingUnit
+                  _text="ثبت هزینه‌ها"
+                  imageUri={require("../../assets/img/theme/team-4-800x800.jpg")}
+                />
+                <OnboardingUnit
+                  _text="مدیریت هزینهها"
+                  imageUri={require("../../assets/img/theme/team-4-800x800.jpg")}
+                />
+                <OnboardingUnit
+                  _text="گزارش گیری"
+                  imageUri={require("../../assets/img/theme/team-4-800x800.jpg")}
+                />
+              </Row>
+            </Col>
+          </Row>
+        </Container>
+      </div>
     );
   }
 }

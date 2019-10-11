@@ -28,7 +28,11 @@ padding: auto;
 display: flex;
 align-items: center;
 }
-
+@media (max-width: 768px) {
+      .sec{
+        background:none !important;
+       }
+}
 .sec{
   background: url('../assets/img/theme/cloud01.png') no-repeat left bottom;
   background-size: 80vmin;
@@ -96,9 +100,10 @@ height: auto;
 .learning-card{
   background-color: #fff !important;
   border-radius: 3%;
-  margin-left: 0.5rem;
+  margin: 4vmin 16vmin;
   padding-top: 1.2rem;
   padding-bottom: 1rem;
+  min-width: 100%;
   box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07) !important;
 }
 

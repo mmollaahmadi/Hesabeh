@@ -6,7 +6,7 @@ import AboutUs from "./about-us";
 import Features from "./features.js";
 import Footer from "../common/footer/footer.js";
 import OurStatistics from "./statistics/OurStatistics.js";
-import Learning from "./onboarding/learning.js";
+import Onboarding from "./onboarding/onboarding.js";
 
 import './main-page.css';
 
@@ -21,7 +21,7 @@ class MainPage extends React.Component {
         <div>
           <Landing />
           <AboutUs />
-          <Learning />          
+          <Onboarding />
           <Features />
           <OurStatistics />
         </div>
