@@ -1,16 +1,28 @@
 {
   "files": {
+<<<<<<< HEAD
     "main.css": "//mmollaahmadi.github.io/Hesabeh/static/css/main.252582ce.chunk.css",
     "main.js": "//mmollaahmadi.github.io/Hesabeh/static/js/main.81b6cb1d.chunk.js",
     "main.js.map": "//mmollaahmadi.github.io/Hesabeh/static/js/main.81b6cb1d.chunk.js.map",
+=======
+    "main.css": "//mmollaahmadi.github.io/Hesabeh/static/css/main.ee3bd103.chunk.css",
+    "main.js": "//mmollaahmadi.github.io/Hesabeh/static/js/main.d0a75ce8.chunk.js",
+    "main.js.map": "//mmollaahmadi.github.io/Hesabeh/static/js/main.d0a75ce8.chunk.js.map",
+>>>>>>> c8729f27e3f4f3d93759fe1396d8ec7ced8fa5ed
     "runtime~main.js": "//mmollaahmadi.github.io/Hesabeh/static/js/runtime~main.b2a768cc.js",
     "runtime~main.js.map": "//mmollaahmadi.github.io/Hesabeh/static/js/runtime~main.b2a768cc.js.map",
     "static/js/2.e123edd5.chunk.js": "//mmollaahmadi.github.io/Hesabeh/static/js/2.e123edd5.chunk.js",
     "static/js/2.e123edd5.chunk.js.map": "//mmollaahmadi.github.io/Hesabeh/static/js/2.e123edd5.chunk.js.map",
     "index.html": "//mmollaahmadi.github.io/Hesabeh/index.html",
+<<<<<<< HEAD
     "precache-manifest.654afb9f3f779a55cf61c2a2d04b479c.js": "//mmollaahmadi.github.io/Hesabeh/precache-manifest.654afb9f3f779a55cf61c2a2d04b479c.js",
     "service-worker.js": "//mmollaahmadi.github.io/Hesabeh/service-worker.js",
     "static/css/main.252582ce.chunk.css.map": "//mmollaahmadi.github.io/Hesabeh/static/css/main.252582ce.chunk.css.map",
+=======
+    "precache-manifest.fad08298303c7dc7ea4f24083004f157.js": "//mmollaahmadi.github.io/Hesabeh/precache-manifest.fad08298303c7dc7ea4f24083004f157.js",
+    "service-worker.js": "//mmollaahmadi.github.io/Hesabeh/service-worker.js",
+    "static/css/main.ee3bd103.chunk.css.map": "//mmollaahmadi.github.io/Hesabeh/static/css/main.ee3bd103.chunk.css.map",
+>>>>>>> c8729f27e3f4f3d93759fe1396d8ec7ced8fa5ed
     "static/media/custom.css": "//mmollaahmadi.github.io/Hesabeh/static/media/Samim-FD.f95b5825.ttf",
     "static/media/main-page.css": "//mmollaahmadi.github.io/Hesabeh/static/media/cloud01.b5d09d78.png",
     "static/media/all.min.css": "//mmollaahmadi.github.io/Hesabeh/static/media/fa-solid-900.815694de.woff",

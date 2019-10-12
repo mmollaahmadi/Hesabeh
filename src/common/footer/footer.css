@@ -29,7 +29,7 @@
 }
 .footer-links{
   font-size: 0.8rem;
-  font-family: Samim-Bold;
+  font-family: Samim-Bold, serif;
   color: #03091e !important;
 }
 .footer-links:hover{
@@ -42,27 +42,27 @@
 
 }
 .footer-hesabeh{
-  padding: 0px;
-  margin: 0px;
-  font-family: Lalezar;
+  padding: 0;
+  margin: 0;
+  font-family: Lalezar, serif;
   font-size: 1.5rem;
   position: relative;
   bottom:  -20px;
+  height: auto;
   color: #03091e !important;
 
 }
 .footer-heabeh-latin{
-font-family: Baloo;
+  font-family: Baloo, serif;
 font-size: 1.5rem;
-margin: 0px;
-padding: 0px;
-padding-left: 0.3rem;
-position: relative;
+margin: 0;
+  padding: 0 0 0 0.3rem;
+  position: relative;
 bottom:  -5px;
 color: #03091e !important;
 }
 .footer-logo-row{
-  margin: 0px;
+  margin: 0;
   height: 45px;
   background-color: #f3f3f1;
   display: flex;
@@ -75,4 +75,15 @@ color: #03091e !important;
     border-color: #f3f3f1;
     border-width: 2px;
     background-color: #f3f3f1;
+}
+.footer-company{
+  display: block;
+  text-align: center;
+  padding: auto 4vmin;
+  margin-top: 6vmin !important;
+}
+@media (min-width: 992px) {
+  .footer-company{
+    margin-top: -1.5vmin !important;
+  }
 }

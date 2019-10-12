@@ -17,7 +17,6 @@ import NavBar from "../common/navbar/navbar.js";
 import Footer from "../common/footer/footer.js";
 import Chip from "../common/chip/chip";
 import './payments-page.css';
-import {render} from "react-dom";
 import { DatePicker } from "jalali-react-datepicker";
 
 class AddPaymentPage extends React.Component {
