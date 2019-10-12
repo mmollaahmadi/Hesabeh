@@ -16,7 +16,9 @@ import {
 import NavBar from "../common/navbar/navbar.js";
 import Footer from "../common/footer/footer.js";
 import Chip from "../common/chip/chip";
-import './payments.css';
+import './payments-page.css';
+import {render} from "react-dom";
+import { DatePicker } from "jalali-react-datepicker";
 
 class AddPaymentPage extends React.Component {
   constructor(props) {
@@ -88,6 +90,7 @@ class AddPaymentPage extends React.Component {
                       <Form role="form" className="audit-form">
 
                         <Row className="mb-3 d-flex justify-content-right">
+                          <DatePicker/>
                         </Row>
 
                         <Row className=" m-0 text-center justify-content-center">
@@ -166,7 +169,7 @@ class AddPaymentPage extends React.Component {
                           </Col>
                           <Col lg="12" className="m-0 mt-3">
                             <Row className="m-0 d-flex justify-content-right">
-                              <p className='p-0 mx-3 consumers-text'>مصرفکنندگان: </p>
+                              <p className='p-0 mx-3 consumers-text'>مصرف‌کنندگان: </p>
                               <Chip
                                 class="mb-2 ml-2"
                                 haveCloseButton="true"
@@ -261,7 +264,7 @@ class AddPaymentPage extends React.Component {
                   </Row>
                 </CardBody>
               </Card>
-              <Card>
+              <Card className='mt-5 shadow'>
                 <CardHeader>
                   هزینهها
                 </CardHeader>

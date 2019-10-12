@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 class NavbarProfile extends React.Component {
   render() {
     return (
-      <div>
+      <div className='mr-auto'>
         <Nav className="navbar-nav-hover align-items-lg-center p-0" navbar>
           <UncontrolledDropdown nav>
             <DropdownToggle nav className="p-0">

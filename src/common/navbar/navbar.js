@@ -6,15 +6,13 @@ import {
   Navbar,
   Nav,
   Container,
-  Row,
-  Col,
   Button,
   NavLink,
   Badge
 } from "reactstrap";
-import { Link } from "react-router-dom";
-import NavbarProfile from "./navbar-profile.js";
-import NavbarButtons from "./navbar-buttons";
+import {Link} from "react-router-dom";
+import NavBarProfile from "./navbar-profile.js";
+import NavBarButtons from "./nav-bar-buttons";
 import "./navbar.css";
 
 class MyNavbar extends React.Component {
@@ -22,7 +20,9 @@ class MyNavbar extends React.Component {
     super(props);
 
     this.state = {
-      pageSelection: "my-account"
+      pageSelection: "my-account",
+      collapsed:true,
+      setCollapsed:true
     };
   }
 
@@ -37,15 +37,15 @@ class MyNavbar extends React.Component {
     // initialise
     // headroom.init();
   }
+
   render() {
     const pageSelection = this.state.pageSelection;
-
     let buttonsOrProfile;
     let links;
     if (this.props.isLogin === "true") {
-      buttonsOrProfile = <NavbarProfile />;
+      buttonsOrProfile = <NavBarProfile/>;
       links = (
-        <div className="d-flex justify-content-center align-items-center">
+        <div className="d-lg-flex d-block justify-content-center align-items-center">
           <Button
             color="link"
             className={
@@ -60,10 +60,10 @@ class MyNavbar extends React.Component {
             حساب من
           </Button>
           <Button
-            className={
+            className={`d-block ${
               pageSelection === "notifications"
                 ? "navbar-link-active"
-                : "navbar-link"
+                : "navbar-link"}`
             }
             onClick={() => this.togglePage("notifications")}
             color="link"
@@ -100,64 +100,40 @@ class MyNavbar extends React.Component {
         </div>
       );
     } else {
-      buttonsOrProfile = <NavbarButtons />;
+      buttonsOrProfile = <NavBarButtons/>;
       links = null;
     }
     return (
-      // <header className="header-global">
+       // <header className="header-global">
       <Navbar
         className="navbar-main navbar-light navbar-transparent  pb-0 "
         expand="lg"
         id="navbar-main"
       >
         <Container>
+
           {/* BRAND */}
           <NavbarBrand className="mr-0 pt-0 pb-0" to="/" tag={Link}>
-        {/*  <img
+            {/*  <img
             alt="..."
             className="rounded-circle  logo brand-logo"
             src={require("../../assets/img/theme/logo01.png")}
           />*/}
-          <p className="navbar-brand-title">حسابِه</p>
+            <p className="navbar-brand-title">حسابِه</p>
           </NavbarBrand>
-          {/* TOGGLER */}
 
+          {/* TOGGLER */}
           <button className="navbar-toggler" id="navbar_global">
             <span className="navbar-toggler-icon" />
           </button>
           <UncontrolledCollapse navbar toggler="#navbar_global">
-            <div className="navbar-collapse-header">
-              <Row>
-                <Col className="collapse-brand" xs="6">
-                  <Link to="/">
-                    <img
-                      alt="..."
-                      src={require("../../assets/img/brand/hesabeh-white.png")}
-                    />
-                    <p
-                      className="h1-hesabeh"
-                      style={{ color: "#fff", fontSize: "29px" }}
-                    >
-                      حسابِه
-                    </p>
-                  </Link>
-                </Col>
-
-                <Col className="collapse-close" xs="6">
-                  <button className="navbar-toggler" id="navbar_global">
-                    <span />
-                    <span />
-                  </button>
-                </Col>
-              </Row>
-            </div>
-            <Nav className="align-items-lg-center ml-lg-auto" navbar>
+            <Nav className="d-flex w-100" navbar>
               {links}
-              <div className="d-flex justify-content-center align-items-center">
+              <div className="d-lg-flex  justify-content-center align-items-center">
                 <NavLink
                   to="/support"
                   tag={Link}
-                  className="navbar-link pl-3 pr-3"
+                  className="navbar-link d-block ml-auto pl-3 pr-3"
                   color="primary"
                 >
                   پشتیبانی
@@ -165,21 +141,19 @@ class MyNavbar extends React.Component {
                 <NavLink
                   to="/help"
                   tag={Link}
-                  className="navbar-link pl-3 pr-3"
+                  className="navbar-link d-block pl-3 pr-3"
                   color="primary"
                 >
                   راهنما
                 </NavLink>
-
               </div>
-            </Nav>
-            <Nav className="align-items-lg-center mr-lg-auto" navbar>
               {buttonsOrProfile}
             </Nav>
+
           </UncontrolledCollapse>
         </Container>
       </Navbar>
-      // </header>
+    // </header>
     );
   }
 }

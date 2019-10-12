@@ -9,7 +9,7 @@ import {
 } from "reactstrap";
 
 import NotificationsTableRow from "./notifications-table-row.js";
-import TableCardHeader from "../../common/table-card-header/table-card-header";
+import TableTools from "../../common/table-tools/table-tools";
 
 class NotificationsTable extends React.Component {
   state = {};
@@ -30,9 +30,10 @@ class NotificationsTable extends React.Component {
         <Container>
           <Card className="card-profile shadow mt-5">
             <CardHeader>
-              <TableCardHeader title="" buttonTitle="ایجاد درخواست" buttonLink="/create-new-request"/>
+
             </CardHeader>
             <CardBody>
+              <TableTools buttonTitle="ایجاد درخواست" buttonLink="/create-new-request"/>
               <Row className="justify-content-center py-5">
                 <Col sm="12" className="notifications-table">
                   {rows}
