@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6de2a612f12cec46f7591b4b6b341099",
+    "revision": "b710d359e7831184ed026d83fc21744f",
     "url": "//mmollaahmadi.github.io/Hesabeh/index.html"
   },
   {
-    "revision": "189af93ab77208b40683",
-    "url": "//mmollaahmadi.github.io/Hesabeh/static/css/main.252582ce.chunk.css"
+    "revision": "c70fade0869263612a94",
+    "url": "//mmollaahmadi.github.io/Hesabeh/static/css/main.7fdc743d.chunk.css"
   },
   {
-    "revision": "f809feb3cf170dc4f2a5",
-    "url": "//mmollaahmadi.github.io/Hesabeh/static/js/2.e123edd5.chunk.js"
+    "revision": "1d02214e1a0b804da9a0",
+    "url": "//mmollaahmadi.github.io/Hesabeh/static/js/2.a8698f3a.chunk.js"
   },
   {
-    "revision": "189af93ab77208b40683",
-    "url": "//mmollaahmadi.github.io/Hesabeh/static/js/main.81b6cb1d.chunk.js"
+    "revision": "c70fade0869263612a94",
+    "url": "//mmollaahmadi.github.io/Hesabeh/static/js/main.37f21099.chunk.js"
   },
   {
     "revision": "11ae8daf8ea0a96d6b4b",
@@ -130,10 +130,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "87be59a1f7061fc6021876aad6fee028",
     "url": "//mmollaahmadi.github.io/Hesabeh/static/media/google.87be59a1.svg"
-  },
-  {
-    "revision": "022f1bf8b54408758d9b024c5cc4f759",
-    "url": "//mmollaahmadi.github.io/Hesabeh/static/media/hesabeh-white.022f1bf8.png"
   },
   {
     "revision": "8d3221c7789838c6ba5993aa2058b248",
