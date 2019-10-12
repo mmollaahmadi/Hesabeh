@@ -1,7 +1,7 @@
 /* #----------------------------------- BODY ------------------------------ */
 .footer {
   background-color: #00e5ac !important;
-  background: url('../../assets/img/theme/pattern.png');
+  /*background: url('../../assets/img/theme/pattern.png');*/
   background-repeat: no-repeat;
   background-size: auto;
   padding-top: 1rem !important;
