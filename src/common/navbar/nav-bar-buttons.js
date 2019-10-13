@@ -8,7 +8,7 @@ import SignUpLink from "../signup-button/SignUpLink.js";
 class NavBarButtons extends React.Component {
   render() {
     return (
-      <Row className="order-last m-0 d-lg-flex align-items-center">
+      <Row className=" m-0 d-lg-flex align-items-center">
 
         <SignInButton/>
         <p className="d-inline d-lg-none m-0 slash">/</p>

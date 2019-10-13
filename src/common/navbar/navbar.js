@@ -5,8 +5,6 @@ import {
   NavbarBrand,
   Navbar,DropdownItem,
   Nav,
-  Container,
-  Button,
   Row,
   NavLink,
   Badge
@@ -14,6 +12,7 @@ import {
 import { Link } from "react-router-dom";
 import NavBarProfile from "./navbar-profile.js";
 import NavBarButtons from "./nav-bar-buttons";
+import NavBarProfileToggler from './nav-bar-profile-toggler.js'
 import "./navbar.css";
 
 class MyNavbar extends React.Component {
@@ -41,10 +40,14 @@ class MyNavbar extends React.Component {
 
   render() {
     const pageSelection = this.state.pageSelection;
-    let buttonsOrProfile;
+    let profileToggler;
+    let profile;
+    let auditButtons;
     let links;
     if (this.props.isLogin === "true") {
-      buttonsOrProfile = <NavBarProfile />;
+      profileToggler = <NavBarProfileToggler togglePage={this.togglePage} />;
+      profile = <NavBarProfile />;
+      auditButtons=null;
       links = (
         <>
           <NavLink
@@ -58,6 +61,7 @@ class MyNavbar extends React.Component {
             color="primary"
             onClick={() => this.togglePage("my-account")}
           >
+            <i className="fa fa-credit-card-alt d-lg-none mr-0 ml-2"/>
             حساب من
           </NavLink>
           <NavLink
@@ -71,7 +75,8 @@ class MyNavbar extends React.Component {
             to="/notifications"
             tag={Link}
           >
-            اعلام‌ها <Badge color="warning">4</Badge>
+            <i className="fa fa-bell d-lg-none mr-0 ml-2"/>
+            اعلام‌ها <Badge className='notification-badge' >5</Badge>
           </NavLink>
 
           <NavLink
@@ -85,6 +90,7 @@ class MyNavbar extends React.Component {
             to="/mygroups"
             tag={Link}
           >
+            <i className="fa fa-users d-lg-none mr-0 ml-2"/>
             گروه‌های من
           </NavLink>
           <NavLink
@@ -96,12 +102,15 @@ class MyNavbar extends React.Component {
             tag={Link}
             disabled
           >
+            <i className="fa fa-line-chart d-lg-none mr-0 ml-2"/>
             گزارش
           </NavLink>
+          <DropdownItem className='d-lg-none my-divider' divider />
         </>
       );
     } else {
-      buttonsOrProfile = <NavBarButtons />;
+      profile = null;
+      auditButtons =  <NavBarButtons />;
       links = null;
     }
     return (
@@ -125,18 +134,21 @@ class MyNavbar extends React.Component {
         <button className="navbar-toggler" id="navbar_global">
           <span className="navbar-toggler-icon" />
         </button>
-        <UncontrolledCollapse navbar toggler="#navbar_global">
+        <UncontrolledCollapse navbar toggler="#navbar_global" className='px--5'>
           <Nav className="d-flex w-100 pr-0" navbar>
-            {buttonsOrProfile}
+            {profile}
+            {auditButtons}
+
             <Row className="order-lg-first d-lg-flex d-block justify-content-center align-items-center mx-lg-auto mx-0">
+              {profileToggler}
               {links}
-              <DropdownItem className='d-lg-none my-divider' divider />
               <NavLink
                 to="/support"
                 tag={Link}
                 className="navbar-link d-block ml-auto pl-3 pr-3"
                 color="primary"
               >
+                <i className="fa fa-life-ring d-lg-none mr-0 ml-2"/>
                 پشتیبانی
               </NavLink>
               <NavLink
@@ -145,6 +157,7 @@ class MyNavbar extends React.Component {
                 className="navbar-link d-block pl-3 pr-3"
                 color="primary"
               >
+                <i className="fa fa-question-circle d-lg-none mr-0 ml-2"/>
                 راهنما
               </NavLink>
             </Row>

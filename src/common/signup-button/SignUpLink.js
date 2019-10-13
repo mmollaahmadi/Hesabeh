@@ -12,6 +12,7 @@ class SignUpLink extends React.Component{
         to="/signup"
         tag={Link}
       >
+        <i className="d-lg-none fa fa-user-plus mr-0 ml-2"/>
         ثبت نام
       </NavLink>
     );

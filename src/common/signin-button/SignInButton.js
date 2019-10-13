@@ -19,13 +19,14 @@ class SignInButton extends React.Component {
 
 
       <NavLink
-        className="navbar-link d-inline pl-3 pr-0 pr-lg-3"
+        className="navbar-link d-inline pl-3 pr-3 pr-lg-0"
         color="primary"
         id="navbar-signin"
         // onClick={() => this.toggleModal("loginFormModal")}
         to="/signin"
         tag={Link}
       >
+        <i className="d-lg-none fa fa-sign-in mr-0 ml-2"/>
         ورود
       </NavLink>
 
