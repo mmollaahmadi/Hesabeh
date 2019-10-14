@@ -8,9 +8,10 @@ import {
   CardBody,
   Badge
 } from "reactstrap";
+import AccountUnit from "./account/account-unit.js";
 
 class Profile extends React.Component {
-    render() {
+  render() {
     return (
       <section className="section pt-0">
         <Container>
@@ -18,39 +19,31 @@ class Profile extends React.Component {
             <section className="section pt-0 pb-2">
               <Row>
                 <Col lg="12">
-                  <Card className="card-profile shadow mt-5">
-                    <CardHeader>وضعیت کلی</CardHeader>
-                    <CardBody>
-                      <Row className="d-flex justify-content-center">
-                        <Col lg="3" className="">
-                          <Badge className="profile-data-title" color="danger">
-                            میزان هزینه شخصی
-                          </Badge>
-                          <h3 className="profile-data-value">20000 تومان</h3>
-                        </Col>
-                        <Col lg="3" className="">
-                          <Badge className="profile-data-title" color="danger">
-                            میزان هزینه گروهی
-                          </Badge>
-                          <h3 className="profile-data-value">20000 تومان</h3>
-                        </Col>
-                        <Col lg="3" className="">
-                          <Badge className="profile-data-title" color="success">
-                            میزان مصرف گروهی:
-                          </Badge>
-                          <h3 className="profile-data-value mr-3">10000 تومان</h3>
-                        </Col>
-                        <Col lg="3" className="">
-                          <Badge className="profile-data-title" color="warning">وضعیت نهایی:</Badge>
-                          <h3 className="profile-data-value">
-                            10000 تومان طلبکار
-                          </h3>
-                        </Col>
-                      </Row>
+                  <Row className="m-0 d-flex justify-content-center">
+                    <AccountUnit
+                      _text="میزان هزینه شخصی"
+                      cost='21100'
+                      imageUri={require("../assets/img/theme/team-4-800x800.jpg")}
+                    />
 
-                      <Row className="hr"/>
-                    </CardBody>
-                  </Card>
+                    <AccountUnit
+                      _text="میزان هزینه گروهی"
+                      cost='2900'
+                      imageUri={require("../assets/img/theme/team-4-800x800.jpg")}
+                    />
+
+                    <AccountUnit
+                      _text="میزان مصرف گروهی"
+                      cost='1111'
+                      imageUri={require("../assets/img/theme/team-4-800x800.jpg")}
+                    />
+
+                    <AccountUnit
+                      _text="وضعیت نهایی"
+                      cost='2341'
+                      imageUri={require("../assets/img/theme/team-4-800x800.jpg")}
+                    />
+                  </Row>
                 </Col>
               </Row>
             </section>

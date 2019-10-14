@@ -38,3 +38,32 @@
     color: #A0A1A1;
     font-size: 1rem;
 }
+
+
+
+
+
+.notifications-table-header{
+    background-color: #01cd9a !important;
+}
+.notifications-table-header-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fbb140 !important;
+}
+.notifications-table-header-col > p{
+    margin: 0;
+}
+
+
+.account-status-text{
+  justify-content: center;
+}
+.account-status-title{
+  width: 100%;
+}
+.account-status-value{
+  text-align: center;
+  font-size: 1.5rem;
+}

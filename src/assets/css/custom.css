@@ -470,13 +470,13 @@ border-radius: 10px 10px 0px 0px !important;
   bottom: -9px;
 }
 .ntr-hr{
-  padding: 0px;
+  padding: 0;
   border-bottom: dashed 1px #03091e88;
-  margin: 0.4rem 4rem;
+  margin: 0.1rem 4rem;
 }
 .notification-table-row-btn{
   padding: 0.1rem 1rem;
-  margin: 0rem 0.2rem;
+  margin: 0 0.2rem;
 }
 .date-request{
   margin: auto 0px;
