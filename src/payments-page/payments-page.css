@@ -38,3 +38,25 @@
     color: #A0A1A1;
     font-size: 1rem;
 }
+
+
+
+
+.custom-control-label{
+
+}
+.custom-control-input{
+
+}
+.notifications-table-header{
+    background-color: #01cd9a !important;
+}
+.notifications-table-header-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fbb140 !important;
+}
+.notifications-table-header-col > p{
+    margin: 0;
+}
