@@ -7,7 +7,7 @@ import {
   Row,
   Col
 } from "reactstrap";
-
+import NotificationsTableHeader from './notifications-table-header'
 import NotificationsTableRow from "./notifications-table-row.js";
 import TableTools from "../../common/table-tools/table-tools";
 
@@ -22,7 +22,7 @@ class NotificationsTable extends React.Component {
   render() {
     const rows = [];
     this.props.data.forEach(row => {
-      rows.push(<NotificationsTableRow rowData={row} />);
+      rows.push(<NotificationsTableRow rowData={row}/>);
     });
 
     return (
@@ -35,9 +35,8 @@ class NotificationsTable extends React.Component {
             <CardBody>
               <TableTools buttonTitle="ایجاد درخواست" buttonLink="/create-new-request"/>
               <Row className="justify-content-center py-5">
-                <Col sm="12" className="notifications-table">
-                  {rows}
-                </Col>
+                <NotificationsTableHeader/>
+                {rows}
               </Row>
             </CardBody>
           </Card>

@@ -1,7 +1,7 @@
 import React from 'react'
 import {Col, Row} from "reactstrap";
 
-class PaymentsTableHeader extends React.Component {
+class MyGroupsTableHeader extends React.Component {
   render() {
     return (
       <Col lg='12' className='d-none d-lg-block px-0'>
@@ -28,16 +28,13 @@ class PaymentsTableHeader extends React.Component {
             <p>تاریخ</p>
           </Col>
           <Col lg="3" className="payments-table-header-col">
-            <p>نام</p>
+            <p>نام گروه</p>
           </Col>
           <Col lg="2" className="payments-table-header-col">
-            <p>قیمت</p>
+            <p>بودجه</p>
           </Col>
-          <Col lg="3" className="payments-table-header-col">
-            <p>انجام دهندگان</p>
-          </Col>
-          <Col lg="2" className="payments-table-header-col      flex-grow-1">
-            <p>مصرف کنندگان</p>
+          <Col lg="3" className="payments-table-header-col      flex-grow-1">
+            <p>کاربران</p>
           </Col>
           <Col sm="12" className="payments-table-header-line"/>
         </Row>
@@ -46,4 +43,4 @@ class PaymentsTableHeader extends React.Component {
   }
 }
 
-export default PaymentsTableHeader;
+export default MyGroupsTableHeader;

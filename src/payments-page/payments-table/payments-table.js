@@ -5,7 +5,6 @@ import {
   CardHeader,
   CardBody,
   Row,
-  Col,
 } from "reactstrap";
 import PaymentsTableRow from "./payments-table-row.js";
 import TableTools from "../../common/table-tools/table-tools";
@@ -28,9 +27,7 @@ class PaymentsTable extends React.Component {
               <TableTools buttonTitle="افزودن هزینه" buttonLink="/add-new-payment"/>
               <Row className="justify-content-center px-1">
                 <PaymentsTableHeader/>
-
-                  {payments}
-
+                {payments}
               </Row>
             </CardBody>
           </Card>

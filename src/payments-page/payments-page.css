@@ -42,7 +42,7 @@
 
 
 
-.notifications-table-row-col{
+.payments-table-row-col{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,7 +51,7 @@ background-color: transparent !important;
     padding-bottom: 1vmin;
     padding-top: 1vmin;
 }
-.notifications-table-row-col-xs{
+.payments-table-row-col-xs{
     display: flex;
     justify-content: end;
     align-items: center;
@@ -59,12 +59,12 @@ background-color: transparent !important;
     background-color: transparent !important;
     padding: 1vmin 0;
 }
-.notifications-table-header{
+.payments-table-header{
     background-color: #E5E5E5 !important;
     /*background-color: #01cd9a !important;*/
 /*border-radius: 20px 200px 0 0 ;*/
 }
-.notifications-table-header-col {
+.payments-table-header-col {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,17 +73,23 @@ background-color: transparent !important;
     max-width: unset;
     background-color: transparent;
 }
-.notifications-table-header-col > p{
+.payments-table-header-col > p{
     margin: 0;
 }
+.payments-table-header-line{
+    border-bottom: solid 1px #03091e;
+}
+.payments-table-row-line{
+    border-bottom: dashed 1px #03091e;
+}
 .check-width{
-
     width: auto !important;
     flex-grow: unset;
 }
 .consumers{
     display: flex;
     justify-content: center;
+    margin: 0;
 }
 .account-status-text{
   justify-content: center;
@@ -108,9 +114,3 @@ background-color: transparent !important;
 }
 
 
-.notification-table-header-line{
-    border-bottom: solid 1px #03091e;
-}
-.notification-table-row-line{
-    border-bottom: dashed 1px #03091e;
-}

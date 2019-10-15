@@ -5,16 +5,16 @@ import {
   CardHeader,
   Container,
   Row,
-  Col
 } from "reactstrap";
-import GroupsTableRow from "./my-groups-table-row.js";
+import MyGroupsTableRow from "./my-groups-table-row.js";
 import TableTools from "../../common/table-tools/table-tools";
+import MyGroupsTableHeader from "./my-groups-table-header";
 
 class GroupsTable extends React.Component {
   render() {
     let myGroups = [];
     this.props.myGroups.forEach(group => {
-      myGroups.push(<GroupsTableRow dataGroup={group} />);
+      myGroups.push(<MyGroupsTableRow dataGroup={group}/>);
     });
     return (
       <section className="section pt-0">
@@ -24,10 +24,9 @@ class GroupsTable extends React.Component {
             </CardHeader>
             <CardBody>
               <TableTools buttonTitle="ایجاد گروه جدید" buttonLink="/create-new-group"/>
-              <Row className="justify-content-center p-5">
-                <Col sm="12" className="notifications-table">
-                  {myGroups}
-                </Col>
+              <Row className="justify-content-center px-2">
+                <MyGroupsTableHeader/>
+                {myGroups}
               </Row>
             </CardBody>
           </Card>

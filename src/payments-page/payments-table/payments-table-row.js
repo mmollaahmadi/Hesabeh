@@ -1,5 +1,5 @@
 import React from 'react';
-import {Row, Col, Button} from 'reactstrap'
+import {Row, Col} from 'reactstrap'
 import Chip from '../../common/chip/chip'
 
 class PaymentsTableRow extends React.Component {
@@ -20,7 +20,7 @@ class PaymentsTableRow extends React.Component {
       <>
         <Col lg='12' className='d-lg-block d-none p-0'>
           <Row className="notification-table-row m-0">
-            <Col className="notifications-table-row-col px-0 check-width">
+            <Col className="payments-table-row-col px-0 check-width">
               <div
                 className="p-0 px-1 custom-control custom-control-alternative custom-checkbox">
                 <input
@@ -38,19 +38,19 @@ class PaymentsTableRow extends React.Component {
               </div>
             </Col>
 
-            <Col lg="1" className="notifications-table-row-col date-request">
+            <Col lg="1" className="payments-table-row-col date-request">
               <span>{this.props.data.date}</span>
             </Col>
-            <Col lg="3" className=" notifications-table-row-col my-auto">
+            <Col lg="3" className=" payments-table-row-col my-auto">
           <span>
             {this.props.data.name}
           </span>
             </Col>
-            <Col lg="2" className="notifications-table-row-col my-auto">
+            <Col lg="2" className="payments-table-row-col my-auto">
               <span>{this.props.data.value}</span>
             </Col>
 
-            <Col lg="3" className="notifications-table-row-col my-auto">
+            <Col lg="3" className="payments-table-row-col my-auto">
               <span className="user-sender">
                 <Chip
                   link="/mollaahmadi.ir"
@@ -62,17 +62,17 @@ class PaymentsTableRow extends React.Component {
               </span>
             </Col>
 
-            <Col lg="2" className="notifications-table-row-col my-auto flex-grow-1">
+            <Col lg="2" className="payments-table-row-col my-auto flex-grow-1">
               <Row className="consumers">{consumers}</Row>
             </Col>
 
-            <Col sm="12" className="notification-table-row-line"/>
+            <Col sm="12" className="payments-table-row-line"/>
           </Row>
         </Col>
 
         <Col sm='6' xs='12' className='d-lg-none m-3'>
           <Row className="notification-table-row m-0">
-            <Col xs='12' className="notifications-table-row-col-xs check-width">
+            <Col xs='12' className="payments-table-row-col-xs check-width">
               <span className='ml-auto'>{this.props.data.date}</span>
               <div
                 className="p-0 px-1 custom-control custom-control-alternative custom-checkbox">
@@ -91,21 +91,21 @@ class PaymentsTableRow extends React.Component {
               </div>
             </Col>
 
-            <Col xs='6' className=" notifications-table-row-col-xs my-auto">
+            <Col xs='6' className=" payments-table-row-col-xs my-auto">
                 <span className='ml-2'>نام: </span>
                 <span>
                   {this.props.data.name}
                 </span>
               </Col>
-            <Col xs='6' className="notifications-table-row-col-xs my-auto">
+            <Col xs='6' className="payments-table-row-col-xs my-auto">
               <span className='ml-2'>قیمت: </span>
               <span>{this.props.data.value}</span>
             </Col>
-            <Col xs='12' className="notifications-table-row-col-xs my-auto">
+            <Col xs='12' className="payments-table-row-col-xs my-auto">
               <span className='ml-2'>توضیح: </span>
               <span>{this.props.data.description}</span>
             </Col>
-            <Col xs='12' className="notifications-table-row-col-xs my-auto">
+            <Col xs='12' className="payments-table-row-col-xs my-auto">
               <span className='ml-2'>انجام دهندگان: </span>
 
                 <Chip
@@ -118,12 +118,12 @@ class PaymentsTableRow extends React.Component {
 
             </Col>
 
-            <Col lg="2" className="notifications-table-row-col-xs my-auto flex-grow-1">
+            <Col lg="2" className="payments-table-row-col-xs my-auto flex-grow-1">
               <span className='ml-2 w-auto'>مصرف کنندگان: </span>
               <Row className="mx-0 consumers">{consumers}</Row>
             </Col>
 
-            <Col sm="12" className="notification-table-row-line"/>
+            <Col sm="12" className="payments-table-row-line"/>
           </Row>
         </Col>
 
