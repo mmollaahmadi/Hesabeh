@@ -3,9 +3,14 @@ import { Row, Col, Badge } from "reactstrap";
 
 class AccountUnit extends React.Component {
   render() {
+    let accountStatusBgColor='orange';
+    if(this.props._text === "میزان مصرف گروهی")
+      accountStatusBgColor = 'green';
+    if(this.props._text === "وضعیت نهایی")
+      accountStatusBgColor = 'yellow';
     return (
-      <Col lg="3" sm="6" xs="12" className="m-0 d-flex justify-content-center">
-        <Row className="justify-content-center learning-card">
+      <Col lg="3" xs="6" className="m-0 d-flex justify-content-center">
+        <Row className={`justify-content-center learning-card ${accountStatusBgColor}`}>
           <Col xs="12">
             <img
               className="rounded-circle statistic-circle-image"

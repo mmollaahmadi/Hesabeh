@@ -25,7 +25,6 @@ class Chip extends React.Component {
     }
     const chipClassName = this.props.class;
     return (
-
         <Badge className={`chip-body ${chipClassName}`} color="default" pill>
           <Row className="m-0 d-flex align-items-center">
             <img

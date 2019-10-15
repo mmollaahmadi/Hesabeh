@@ -28,9 +28,9 @@ class PaymentsTable extends React.Component {
               <TableTools buttonTitle="افزودن هزینه" buttonLink="/add-new-payment"/>
               <Row className="justify-content-center px-1">
                 <PaymentsTableHeader/>
-                <Col sm="12" className="notifications-table">
+
                   {payments}
-                </Col>
+
               </Row>
             </CardBody>
           </Card>

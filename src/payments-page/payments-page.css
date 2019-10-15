@@ -42,21 +42,49 @@
 
 
 
-
+.notifications-table-row-col{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: unset;
+background-color: transparent !important;
+    padding-bottom: 1vmin;
+    padding-top: 1vmin;
+}
+.notifications-table-row-col-xs{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    max-width: unset;
+    background-color: transparent !important;
+    padding: 1vmin 0;
+}
 .notifications-table-header{
-    background-color: #01cd9a !important;
+    background-color: #E5E5E5 !important;
+    /*background-color: #01cd9a !important;*/
+/*border-radius: 20px 200px 0 0 ;*/
 }
 .notifications-table-header-col {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fbb140 !important;
+    padding-top: 1vmin;
+    padding-bottom: 1vmin;
+    max-width: unset;
+    background-color: transparent;
 }
 .notifications-table-header-col > p{
     margin: 0;
 }
+.check-width{
 
-
+    width: auto !important;
+    flex-grow: unset;
+}
+.consumers{
+    display: flex;
+    justify-content: center;
+}
 .account-status-text{
   justify-content: center;
 }
@@ -66,4 +94,23 @@
 .account-status-value{
   text-align: center;
   font-size: 1.5rem;
+}
+
+
+.green{
+    background-color: #00E5AC !important;
+}
+.orange{
+    background-color: #FF6F61 !important;
+}
+.yellow{
+    background-color: #f1c519 !important;
+}
+
+
+.notification-table-header-line{
+    border-bottom: solid 1px #03091e;
+}
+.notification-table-row-line{
+    border-bottom: dashed 1px #03091e;
 }
