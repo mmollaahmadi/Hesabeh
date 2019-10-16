@@ -5,8 +5,8 @@ class MyGroupsTableHeader extends React.Component {
   render() {
     return (
       <Col lg='12' className='d-none d-lg-block px-0'>
-        <Row className="payments-table-header m-0">
-          <Col  className="payments-table-header-col px-0 check-width">
+        <Row className="table-header m-0">
+          <Col  className="table-header-col px-0 check-width">
             <div
               className="p-0 px-1 custom-control custom-control-alternative custom-checkbox">
               <input
@@ -24,19 +24,19 @@ class MyGroupsTableHeader extends React.Component {
             </div>
           </Col>
 
-          <Col lg="1" className="payments-table-header-col">
+          <Col lg="1" className="table-header-col">
             <p>تاریخ</p>
           </Col>
-          <Col lg="3" className="payments-table-header-col">
+          <Col lg="3" className="table-header-col">
             <p>نام گروه</p>
           </Col>
-          <Col lg="2" className="payments-table-header-col">
+          <Col lg="2" className="table-header-col">
             <p>بودجه</p>
           </Col>
-          <Col lg="3" className="payments-table-header-col      flex-grow-1">
+          <Col lg="3" className="table-header-col flex-grow-1">
             <p>کاربران</p>
           </Col>
-          <Col sm="12" className="payments-table-header-line"/>
+          <Col sm="12" className="table-header-line"/>
         </Row>
       </Col>
     );

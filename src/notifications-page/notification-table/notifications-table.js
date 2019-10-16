@@ -4,8 +4,7 @@ import {
   CardHeader,
   CardBody,
   Container,
-  Row,
-  Col
+  Row
 } from "reactstrap";
 import NotificationsTableHeader from './notifications-table-header'
 import NotificationsTableRow from "./notifications-table-row.js";

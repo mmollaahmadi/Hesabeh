@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Button } from "reactstrap";
+import {Row, Col, Button} from "reactstrap";
 import Chip from "../../common/chip/chip.js";
 
 class NotificationsTableRow extends React.Component {
@@ -9,15 +9,14 @@ class NotificationsTableRow extends React.Component {
     let actionCol = null;
     const rowData = this.props.rowData;
 
-let dateCol = <span>{rowData.dateRequest}</span>;
+    let dateCol = <span>{rowData.dateRequest}</span>;
 
     if (rowData.type === "buy-list") {
-
       requestCol = (
         <>
           <span className="user-sender">
             <Chip
-            link="/mollaahmadi.ir"
+              link="/mollaahmadi.ir"
               haveCloseButton="false"
               avatarSrc={require("../../assets/img/users/user01.jpg")}
               label={rowData.sender}
@@ -42,7 +41,6 @@ let dateCol = <span>{rowData.dateRequest}</span>;
         </Button>
       );
     } else if (rowData.type === "join-to-my-group") {
-
       requestCol = (
         <>
           <span className="user-sender">
@@ -76,7 +74,6 @@ let dateCol = <span>{rowData.dateRequest}</span>;
         </>
       );
     } else if (rowData.type === "join-me-to-other-group") {
-
       requestCol = (
         <>
           شما درخواست پیوستن به گروه
@@ -175,86 +172,47 @@ let dateCol = <span>{rowData.dateRequest}</span>;
     }
 
     return (
-      <>
-        <Col lg='12' className='d-lg-block d-none p-0'>
-          <Row className="notification-table-row m-0">
-            <Col className="payments-table-row-col px-0 check-width">
-              <div
-                className="p-0 px-1 custom-control custom-control-alternative custom-checkbox">
-                <input
-                  className="custom-control-input"
-                  id=" customCheckLogin1"
-                  type="checkbox"
-                />
-                <label
-                  className="custom-control-label pr-1"
-                  htmlFor=" customCheckLogin11"
-                >
+      <Col xs='12' className='px-2 p-lg-0 m-1 m-lg-0'>
+        <Row className="m-0">
+          <Col xs='12' lg='auto'
+               className="table-row-col justify-content-lg-center check-width px-lg-0">
+            <span className='d-lg-none ml-auto'>{dateCol}</span>
+            <div
+              className="p-0 px-1 custom-control custom-control-alternative custom-checkbox">
+              <input
+                className="custom-control-input"
+                id={rowData.id}
+                type="checkbox"
+              />
+              <label
+                className="custom-control-label pr-1"
+                htmlFor={rowData.id}
+              >
                   <span className="signin-modal-text mr-3">
                   </span>
-                </label>
-              </div>
-            </Col>
+              </label>
+            </div>
+          </Col>
 
-            <Col lg="1" className="payments-table-row-col date-request">
-              <span>{dateCol}</span>
-            </Col>
-            <Col lg="8" className="">
-              {requestCol}
-            </Col>
-            <Col lg="2" className="payments-table-header-col my-auto flex-grow-1">
-              {actionCol}
-            </Col>
+          <Col lg="1" className="d-none d-lg-flex table-row-col date-request">
+            <span>{dateCol}</span>
+          </Col>
 
-            <Col sm="12" className="payments-table-row-line"/>
-          </Row>
-        </Col>
-
-
-
-
-
-        <Col sm='6' xs='12' className='d-lg-none m-3'>
-          <Row className="notification-table-row m-0">
-            <Col xs='12' className="payments-table-row-col-xs check-width">
-              <span className='ml-auto'>{dateCol}</span>
-              <div
-                className="p-0 px-1 custom-control custom-control-alternative custom-checkbox">
-                <input
-                  className="custom-control-input"
-                  id=" customCheckLogin11"
-                  type="checkbox"
-                />
-                <label
-                  className="custom-control-label pr-1"
-                  htmlFor=" customCheckLogin11"
-                >
-                  <span className="signin-modal-text mr-3">
-                  </span>
-                </label>
-              </div>
-            </Col>
-
-            <Col xs='12' className=" payments-table-row-col-xs my-auto">
-              <span className='ml-2'>درخواست: </span>
-              <span>
+          <Col xs='12' lg="8" className="table-row-col my-auto">
+            <span className='d-lg-none ml-2'>درخواست: </span>
+            <span>
                   {requestCol}
                 </span>
-            </Col>
+          </Col>
 
 
-            <Col lg="12" className="payments-table-header-col my-auto flex-grow-1">
-              {actionCol}
-            </Col>
+          <Col xs="12" lg="2" className="table-row-col justify-content-end justify-content-lg-center my-auto flex-grow-1">
+            {actionCol}
+          </Col>
 
-            <Col sm="12" className="payments-table-row-line"/>
-          </Row>
-        </Col>
-
-    </>
-
-
-
+          <Col sm="12" className="table-row-line"/>
+        </Row>
+      </Col>
     );
   }
 }

@@ -220,10 +220,10 @@ class Profile extends React.Component {
                                   />
                                 </InputGroup>
                               </FormGroup>
-                              <div class="text-muted font-italic justify-content-center d-flex mt-0">
+                              <div className="text-muted font-italic justify-content-center d-flex mt-0">
                                 <small>
                                   کیفیت رمز عبور جدید:{" "}
-                                  <span class="text-success font-weight-700 mr-2">
+                                  <span className="text-success font-weight-700 mr-2">
                                     قوی
                                   </span>
                                 </small>
@@ -389,7 +389,7 @@ class Profile extends React.Component {
                   </Col>
                 </Row>
 
-                <Row className="hr"></Row>
+                <Row className="hr"/>
 
                 <Row className="d-flex justify-connect-center">
                   <Col lg="6" className="pr-5">

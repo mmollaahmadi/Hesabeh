@@ -11,6 +11,7 @@ import {
   InputGroup
 } from "reactstrap";
 import { Link } from "react-router-dom";
+import GroupUser from "./group-users";
 
 class GroupProfile extends React.Component {
   state = {};
@@ -24,10 +25,11 @@ class GroupProfile extends React.Component {
     return (
       <section className="section">
         <Container>
-          <Card className="card-profile shadow mt--300">
+          <Card className="card-profile shadow mt-0">
             <div className="px-4">
               <Row className="justify-content-center">
-                <Col className="order-lg-2" lg="3">
+
+                <Col className="order-lg-2 " lg="4">
                   <div className="card-profile-image">
                     <a href="#pablo" onClick={e => e.preventDefault()}>
                       <img
@@ -38,55 +40,48 @@ class GroupProfile extends React.Component {
                     </a>
                   </div>
                 </Col>
+
                 <Col
-                  className="order-lg-3 text-lg-right d-flex justify-content-center p-0"
+                  className="order-lg-3 text-lg-right align-self-lg-center"
                   lg="4"
                 >
-                  <div className="card-profile-actions py-4 px-0 mt-lg-0">
+                  <div className="d-flex justify-content-center py-4 px-0 mt-lg-0">
                     <Modal
                       className="modal-dialog-centered"
-                      isOpen={this.state.defaultModal}
-                      toggle={() => this.toggleModal("defaultModal")}
+                      isOpen={this.state.exitModal}
+                      toggle={() => this.toggleModal("exitModal")}
                     >
                       <div className="modal-body p-0">
                         <Card className="bg-secondary shadow border-0">
-                          <CardHeader className="bg-transparent p-1">
-                            {/* <Row className="justify-content-center"> */}
-                            <div className="text-muted  mt-3 mb-2">
-                              <h5 className="my-modal-header">
-                                تغییر رمز عبور
-                              </h5>
-                            </div>
-                            {/* </Row> */}
-                          </CardHeader>
-                          <CardBody className="px-lg-5 py-lg-3">
-
+                          <CardBody className="px-3 d-flex justify-content-center">
+                            <p className="profile-modal-text">
+                              میخواهید از حساب کاربری خارج شوید؟
+                            </p>
+                            <Button
+                              className="profile-modal-btn"
+                              color="primary"
+                              to="/dashboard"
+                              tag={Link}
+                            >
+                              بله
+                            </Button>
+                            <Button
+                              className="profile-modal-btn"
+                              color="default"
+                              to="/dashboard"
+                              tag={Link}
+                            >
+                              خیر
+                            </Button>
                           </CardBody>
                         </Card>
                       </div>
                     </Modal>
-                    <Button
-                      className="float-right btn-primary"
-                      color="info"
-                      href="#pablo"
-                      onClick={() => this.toggleModal("defaultModal")}
-                      size="sm"
-                    >
-                      خروج
-                    </Button>
-                    <Button
-                      className="mr-4 delete-account-btn"
-                      href="#pablo"
-                      onClick={() => this.toggleModal("notificationModal")}
-                      size="sm"
-                    >
-                      حذف حساب کاربری
-                    </Button>
                     <Modal
                       className="modal-dialog-centered modal-danger"
                       contentClassName="bg-gradient-danger"
-                      isOpen={this.state.notificationModal}
-                      toggle={() => this.toggleModal("notificationModal")}
+                      isOpen={this.state.deleteAccountModal}
+                      toggle={() => this.toggleModal("deleteAccountModal")}
                     >
                       <div className="modal-header d-flex justify-content-center">
                         <h6
@@ -95,7 +90,15 @@ class GroupProfile extends React.Component {
                         >
                           توجه کنید
                         </h6>
-
+                        {/*<button
+                          aria-label="Close"
+                          className="close d-flex justify-left"
+                          data-dismiss="modal"
+                          type="button"
+                          onClick={() => this.toggleModal("notificationModal")}
+                        >
+                          <span aria-hidden={true}>×</span>
+                        </button>*/}
                       </div>
                       <div className="modal-body">
                         <div className="py-3 text-center">
@@ -119,101 +122,94 @@ class GroupProfile extends React.Component {
                           color="link"
                           data-dismiss="modal"
                           type="button"
-                          onClick={() => this.toggleModal("notificationModal")}
                         >
                           بیخیال
                         </Button>
                       </div>
                     </Modal>
+                    <Button
+                      className="group-profile-btn my-auto mx-2"
+                      color="default"
+                      href="#pablo"
+                      onClick={() => this.toggleModal("exitModal")}
+                    >
+                      خروج
+                    </Button>
+                    <Button
+                      className="group-profile-btn m-auto"
+                      href="#pablo"
+                      onClick={() => this.toggleModal("deleteAccountModal")}
+                      color="warning"
+                    >
+                      حذف حساب کاربری
+                    </Button>
                   </div>
                 </Col>
-                <Col className="order-lg-1" lg="4">
+                <Col
+                  className="order-lg-1 "
+                  lg="4">
                   <div className="card-profile-stats d-flex justify-content-center">
                     <div>
-                      <span className="heading">22</span>
-                      <span className="description">گروه ایجاد شده</span>
+                      <span className="heading">1398/09/21</span>
+                      <span className="description">آغاز فعالیت</span>
                     </div>
                     <div>
                       <span className="heading">10</span>
-                      <span className="description">گروه فعال</span>
+                      <span className="description">کاربر</span>
                     </div>
                   </div>
                 </Col>
+
               </Row>
-              <div className="text-center mt-5 pb-5">
-                <Form role="form" className="profile-form">
-                  <Row className="text-center justify-content-center">
-                    <Col lg="5">
-                      <FormGroup className="mb-3">
-                        <InputGroup className="input-group-alternative">
-                          <InputGroupAddon addonType="prepend">
-                            <InputGroupText>
-                              <i className="ni ni-email-83" />
-                            </InputGroupText>
-                          </InputGroupAddon>
+              <div className="text-center mt-5 pt-5 pb-5">
+                <Row className='m-0'>
+                  <Col xs='12' md="6" className="pr-5">
+                    <p className="profile-data-title">نام گروه</p>
+                    <h3 className="profile-data-value">اتاق 406 خوابگاه کشاورز</h3>
+                  </Col>
+                  <Col xs='12' md="6" className="pr-5">
+                    <p className="profile-data-title">شناسه گروه</p>
+                    <h3 className="profile-data-value">keshavarz406@</h3>
+                  </Col>
+                </Row>
 
-                          <Input
-                            className="profile-input"
-                            value="mollaahmadi@"
-                          />
-                        </InputGroup>
-                      </FormGroup>
+                <Row className="hr"/>
 
-                      <FormGroup className="mb-3">
-                        <InputGroup className="input-group-alternative">
-                          <InputGroupAddon addonType="prepend">
-                            <InputGroupText>
-                              <i className="ni ni-email-83" />
-                            </InputGroupText>
-                          </InputGroupAddon>
-
-                          <Input
-                            className="profile-input"
-                            value="محمد ملااحمدی"
-                            type="email"
-                          />
-                        </InputGroup>
-                      </FormGroup>
-
-
-
-                      <FormGroup className="mb-3">
-                        <InputGroup className="input-group-alternative">
-                          <InputGroupAddon addonType="prepend">
-                            <InputGroupText>
-                              <i className="ni ni-email-83" />
-                            </InputGroupText>
-                          </InputGroupAddon>
-
-                          <Input
-                            className="profile-input"
-                            value="30000 تومان"
-                          />
-
-                        </InputGroup>
-                      </FormGroup>
-                      <FormGroup>
-                        <Row className="justify-item-center d-flex">
-                          <Col className="lg-9 m-0 text-center">
-                            <Button
-                              className="signin-button"
-                              color="primary"
-                              to="/payments"
-                              tag={Link}
-                            >
-                              اعمال تغییرات
-                            </Button>
-                          </Col>
-                        </Row>
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                </Form>
+                <Row className="d-flex justify-connect-center">
+                  <Col lg="6" className="pr-5">
+                    <Row>
+                      <div>
+                        <p className="profile-data-title">میزان اعتبار</p>
+                        <h3 className="profile-data-value">۳۰۰۰۰ تومان</h3>
+                      </div>
+                      <Button className="profile-btn m-auto" color="primary">
+                        افزایش اعتبار
+                      </Button>
+                    </Row>
+                  </Col>
+                  <Col lg="6" className="pr-5">
+                    <Row>
+                      <div>
+                        <p className="profile-data-title">وضعیت کلی</p>
+                        <h3 className="profile-data-value">۳۰۰۰۰ تومان بدهکار</h3>
+                      </div>
+                      <Button className="profile-btn m-auto" color="primary">
+                        پرداخت بدهی
+                      </Button>
+                    </Row>
+                  </Col>
+                </Row>
               </div>
             </div>
           </Card>
+
         </Container>
       </section>
+
+
+
+
+
     );
   }
 }

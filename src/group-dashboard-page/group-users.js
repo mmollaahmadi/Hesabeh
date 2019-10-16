@@ -12,15 +12,15 @@ import "./group-dashboard.css";
 class GroupUser extends React.Component {
   render() {
     return (
-      <Col lg="auto" className="mt-3">
+      <Col lg="6" className="mt-3">
         <Card className="user-status w-auto">
           <Row>
             <p className="card-profile-name">محمد ملااحمدی</p>
             <Button className="p-0 plus-btn-circle m-0 mr-3 mt-1" color="primary">
-              <i className="fa fa-dollar"></i>
+              <i className="fa fa-dollar"/>
             </Button>
             <Button className="p-0 plus-btn-circle m-0 mr-2 mt-1" color="primary">
-              <i className="fa fa-plus"></i>
+              <i className="fa fa-plus"/>
             </Button>
           </Row>
           <Row>
