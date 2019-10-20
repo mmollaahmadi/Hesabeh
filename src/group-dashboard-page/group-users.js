@@ -13,7 +13,10 @@ class GroupUser extends React.Component {
   render() {
     return (
       <Col lg="6" className="mt-3">
-        <Card className="user-status w-auto">
+        <Card data-aos="zoom-in"
+              data-aos-duration="1000"
+              data-aos-delay="1000"
+              className="user-status w-auto">
           <Row>
             <p className="card-profile-name">محمد ملااحمدی</p>
             <Button className="p-0 plus-btn-circle m-0 mr-3 mt-1" color="primary">

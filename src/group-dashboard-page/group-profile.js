@@ -4,7 +4,7 @@ import {
   CardBody,
 } from "reactstrap";
 import { Link } from "react-router-dom";
-
+import AOS from 'aos';
 class GroupProfile extends React.Component {
   state = {};
   toggleModal = state => {
@@ -12,12 +12,20 @@ class GroupProfile extends React.Component {
       [state]: !this.state[state]
     });
   };
-
+  componentDidMount() {
+    AOS.refresh();
+  }
+  componentWillMount() {
+    AOS.init();
+  }
   render() {
     return (
       <section className="section">
         <Container>
-          <Card className="card-profile shadow mt-0">
+          <Card data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-delay="50"
+                className="card-profile shadow mt-0">
             <div className="px-4">
               <Row className="justify-content-center">
 

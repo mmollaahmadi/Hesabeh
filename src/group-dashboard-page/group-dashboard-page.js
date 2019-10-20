@@ -22,7 +22,10 @@ class GroupDashboardPage extends React.Component {
           <Container>
             <GroupProfile />
 
-            <Card className=' shadow mt-0'>
+            <Card data-aos="fade-up"
+                  data-aos-duration="1000"
+                  data-aos-delay="50"
+                  className=' shadow mt-0'>
               <CardHeader>
                 کاربران
               </CardHeader>

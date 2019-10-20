@@ -2,8 +2,8 @@
 .footer {
   background-color: #00e5ac !important;
   background: url('../../assets/img/theme/pattern.png');
-  background-repeat: no-repeat;
-  background-size: auto;
+  background-repeat: repeat;
+  background-size: contain;
   padding-top: 1rem !important;
   padding-bottom: 1rem !important;
 }

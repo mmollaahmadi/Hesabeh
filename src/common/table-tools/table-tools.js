@@ -17,11 +17,11 @@ class TableTools extends React.Component{
         return(
 
                 <Row className="justify-content-center">
-                    <Col lg="2" className='order-1 order-lg-1'>
+                    <Col xs='6' lg="2" className='order-1 order-lg-1'>
                         <i className="fa fa-sort fa-2x mx-2 d-inline-block" />
                         <i className="fa fa-filter fa-2x mx-2 d-inline" />
                     </Col>
-                    <Col lg='3' className='order-3 order-lg-2'>
+                    <Col xs='12' lg='7' className='order-3 order-lg-2'>
                         <Form className="d-inline">
                             <FormGroup>
                                 <InputGroup className="input-group-alternative">
@@ -40,7 +40,7 @@ class TableTools extends React.Component{
                             </FormGroup>
                         </Form>
                     </Col>
-                    <Col lg="7" className='order-2 order-lg-3'>
+                    <Col xs='6' lg="3" className='order-2 order-lg-3'>
                         <Button
                             color="primary"
                             className="p-2"
