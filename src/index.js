@@ -21,6 +21,8 @@ import './assets/css/custom.css';
 
 import './assets/css/animate.css';
 
+import 'aos/dist/aos.css';
+
 import MainPage from './main-page/main-page';
 import UserDashboardPage from './user-dashboard-page/user-dashboard-page.js';
 import GroupDashboardPage from './group-dashboard-page/group-dashboard-page.js';

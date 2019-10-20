@@ -1,49 +1,58 @@
 .h1-hesabeh {
-  font-family: Lalezar, Tahoma, serif;
-  display: inline;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  font-size: 12vmin;
-  color: #00e5ac;
+    font-family: Lalezar, Tahoma, serif;
+    display: inline;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    font-size: 12vmin;
+    color: #00e5ac;
 }
-.h2-hesabeh{
-  font-size: 6vmin;
+
+.h2-hesabeh {
+    font-size: 6vmin;
 }
-.h4-hesabeh{
-  font-size: 4vmin;
+
+.h4-hesabeh {
+    font-size: 4vmin;
 }
-.p-hesabeh{
-  font-size: 3vmin;
+
+.p-hesabeh {
+    font-size: 3vmin;
 }
-.main-page-text{
-  font-size: 3vmin;
+
+.main-page-text {
+    font-size: 3vmin;
 }
-.land-pic{
-  background: url('../assets/img/theme/cloud01.png') no-repeat center;
-  -webkit-background-size: 60%;
-  -moz-background-size: 60%;
-  -o-background-size: 60%;
-  background-size: 60%;
-padding: auto;
-display: flex;
-align-items: center;
+
+.land-pic {
+    background: url('../assets/img/theme/cloud01.png') no-repeat center;
+    -webkit-background-size: 60%;
+    -moz-background-size: 60%;
+    -o-background-size: 60%;
+    background-size: 60%;
+    padding: auto;
+    display: flex;
+    align-items: center;
 }
+
 @media (max-width: 768px) {
-      .sec{
-        background:none !important;
-       }
+    .sec {
+        background: none !important;
+    }
 }
-.sec{
-  background: url('../assets/img/theme/cloud01.png') no-repeat left bottom;
-  background-size: 80vmin;
-  height: 100vh;
-  width: 100%;
-  margin: 0;
-  padding-top: 80px;
+
+.sec {
+    background: url('../assets/img/theme/cloud01.png') no-repeat left bottom;
+    background-size: 80vmin;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding-top: 80px;
 }
-.section{
-  padding: 8vmin  0 !important;
+
+.section {
+    padding: 8vmin 0 !important;
 }
+
 /* {<div className="landing-position-relative">
 <div className="d-flex align-items-center">
     <Container className="d-flex justify-content-start">
@@ -64,8 +73,8 @@ align-items: center;
 </div>} */
 
 
-
-{/*  <div className="header">
+{
+/*  <div className="header">
 
     <h2 className="display-3">
       حساب،
@@ -76,85 +85,79 @@ align-items: center;
     <p>هزینه‌های روزمره رو اینجا ثبت کن و به راحتی مدیریتشون کن</p>
 
 
-  </div>*/}
-
-
+  </div>*/
+}
 
 
 /* section */
-.statistics-body{
-background-color: #f3f3f1;
+.statistics-body {
+    background-color: #f3f3f1;
 }
 
 
 /* learning */
-.dark-section{
-  background-color: #EFF4F7 !important;
-  padding-top: 4rem;
-  padding-bottom: 6rem;
-}
-.learning-img-card{
-width: 70%;
-height: auto;
-}
-.learning-card{
-  background-color: #fff !important;
-  border-radius: 3%;
-  margin: 4vmin 16vmin;
-  padding-top: 1.2rem;
-  padding-bottom: 1rem;
-  min-width: 100%;
-  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07) !important;
+.dark-section {
+    background-color: #EFF4F7 !important;
+    padding-top: 4rem;
+    padding-bottom: 6rem;
 }
 
-.section-title{
-  font-family: Samim-Bold, serif !important;
-  color: #03091e !important;
-  font-size: 5vmin;
-  margin-bottom: 6vmin;
+.learning-img-card {
+    width: 70%;
+    height: auto;
+}
+
+.learning-card {
+    background-color: #fff !important;
+    border-radius: 3%;
+    margin: 4vmin 16vmin;
+    padding-top: 1.2rem;
+    padding-bottom: 1rem;
+    min-width: 100%;
+    box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07) !important;
+}
+
+.section-title {
+    font-family: Samim-Bold, serif !important;
+    color: #03091e !important;
+    font-size: 5vmin;
+    margin-bottom: 6vmin;
 }
 
 
-.features-btn{
-  background-color: #fff !important;
-  color: #33393f60;
-  border-style: dashed;
-  border-color: #33393f60;
-  margin: 1.5rem 0.5rem !important;
-  box-shadow: none;
-}
-.features-btn:hover, .features-btn:focus{
-  border-color: #33393f !important;
-  color: #33393f !important;
-}
-.features-btn-active{
-  border-color: #33393f;
-  color: #33393f;
-  background-color: #fff !important;
-  border-style: dashed;
+.features-btn {
+    background-color: #fff !important;
+    color: #33393f60;
+    border-style: dashed;
+    border-color: #33393f60;
     margin: 1.5rem 0.5rem !important;
-}
-.features-btn-active:hover{
-  border-color: #33393f;
-  color: #33393f;
-}
-.features-img{
-  width: 100%;
+    box-shadow: none;
 }
 
-
-
-.statistic-circle-image{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 130px;
-  /* border-style: dashed;
-  border-color: #03091e;
-  border-width: 2px; */
+.features-btn:hover,
+.features-btn:focus,
+.features-btn:active{
+    border-color: #33393f !important;
+    color: #33393f !important;
 }
 
-.landing-logo{
-  width: 24vmin;
-  height: 24vmin;
+
+.features-img {
+    width: 100%;
+}
+
+
+.statistic-circle-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 130px;
+    /* border-style: dashed;
+    border-color: #03091e;
+    border-width: 2px; */
+}
+
+.landing-logo {
+    width: 24vmin;
+    height: 24vmin;
 }

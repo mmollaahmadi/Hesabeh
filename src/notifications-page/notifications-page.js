@@ -3,7 +3,6 @@ import React from "react";
 import Navbar from "../common/navbar/navbar";
 import Footer from "../common/footer/footer";
 import NotificationsTable from "./notification-table/notifications-table.js";
-import Title from "../common/title/title.js";
 
 const DATA = [
   {
@@ -66,7 +65,6 @@ class NotificationsPage extends React.Component {
         <Navbar isLogin="true" />
 
         <div className="my-body">
-          <Title text="اعلام ها" />
           <NotificationsTable data={DATA} />
         </div>
 

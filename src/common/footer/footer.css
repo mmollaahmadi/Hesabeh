@@ -87,3 +87,12 @@ color: #03091e !important;
     margin-top: -1.5vmin !important;
   }
 }
+
+.footer-divider{
+  border-bottom: dashed #03091e60 2px;
+  display: block;
+  text-align: center;
+  padding: auto 8vmin;
+  margin-top: 2vmin !important;
+  margin-bottom: 3vmin !important;
+}

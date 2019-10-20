@@ -3,10 +3,10 @@ import React from "react";
 import Navbar from "../common/navbar/navbar";
 import Landing from "./landing/landing";
 import AboutUs from "./about-us";
-import Features from "./features.js";
+import Features from "./features/features.js";
 import Footer from "../common/footer/footer.js";
 import OurStatistics from "./statistics/OurStatistics.js";
-import Onboarding from "./onboarding/onboarding.js";
+import OnBoarding from "./onboarding/onBoarding.js";
 
 import './main-page.css';
 
@@ -21,7 +21,7 @@ class MainPage extends React.Component {
         <div>
           <Landing />
           <AboutUs />
-          <Onboarding />
+          <OnBoarding />
           <Features />
           <OurStatistics />
         </div>

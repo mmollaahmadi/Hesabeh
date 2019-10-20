@@ -4,7 +4,6 @@ import NavBar from "../common/navbar/navbar";
 import Footer from "../common/footer/footer";
 import Account from "./account/account.js";
 import PaymentsTable from "./payments-table/payments-table.js";
-import Title from "../common/title/title.js";
 
 const PAYMENTS = [
   {
@@ -46,19 +45,19 @@ const PAYMENTS = [
     ]
   }
 ];
+
 class PaymentsPage extends React.Component {
   render() {
     return (
       <div>
-        <NavBar isLogin="true" />
+        <NavBar isLogin="true"/>
 
         <div className="my-body">
-          <Title text="حساب من" />
-          <Account />
-          <PaymentsTable payments={PAYMENTS} />
+          <Account/>
+          <PaymentsTable payments={PAYMENTS}/>
         </div>
 
-        <Footer />
+        <Footer/>
       </div>
     );
   }

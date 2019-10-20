@@ -32,14 +32,16 @@ class Footer extends React.Component {
             <Row className=" row-grid align-items-center mb-1 mt-1 mt-lg-4 mx-0">
               {/* CONTACT US */}
               <Col
-                className="justify-content-right btn-wrapper mt-2 px-3 order-3 order-lg-1"
+                className="justify-content-right btn-wrapper mt-2 px-3 order-5 order-lg-1"
                 lg="6"
               >
                 <ContactUs />
               </Col>
 
+
+
               {/* LINKS */}
-              <Col className="px-3 text-center mt-2 order-2" lg="4">
+              <Col className="px-3 text-center mt-2 order-3" lg="4">
                 <Row className="">
                   <Col className="lg-auto">
                     <NavLink to="/support" tag={Link} className="footer-links">
@@ -67,15 +69,12 @@ class Footer extends React.Component {
                   </Col>
                 </Row>
               </Col>
+              <Col xs='12' className='d-lg-none footer-divider order-4 '/>
 
               {/* LOGO */}
               <Col className=" footer-company  order-1 order-lg-3" lg="2">
-
                 <p className="footer-hesabeh">حسابِه</p>
-
                 <p className="footer-heabeh-latin">HesabeH</p>
-
-
                 <div>
                   <Button
                     className=" ml-1 p-0 mr-0 social-network-link"
@@ -143,8 +142,9 @@ class Footer extends React.Component {
                     Follow Us
                   </UncontrolledTooltip>
                 </div>
-
               </Col>
+              <Col xs='12' className='d-lg-none footer-divider order-2 '/>
+
             </Row>
 
             <Row className='mt-3'>

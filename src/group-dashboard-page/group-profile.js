@@ -1,17 +1,9 @@
 import React from "react";
 import { Button, Modal, Card, Container, Row, Col } from "reactstrap";
 import {
-  CardHeader,
   CardBody,
-  FormGroup,
-  Form,
-  Input,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroup
 } from "reactstrap";
 import { Link } from "react-router-dom";
-import GroupUser from "./group-users";
 
 class GroupProfile extends React.Component {
   state = {};

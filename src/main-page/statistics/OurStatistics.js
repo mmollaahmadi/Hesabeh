@@ -48,7 +48,10 @@ class OurStatistics extends React.Component {
       <div className="section">
         <Container>
           <Row className="mx-0 mt-5 d-flex justify-content-center">
-            <p className="section-title">به حسابِه بپیوندید</p>
+            <p data-aos="fade-up"
+               data-aos-duration="1000"
+               data-aos-delay="50"
+               className="section-title">به حسابِه بپیوندید</p>
           </Row>
           <Row className="mx-0 my-1">
             <StatisticUnit

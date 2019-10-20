@@ -8,8 +8,14 @@ class AboutUs extends React.Component {
         <Container className="pt-30 pb-30">
           <Row className="text-center justify-content-center">
             <Col lg="10">
-              <p className="section-title">درباره‌ی ما</p>
-              <p className="main-page-text text-justify">
+              <p data-aos="fade-up"
+                 data-aos-duration="1000"
+                 data-aos-delay="50"
+                 className="section-title">درباره‌ی ما</p>
+              <p data-aos="fade-up"
+                 data-aos-duration="1000"
+                 data-aos-delay="200"
+                 className="main-page-text text-justify">
                 خریدهای منزل، پرداخت قبوض، اجاره‌بها، تعمیرات منزل، سفر با
                 دوستان، خریدهای مشترک هم‌خانه‌ای‌ها، رفتن به سینما و... تنها
                 تعداد کمی از هزینه‌هایی هستند که در طول ماه انجام می‌دهیم.

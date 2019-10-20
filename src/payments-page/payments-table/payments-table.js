@@ -19,9 +19,12 @@ class PaymentsTable extends React.Component {
     return (
       <section className="section pt-0">
         <Container>
-          <Card className="card-profile shadow mt-4">
+          <Card data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-delay="200"
+                className="card-profile shadow mt-4">
             <CardHeader>
-              هزینه ها
+              هزینه‌ها
             </CardHeader>
             <CardBody>
               <TableTools buttonTitle="افزودن هزینه" buttonLink="/add-new-payment"/>

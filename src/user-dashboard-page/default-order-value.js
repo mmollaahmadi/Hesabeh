@@ -15,7 +15,10 @@ class DefaultOrderValue extends React.Component {
     return (
       <>
       <Col lg="7">
-      <Card className="card-profile shadow m-0">
+      <Card data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="50"
+            className="card-profile shadow m-0">
         <CardBody>
           <Form>
             <Row className="px-2">

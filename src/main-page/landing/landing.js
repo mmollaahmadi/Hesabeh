@@ -1,12 +1,20 @@
 import React from "react";
 
 // reactstrap components
-import { Row, Button, Col } from "reactstrap";
+import {Row, Button, Col} from "reactstrap";
+import AOS from "aos";
 // import SignupButton from '../common/signup-button/SignupButton.js';
 // import SigninButton from "../../common/signin-button/SigninButton.js";
 // import OnboardingUnit from "./OnboardingUnit.js";
 
 class Landing extends React.Component {
+  componentDidMount() {
+    AOS.refresh();
+  }
+  componentWillMount() {
+    AOS.init();
+  }
+
   render() {
     return (
       <Row className="sec">
@@ -14,7 +22,10 @@ class Landing extends React.Component {
           md="5"
           className="d-flex align-items-center justify-content-lg-end justify-content-center px-auto"
         >
-          <div className="d-block text-center">
+          <div data-aos="fade-up"
+               data-aos-duration="1000"
+               data-aos-delay="50"
+               className="d-block text-center">
             <img
               alt=""
               className="rounded-circle landing-logo"

@@ -17,7 +17,6 @@ import NavBar from "../common/navbar/navbar.js";
 import Footer from "../common/footer/footer.js";
 import Chip from "../common/chip/chip";
 import './payments-page.css';
-import { DatePicker } from "jalali-react-datepicker";
 
 class AddPaymentPage extends React.Component {
   constructor(props) {
@@ -87,10 +86,6 @@ class AddPaymentPage extends React.Component {
                   <Row className="justify-content-center py-5">
                     <Col sm="12" className="notifications-table">
                       <Form role="form" className="audit-form">
-
-                        <Row className="mb-3 d-flex justify-content-right">
-                          <DatePicker/>
-                        </Row>
 
                         <Row className=" m-0 text-center justify-content-center">
                           <Col lg="4" className="m-0">
