@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "../assets/css/custom.css";
 import {Link} from "react-router-dom";
 import {
@@ -17,6 +17,7 @@ import NavBar from "../common/navbar/navbar.js";
 import Footer from "../common/footer/footer.js";
 import Chip from "../common/chip/chip";
 import './payments-page.css';
+import DatePicker from 'react-persian-calendar-date-picker';
 
 class AddPaymentPage extends React.Component {
   constructor(props) {
@@ -44,9 +45,10 @@ class AddPaymentPage extends React.Component {
       paymentPicture: {
         value: []
       },
-        payments:[],
+      payments: [],
       consumersCollapse: false,
-      saveInputsValue: false
+      saveInputsValue: false,
+
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -65,12 +67,16 @@ class AddPaymentPage extends React.Component {
     });
   }
 
+
+
   render() {
-      const payments = this.state;
-      let tempTablePayments = (<p className='nothing'>هیچ هزینه ای اضافه نشده است.</p>);
-      if(payments.length > 0){
-          tempTablePayments = <p>hihhihhi</p>;
-      }
+
+    const payments = this.state;
+    let tempTablePayments = (<p className='nothing'>هیچ هزینه ای اضافه نشده است.</p>);
+    if (payments.length > 0) {
+      tempTablePayments = <p>hihhihhi</p>;
+    }
+
     return (
       <div>
         <NavBar isLogin="true"/>
@@ -110,7 +116,7 @@ class AddPaymentPage extends React.Component {
                           <Col lg="4" className="m-0">
                             <FormGroup className="mb-3">
                               <InputGroup className="input-group-alternative">
-                                <InputGroupAddon addonType="prepend">
+                                <InputGroupAddon className='input-prepend' addonType="prepend">
                                   <InputGroupText>
                                     <i className="fa fa-usd"/>
                                   </InputGroupText>
@@ -124,24 +130,20 @@ class AddPaymentPage extends React.Component {
                             </FormGroup>
                           </Col>
                           <Col lg="4" className="m-0">
+                            <FormGroup className="mb-3 ">
+                              <InputGroup className="input-group-alternative">
+                                <InputGroupAddon addonType="prepend">
+                                  <InputGroupText>
+                                    <i className="fa fa-calendar"/>
+                                  </InputGroupText>
+                                </InputGroupAddon>
 
-                                <FormGroup className="mb-3 d-inline">
-                                  <InputGroup className="input-group-alternative">
-                                    <InputGroupAddon addonType="prepend">
-                                      <InputGroupText>
-                                        <i className="fa fa-calendar"/>
-                                      </InputGroupText>
-                                    </InputGroupAddon>
 
-                                    <Input
-                                      className="audit-input"
-                                      placeholder={this.state.paymentDate.placeholder}
-                                      name='paymentDate'
-                                      value={this.state.paymentDate.value}
-                                      onChange={this.handleInputChange}
-                                    />
-                                  </InputGroup>
-                                </FormGroup>
+                                  <App/>
+
+                              </InputGroup>
+
+                            </FormGroup>
 
                           </Col>
                           <Col lg="12" className="m-0">
@@ -289,9 +291,9 @@ class AddPaymentPage extends React.Component {
                       </Col>
                     </Row>
                   </FormGroup>
-                    <Row className='m-0 d-flex justify-content-center'>
+                  <Row className='m-0 d-flex justify-content-center'>
                     {tempTablePayments}
-                    </Row>
+                  </Row>
                 </CardBody>
               </Card>
             </Container>
@@ -303,5 +305,17 @@ class AddPaymentPage extends React.Component {
     );
   }
 }
-
+const App = () => {
+  const [selectedDay, setSelectedDay] = useState(null);
+  return (
+    <DatePicker
+      selectedDay={selectedDay}
+      onChange={setSelectedDay}
+      colorPrimary="#01cd9a"
+      calendarClassName="custom-calendar"
+      calendarTodayClassName="custom-today-day"
+      inputPlaceholder="انتخاب روز"
+    />
+  );
+};
 export default AddPaymentPage;

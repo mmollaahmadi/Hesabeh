@@ -49,6 +49,37 @@
 
 
 
+.input-group-prepend{
+    min-width: 43px !important;
+    justify-content: center;
+}
+
+
+
+
+.custom-today-day{
+    border-color: #01cd9a;
+    color: #01cd9a !important;
+    text-underline: #01cd9a !important;
+}
+.Calendar__day.-today:not(.-selectedStart):not(.-selectedEnd):not(.-selectedBetween)::after{
+    background-color: transparent !important;
+}
+.custom-calendar{
+    margin: 0 !important;
+    background-color: #FFFFFF !important;
+
+}
+.DatePicker__calendarContainer{
+    z-index: 289;
+}
+.Calendar{
+    --cl-color-disabled: #000 !important;
+}
+.Calendar__weekDay{
+    font-size: .8rem;
+    font-family: Samim-Bold, serif;
+}
 
 
 
