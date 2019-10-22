@@ -25,7 +25,7 @@ class NotificationsTable extends React.Component {
     });
 
     return (
-      <section className="section pt-0">
+
         <Container>
           <Card className="card-profile shadow mt-5">
             <CardHeader>
@@ -40,7 +40,7 @@ class NotificationsTable extends React.Component {
             </CardBody>
           </Card>
         </Container>
-      </section>
+
     );
   }
 }

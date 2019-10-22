@@ -36,6 +36,13 @@
   font-size: 0.75rem !important;
   width: fit-content;
 }
+.nav-bar-link-active{
+  color: #00e5ac !important;
+  font-family: Samim-Bold, Tahoma, serif !important;
+  cursor: pointer;
+  font-size: 0.75rem !important;
+  width: fit-content;
+}
 .signup-button {
   /* border-radius: 3rem; */
   font-size: 0.75rem !important;
@@ -98,9 +105,11 @@
   font-family: Samim, Tahoma, serif;
   font-size: .9em;
   color: #f0f1f1 !important;
-  background-color: #01cd9a;
-  border-color: #01cd9a;
+  background-color: #00e5ac;
+  border-color: #00e5ac;
 }
+
+
 
 
 
@@ -110,9 +119,16 @@
   display: none; }
 
 @media (max-width: 991.98px) {
+  .navbar-link-active{
+    color: #00e5ac !important;
+    font-family: Samim-Bold, Tahoma, serif !important;
+    cursor: pointer;
+    font-size: 0.75rem !important;
+    width: fit-content;
+  }
   .navbar-nav .nav-link {
     padding: .625rem 0;
-    color: #172b4d !important; }
+    color: #172b4d ; }
   .navbar-nav .dropdown-menu {
     box-shadow: none;
     min-width: auto; }

@@ -28,13 +28,13 @@ import 'react-persian-calendar-date-picker/lib/DatePicker.css';
 import MainPage from './main-page/main-page';
 import UserDashboardPage from './user-dashboard-page/user-dashboard-page.js';
 import GroupDashboardPage from './group-dashboard-page/group-dashboard-page.js';
-import MyGroupsPage from './groups-page/my-groups-page.js';
+import MyGroupsPage from './my-groups-page/my-groups-page.js';
 import NewPasswordRequestPage from './forgot-password-pages/new-password-request-page.js';
 import SupportPage from './support-page/support-page.js';
 import SignInPage from './signin-page/sign-in-page.js';
 import RegisterPage from './register-page/register-page.js';
 import PaymentsPage from './payments-page/payments-page.js';
-import CreateNewGroupPage from './groups-page/create-new-group-page.js';
+import CreateNewGroupPage from './my-groups-page/create-new-group-page.js';
 import NotificationsPage from './notifications-page/notifications-page.js';
 import CreateNewRequestPage from './notifications-page/new-request/create-new-request-page.js'
 import AddPaymentPage from './payments-page/add-new-payment.js';

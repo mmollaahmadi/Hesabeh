@@ -41,26 +41,29 @@ class Features extends React.Component {
                data-aos-delay="50"
                className="section-title">امکانات</p>
           </Row>
-          <Row className="text-center justify-content-center px-2">
-            <Col lg="3" className="align-self-center order-2 order-lg-1">
-            <Row className="d-flex justify-content-center">
+          <Row className="text-center justify-content-center px-2 m-0">
+            <Col xs='6' lg="3" className="align-self-center order-2 order-lg-1">
+            <Row className="d-flex justify-content-center m-0">
               <FeaturesButton
+                direction='rtl'
                 number = {1}
                 featureSelectedNumber = {featureSelectedNumber}
                 onClick={() => this.toggleFeatureSelection(1)}
-                text='01 سریع و آسان'
+                text='سرعت'
               />
               <FeaturesButton
+                direction='rtl'
                 number = {2}
                 featureSelectedNumber = {featureSelectedNumber}
                 onClick={() => this.toggleFeatureSelection(2)}
-                text='01 سریع و آسان'
+                text='سهولت'
               />
               <FeaturesButton
+                direction='rtl'
                 number = {3}
                 featureSelectedNumber = {featureSelectedNumber}
                 onClick={() => this.toggleFeatureSelection(3)}
-                text='01 سریع و آسان'
+                text='اطمینان'
               />
 
               </Row>
@@ -75,27 +78,30 @@ class Features extends React.Component {
               src={featureSelectedImage} />
             </Col>
 
-            <Col lg="3" className="align-self-center order-3 order-lg-3">
-            <Row className="d-flex justify-content-center">
+            <Col xs='6' lg="3" className="align-self-center order-3 order-lg-3">
+            <Row className="d-flex justify-content-center m-0">
               <FeaturesButton
+                direction='ltr'
                 number = {4}
                 featureSelectedNumber = {featureSelectedNumber}
                 onClick={() => this.toggleFeatureSelection(4)}
-                text='01 سریع و آسان'
+                text='خدمات رایگان'
               />
 
               <FeaturesButton
+                direction='ltr'
                 number = {5}
                 featureSelectedNumber = {featureSelectedNumber}
                 onClick={() => this.toggleFeatureSelection(5)}
-                text='01 سریع و آسان'
+                text='هوشمندی'
               />
 
               <FeaturesButton
+                direction='ltr'
                 number = {6}
                 featureSelectedNumber = {featureSelectedNumber}
                 onClick={() => this.toggleFeatureSelection(6)}
-                text='01 سریع و آسان'
+                text='گزارش دقیق'
               />
               </Row>
             </Col>

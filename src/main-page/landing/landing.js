@@ -40,7 +40,7 @@ class Landing extends React.Component {
             <p className="p-hesabeh">
               هزینه‌های روزمره رو اینجا ثبت کن و به راحتی مدیریتشون کن
             </p>
-            <Button color="primary" className="py-1 px-4">
+            <Button color="primary" className="py-1 px-4 primary-button">
               بیشتر
             </Button>
           </div>

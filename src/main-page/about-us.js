@@ -12,7 +12,7 @@ class AboutUs extends React.Component {
                  data-aos-duration="1000"
                  data-aos-delay="50"
                  className="section-title">درباره‌ی ما</p>
-              <p data-aos="fade-up"
+              <p data-aos="zoom-in"
                  data-aos-duration="1000"
                  data-aos-delay="200"
                  className="main-page-text text-justify">

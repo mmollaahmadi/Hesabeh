@@ -10,7 +10,7 @@ import {
   Badge
 } from "reactstrap";
 import { Link } from "react-router-dom";
-import NavBarProfile from "./navbar-profile.js";
+import NavBarProfile from "./nav-bar-profile.js";
 import NavBarButtons from "./nav-bar-buttons";
 import NavBarProfileToggler from './nav-bar-profile-toggler.js'
 import "./navbar.css";
@@ -45,7 +45,7 @@ class MyNavbar extends React.Component {
     let auditButtons;
     let links;
     if (this.props.isLogin === "true") {
-      profileToggler = <NavBarProfileToggler togglePage={this.togglePage} />;
+      profileToggler = <NavBarProfileToggler pageSelection={this.state.pageSelection} togglePage={this.togglePage} />;
       profile = <NavBarProfile />;
       auditButtons=null;
       links = (
@@ -82,7 +82,7 @@ class MyNavbar extends React.Component {
           <NavLink
             className={`d-block ml-auto pl-3 pr-3 ${
               pageSelection === "my-groups"
-                ? "navbar-link-active"
+                ? "nav-bar-link-active"
                 : "navbar-link"
             }`}
             onClick={() => this.togglePage("my-groups")}
@@ -116,7 +116,7 @@ class MyNavbar extends React.Component {
     return (
       // <header className="header-global">
       <Navbar
-        className="navbar-main navbar-light navbar-transparent  pb-0 px-5"
+        className="navbar-main navbar-light navbar-transparent  pb-0 px-2 px-lg-5"
         expand="lg"
         id="navbar-main"
       >

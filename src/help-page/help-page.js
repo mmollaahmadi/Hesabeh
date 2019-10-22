@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import Navbar from "../common/navbar/navbar";
 import Footer from "../common/footer/footer";
+import Title from "../common/title/title";
 class HelpPage extends React.Component {
   render() {
     return (

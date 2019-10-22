@@ -1,19 +1,21 @@
 import React from 'react'
-import {Button} from "reactstrap";
+import {Button, Col} from "reactstrap";
 
 class FeaturesButton extends React.Component{
   render() {
     return(
+      <Col xs='12' className='justify-content-center p-0 m-0'>
       <Button
-        data-aos="fade-up"
-        data-aos-duration={this.props.number * 500}
-        data-aos-delay="50"
-        className='main-page-text features-btn'
+        data-aos='zoom-in'
+        data-aos-duration='1000'
+        data-aos-delay="200"
+        className='main-page-text features-btn px-auto'
         color="primary"
         onClick={this.props.onClick}
       >
         {this.props.text}
       </Button>
+      </Col>
     );
   }
 }

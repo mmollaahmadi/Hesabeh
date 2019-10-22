@@ -9610,7 +9610,7 @@ background-color: #42424280 !important;}
 @media (max-width: 991.98px) {
   .navbar-nav .nav-link {
     padding: .625rem 0;
-    color: #172b4d !important; }
+    color: #172b4d ; }
   .navbar-nav .dropdown-menu {
     box-shadow: none;
     min-width: auto; }

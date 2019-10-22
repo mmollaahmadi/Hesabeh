@@ -89,12 +89,13 @@ class RequirementsListRequest extends React.Component {
                         label="محمد ملااحمدی"
                         // onDelete={() => this.deleteUser()}
                       />
-                      <Button className="btn btn-icon payments-btn-lv2"
-                              type="button"
-                              color="dark-green">
-                                                                <span className="btn-inner--icon">
-                                                                  <i className="fa fa-group"/>
-                                                                </span>
+                      <Button
+                        className="btn btn-icon payments-btn-lv2"
+                        type="button"
+                        color="dark-green">
+                          <span className="btn-inner--icon">
+                            <i className="fa fa-group"/>
+                          </span>
                         {/*<span className="btn-inner--text">مصرف کنندگان</span>*/}
                       </Button>
                     </Row>

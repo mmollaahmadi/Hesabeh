@@ -22,7 +22,7 @@ class SupportPage extends React.Component {
 
   render() {
     return (
-      <div className="register-section section-lg">
+      <div className="section-lg">
         <Container className="pt-10 pb-30  h-100">
           <Row className="text-center justify-content-center">
             <Col lg="5">

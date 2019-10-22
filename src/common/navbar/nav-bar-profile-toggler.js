@@ -7,6 +7,7 @@ import {
   Col
 } from "reactstrap";
 import {Link} from "react-router-dom";
+import './navbar.css'
 
 class NavBarProfileToggler extends React.Component {
   render() {
@@ -25,33 +26,30 @@ class NavBarProfileToggler extends React.Component {
             />
           </Col>
         </Row>
-            <NavLink
-              className={`d-lg-none d-block ml-auto pl-3 pr-3 ${
-                this.props.pageSelection === "settings" ? "navbar-link-active" : "navbar-link"
-              }`}
-              onClick={() => this.props.togglePage("settings")}
-              color="link"
-              tag={Link}
-              to="/dashboard"
-            >
-              <i className="fa fa-cog mr-0 ml-2"/>
-              حساب کاربری
-            </NavLink>
-            <NavLink
-              className={`d-lg-none d-block ml-auto pl-3 pr-3 ${
-                this.props.pageSelection === "exit" ? "navbar-link-active" : "navbar-link"
-              }`}
-              onClick={() => this.props.togglePage("exit")}
-              color="link"
-              tag={Link}
-              to='/'
-            >
-              <i className="fa fa-sign-out mr-0 ml-2"/>
-              خروج
-            </NavLink>
+        <NavLink
+          className={`d-lg-none d-block ml-auto pl-3 pr-3 ${this.props.pageSelection === "settings" ? 'nav-bar-link-active' : "navbar-link"}`}
+          onClick={() => this.props.togglePage("settings")}
+          color="link"
+          tag={Link}
+          to="/dashboard"
+        >
+          <i className="fa fa-cog mr-0 ml-2"/>
+          حساب کاربری
+        </NavLink>
+        <NavLink
+          className={`d-lg-none d-block ml-auto pl-3 pr-3 
+          ${this.props.pageSelection === "exit" ? "navbar-link-active" : "navbar-link"}`}
+          onClick={() => this.props.togglePage("exit")}
+          color="link"
+          tag={Link}
+          to='/'
+        >
+          <i className="fa fa-sign-out mr-0 ml-2"/>
+          خروج
+        </NavLink>
 
 
-        <DropdownItem className='d-lg-none my-divider' divider />
+        <DropdownItem className='d-lg-none my-divider' divider/>
 
       </>
     );
