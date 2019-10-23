@@ -9,14 +9,13 @@ import {
 import NotificationsTableHeader from './notifications-table-header'
 import NotificationsTableRow from "./notifications-table-row.js";
 import TableTools from "../../common/table-tools/table-tools";
+import AOS from 'aos';
 
 class NotificationsTable extends React.Component {
-  state = {};
-  toggleModal = state => {
-    this.setState({
-      [state]: !this.state[state]
-    });
-  };
+  constructor(props){
+    super(props);
+    AOS.init();
+  }
 
   render() {
     const rows = [];
@@ -27,7 +26,10 @@ class NotificationsTable extends React.Component {
     return (
 
         <Container>
-          <Card className="card-profile shadow mt-5">
+          <Card data-aos="fade-up"
+               data-aos-duration="1000"
+               data-aos-delay="50"
+          className="card-profile shadow mt-5">
             <CardHeader>
 
             </CardHeader>

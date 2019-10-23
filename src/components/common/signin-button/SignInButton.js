@@ -4,16 +4,7 @@ import {
   NavLink,
 } from "reactstrap";
 
-class SignInButton extends React.Component {
-  state = {
-    loginFormModal: false
-  };
-  toggleModal = state => {
-    this.setState({
-      [state]: !this.state[state]
-    });
-  };
-
+class SignInButton extends React.Component {  
   render() {
     return (
 
@@ -22,7 +13,6 @@ class SignInButton extends React.Component {
         className="navbar-link d-inline pl-3 pr-3 pr-lg-0"
         color="primary"
         id="navbar-signin"
-        // onClick={() => this.toggleModal("loginFormModal")}
         to="/signin"
         tag={Link}
       >

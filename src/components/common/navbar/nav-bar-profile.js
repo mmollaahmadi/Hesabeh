@@ -13,12 +13,13 @@ import {Link} from "react-router-dom";
 class NavBarProfile extends React.Component {
   constructor(props) {
     super(props);
-
-    this.onLogout = this.onLogout.bind(this);
+  this.onLogout = this.onLogout.bind(this);
   }
   onLogout(){
     this.props.onLogout();
+    this.props.resetPageSelection();
   }
+
   render() {
     return (
       <>
@@ -38,7 +39,9 @@ class NavBarProfile extends React.Component {
                   mollaahmadi@
                 </DropdownItem>
                 <DropdownItem divider/>
-                <DropdownItem className="profile-item" to="/dashboard" tag={Link}>
+                <DropdownItem className="profile-item"
+                to="/dashboard"
+                tag={Link}>
                   <i className="fa fa-cog mr-0 ml-2"/>
                   حساب کاربری
                 </DropdownItem>

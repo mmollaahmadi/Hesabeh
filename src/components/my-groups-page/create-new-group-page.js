@@ -21,8 +21,7 @@ import Chip from '../common/chip/chip.js';
 class CreateNewGroupPage extends React.Component {
   render() {
     return (
-      <div>
-        <Navbar isLogin="true" />
+
         <div className="section-lg">
           <Container className="pt-10 pb-30  h-100">
             <Row className="text-center justify-content-center">
@@ -114,8 +113,7 @@ class CreateNewGroupPage extends React.Component {
             </Row>
           </Container>
         </div>
-        <Footer />
-      </div>
+        
     );
   }
 }

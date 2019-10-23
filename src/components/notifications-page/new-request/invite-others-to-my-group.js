@@ -12,11 +12,19 @@ import {
     Row
 } from "reactstrap";
 import Chip from "../../common/chip/chip";
+import AOS from 'aos'
 
 class InviteOthersToMyGroup extends React.Component{
+  constructor(props){
+    super(props);
+    AOS.init();
+  }
     render(){
         return(
-            <Card className="card-profile shadow mt-5">
+            <Card data-aos="fade-up"
+                 data-aos-duration="1000"
+                 data-aos-delay="50"
+                 className="card-profile shadow mt-5">
                 <CardHeader>دعوت به گروه</CardHeader>
                 <CardBody>
                     <Form role="form" className="audit-form">

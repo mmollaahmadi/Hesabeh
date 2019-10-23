@@ -44,8 +44,6 @@ class CreateNewRequestPage extends React.Component {
 
   render() {
     return (
-      <div>
-        <Navbar isLogin="true"/>
 
         <main className="profile-page pb-5" ref="main">
           <div className="my-body">
@@ -69,8 +67,6 @@ class CreateNewRequestPage extends React.Component {
           </div>
         </main>
 
-        <Footer/>
-      </div>
     );
   }
 }

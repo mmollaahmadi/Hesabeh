@@ -54,7 +54,10 @@ class RequirementsListRequest extends React.Component {
       groups.push(<UserGroupAccount username={group.username}/>);
     });
     return (
-      <Card className="card-profile shadow mt-5">
+      <Card data-aos="fade-up"
+           data-aos-duration="1000"
+           data-aos-delay="50"
+           className="card-profile shadow mt-5">
         <CardHeader>ایجاد لیست نیازمندی</CardHeader>
         <CardBody>
           <Row className="justify-content-center py-5">

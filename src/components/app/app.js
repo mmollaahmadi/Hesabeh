@@ -57,7 +57,7 @@ class App extends Component {
     super(props);
     this.state = {
       currentUser: null,
-      isAuthenticated: true,
+      isAuthenticated: false,
       isLoading: false
     };
     this.handleLogout = this.handleLogout.bind(this);
@@ -116,8 +116,9 @@ class App extends Component {
     //   message: 'Polling App',
     //   description: "You're successfully logged in.",
     // });
-    // this.loadCurrentUser();
-    this.props.history.push("/");
+    this.loadCurrentUser();
+    // this.props.history.push("/");
+    this.props.history.push('/my-account');
   }
 
   render() {
@@ -128,13 +129,14 @@ class App extends Component {
       <div className="app-container">
         <NavBar isLogin={this.state.isAuthenticated}
                 user={this.state.currentUser}
-                onLogout={this.handleLogout}/>
+                onLogout={this.handleLogout}
+                />
         {/*<AppHeader isAuthenticated={this.state.isAuthenticated}*/}
         {/*           currentUser={this.state.currentUser}*/}
         {/*           onLogout={this.handleLogout} />*/}
 
         <div className="app-content">
-          <div className="container">
+
             <Switch>
               <Route path="/" exact render={props => <MainPage isLogin='false'/>}/>
               <Route
@@ -145,7 +147,7 @@ class App extends Component {
               <Route
                 path="/signin"
                 exact
-                render={props => <SignInPage {...props} />}
+                render={props => <SignInPage onLogin={this.handleLogin} />}
               />
               <Route
                 path="/forgot-password"
@@ -203,7 +205,7 @@ class App extends Component {
                 render={props => <CreateNewGroupPage {...props} />}
               />
             </Switch>
-          </div>
+
         </div>
         <Footer/>
       </div>

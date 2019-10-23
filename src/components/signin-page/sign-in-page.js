@@ -41,6 +41,7 @@ class SignInPage extends React.Component {
     this.handleInputChange = this.handleInputChange.bind(this);
     this.signInHandle = this.signInHandle.bind(this);
   }
+
   signInHandle(){
     let emailOrUsername = this.state.emailOrUsername.value;
     let password = this.state.password.value;
@@ -49,7 +50,8 @@ class SignInPage extends React.Component {
       if(password !== ''){
         if(emailOrUsername === 'admin'){
           if(password === 'admin'){
-            this.props.history.push('/my-account');
+            // this.props.history.push('/my-account');
+            this.props.onLogin();
           }
           else {
             this.setState({

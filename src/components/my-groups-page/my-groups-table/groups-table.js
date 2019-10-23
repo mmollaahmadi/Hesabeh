@@ -9,8 +9,12 @@ import {
 import MyGroupsTableRow from "./my-groups-table-row.js";
 import TableTools from "../../common/table-tools/table-tools";
 import MyGroupsTableHeader from "./my-groups-table-header";
-
+import AOS from 'aos'
 class GroupsTable extends React.Component {
+  constructor(props){
+    super(props);
+    AOS.init();
+  }
   render() {
     let myGroups = [];
     this.props.myGroups.forEach(group => {
@@ -19,7 +23,10 @@ class GroupsTable extends React.Component {
     return (
 
         <Container>
-          <Card className="card-profile shadow mt-5">
+          <Card data-aos="fade-up"
+               data-aos-duration="1000"
+               data-aos-delay="50"
+               className="card-profile shadow mt-5">
             <CardHeader>
             </CardHeader>
             <CardBody>

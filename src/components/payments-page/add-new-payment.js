@@ -18,6 +18,7 @@ import Footer from "../common/footer/footer.js";
 import Chip from "../common/chip/chip";
 import './payments-page.css';
 import DatePicker from 'react-persian-calendar-date-picker';
+import AOS from 'aos'
 
 class AddPaymentPage extends React.Component {
   constructor(props) {
@@ -52,6 +53,8 @@ class AddPaymentPage extends React.Component {
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
+
+    AOS.init();
   }
 
   handleInputChange(event) {
@@ -78,13 +81,15 @@ class AddPaymentPage extends React.Component {
     }
 
     return (
-      <div>
-        <NavBar isLogin="true"/>
+
 
         <div className="my-body">
           <section className="section pt-0">
             <Container>
-              <Card className="card-profile shadow mt-5">
+              <Card data-aos="fade-up"
+                   data-aos-duration="1000"
+                   data-aos-delay="50"
+                   className="card-profile shadow mt-5">
                 <CardHeader>
                   افزودن هزینه جدید
                 </CardHeader>
@@ -260,7 +265,10 @@ class AddPaymentPage extends React.Component {
                   </Row>
                 </CardBody>
               </Card>
-              <Card className='mt-5 shadow'>
+              <Card data-aos="fade-up"
+                   data-aos-duration="1000"
+                   data-aos-delay="50"
+                   className='mt-5 shadow'>
                 <CardHeader>
                   هزینهها
                 </CardHeader>
@@ -300,8 +308,6 @@ class AddPaymentPage extends React.Component {
           </section>
         </div>
 
-        <Footer/>
-      </div>
     );
   }
 }

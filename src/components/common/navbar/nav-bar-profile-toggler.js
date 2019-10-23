@@ -10,6 +10,18 @@ import {Link} from "react-router-dom";
 import './navbar.css'
 
 class NavBarProfileToggler extends React.Component {
+constructor(props){
+  super(props);
+  this.onLogout=this.onLogout.bind(this);
+}
+  onLogout(pageSelection){
+    this.props.togglePage(pageSelection);
+    if(pageSelection === 'exit'){
+      this.props.onLogout();
+      this.props.resetPageSelection();
+    }
+
+  }
   render() {
     return (
       <>
@@ -28,7 +40,7 @@ class NavBarProfileToggler extends React.Component {
         </Row>
         <NavLink
           className={`d-lg-none d-block ml-auto pl-3 pr-3 ${this.props.pageSelection === "settings" ? 'nav-bar-link-active' : "navbar-link"}`}
-          onClick={() => this.props.togglePage("settings")}
+          onClick={() => this.onLogout('settings')}
           color="link"
           tag={Link}
           to="/dashboard"
@@ -37,9 +49,9 @@ class NavBarProfileToggler extends React.Component {
           حساب کاربری
         </NavLink>
         <NavLink
-          className={`d-lg-none d-block ml-auto pl-3 pr-3 
+          className={`d-lg-none d-block ml-auto pl-3 pr-3
           ${this.props.pageSelection === "exit" ? "navbar-link-active" : "navbar-link"}`}
-          onClick={() => this.props.togglePage("exit")}
+          onClick={() => this.onLogout('exit')}
           color="link"
           tag={Link}
           to='/'

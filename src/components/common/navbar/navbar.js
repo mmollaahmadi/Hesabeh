@@ -24,6 +24,7 @@ class MyNavbar extends React.Component {
       collapsed: true,
       setCollapsed: true
     };
+    this.resetPageSelection=this.resetPageSelection.bind(this);
   }
 
   togglePage = state => {
@@ -36,6 +37,12 @@ class MyNavbar extends React.Component {
     // let headroom = new Headroom(document.getElementById("navbar-main"));
     // initialise
     // headroom.init();
+
+  }
+  resetPageSelection(){
+    this.setState({
+      pageSelection: 'my-account'
+    });
   }
 
   render() {
@@ -45,8 +52,18 @@ class MyNavbar extends React.Component {
     let auditButtons;
     let links;
     if (this.props.isLogin === true) {
-      profileToggler = <NavBarProfileToggler pageSelection={this.state.pageSelection} togglePage={this.togglePage} />;
-      profile = <NavBarProfile onLogout={this.props.onLogout}/>;
+      profileToggler = <NavBarProfileToggler
+      onLogout={this.props.onLogout}
+      pageSelection={this.state.pageSelection}
+      resetPageSelection={this.resetPageSelection}
+      togglePage={this.togglePage} />;
+
+      profile = <NavBarProfile
+      pageSelection={this.state.pageSelection}
+      onLogout={this.props.onLogout}
+      resetPageSelection={this.resetPageSelection}
+      togglePage={this.togglePage}
+      />;
       auditButtons=null;
       links = (
         <>
@@ -145,8 +162,13 @@ class MyNavbar extends React.Component {
               <NavLink
                 to="/support"
                 tag={Link}
-                className="navbar-link d-block ml-auto pl-3 pr-3"
+                className={`d-block ml-auto pl-3 pr-3 ${
+                  pageSelection === "support"
+                    ? "nav-bar-link-active"
+                    : "navbar-link"
+                }`}
                 color="primary"
+                onClick={() => this.togglePage("support")}
               >
                 <i className="fa fa-life-ring d-lg-none mr-0 ml-2"/>
                 پشتیبانی
@@ -154,8 +176,13 @@ class MyNavbar extends React.Component {
               <NavLink
                 to="/help"
                 tag={Link}
-                className="navbar-link d-block pl-3 pr-3"
+                className={`d-block ml-auto pl-3 pr-3 ${
+                  pageSelection === "help"
+                    ? "nav-bar-link-active"
+                    : "navbar-link"
+                }`}
                 color="primary"
+                onClick={() => this.togglePage("help")}
               >
                 <i className="fa fa-question-circle d-lg-none mr-0 ml-2"/>
                 راهنما

@@ -2,9 +2,15 @@ import React from 'react'
 import {Button, Card, CardBody, CardHeader, Col, Form, FormGroup, Input, InputGroup, Row} from "reactstrap";
 
 class JoinToOtherGroup extends React.Component {
+  constructor(props){
+    super(props);
+  }
   render() {
     return (
-      <Card className="card-profile shadow mt-5">
+      <Card data-aos="fade-up"
+           data-aos-duration="1000"
+           data-aos-delay="50"
+      className="card-profile shadow mt-5">
         <CardHeader>پیوستن به گروه</CardHeader>
         <CardBody>
           <Form role="form" className="w-100 pt-5 pb-4">
