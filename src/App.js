@@ -3,7 +3,7 @@ import React from 'react';
 
 import './App.css';
 
-import MainPage from './main-page/MainPage';
+import MainPage from './components/main-page/MainPage';
 
 class App extends React.Component{
   constructor(props){
