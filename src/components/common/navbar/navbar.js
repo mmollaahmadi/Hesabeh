@@ -1,7 +1,7 @@
 import React from "react";
 // import Headroom from "./headroom/Headroom.js";
 import {
-  UncontrolledCollapse,
+  Collapse,
   NavbarBrand,
   Navbar,DropdownItem,
   Nav,
@@ -21,24 +21,24 @@ class MyNavbar extends React.Component {
 
     this.state = {
       pageSelection: "my-account",
-      collapsed: true,
-      setCollapsed: true
+      collapse: true
     };
     this.resetPageSelection=this.resetPageSelection.bind(this);
   }
 
   togglePage = state => {
     this.setState({
-      pageSelection: state
+      pageSelection: state,
+      collapse: false
     });
   };
 
-  componentDidMount() {
-    // let headroom = new Headroom(document.getElementById("navbar-main"));
-    // initialise
-    // headroom.init();
-
+  toggleCollapse = () => {
+    this.setState({
+      collapse: !this.state.collapse
+    });
   }
+  
   resetPageSelection(){
     this.setState({
       pageSelection: 'my-account'
@@ -148,10 +148,10 @@ class MyNavbar extends React.Component {
         </NavbarBrand>
 
         {/* TOGGLER */}
-        <button className="navbar-toggler" id="navbar_global">
+        <button className="navbar-toggler" onClick={() => this.toggleCollapse()}>
           <span className="navbar-toggler-icon" />
         </button>
-        <UncontrolledCollapse navbar toggler="#navbar_global" className='px--5'>
+        <Collapse navbar isOpen={this.state.collapse} className='px--5'>
           <Nav className="d-flex w-100 pr-0" navbar>
             {profile}
             {auditButtons}
@@ -189,7 +189,7 @@ class MyNavbar extends React.Component {
               </NavLink>
             </Row>
           </Nav>
-        </UncontrolledCollapse>
+        </Collapse>
       </Navbar>
       // </header>
     );

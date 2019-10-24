@@ -16,8 +16,8 @@ class NavBarProfile extends React.Component {
   this.onLogout = this.onLogout.bind(this);
   }
   onLogout(){
-    this.props.onLogout();
     this.props.resetPageSelection();
+    this.props.onLogout();
   }
 
   render() {
@@ -39,7 +39,10 @@ class NavBarProfile extends React.Component {
                   mollaahmadi@
                 </DropdownItem>
                 <DropdownItem divider/>
-                <DropdownItem className="profile-item"
+                <DropdownItem className={`profile-item ${this.props.pageSelection === "settings"
+                  ? "profile-item-active"
+                  : ""}`}
+                  onClick={() => this.props.togglePage('settings')}
                 to="/dashboard"
                 tag={Link}>
                   <i className="fa fa-cog mr-0 ml-2"/>
