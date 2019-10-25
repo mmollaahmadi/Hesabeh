@@ -24,7 +24,16 @@ class MyNavbar extends React.Component {
       collapse: true
     };
     this.resetPageSelection=this.resetPageSelection.bind(this);
+    this.handleOutsideClick = this.handleOutsideClick.bind(this);
   }
+  handleOutsideClick(e) {
+      // ignore clicks on the component itself
+      if (this.node.contains(e.target)) {
+        return;
+      }
+
+      this.toggleCollapse();
+    }
 
   togglePage = state => {
     this.setState({
@@ -34,11 +43,18 @@ class MyNavbar extends React.Component {
   };
 
   toggleCollapse = () => {
+    if (!this.state.collapse) {
+      // attach/remove event handler
+      document.addEventListener('click', this.handleOutsideClick, false);
+    } else {
+      document.removeEventListener('click', this.handleOutsideClick, false);
+    }
+
     this.setState({
       collapse: !this.state.collapse
     });
   }
-  
+
   resetPageSelection(){
     this.setState({
       pageSelection: 'my-account'
@@ -53,12 +69,14 @@ class MyNavbar extends React.Component {
     let links;
     if (this.props.isLogin === true) {
       profileToggler = <NavBarProfileToggler
+      currentUser = {this.props.currentUser}
       onLogout={this.props.onLogout}
       pageSelection={this.state.pageSelection}
       resetPageSelection={this.resetPageSelection}
       togglePage={this.togglePage} />;
 
       profile = <NavBarProfile
+      currentUser = {this.props.currentUser}
       pageSelection={this.state.pageSelection}
       onLogout={this.props.onLogout}
       resetPageSelection={this.resetPageSelection}
@@ -132,6 +150,7 @@ class MyNavbar extends React.Component {
     }
     return (
       // <header className="header-global">
+      <div className="popover-container" ref={node => { this.node = node; }}>
       <Navbar
         className="navbar-main navbar-light navbar-transparent  pb-0 px-2 px-lg-5"
         expand="lg"
@@ -191,6 +210,7 @@ class MyNavbar extends React.Component {
           </Nav>
         </Collapse>
       </Navbar>
+      </div>
       // </header>
     );
   }

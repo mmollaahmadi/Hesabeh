@@ -51,32 +51,43 @@ import NavBar from "../common/navbar/navbar";
 import Footer from "../common/footer/footer";
 
 // const { Content } = Layout;
+import {USERS} from '../../constants/constants'
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentUser: null,
-      isAuthenticated: false,
+      currentUser: USERS[0],
+      isAuthenticated: true,
       isLoading: false
     };
     this.handleLogout = this.handleLogout.bind(this);
     this.loadCurrentUser = this.loadCurrentUser.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
-
-    // notification.config({
-    //   placement: 'topRight',
-    //   top: 70,
-    //   duration: 3,
-    // });
   }
 
-  loadCurrentUser() {
-    this.setState({
-      currentUser: USERS[0],
-      isAuthenticated: true,
-      isLoading: true,
+  loadCurrentUser(emailOrUsernameOrPhoneNumber, password) {
+    let user = null;
+    USERS.map((u) => {
+      if((u.username === emailOrUsernameOrPhoneNumber || u.email === emailOrUsernameOrPhoneNumber) &&
+    u.password === password){
+        user = u;
+      }
     });
+
+    if(user)
+      this.setState({
+        currentUser: user,
+        isAuthenticated: true,
+        isLoading: true,
+      });
+    else {
+      this.setState({
+        currentUser: user,
+        isAuthenticated: false,
+        isLoading: false,
+      });
+    }
     // getCurrentUser()
     //   .then(response => {
     //     this.setState({
@@ -92,7 +103,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-     this.loadCurrentUser();
+     // this.loadCurrentUser();
   }
 
   handleLogout(redirectTo = "/", notificationType = "success", description = "You're successfully logged out.") {
@@ -111,13 +122,8 @@ class App extends Component {
     // });
   }
 
-  handleLogin() {
-    // notification.success({
-    //   message: 'Polling App',
-    //   description: "You're successfully logged in.",
-    // });
-    this.loadCurrentUser();
-    // this.props.history.push("/");
+  handleLogin(emailOrUsernameOrPhoneNumber, password) {
+    this.loadCurrentUser(emailOrUsernameOrPhoneNumber,password);
     this.props.history.push('/my-account');
   }
 
@@ -128,12 +134,9 @@ class App extends Component {
     return (
       <div className="app-container">
         <NavBar isLogin={this.state.isAuthenticated}
-                user={this.state.currentUser}
+                currentUser={this.state.currentUser}
                 onLogout={this.handleLogout}
                 />
-        {/*<AppHeader isAuthenticated={this.state.isAuthenticated}*/}
-        {/*           currentUser={this.state.currentUser}*/}
-        {/*           onLogout={this.handleLogout} />*/}
 
         <div className="app-content">
 
@@ -177,7 +180,7 @@ class App extends Component {
               <Route
                 path="/dashboard"
                 exact
-                render={props => <UserDashboardPage {...props} />}
+                render={props => <UserDashboardPage currentUser={this.state.currentUser}{...props} />}
               />
               <Route
                 path="/notifications"
@@ -205,7 +208,6 @@ class App extends Component {
                 render={props => <CreateNewGroupPage {...props} />}
               />
             </Switch>
-
         </div>
         <Footer/>
       </div>
@@ -214,12 +216,3 @@ class App extends Component {
 }
 
 export default withRouter(App);
-
-const USERS = [
-  {
-    name: "Mohammad Mollaahmadi",
-    username: "mollaahmadi",
-    email: "mollaahmadimohammad@gmail.com"
-  },
-  { name: "Ali Pashaee", username: "pashaee", email: "alipashae8@yahoo.com" }
-];

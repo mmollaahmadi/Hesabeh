@@ -380,21 +380,21 @@ class Profile extends React.Component {
                 <Row>
                   <Col lg="6" className="pr-5">
                     <p className="profile-data-title">نام و نام خانوادگی</p>
-                    <h3 className="profile-data-value">محمد ملااحمدی</h3>
+                    <h3 className="profile-data-value">{this.props.currentUser ? this.props.currentUser.name : ''}</h3>
                   </Col>
                   <Col lg="6" className="pr-5">
                     <p className="profile-data-title">نام کاربری</p>
-                    <h3 className="profile-data-value">mollaahmadi@</h3>
+                    <h3 className="profile-data-value">{this.props.currentUser ? this.props.currentUser.username : ''}@</h3>
                   </Col>
                   <Col lg="6" className="pr-5">
                     <p className="profile-data-title">پست الکترونیکی</p>
                     <h3 className="profile-data-value">
-                      mollaahmadimohammad@gmail.com
+                      {this.props.currentUser ? this.props.currentUser.email : ''}
                     </h3>
                   </Col>
                   <Col lg="6" className="pr-5">
                     <p className="profile-data-title">شماره همراه</p>
-                    <h3 className="profile-data-value">۰۹۱۸۳۶۹۴۸۵۸</h3>
+                    <h3 className="profile-data-value">{this.props.currentUser ? this.props.currentUser.phoneNumber : ''}</h3>
                   </Col>
                 </Row>
 

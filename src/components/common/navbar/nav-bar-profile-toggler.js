@@ -27,8 +27,8 @@ constructor(props){
       <>
         <Row className="d-lg-none mx-0 align-items-center">
           <Col className=' pl-0'>
-            <p className="text-muted  text-left mb-0 nav-bar-profile-toggle-id">mollaahmadi@</p>
-            <p className="text-muted  text-left mb-0 nav-bar-profile-toggle-email">mollaahmadimohammad@gmail.com</p>
+            <p className="text-muted  text-left mb-0 nav-bar-profile-toggle-id">{this.props.currentUser ? this.props.currentUser.username : ''}@</p>
+            <p className="text-muted  text-left mb-0 nav-bar-profile-toggle-email">{this.props.currentUser ? this.props.currentUser.email : ''}</p>
           </Col>
           <Col xs='auto' className='d-flex justify-content-end'>
             <img

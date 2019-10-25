@@ -17,7 +17,7 @@ class UserDashboardPage extends React.Component {
       <div>
         <main className="profile-page pb-5" ref="main">
           <div className="my-body">
-            <Profile />
+            <Profile currentUser={this.props.currentUser}/>
             <Container>
               <Row>
                 <DefaultOrderValue />

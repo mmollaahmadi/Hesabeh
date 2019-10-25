@@ -20,6 +20,7 @@ import {
 import "../../assets/css/custom.css";
 import Header from "../common/header.js";
 import googleIcon from "../../assets/img/icons/common/google.svg"
+import {doesExistUser, isCurrectUser} from '../../utils/auditUtils'
 class SignInPage extends React.Component {
   constructor(props) {
     super(props);
@@ -48,10 +49,10 @@ class SignInPage extends React.Component {
 
     if(emailOrUsername !== ''){
       if(password !== ''){
-        if(emailOrUsername === 'admin'){
-          if(password === 'admin'){
+        if(doesExistUser(emailOrUsername)){
+          if(isCurrectUser(emailOrUsername, password)){
             // this.props.history.push('/my-account');
-            this.props.onLogin();
+            this.props.onLogin(emailOrUsername, password);
           }
           else {
             this.setState({
@@ -259,5 +260,4 @@ class SignInPage extends React.Component {
     );
   }
 }
-
 export default SignInPage;

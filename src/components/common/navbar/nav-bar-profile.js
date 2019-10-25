@@ -36,7 +36,7 @@ class NavBarProfile extends React.Component {
               <DropdownMenu className="profile-menu">
                 <DropdownItem className="profile-item pb-0" disabled>
                   <i className="fa fa-user mr-0 ml-2"/>
-                  mollaahmadi@
+                  {this.props.currentUser ? this.props.currentUser.username : ''}@
                 </DropdownItem>
                 <DropdownItem divider/>
                 <DropdownItem className={`profile-item ${this.props.pageSelection === "settings"
