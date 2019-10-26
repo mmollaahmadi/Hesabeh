@@ -124,17 +124,23 @@
     margin-bottom: 6vmin;
 }
 
-
-.features-btn {
+.features-btn{
+    border-style: dashed;
+    margin: 1rem 0.5rem !important;
+    min-width: 90%;
     background-color: #fff !important;
     color: #33393f60;
-    border-style: dashed;
     border-color: #33393f60;
-    margin: 1rem 0.5rem !important;
-    box-shadow: none;
-    min-width: 90%;
 }
-
+.features-btn-not-active {
+    color: #33393f60;
+    border-color: #33393f60;
+    box-shadow: none;
+}
+.features-btn-active{
+    border-color: #33393f !important;
+    color: #33393f !important;
+}
 .features-btn:hover,
 .features-btn:focus,
 .features-btn:active{
@@ -147,7 +153,15 @@
     width: 100%;
 }
 
-
+.account-circle-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    /* border-style: dashed;
+    border-color: #03091e;
+    border-width: 2px; */
+}
 .statistic-circle-image {
     display: block;
     margin-left: auto;

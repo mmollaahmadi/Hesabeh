@@ -49,7 +49,8 @@
 }
 .signup-button {
   /* border-radius: 3rem; */
-  font-size: 0.75rem !important;
+  /*font-size: 0.75rem !important;*/
+  font-size: 2vmin;
   font-family: Samim-Bold, Tahoma, serif !important;
   padding: 0.5rem 0.7rem;
   border-style: none;

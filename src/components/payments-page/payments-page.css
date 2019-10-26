@@ -95,12 +95,19 @@
 }
 
 .account-status-title {
+    background-color: #00e5ac;
+    text-align: center;
+    padding: 0.5rem 1rem !important;
     width: 100%;
+    border-radius: 20px;
+    /*border: dashed #03091e66 1px;*/
+    font-family: Samim, Tahoma, serif;
+    font-size: 4vmin;
 }
 
 .account-status-value {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 5vmin;
 }
 
 

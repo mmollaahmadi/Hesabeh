@@ -23,16 +23,17 @@ class MyNavbar extends React.Component {
       pageSelection: "my-account",
       collapse: true
     };
+
     this.resetPageSelection=this.resetPageSelection.bind(this);
     this.handleOutsideClick = this.handleOutsideClick.bind(this);
   }
   handleOutsideClick(e) {
       // ignore clicks on the component itself
-      if (this.node.contains(e.target)) {
-        return;
-      }
-
-      this.toggleCollapse();
+    //   if (this.node.contains(e.target)) {
+    //     return;
+    //   }
+    //
+    //   this.toggleCollapse();
     }
 
   togglePage = state => {
@@ -43,17 +44,17 @@ class MyNavbar extends React.Component {
   };
 
   toggleCollapse = () => {
-    if (!this.state.collapse) {
-      // attach/remove event handler
-      document.addEventListener('click', this.handleOutsideClick, false);
-    } else {
-      document.removeEventListener('click', this.handleOutsideClick, false);
-    }
+    // if (!this.state.collapse) {
+    //   // attach/remove event handler
+    //   document.addEventListener('click', this.handleOutsideClick, false);
+    // } else {
+    //   document.removeEventListener('click', this.handleOutsideClick, false);
+    // }
 
     this.setState({
       collapse: !this.state.collapse
     });
-  }
+  };
 
   resetPageSelection(){
     this.setState({
