@@ -100,7 +100,7 @@ class CreateNewGroupPage extends React.Component {
                   </FormGroup>
 
                   <Button
-                    className="btn-icon audit-button"
+                    className="audit-button"
                     color="default"
                     href="#pablo"
                     onClick={() => this.toggle("password")}

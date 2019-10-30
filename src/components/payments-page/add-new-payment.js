@@ -248,7 +248,7 @@ class AddPaymentPage extends React.Component {
                             <Col lg="auto"
                                  className="d-flex align-items-center justify-content-center">
                               <Button
-                                className="payments-btn-lv2"
+                                className=""
                                 color="primary"
                                 href="#pablo"
                                 onClick={() => this.toggle("password")}
