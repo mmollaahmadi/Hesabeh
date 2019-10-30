@@ -19,6 +19,7 @@ import {
 import "../../assets/css/custom.css";
 import Header from "../common/header.js";
 import googleIcon from "../../assets/img/icons/common/google.svg"
+import AOS from 'aos'
 class RegisterPage extends React.Component {
   constructor(props) {
     super(props);
@@ -52,6 +53,8 @@ class RegisterPage extends React.Component {
         },
         validationsCollapse: false
     };
+
+    AOS.init();
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.checkEmail = this.checkEmail.bind(this);
@@ -229,11 +232,15 @@ class RegisterPage extends React.Component {
   render() {
 
     return (
-      <div className="register-section section-lg">
+      <div className="my-section">
         <Container className="pt-10 pb-30  h-100">
           <Row className="text-center justify-content-center">
-            <Col lg="5">
-              <Header title=" ایجاد حساب کاربری" />
+            <Col lg="5"
+                 data-aos="fade-up"
+                 data-aos-duration="1000"
+                 data-aos-delay="50">
+              <Header needBrand={true}
+                      title=" ایجاد حساب کاربری" />
               <Form role="form" className="audit-form">
                 <FormGroup className="mb-3">
                   <InputGroup className="input-group-alternative">

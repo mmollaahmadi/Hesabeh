@@ -42,7 +42,7 @@ import PaymentsPage from '../payments-page/payments-page.js';
 import CreateNewGroupPage from '../my-groups-page/create-new-group-page.js';
 import NotificationsPage from '../notifications-page/notifications-page.js';
 import CreateNewRequestPage from '../notifications-page/new-request/create-new-request-page.js'
-import AddPaymentPage from '../payments-page/add-new-payment.js';
+import AddPaymentPage from '../payments-page/add-new-payment/add-new-payment.js';
 import HelpPage from '../help-page/help-page'
 
 
@@ -68,6 +68,7 @@ class App extends Component {
 
   loadCurrentUser(emailOrUsernameOrPhoneNumber, password) {
     let user = null;
+    // eslint-disable-next-line array-callback-return
     USERS.map((u) => {
       if((u.username === emailOrUsernameOrPhoneNumber || u.email === emailOrUsernameOrPhoneNumber) &&
     u.password === password){

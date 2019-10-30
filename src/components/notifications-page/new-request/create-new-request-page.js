@@ -1,8 +1,4 @@
 import React from "react";
-
-import Navbar from "../../common/navbar/navbar.js";
-import Footer from "../../common/footer/footer.js";
-
 import {
   Container,
   Row,

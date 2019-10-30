@@ -2,9 +2,6 @@ import React from 'react'
 import {Button, Card, CardBody, CardHeader, Col, Form, FormGroup, Input, InputGroup, Row} from "reactstrap";
 
 class JoinToOtherGroup extends React.Component {
-  constructor(props){
-    super(props);
-  }
   render() {
     return (
       <Card data-aos="fade-up"

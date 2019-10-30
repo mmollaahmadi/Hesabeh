@@ -97,30 +97,128 @@
 .account-status-title {
     background-color: #00e5ac;
     text-align: center;
-    padding: 0.5rem 1rem !important;
+    padding: 0.5rem auto !important;
     width: 100%;
     border-radius: 20px;
     /*border: dashed #03091e66 1px;*/
     font-family: Samim, Tahoma, serif;
-    font-size: 4vmin;
+    font-size: 1rem;
 }
 
 .account-status-value {
     text-align: center;
-    font-size: 5vmin;
+    font-size: 1rem;
+    /*-webkit-text-stroke: thin #00bbc1;*/
 }
-
+.account-status-value-green{
+    color: #00af7e;
+    -webkit-text-stroke: thin #00af7e;
+}
+.account-status-value-orange{
+    color: #af6969;
+    -webkit-text-stroke: thin #af6969;
+}
+.account-status-value-yellow{
+    color: #af841c;
+    -webkit-text-stroke: thin #af841c;
+}
 
 .green {
-    background-color: #00E5AC60 !important;
+    background-color: #00E5AC50 !important;
+    color: #00cd96;
 }
-
 .orange {
-    background-color: #FF6F6160 !important;
+    background-color: #FF6F6150 !important;
+    color: #cd685c;
 }
 
 .yellow {
-    background-color: #f1c51960 !important;
+    background-color: #f1c51950 !important;
+    color: #cda21c;
 }
 
 
+
+
+
+.group-unit-card {
+    background-color: #fff !important;
+    border-radius: 3%;
+    margin: 0;
+    padding-top: 1.2rem;
+    padding-bottom: 1rem;
+    min-width: 100%;
+    box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07) !important;
+}
+.group-unit-circle-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50px;
+    /* border-style: dashed;
+    border-color: #03091e;
+    border-width: 2px; */
+}
+.group-unit-name {
+    justify-content: center;
+}
+
+.group-unit-name-text {
+    background-color: #00e5ac;
+    text-align: center;
+    padding: 0.5rem auto !important;
+    width: 100%;
+    border-radius: 20px;
+    /*border: dashed #03091e66 1px;*/
+    font-family: Samim, Tahoma, serif;
+    font-size: 0.8rem !important;
+}
+
+
+
+.DatePicker__input {
+    display: flex;
+    width: 100%;
+    justify-content: right;
+    font-family: Samim, Tahoma, serif;
+    font-size: 0.875rem;
+    text-align: right;
+    height: 100%;
+    padding: 0 1rem;
+    background-color: #33393f10 !important;
+    color: #424242 !important;
+    border: 0;
+    border-right-style: solid !important;
+    border-right-color: #42424230 !important;
+    border-right-width: 1px !important;
+}
+.DatePicker__input:-webkit-autofill {
+    -webkit-box-shadow: inset 0 0 0 9999px #d7d7d6df;
+}
+.DatePicker__input::placeholder {
+    color: #42424280;
+    font-family: Samim, Tahoma, serif;
+    text-align: right;
+    font-size: 0.875rem;
+}
+.DatePicker{
+    position: relative;
+    flex: 1 1 auto;
+    width: 1%;
+}
+.DatePicker::after {
+    width: 100% !important;
+}
+.input-group-alternative1 {
+    /*box-shadow: 0 1px 3px rgba(50, 50, 93, 0.15), 0 1px 0 rgba(0, 0, 0, 0.02);*/
+    border: 0;
+    /*transition: box-shadow .15s ease; */
+    width: 100% !important;
+}
+.input-group-alternative1 .form-control,
+.input-group-alternative1 .input-group-text {
+    border: 0;
+    box-shadow: none; }
+
+.focused .input-group-alternative1 {
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08) !important; }

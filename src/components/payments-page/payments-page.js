@@ -1,7 +1,4 @@
 import React from "react";
-
-import NavBar from "../common/navbar/navbar";
-import Footer from "../common/footer/footer";
 import Account from "./account/account.js";
 import PaymentsTable from "./payments-table/payments-table.js";
 

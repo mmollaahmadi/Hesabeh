@@ -15,17 +15,24 @@ import {
   InputGroup
 } from "reactstrap";
 import "../../assets/css/custom.css";
-import Navbar from "../common/navbar/navbar.js";
-import Footer from "../common/footer/footer";
 import Chip from '../common/chip/chip.js';
+import AOS from 'aos'
 class CreateNewGroupPage extends React.Component {
+  constructor(){
+    super();
+    AOS.init();
+  }
   render() {
     return (
 
-        <div className="section-lg">
+        <div className="my-section">
           <Container className="pt-10 pb-30  h-100">
             <Row className="text-center justify-content-center">
-              <Col lg="5">
+              <Col lg="5"
+                   data-aos="fade-up"
+                   data-aos-duration="1000"
+                   data-aos-delay="50"
+              >
 
                 <img
                   alt="..."
@@ -37,7 +44,7 @@ class CreateNewGroupPage extends React.Component {
                     <InputGroup className="input-group-alternative">
                       <InputGroupAddon addonType="prepend">
                         <InputGroupText>
-                          <i class="fa fa-users" />
+                          <i className="fa fa-users" />
                         </InputGroupText>
                       </InputGroupAddon>
 
@@ -49,7 +56,7 @@ class CreateNewGroupPage extends React.Component {
                     <InputGroup className="input-group-alternative">
                       <InputGroupAddon addonType="prepend">
                         <InputGroupText>
-                          <i class="fa fa-user-plus" />
+                          <i className="fa fa-user-plus" />
                         </InputGroupText>
                       </InputGroupAddon>
 

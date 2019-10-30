@@ -83,11 +83,12 @@ class NewPasswordRequestPage extends React.Component {
 
   render() {
     return (
-      <div className="section-lg">
+      <div className="my-section">
         <Container className="pt-10 pb-30  h-100">
           <Row className="text-center justify-content-center">
             <Col lg="5">
-            <Header title="درخواست تغییر رمز عبور" />
+            <Header needBrand={false}
+                    title="درخواست تغییر رمز عبور" />
 
 
               <Form role="form" className="audit-form">

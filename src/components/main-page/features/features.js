@@ -1,5 +1,5 @@
 import React from "react";
-import {Container, Row, Col} from "reactstrap";
+import {Container, Row, Col, Button} from "reactstrap";
 import FeaturesButton from "./features-btn";
 
 class Features extends React.Component {
@@ -44,7 +44,10 @@ class Features extends React.Component {
                className="section-title">امکانات</p>
           </Row>
           <Row className="text-center justify-content-center px-2 m-0">
-            <Col xs='6' lg="3" className="align-self-center order-2 order-lg-1">
+            <Col xs='6' lg="3" className="align-self-center order-2 order-lg-1"
+                 data-aos='zoom-in'
+                 data-aos-duration='1000'
+                 data-aos-delay="200">
               <Row className="d-flex justify-content-center m-0">
 
                 <FeaturesButton
@@ -82,7 +85,10 @@ class Features extends React.Component {
                    src={featureSelectedImage}/>
             </Col>
 
-            <Col xs='6' lg="3" className="align-self-center order-3 order-lg-3">
+            <Col xs='6' lg="3" className="align-self-center order-3 order-lg-3"
+                 data-aos='zoom-in'
+                 data-aos-duration='1000'
+                 data-aos-delay="200">
               <Row className="d-flex justify-content-center m-0">
                 <FeaturesButton
                   direction='ltr'

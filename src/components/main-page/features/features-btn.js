@@ -26,9 +26,7 @@ class FeaturesButton extends React.Component {
         <Button
           id={'features-btn'}
           // ref={this.speedFeatureBtn}
-          data-aos='zoom-in'
-          data-aos-duration='1000'
-          data-aos-delay="200"
+
           // className='main-page-text features-btn px-auto'
           className={`main-page-text features-btn px-auto ${this.props.number === this.props.featureSelectedNumber ? 'features-btn-active' : 'features-btn-not-active'}`}
           color="primary"
