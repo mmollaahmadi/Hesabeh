@@ -18,15 +18,24 @@ import {
 } from "reactstrap";
 import "../../assets/css/custom.css";
 import Header from "../common/header.js";
+import AOS from 'aos'
 class SupportPage extends React.Component {
-
+constructor(){
+  super();
+  AOS.init();
+}
   render() {
     return (
-      <div className="section-lg">
+      <div className="my-section">
         <Container className="pt-10 pb-30  h-100">
           <Row className="text-center justify-content-center">
-            <Col lg="5">
-            <Header title="مشکلات، نظرات و پیشنهادات خود را با ما در میان بگذارید" />
+            <Col lg="5"
+                 data-aos="fade-up"
+                 data-aos-duration="1000"
+                 data-aos-delay="50"
+            >
+            <Header needBrand={false}
+                    title="مشکلات، نظرات و پیشنهادات خود را با ما در میان بگذارید" />
 
               <Form role="form" className="audit-form">
                 <FormGroup className="mb-3">

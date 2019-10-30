@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Badge } from "reactstrap";
+import { Row, Col } from "reactstrap";
 import AOS from 'aos';
 
 class AccountUnit extends React.Component {
@@ -22,12 +22,7 @@ constructor(){
            lg="3" xs="12" md='6'
            className="m-0 d-flex justify-content-center">
         <Row className='pt-1 justify-content-center learning-card'>
-          <Col xs="12" className="account-status-text mb-3 d-flex justify-content-center">
-            <span className={`account-status-title ${accountStatusBgColor}`}>
-              <p className={'hi'}>{this.props._text}</p>
-            </span>
-          </Col>
-          <Col xs="12">
+          <Col xs="12 mt-3">
             <img
               className="rounded-circle account-circle-image"
               top
@@ -35,8 +30,13 @@ constructor(){
               alt=""
             />
           </Col>
-          <Col xs="12" className="mt-4 account-status-text">
-            <h3 className="account-status-value">{this.props.cost} تومان</h3>
+          <Col xs="12" className="account-status-text mt-4 d-flex justify-content-center">
+            <span className={`account-status-title ${accountStatusBgColor}`}>
+              <p className={'m-0'}>{this.props._text}</p>
+            </span>
+          </Col>
+          <Col xs="12" className="mt-2 account-status-text">
+            <h3 className={`account-status-value account-status-value-${accountStatusBgColor}`}>{this.props.cost} تومان</h3>
           </Col>
         </Row>
       </Col>

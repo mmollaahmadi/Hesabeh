@@ -1,7 +1,4 @@
 import React from "react";
-
-import Navbar from "../common/navbar/navbar";
-import Footer from "../common/footer/footer";
 import Profile from "./profile.js";
 
 import "./user-dashboard.css";

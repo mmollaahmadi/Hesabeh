@@ -13,8 +13,6 @@ import {
   Input,
   InputGroup, Card, CardHeader, CardBody, Collapse
 } from "reactstrap";
-import NavBar from "../common/navbar/navbar.js";
-import Footer from "../common/footer/footer.js";
 import Chip from "../common/chip/chip";
 import './payments-page.css';
 import DatePicker from 'react-persian-calendar-date-picker';
@@ -81,10 +79,8 @@ class AddPaymentPage extends React.Component {
     }
 
     return (
-
-
         <div className="my-body">
-          <section className="section pt-0">
+
             <Container>
               <Card data-aos="fade-up"
                    data-aos-duration="1000"
@@ -142,10 +138,7 @@ class AddPaymentPage extends React.Component {
                                     <i className="fa fa-calendar"/>
                                   </InputGroupText>
                                 </InputGroupAddon>
-
-
-                                  <App/>
-
+                                  <PersianCalendar/>
                               </InputGroup>
 
                             </FormGroup>
@@ -225,7 +218,7 @@ class AddPaymentPage extends React.Component {
                             </Collapse>
                           </Col>
 
-                          <Row className="m-0 d-flex justify-content-center w-100">
+                          <Row className="m-0 mt-3 d-flex justify-content-center w-100">
                             <Col lg="auto"
                                  className="d-flex align-items-center justify-content-center">
                               <div
@@ -270,7 +263,7 @@ class AddPaymentPage extends React.Component {
                    data-aos-delay="50"
                    className='mt-5 shadow'>
                 <CardHeader>
-                  هزینهها
+                  هزینه‌های اضافه شده
                 </CardHeader>
                 <CardBody>
 
@@ -305,14 +298,26 @@ class AddPaymentPage extends React.Component {
                 </CardBody>
               </Card>
             </Container>
-          </section>
+
         </div>
 
     );
   }
 }
-const App = () => {
+const PersianCalendar = () => {
   const [selectedDay, setSelectedDay] = useState(null);
+
+  // render regular HTML input element
+  // const renderCustomInput = ({ ref, onFocus, onBlur }) => (
+  //   <input
+  //     readOnly
+  //     ref={ref} // necessary
+  //     onFocus={onFocus} // necessary
+  //     onBlur={onBlur} // necessary
+  //     className="input-group-alternative1" // a styling class
+  //   />
+  // );
+
   return (
     <DatePicker
       selectedDay={selectedDay}
@@ -321,6 +326,8 @@ const App = () => {
       calendarClassName="custom-calendar"
       calendarTodayClassName="custom-today-day"
       inputPlaceholder="انتخاب روز"
+      // renderInput={renderCustomInput}
+      // inputClassName='input-group-alternative1'
     />
   );
 };

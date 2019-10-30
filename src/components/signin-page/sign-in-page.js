@@ -21,6 +21,7 @@ import "../../assets/css/custom.css";
 import Header from "../common/header.js";
 import googleIcon from "../../assets/img/icons/common/google.svg"
 import {doesExistUser, isCurrectUser} from '../../utils/auditUtils'
+import AOS from 'aos'
 class SignInPage extends React.Component {
   constructor(props) {
     super(props);
@@ -39,6 +40,7 @@ class SignInPage extends React.Component {
         errorCollapse:false
       }
     };
+    AOS.init();
     this.handleInputChange = this.handleInputChange.bind(this);
     this.signInHandle = this.signInHandle.bind(this);
   }
@@ -120,11 +122,15 @@ class SignInPage extends React.Component {
 
   render() {
     return (
-      <div className="section-lg">
+      <div className="my-section">
         <Container className="pt-1 pb-30  h-100">
           <Row className="text-center justify-content-center">
-            <Col lg="5">
-              <Header title="ورود به حساب کاربری" />
+            <Col lg="5"
+                 data-aos="fade-up"
+                 data-aos-duration="1000"
+                 data-aos-delay="50">
+              <Header needBrand={true}
+                      title="ورود به حساب کاربری" />
 
               <Form role="form" className="audit-form">
                 <FormGroup className="mb-3">

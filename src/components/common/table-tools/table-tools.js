@@ -11,7 +11,6 @@ import {
 } from "reactstrap";
 import {Link} from "react-router-dom";
 import './table-tools.css'
-import AOS from 'aos'
 
 class TableTools extends React.Component {
   constructor(props) {

@@ -1,7 +1,4 @@
 import React from "react";
-
-import Navbar from "../common/navbar/navbar";
-import Footer from "../common/footer/footer";
 import GroupProfile from "./group-profile.js";
 import GroupUser from './group-users'
 import {

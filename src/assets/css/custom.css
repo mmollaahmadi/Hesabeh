@@ -45,6 +45,12 @@ h1, h2, h3, h4, h5, h6{
   margin-top: 15vmin;
   margin-bottom: 5rem;
 }
+
+.my-section {
+  margin-top: 3rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
 /* ============================== MODALS ==================================== */
 /* ========================================================================== */
 
@@ -408,6 +414,12 @@ body.modal-open {
   font-size: 2rem;
   color: #03091e !important;
   margin: 0;
+}
+.brand-title-inline {
+  display: inline-flex;
+  font-family: Samim-Bold, serif !important;
+  color: #03091e !important;
+  margin: 0 0.3rem 0 0;
 }
 .title-text {
   margin: 0 0 1rem 0;

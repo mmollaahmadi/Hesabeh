@@ -1,10 +1,7 @@
 import React from "react";
-
-import Navbar from "../common/navbar/navbar";
 import Landing from "./landing/landing";
 import AboutUs from "./about-us";
 import Features from "./features/features.js";
-import Footer from "../common/footer/footer.js";
 import OurStatistics from "./statistics/OurStatistics.js";
 import OnBoarding from "./onboarding/onBoarding.js";
 

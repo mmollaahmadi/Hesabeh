@@ -68,6 +68,7 @@ class App extends Component {
 
   loadCurrentUser(emailOrUsernameOrPhoneNumber, password) {
     let user = null;
+    // eslint-disable-next-line array-callback-return
     USERS.map((u) => {
       if((u.username === emailOrUsernameOrPhoneNumber || u.email === emailOrUsernameOrPhoneNumber) &&
     u.password === password){

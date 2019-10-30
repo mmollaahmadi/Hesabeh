@@ -1,9 +1,5 @@
 import React from "react";
-
-import Navbar from "../common/navbar/navbar";
-import Footer from "../common/footer/footer";
 import GroupsTable from "./my-groups-table/groups-table.js";
-import Title from "../common/title/title.js";
 
 const MYGROUPS = [
   {
