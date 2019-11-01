@@ -136,7 +136,7 @@ class RequirementsListRequest extends React.Component {
                         </InputGroupAddon>
 
                         <Input
-                          className="signin-input"
+                          className="audit-input"
                           placeholder={this.state.orderDescription.placeholder}
                           type="email"
                         />

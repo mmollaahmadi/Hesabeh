@@ -21,3 +21,22 @@ export const USERS = [
     password: 'saadat'
   }
 ];
+
+export const FILTERS = [
+  {
+    value: 'قدیمی ترین',
+    link: ''
+  },
+  {
+    value: 'جدیدترین',
+    link: ''
+  },
+  {
+    value: 'ارزان ترین',
+    link: ''
+  },
+  {
+    value: 'گران ترین',
+    link: ''
+  },
+];

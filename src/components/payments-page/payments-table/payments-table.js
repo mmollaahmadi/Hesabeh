@@ -8,7 +8,9 @@ import {
 } from "reactstrap";
 import PaymentsTableRow from "./payments-table-row.js";
 import TableTools from "../../common/table-tools/table-tools";
+import TableFilters from "../../common/table-filters/table-filters";
 import PaymentsTableHeader from "./payments-table-header";
+import {FILTERS} from '../../../constants/constants'
 
 class PaymentsTable extends React.Component {
   render() {
@@ -28,7 +30,8 @@ class PaymentsTable extends React.Component {
             </CardHeader>
             <CardBody>
               <TableTools buttonTitle="افزودن هزینه" buttonLink="/add-new-payment"/>
-              <Row className="justify-content-center px-1">
+              <TableFilters data={FILTERS}/>
+              <Row className="justify-content-center py-1">
                 <PaymentsTableHeader/>
                 {payments}
               </Row>

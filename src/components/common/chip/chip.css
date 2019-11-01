@@ -3,7 +3,8 @@
   width: auto;
   padding: 0 0 0 0.5rem;
   margin: 0 0 0 0;
-  background-color: #E0E0E0 !important;
+  background-color: #33393f10 !important;
+  max-height: 32px !important;
 }
 .chip-avatar{
   width: 32px;

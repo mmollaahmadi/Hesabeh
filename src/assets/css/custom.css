@@ -342,8 +342,11 @@ body.modal-open {
 .audit-input::placeholder {
   color: #42424280;
 }
-.audit-form .input-group-text {
+.audit-form .input-group-prepend{
   background-color: #33393f10 !important;
+}
+.audit-form .input-group-text {
+  background-color: transparent !important;
   color: #42424280 !important;
 }
 .audit-form .form-control::placeholder {
@@ -453,7 +456,7 @@ border-radius: 10px 10px 0 0 !important;
   text-align: center;
   font-size: 1.2rem;
   font-family: Samim-Bold, serif;
-  background-color: #f0f1f1 !important;
+  background-color: #fff !important;
   /* background-image: url('../img/theme/card-header-bg-01.png');
   background-repeat: no-repeat;
   background-size: cover;
@@ -511,8 +514,8 @@ border-radius: 10px 10px 0 0 !important;
 }
 /*-----------------*/
 .table-header {
-  background-color: #E5E5E5 !important;
-  /*border-radius: 20px 200px 0 0 ;*/
+  background-color: #fff !important;
+  border-radius: 5px 5px 0 0 ;
 }
 .table-header-col {
   display: flex;
@@ -522,6 +525,8 @@ border-radius: 10px 10px 0 0 !important;
   padding-bottom: 1vmin;
   max-width: unset;
   background-color: transparent;
+  color: #03091e;
+  -webkit-text-stroke: .05rem #01cd9a;
 }
 .table-header-col > p {
   margin: 0;

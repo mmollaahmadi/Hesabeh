@@ -1,0 +1,9 @@
+.table-filters-btn{
+  margin: auto 2vmin;
+  padding: 0.5vmin 2vmin;
+  background-color: #f0f0f0;
+  box-shadow: none;
+}
+.table-filters-btn:hover{
+  box-shadow: none;
+}

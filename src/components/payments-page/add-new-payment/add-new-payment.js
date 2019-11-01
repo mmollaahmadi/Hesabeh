@@ -14,10 +14,12 @@ import {
   InputGroup, Card, CardHeader, CardBody, Collapse, Modal
 } from "reactstrap";
 import Chip from "../../common/chip/chip";
+import Dropzone from "../../common/dropzone/dropzone";
 import '../payments-page.css';
 import DatePicker from 'react-persian-calendar-date-picker';
 import AOS from 'aos'
 import GroupUnit from "./group-unit";
+import DefaultExample from './example.js';
 
 class AddPaymentPage extends React.Component {
   constructor(props) {
@@ -52,6 +54,7 @@ class AddPaymentPage extends React.Component {
 
     };
 
+
     this.handleInputChange = this.handleInputChange.bind(this);
     this.animateCSS = this.animateCSS.bind(this);
     this.handleBackOrNextStep = this.handleBackOrNextStep.bind(this);
@@ -60,23 +63,30 @@ class AddPaymentPage extends React.Component {
   }
   handleBackOrNextStep(){
     let fadeAnimation = 'fadeOut';
-    if(this.state.isStepOne)
+    if(this.state.isStepOne){
+      this.animateCSS('.selectGroupCardHeader', fadeAnimation);
       this.animateCSS('.selectGroupCardBody', fadeAnimation, this.myCallBack);
-    else
-      this.animateCSS('.selectUsersCardBody', fadeAnimation, this.myCallBack);
+    }
+    else{
+      this.animateCSS('.selectUsersCardHeader', fadeAnimation);
+        this.animateCSS('.selectUsersCardBody', fadeAnimation, this.myCallBack);
+    }
   }
 
   myCallBack(){
     let fadeInAnimation = 'fadeIn';
+    let fadeAnimation = 'fadeOut';
     if(this.state.isStepOne) {
       this.setState({
         isStepOne: false
       });
+      this.animateCSS('.selectUsersCardHeader', fadeInAnimation);
       this.animateCSS('.selectUsersCardBody', fadeInAnimation);
     }else {
       this.setState({
         isStepOne: true
       });
+      this.animateCSS('.selectGroupCardHeader', fadeInAnimation);
       this.animateCSS('.selectGroupCardBody', fadeInAnimation);
     }
   };
@@ -117,11 +127,16 @@ class AddPaymentPage extends React.Component {
 
   render() {
 
+    // Dropzone class:
+    var myDropzone = new Dropzone("div#myId", { url: "/file/post"});
+
     const payments = this.state;
     let tempTablePayments = (<p className='nothing'>هیچ هزینه ای اضافه نشده است.</p>);
     if (payments.length > 0) {
       tempTablePayments = <p>hihhihhi</p>;
     }
+
+    const dragBody = document.getElementById('image-upload-body');
 
     return (
       <div className="my-body">
@@ -251,8 +266,11 @@ class AddPaymentPage extends React.Component {
                                 <CardHeader className="bg-transparent p-1">
                                   {/* <Row className="justify-content-center"> */}
                                   <div className="text-muted  mt-3 mb-2">
-                                    <h5 className="my-modal-header">
+                                    <h5 className={`selectGroupCardHeader my-modal-header ${this.state.isStepOne ? '' : 'd-none'}`}>
                                       انتخاب گروه
+                                    </h5>
+                                    <h5 className={`selectUsersCardHeader my-modal-header ${this.state.isStepOne ? 'd-none' : ''}`}>
+                                      انتخاب کاربران
                                     </h5>
                                   </div>
                                   {/* </Row> */}
@@ -333,18 +351,13 @@ class AddPaymentPage extends React.Component {
                       </Col>
 
 
-                      <Col lg="12" className="m-0">
-                        <div className='drag-pic'>
-                          <p className='m-0 add-image-text'>افزودن تصویر</p>
-                          <Button className="btn btn-icon payments-btn-lv2"
-                                  type="button"
-                                  color="dark-green">
-                                <span className="btn-inner--icon">
-                                  <i className="fa fa-camera"/>
-                                </span>
-                            {/*<span className="btn-inner--text">افزودن عکس</span>*/}
-                          </Button>
-                        </div>
+                      <Col lg="12" className="m-0 mt-2" id='image-upload-body'>
+
+                          <div className="example">
+                          <Dropzone onFilesAdded={console.log} />
+                            {/* <DefaultExample ii={dragBody}/>                            */}
+                          </div>
+
                       </Col>
 
                       <Col lg="12" className="m-0">

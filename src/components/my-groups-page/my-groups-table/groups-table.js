@@ -10,6 +10,8 @@ import MyGroupsTableRow from "./my-groups-table-row.js";
 import TableTools from "../../common/table-tools/table-tools";
 import MyGroupsTableHeader from "./my-groups-table-header";
 import AOS from 'aos'
+import TableFilters from "../../common/table-filters/table-filters";
+import {FILTERS} from '../../../constants/constants'
 class GroupsTable extends React.Component {
   constructor(props){
     super(props);
@@ -28,10 +30,12 @@ class GroupsTable extends React.Component {
                data-aos-delay="50"
                className="card-profile shadow mt-5">
             <CardHeader>
+            لیست گروه ها
             </CardHeader>
             <CardBody>
               <TableTools buttonTitle="ایجاد گروه جدید" buttonLink="/create-new-group"/>
-              <Row className="justify-content-center px-2">
+              <TableFilters data={FILTERS}/>
+              <Row className="justify-content-center py-1">
                 <MyGroupsTableHeader/>
                 {myGroups}
               </Row>

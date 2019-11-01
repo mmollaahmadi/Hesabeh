@@ -9,7 +9,9 @@ import {
 import NotificationsTableHeader from './notifications-table-header'
 import NotificationsTableRow from "./notifications-table-row.js";
 import TableTools from "../../common/table-tools/table-tools";
+import TableFilters from "../../common/table-filters/table-filters";
 import AOS from 'aos';
+import {FILTERS} from '../../../constants/constants'
 
 class NotificationsTable extends React.Component {
   constructor(props){
@@ -31,11 +33,12 @@ class NotificationsTable extends React.Component {
                data-aos-delay="50"
           className="card-profile shadow mt-5">
             <CardHeader>
-
+              لیست اعلام ها
             </CardHeader>
             <CardBody>
               <TableTools buttonTitle="ایجاد درخواست" buttonLink="/create-new-request"/>
-              <Row className="justify-content-center py-5">
+              <TableFilters data={FILTERS}/>
+              <Row className="justify-content-center py-1">
                 <NotificationsTableHeader/>
                 {rows}
               </Row>
