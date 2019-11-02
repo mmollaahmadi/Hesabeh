@@ -34,12 +34,12 @@ class Profile extends React.Component {
   }
   render() {
     return (
-      <section className="section">
-        <Container>
+
+
           <Card data-aos="fade-up"
                 data-aos-duration="1000"
                 data-aos-delay="50"
-                className="card-profile shadow mt-0">
+                className="card-profile my-card-profile shadow">
             <div className="px-4">
               <Row className="justify-content-center">
                 <Col className="order-lg-2" lg="3">
@@ -58,7 +58,7 @@ class Profile extends React.Component {
                   className="order-lg-3 text-lg-right d-flex justify-content-center p-0"
                   lg="4"
                 >
-                  <div className="card-profile-actions py-4 px-0 mt-lg-0">
+                  <div className="card-profile-actions py-4 px-0 mt-lg-0 px-md-5 px-lg-0 w-100 d-flex justify-content-between">
                     <Modal
                       className="modal-dialog-centered"
                       isOpen={this.state.exitModal}
@@ -163,7 +163,7 @@ class Profile extends React.Component {
                   className="order-lg-1 text-lg-right d-flex justify-content-center p-0"
                   lg="4"
                 >
-                  <div className="card-profile-actions py-4 px-0 mt-lg-0">
+                  <div className="card-profile-actions level2 py-lg-4 py-1 px-0 mt-lg-0 px-md-5 px-lg-0 w-100 d-flex justify-content-between">
                     <Modal
                       className="modal-dialog-centered"
                       isOpen={this.state.changePasswordModal}
@@ -181,7 +181,7 @@ class Profile extends React.Component {
                             {/* </Row> */}
                           </CardHeader>
                           <CardBody className="px-lg-5 py-lg-3">
-                            <Form role="form">
+                            <Form role="form" className='audit-form'>
                               <FormGroup className="mb-2">
                                 <InputGroup className="input-group-alternative">
                                   <InputGroupAddon addonType="prepend">
@@ -191,7 +191,7 @@ class Profile extends React.Component {
                                   </InputGroupAddon>
 
                                   <Input
-                                    className="my-input"
+                                    className="audit-input"
                                     placeholder="رمز عبور فعلی"
                                     type="password"
                                     value=""
@@ -207,7 +207,7 @@ class Profile extends React.Component {
                                   </InputGroupAddon>
 
                                   <Input
-                                    className="my-input"
+                                    className="audit-input"
                                     placeholder="رمز عبور جدید"
                                     type="password"
                                     value=""
@@ -225,7 +225,7 @@ class Profile extends React.Component {
                                   <Input
                                     placeholder="تایید رمز عبور جدید"
                                     type="password"
-                                    className="my-input"
+                                    className="audit-input"
                                   />
                                 </InputGroup>
                               </FormGroup>
@@ -263,8 +263,8 @@ class Profile extends React.Component {
                       </div>
                     </Modal>
                     <Modal
-                      className="modal-dialog-centered modal-danger"
-                      contentClassName="bg-gradient-danger"
+                      className="modal-dialog-centered"
+
                       isOpen={this.state.editProfileModal}
                       toggle={() => this.toggleModal("editProfileModal")}
                     >
@@ -278,7 +278,7 @@ class Profile extends React.Component {
                             </div>
                           </CardHeader>
                           <CardBody className=" py-lg-3">
-                            <Form role="form" className="profile-form">
+                            <Form role="form" className="audit-form">
                               <Row className="text-center justify-content-center">
                                 <Col lg="10">
                                   <FormGroup className="mb-3">
@@ -290,7 +290,7 @@ class Profile extends React.Component {
                                       </InputGroupAddon>
 
                                       <Input
-                                        className="profile-input"
+                                        className="audit-input"
                                         value="mollaahmadimohammad@gmail.com"
                                         type="email"
                                       />
@@ -306,7 +306,7 @@ class Profile extends React.Component {
                                       </InputGroupAddon>
 
                                       <Input
-                                        className="profile-input"
+                                        className="audit-input"
                                         value="محمد ملااحمدی"
                                         type="email"
                                       />
@@ -322,7 +322,7 @@ class Profile extends React.Component {
                                       </InputGroupAddon>
 
                                       <Input
-                                        className="profile-input"
+                                        className="audit-input"
                                         value="۰۹۱۸۳۶۹۴۸۵۸"
                                       />
                                     </InputGroup>
@@ -376,7 +376,7 @@ class Profile extends React.Component {
                   </div>
                 </Col>
               </Row>
-              <div className="text-center mt-5 pt-5 pb-5">
+              <div className="text-center mt-0 mt-sm-5 pt-5 pb-5">
                 <Row>
                   <Col lg="6" className="pr-5">
                     <p className="profile-data-title">نام و نام خانوادگی</p>
@@ -427,8 +427,8 @@ class Profile extends React.Component {
               </div>
             </div>
           </Card>
-        </Container>
-      </section>
+
+
     );
   }
 }

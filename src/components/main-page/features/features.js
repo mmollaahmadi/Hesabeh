@@ -1,5 +1,5 @@
 import React from "react";
-import {Container, Row, Col, Button} from "reactstrap";
+import {Container, Row, Col} from "reactstrap";
 import FeaturesButton from "./features-btn";
 
 class Features extends React.Component {

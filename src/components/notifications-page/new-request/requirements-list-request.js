@@ -11,6 +11,7 @@ import {
 } from "reactstrap";
 import Chip from "../../common/chip/chip";
 import UserGroupAccount from "../../common/user-group-account/user-group-account";
+import Dropzone from "../../common/dropzone/dropzone";
 
 class RequirementsListRequest extends React.Component {
   constructor(props) {
@@ -93,7 +94,7 @@ class RequirementsListRequest extends React.Component {
                         // onDelete={() => this.deleteUser()}
                       />
                       <Button
-                        className="btn btn-icon payments-btn-lv2"
+                        className="btn btn-icon payments-btn-lv2 mt-0"
                         type="button"
                         color="dark-green">
                           <span className="btn-inner--icon">
@@ -144,8 +145,13 @@ class RequirementsListRequest extends React.Component {
                     </FormGroup>
                   </Col>
 
-
-                  <Col lg="12" className="m-0">
+  <Col lg="12" className="m-0 mt-2" id='image-upload-body'>
+                  <div className="example">
+                  <Dropzone onFilesAdded={console.log} />
+                    {/* <DefaultExample ii={dragBody}/>                            */}
+                  </div>
+</Col>
+                  {/*<Col lg="12" className="m-0">
                     <div className='drag-pic'>
                       <p className='m-0'>افزودن تصویر</p>
                       <Button className="btn btn-icon payments-btn-lv2"
@@ -154,10 +160,10 @@ class RequirementsListRequest extends React.Component {
                                                                 <span className="btn-inner--icon">
                                                                   <i className="fa fa-camera"/>
                                                                 </span>
-                        {/*<span className="btn-inner--text">افزودن عکس</span>*/}
+                        //<span className="btn-inner--text">افزودن عکس</span>
                       </Button>
                     </div>
-                  </Col>
+                  </Col>*/}
 
                   <Col lg="12" className="m-0">
                     <Collapse isOpen={this.state.consumersCollapse}>
@@ -165,7 +171,7 @@ class RequirementsListRequest extends React.Component {
                     </Collapse>
                   </Col>
 
-                  <Row className="m-0 d-flex justify-content-center w-100">
+                  <Row className="m-0 mt-3 d-flex justify-content-center w-100">
                     <Col lg="auto"
                          className="d-flex align-items-center justify-content-center">
                       <div

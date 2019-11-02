@@ -21,7 +21,7 @@ class MyNavbar extends React.Component {
 
     this.state = {
       pageSelection: "my-account",
-      collapse: true
+      collapse: false
     };
 
     this.resetPageSelection=this.resetPageSelection.bind(this);

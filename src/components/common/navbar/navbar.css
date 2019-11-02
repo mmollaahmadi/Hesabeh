@@ -3,7 +3,7 @@
 .popover-container {
   width: 100%;
 
-  
+
 }
 /* ------------------------------ toggler ----------------------------------- */
 .navbar-toggler-icon {
@@ -66,10 +66,12 @@
 
 /* ------------------------------ profile ----------------------------------- */
 .navbar-profile-img{
-  border-style: none;
-  border-color: #00e5ac;
-  border-width: 3px;
   width: 45px;
+}
+.profile-selected{
+  border-style: solid;
+  border-color: #00e5ac;
+  border-width: 2px;
 }
 .profile-menu{
   width: 100px;

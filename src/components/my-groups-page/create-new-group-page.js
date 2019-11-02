@@ -17,6 +17,7 @@ import {
 import "../../assets/css/custom.css";
 import Chip from '../common/chip/chip.js';
 import AOS from 'aos'
+import Dropzone from "../common/dropzone/dropzone";
 class CreateNewGroupPage extends React.Component {
   constructor(){
     super();
@@ -27,18 +28,24 @@ class CreateNewGroupPage extends React.Component {
 
         <div className="my-section">
           <Container className="pt-10 pb-30  h-100">
-            <Row className="text-center justify-content-center">
+            <Row className="d-flex text-center justify-content-center">
               <Col lg="5"
                    data-aos="fade-up"
                    data-aos-duration="1000"
                    data-aos-delay="50"
               >
-
-                <img
+              <Row className="d-flex justify-content-center m-0 mb-2">
+              <Dropzone onFilesAdded={console.log}
+              image={require("../../assets/img/users/empty-group.png")}
+              isCircle={true}
+              dontHasButton={true} />
+                {/* <DefaultExample ii={dragBody}/>                            */}
+              </Row>
+              {/*  <img
                   alt="..."
                   className="rounded-circle empty-group"
                   src={require("../../assets/img/users/empty-group.png")}
-                />
+                />*/}
                 <Form role="form" className="audit-form">
                   <FormGroup className="mb-3">
                     <InputGroup className="input-group-alternative">
@@ -120,7 +127,7 @@ class CreateNewGroupPage extends React.Component {
             </Row>
           </Container>
         </div>
-        
+
     );
   }
 }

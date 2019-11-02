@@ -12,22 +12,20 @@ class UserDashboardPage extends React.Component {
   render() {
     return (
       <div>
-        <main className="profile-page pb-5" ref="main">
-          <div className="my-body">
-            <Profile currentUser={this.props.currentUser}/>
-            <Container>
-              <Row>
-                <DefaultOrderValue />
+        <div className="my-body profile-page">
+          <Container>
+            <Profile currentUser={this.props.currentUser} />
+            <Row>
+              <DefaultOrderValue />
 
-                <LabelManagement />
+              <LabelManagement />
 
-                <Col lg="12">
-                  <ShargeHistory />
-                </Col>
-              </Row>
-            </Container>
-          </div>
-        </main>
+              <Col lg="12">
+                <ShargeHistory />
+              </Col>
+            </Row>
+          </Container>
+        </div>
       </div>
     );
   }

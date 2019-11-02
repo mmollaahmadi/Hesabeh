@@ -8,34 +8,30 @@ class JoinToOtherGroup extends React.Component {
            data-aos-duration="1000"
            data-aos-delay="50"
       className="card-profile shadow mt-5">
-        <CardHeader>پیوستن به گروه</CardHeader>
+        <CardHeader>درخواست پیوستن به گروه</CardHeader>
         <CardBody>
-          <Form role="form" className="audit-form w-100 pt-5 pb-4">
-            <Row className="justify-content-center mb-3 ml-0 mr-0">
-              <Col lg="5">
-                <FormGroup className="m-0">
-                <InputGroup className="input-group-alternative">
-                <InputGroupAddon addonType="prepend">
-                  <InputGroupText>
-                    <i className="ni ni-email-83"/>
-                  </InputGroupText>
-                </InputGroupAddon>
+          <Form role="form" className="audit-form w-100 p-0">
 
-                    <Input
-                      className="audit-input"
-                      placeholder="نام گروه"
-                    />
-</InputGroup>
-                </FormGroup>
-              </Col>
-              <Col lg="2" className="">
-                <FormGroup className="m-0">
-                  <Button color="primary" >
+
+              <FormGroup className="mb-3">
+                  <InputGroup className="input-group-alternative">
+                      <InputGroupAddon addonType="prepend">
+                          <InputGroupText>
+                              <i class="fa fa-users" />
+                          </InputGroupText>
+                      </InputGroupAddon>
+
+                      <Input className="audit-input" placeholder="نام گروه" />
+                  </InputGroup>
+              </FormGroup>
+
+
+                <FormGroup className="m-0 d-flex justify-content-center">
+                  <Button className='payments-btn-lv2 btn btn-primary' color="primary" >
                     ارسال درخواست
                   </Button>
                 </FormGroup>
-              </Col>
-            </Row>
+
           </Form>
         </CardBody>
       </Card>

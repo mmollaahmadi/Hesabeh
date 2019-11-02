@@ -7,67 +7,59 @@ import {
   Label,
   Input,
   Card,
-  CardBody
+  CardBody,
+  Badge
 } from "reactstrap";
+import { FILTERS } from "../../constants/constants";
+import TableFilters from "../common/table-filters/table-filters";
 
 class DefaultOrderValue extends React.Component {
   render() {
     return (
       <>
-      <Col lg="7">
-      <Card data-aos="fade-up"
+        <Col lg="7" className='mt-3'>
+          <Card
+            data-aos="fade-up"
             data-aos-duration="1000"
             data-aos-delay="50"
-            className="card-profile shadow m-0">
-        <CardBody>
-          <Form>
-            <Row className="px-2">
-              <Col lg="12" className="px-4">
-                <FormGroup>
-                  <Label for="exampleSelect">ترتیب نمایش گروه‌ها</Label>
-
-                  <Input type="select" name="select" id="exampleSelect">
+            className="shadow m-0 mt-5"
+          >
+            <CardBody>
+              <Form>
+                <Row className="px-2">
+                  <Col lg="12" className="px-4">
+                    <FormGroup>
+                      <Badge color='dark' className='default-order-label-badge'>ترتیب پیشفرض نمایش گروه‌ها:</Badge>
+                      <TableFilters data={FILTERS} />
+                      {/*                  <Input type="select" name="select" id="exampleSelect">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
                     <option>5</option>
                   </Input>
-                </FormGroup>
-              </Col>
-              <Col lg="12" className="px-4">
-                <FormGroup>
-                  <Label for="exampleSelect">ترتیب نمایش خرج‌ها</Label>
+*/}
+                    </FormGroup>
+                  </Col>
+                  <Col lg="12" className="px-4">
+                    <FormGroup>
+                      <Badge color='dark' className='default-order-label-badge'>ترتیب پیشفرض نمایش خرج‌ها:</Badge>
 
-                  <Input type="select" name="select" id="exampleSelect">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </Input>
-                </FormGroup>
-              </Col>
-              <Col lg="12" className="px-4">
-                <FormGroup>
-                  <Label for="exampleSelect">ترتیب نمایش اعلام‌ها</Label>
-
-                  <Input type="select" name="select" id="exampleSelect">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </Input>
-                </FormGroup>
-              </Col>
-            </Row>
-          </Form>
-        </CardBody>
-      </Card>
-      </Col>
-      <Col lg="5">
-      </Col>
+                      <TableFilters data={FILTERS} />
+                    </FormGroup>
+                  </Col>
+                  <Col lg="12" className="px-4">
+                    <FormGroup>
+                      <Badge color='dark' className='default-order-label-badge'>ترتیب پیشفرض نمایش اعلام‌ها:</Badge>
+                      <TableFilters data={FILTERS} />
+                    </FormGroup>
+                  </Col>
+                </Row>
+              </Form>
+            </CardBody>
+          </Card>
+        </Col>
+        <Col lg="5"></Col>
       </>
     );
   }

@@ -1,3 +1,17 @@
+.my-card-profile{
+  margin-top: 10rem !important;
+}
+
+
+.default-order-label-badge{
+  margin: 1rem 0;
+  color: #03091e;
+  background-color: #ffc107;
+  font-family: Samim;
+  font-size: 1rem;
+}
+
+
 .nav-pills .nav-link.active{
   background-color:  #141312 !important;
   color: #f98d00 !important;
@@ -45,8 +59,18 @@ background-color: #123 !important;
 
 
 
+.profile-btn{
+  margin: 0 1rem;
+}
+@media (max-width: 575.98px){
+.profile-page .card-profile .level2 {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
+.btn:not(:last-child) {
 
-
+}
 
 .trigger {
 padding: 1px 10px;

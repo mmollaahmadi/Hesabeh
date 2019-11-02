@@ -2,9 +2,7 @@ import React from 'react'
 import {Col, Row} from "reactstrap";
 
 class GroupUnit extends React.Component{
-  constructor(props){
-    super(props);
-  }
+  
   render() {
     return(
       <Col xs={'12'} sm={'6'} lg={'4'}>

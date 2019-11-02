@@ -2,27 +2,31 @@ import React from 'react'
 import {
   Button,
   Col,
-  Form,
-  Input,
-  InputGroup,
-  InputGroupAddon,
-  InputGroupText,
   Row
 } from "reactstrap"
 import './table-filters.css'
 
 class TableFilters extends React.Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
+    this.state={
+      selectedItem: 'جدیدترین'
+    };
   }
+  selectSort = (val)=> {
+    this.setState({
+      selectedItem: val
+    });
+  };
   render() {
     let filters = [];
+
     this.props.data.map(filter => {
         filters.push(
           <Button
-            className='table-filters-btn'
+            className={`table-filters-btn ${this.state.selectedItem === filter.value ? 'selected-btn' : ''}`}
             color='secondary'
-            // onClick={() => this.toggleSort()}
+            onClick={() => this.selectSort(filter.value)}
             >
             {filter.value}
           </Button>

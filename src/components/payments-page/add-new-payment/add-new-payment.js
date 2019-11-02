@@ -150,7 +150,7 @@ class AddPaymentPage extends React.Component {
               افزودن هزینه جدید
             </CardHeader>
             <CardBody>
-              <Row className="justify-content-center py-5">
+              <Row className="justify-content-center py-2">
                 <Col sm="12" className="notifications-table">
                   <Form role="form" className="audit-form">
 
@@ -245,7 +245,7 @@ class AddPaymentPage extends React.Component {
                             label="محمد ملااحمدی"
                             // onDelete={() => this.deleteUser()}
                           />
-                          <Button className="btn btn-icon payments-btn-lv2"
+                          <Button className="btn btn-icon payments-btn-lv2 mt-0"
                                   type="button"
                                   color="dark-green"
                                   onClick={() => this.toggleModal('consumersCollapse')}

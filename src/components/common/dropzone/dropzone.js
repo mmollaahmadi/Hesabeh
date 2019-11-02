@@ -56,7 +56,7 @@ onDrop(event) {
   render() {
     return (
       <div
-            className={`Dropzone ${this.state.hightlight ? "Highlight" : ""}`}
+            className={`Dropzone ${this.props.isCircle ? "drop-zone-circle" : "drop-zone-rectangle"} ${this.state.hightlight ? "Highlight" : ""}`}
             onDragOver={this.onDragOver}
             onDragLeave={this.onDragLeave}
             onDrop={this.onDrop}
@@ -66,7 +66,7 @@ onDrop(event) {
           <img
             alt="upload"
             className="Icon"
-            src="cloud_upload-24px.svg"
+            src={this.props.image ? this.props.image : "cloud_upload-24px.svg"}
           />
           <input
           ref={this.fileInputRef}
@@ -75,7 +75,7 @@ onDrop(event) {
           multiple
           onChange={this.onFilesAdded}
         />
-          <span>آپلود فایل ها</span>
+          <span className={`${this.props.dontHasButton ? 'd-none' : ''}`}>آپلود فایل ها</span>
         </div>
       );
   }

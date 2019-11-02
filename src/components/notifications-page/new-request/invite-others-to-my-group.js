@@ -78,8 +78,8 @@ class InviteOthersToMyGroup extends React.Component{
                                 // onDelete={() => this.deleteUser()}
                             />
                         </Row>
-                        <FormGroup className="m-0">
-                            <Button color="primary" type="button">
+                        <FormGroup className="m-0 mt-2 d-flex justify-content-center">
+                            <Button className='payments-btn-lv2 btn btn-primary' color="primary" type="button">
                                 ارسال دعوت نامه
                             </Button>
                         </FormGroup>

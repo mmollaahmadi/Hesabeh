@@ -13,7 +13,9 @@ import {
   Button,
   Badge,
   Card,
-  CardBody
+  CardBody,
+  InputGroupText,
+  InputGroupAddon
 } from "reactstrap";
 import { GithubPicker } from "react-color";
 class LabelManagement extends React.Component {
@@ -24,14 +26,19 @@ class LabelManagement extends React.Component {
       <Card data-aos="fade-up"
             data-aos-duration="1000"
             data-aos-delay="50"
-            className="card-profile shadow m-0">
+            className="shadow m-0 mt-5">
         <CardBody>
-          <Form role="form" className="signup-form">
+          <Form role="form" className="audit-form">
             <Row className="justify-content-center mb-3">
               <Col lg="auto">
                 <FormGroup className="m-0">
                   <InputGroup className="input-group-alternative">
-                    <Input className="signup-input" placeholder="نام برچسب" />
+                  <InputGroupAddon addonType="prepend">
+                    <InputGroupText>
+                      <i className="fa fa-tag"/>
+                    </InputGroupText>
+                  </InputGroupAddon>
+                    <Input className="audit-input" placeholder="نام برچسب" />
                   </InputGroup>
                 </FormGroup>
               </Col>
