@@ -18,7 +18,7 @@
   border-radius: 50%;
 }
 .Icon {
-  opacity: 0.2;
+  /* opacity: 0.2; */
   height: 64px;
   width: 64px;
 }
@@ -27,4 +27,7 @@
 }
 .Highlight {
   background-color: rgb(188, 185, 236);
+}
+.upload-message{
+  color: rgb(187, 186, 186);
 }

@@ -1,33 +1,34 @@
 import React from "react";
-import {
-  Row,
-  Col,
-  Card,
-  Badge,
-  Button,
-  UncontrolledTooltip
-} from "reactstrap";
+import { Row, Col, Card, Badge, Button, UncontrolledTooltip } from "reactstrap";
 import "./group-dashboard.css";
 
 class GroupUserUnit extends React.Component {
   render() {
     return (
       <Col lg="6" className="mt-3">
-        <Card data-aos="zoom-in"
-              data-aos-duration="1000"
-              data-aos-delay="1000"
-              className="user-status w-auto">
-          <Row className='mx-0'>
+        <Card
+          data-aos="zoom-in"
+          data-aos-duration="1000"
+          data-aos-delay="1000"
+          className="user-status w-auto"
+        >
+          <Row className="mx-0">
             <p className="card-profile-name">محمد ملااحمدی</p>
-            <Button className="p-0 plus-btn-circle m-0 mr-3 mt-1" color="primary">
-              <i className="fa fa-dollar"/>
+            <Button
+              className="p-0 plus-btn-circle m-0 mr-3 mt-1"
+              color="primary"
+            >
+              <i className="fa fa-dollar" />
             </Button>
-            <Button className="p-0 plus-btn-circle m-0 mr-2 mt-1" color="primary">
-              <i className="fa fa-plus"/>
+            <Button
+              className="p-0 plus-btn-circle m-0 mr-2 mt-1"
+              color="primary"
+            >
+              <i className="fa fa-plus" />
             </Button>
           </Row>
           <Row className="mx-0">
-            <Col lg="auto">
+            <Col xs="3">
               <div className="card-profile-image">
                 <a href="#pablo" onClick={e => e.preventDefault()}>
                   <img
@@ -38,7 +39,7 @@ class GroupUserUnit extends React.Component {
                 </a>
               </div>
             </Col>
-            <Col lg="auto" className="pr-0">
+            <Col xs="7" className="pr-0 justify-content-start">
               <div>
                 <Badge className="status-text" href="#" color="info">
                   mollaahmadi@
@@ -121,7 +122,6 @@ class GroupUserUnit extends React.Component {
             <UncontrolledTooltip delay={0} target="tooltip13">
               Follow Us
             </UncontrolledTooltip>
-
           </Row>
         </Card>
       </Col>

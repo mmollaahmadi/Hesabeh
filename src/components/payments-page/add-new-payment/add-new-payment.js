@@ -140,7 +140,6 @@ class AddPaymentPage extends React.Component {
 
     return (
       <div className="my-body">
-
         <Container>
           <Card data-aos="fade-up"
                 data-aos-duration="1000"
@@ -415,31 +414,7 @@ class AddPaymentPage extends React.Component {
             </CardHeader>
             <CardBody>
 
-              <FormGroup>
-                <Row className="p-0 d-flex mt-3 d-flex justify-content-center">
-                  <Col className="lg-6 m-0">
-                    <Button
-                      className="mr-0 mb-2 audit-button"
-                      color="primary"
-                      to="/payments"
-                      tag={Link}
-                    >
-                      ثبت و ذخیره نهایی
-                    </Button>
-                  </Col>
-                  <Col className="lg-6 m-0">
-                    <Button
-                      className="audit-button"
-                      color="default"
-                      href="#pablo"
-                      onClick={() => this.toggle("password")}
-                      name="email"
-                    >
-                      بازگشت
-                    </Button>
-                  </Col>
-                </Row>
-              </FormGroup>
+
               <Row className='m-0 d-flex justify-content-center'>
                 {tempTablePayments}
               </Row>

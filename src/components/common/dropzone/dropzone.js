@@ -66,7 +66,7 @@ onDrop(event) {
           <img
             alt="upload"
             className="Icon"
-            src={this.props.image ? this.props.image : "cloud_upload-24px.svg"}
+            src={this.props.image ? this.props.image : "upload-img.svg"}
           />
           <input
           ref={this.fileInputRef}
@@ -75,7 +75,7 @@ onDrop(event) {
           multiple
           onChange={this.onFilesAdded}
         />
-          <span className={`${this.props.dontHasButton ? 'd-none' : ''}`}>آپلود فایل ها</span>
+          <span className={`upload-message ${this.props.dontHasButton ? 'd-none' : ''}`}>بارگذاری تصویر</span>
         </div>
       );
   }

@@ -61,12 +61,12 @@ class RequirementsListRequest extends React.Component {
            className="card-profile shadow mt-5">
         <CardHeader>ایجاد لیست نیازمندی</CardHeader>
         <CardBody>
-          <Row className="justify-content-center py-5">
+          <Row className="justify-content-center">
             <Col sm="12" className="notifications-table">
               <Form role="form" className="audit-form">
 
-                <Row className="mb-3 d-flex justify-content-right">
-                </Row>
+                {/*<Row className="mb-3 d-flex justify-content-right">
+                </Row>*/}
 
                 <Row className=" m-0 text-center justify-content-center">
                   <Col lg="12" className="m-0 mt-3">

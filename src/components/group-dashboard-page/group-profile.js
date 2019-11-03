@@ -5,7 +5,7 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import AOS from 'aos';
-import "./profile.css";
+// import "./profile.css";
 class GroupProfile extends React.Component {
   constructor(props){
     super(props);
