@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button, Card, CardBody, CardHeader, Col, Form, FormGroup, Input, InputGroup, Row, InputGroupText, InputGroupAddon} from "reactstrap";
+import {Button, Card, CardBody, CardHeader, Form, FormGroup, Input, InputGroup, InputGroupText, InputGroupAddon} from "reactstrap";
 
 class JoinToOtherGroup extends React.Component {
   render() {

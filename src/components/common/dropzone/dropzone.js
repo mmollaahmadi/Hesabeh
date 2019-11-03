@@ -56,7 +56,7 @@ onDrop(event) {
   render() {
     return (
       <div
-            className={`Dropzone ${this.props.isCircle ? "drop-zone-circle" : "drop-zone-rectangle"} ${this.state.hightlight ? "Highlight" : ""}`}
+            className={`Dropzone ${this.props.class ? this.props.class : ''} ${this.props.isCircle ? "drop-zone-circle" : "drop-zone-rectangle"} ${this.state.hightlight ? "Highlight" : ""}`}
             onDragOver={this.onDragOver}
             onDragLeave={this.onDragLeave}
             onDrop={this.onDrop}

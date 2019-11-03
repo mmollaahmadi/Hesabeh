@@ -5,6 +5,7 @@ import {
   NavbarBrand,
   Navbar,DropdownItem,
   Nav,
+  NavItem,
   Row,
   NavLink,
   Badge
@@ -91,7 +92,7 @@ class MyNavbar extends React.Component {
             tag={Link}
             className={`d-block ml-auto pl-3 pr-3 ${
               pageSelection === "my-account"
-                ? "navbar-link-active"
+                ? "nav-bar-link-active"
                 : "navbar-link"
             }`}
             color="primary"
@@ -103,7 +104,7 @@ class MyNavbar extends React.Component {
           <NavLink
             className={`d-block ml-auto pl-3 pr-3 ${
               pageSelection === "notifications"
-                ? "navbar-link-active"
+                ? "nav-bar-link-active"
                 : "navbar-link"
             }`}
             onClick={() => this.togglePage("notifications")}
@@ -129,9 +130,10 @@ class MyNavbar extends React.Component {
             <i className="fa fa-users d-lg-none mr-0 ml-2"/>
             گروه‌های من
           </NavLink>
+
           <NavLink
             className={`d-block ml-auto pl-3 pr-3 ${
-              pageSelection === "report" ? "navbar-link-active" : "navbar-link"
+              pageSelection === "report" ? "nav-bar-link-active" : "navbar-link"
             }`}
             onClick={() => this.togglePage("report")}
             color="link"
@@ -141,6 +143,7 @@ class MyNavbar extends React.Component {
             <i className="fa fa-line-chart d-lg-none mr-0 ml-2"/>
             گزارش
           </NavLink>
+
           <DropdownItem className='d-lg-none my-divider' divider />
         </>
       );

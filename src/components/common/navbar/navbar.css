@@ -30,21 +30,21 @@
   font-family: Samim-Bold, Tahoma, serif !important;
   color: #0b1526 !important;
   cursor: pointer;
-  font-size: 0.75rem !important;
+  font-size: 0.9rem !important;
   width: fit-content;
 }
 .navbar-link-active{
   color: #00e5ac !important;
   font-family: Samim-Bold, Tahoma, serif !important;
   cursor: pointer;
-  font-size: 0.75rem !important;
+  font-size: 1rem !important;
   width: fit-content;
 }
 .nav-bar-link-active{
   color: #00e5ac !important;
   font-family: Samim-Bold, Tahoma, serif !important;
   cursor: pointer;
-  font-size: 0.75rem !important;
+  font-size: 1rem !important;
   width: fit-content;
 }
 .signup-button {
@@ -66,7 +66,7 @@
 
 /* ------------------------------ profile ----------------------------------- */
 .navbar-profile-img{
-  width: 45px;
+  width: 50px;
 }
 .profile-selected{
   border-style: solid;

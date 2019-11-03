@@ -4,8 +4,6 @@ import {
   Row,
   Col,
   FormGroup,
-  Label,
-  Input,
   Card,
   CardBody,
   Badge

@@ -19,7 +19,7 @@ import '../payments-page.css';
 import DatePicker from 'react-persian-calendar-date-picker';
 import AOS from 'aos'
 import GroupUnit from "./group-unit";
-import DefaultExample from './example.js';
+// import DefaultExample from './example.js';
 
 class AddPaymentPage extends React.Component {
   constructor(props) {
@@ -75,7 +75,7 @@ class AddPaymentPage extends React.Component {
 
   myCallBack(){
     let fadeInAnimation = 'fadeIn';
-    let fadeAnimation = 'fadeOut';
+    // let fadeAnimation = 'fadeOut';
     if(this.state.isStepOne) {
       this.setState({
         isStepOne: false
@@ -128,7 +128,7 @@ class AddPaymentPage extends React.Component {
   render() {
 
     // Dropzone class:
-    var myDropzone = new Dropzone("div#myId", { url: "/file/post"});
+    // var myDropzone = new Dropzone("div#myId", { url: "/file/post"});
 
     const payments = this.state;
     let tempTablePayments = (<p className='nothing'>هیچ هزینه ای اضافه نشده است.</p>);
@@ -136,7 +136,7 @@ class AddPaymentPage extends React.Component {
       tempTablePayments = <p>hihhihhi</p>;
     }
 
-    const dragBody = document.getElementById('image-upload-body');
+    // const dragBody = document.getElementById('image-upload-body');
 
     return (
       <div className="my-body">

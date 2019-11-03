@@ -59,14 +59,26 @@ class TableTools extends React.Component {
 
           </Form>
         </Col>
-        <Col xs='6' lg="2" className='order-2 order-lg-3 d-flex justify-content-center my-auto'>
+        <Col xs='6' lg="2"
+        className='order-2 order-lg-3 d-flex justify-content-center mb-3 my-lg-auto'>
           <Button
             color="primary"
-            className="p-2"
+            className="p-2 w-100"
             tag={Link}
             to={this.props.buttonLink}
           >
             {this.props.buttonTitle}
+          </Button>
+        </Col>
+        <Col xs='6' lg="2"
+        className={`order-2 order-lg-1 d-flex justify-content-center mb-3 my-lg-auto ${this.props.isAnyChecked ? 'disabled' : ''}`}>
+          <Button
+            color="delete"
+            className="p-2"
+            tag={Link}
+            to={this.props.buttonLink}
+          >
+          حذف
           </Button>
         </Col>
       </Row>

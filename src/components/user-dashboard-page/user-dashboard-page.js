@@ -17,9 +17,7 @@ class UserDashboardPage extends React.Component {
             <Profile currentUser={this.props.currentUser} />
             <Row>
               <DefaultOrderValue />
-
               <LabelManagement />
-
               <Col lg="12">
                 <ShargeHistory />
               </Col>

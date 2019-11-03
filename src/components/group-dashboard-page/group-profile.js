@@ -5,13 +5,39 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import AOS from 'aos';
+import "./profile.css";
 class GroupProfile extends React.Component {
-  state = {};
+  constructor(props){
+    super(props);
+    this.state={
+      exitModal: false,
+    };
+    this.fileInputRef = React.createRef();
+    this.openFileDialog = this.openFileDialog.bind(this);
+     this.onFilesAdded = this.onFilesAdded.bind(this);
+  }
+
   toggleModal = state => {
     this.setState({
       [state]: !this.state[state]
     });
   };
+
+
+
+
+  openFileDialog() {
+    if (this.props.disabled) return;
+    this.fileInputRef.current.click();
+  }
+  onFilesAdded(evt) {
+  if (this.props.disabled) return;
+  const files = evt.target.files;
+  if (this.props.onFilesAdded) {
+    const array = this.fileListToArray(files);
+    this.props.onFilesAdded(array);
+  }
+}
   componentDidMount() {
     AOS.refresh();
   }
@@ -20,32 +46,40 @@ class GroupProfile extends React.Component {
   }
   render() {
     return (
-      <section className="section">
-        <Container>
+
           <Card data-aos="fade-up"
                 data-aos-duration="1000"
                 data-aos-delay="50"
-                className="card-profile shadow mt-0">
+                className="card-profile my-card-profile shadow mb-5">
             <div className="px-4">
               <Row className="justify-content-center">
 
-                <Col className="order-lg-2 " lg="4">
+                <Col className="order-lg-2 " lg="3">
                   <div className="card-profile-image">
-                    <a href="#pablo" onClick={e => e.preventDefault()}>
+                    <a href="#pablo" onClick={this.openFileDialog}>
                       <img
                         alt="..."
                         className="rounded-circle profile-image"
                         src={require("../../assets/img/users/user01.jpg")}
                       />
+                      <input
+                      ref={this.fileInputRef}
+                      className="FileInput"
+                      type="file"
+                      // multiple
+                      onChange={this.onFilesAdded}
+                    />
                     </a>
+
                   </div>
                 </Col>
 
                 <Col
-                  className="order-lg-3 text-lg-right align-self-lg-center"
+                  className="order-lg-3 text-lg-right d-flex justify-content-center p-0"
                   lg="4"
                 >
-                  <div className="d-flex justify-content-center py-4 px-0 mt-lg-0">
+                <div className="card-profile-actions py-4 px-0 mt-lg-0 px-md-5 px-lg-0 w-100 d-flex justify-content-between">
+
                     <Modal
                       className="modal-dialog-centered"
                       isOpen={this.state.exitModal}
@@ -128,7 +162,7 @@ class GroupProfile extends React.Component {
                       </div>
                     </Modal>
                     <Button
-                      className="group-profile-btn my-auto mx-2"
+                      className="profile-btn my-auto"
                       color="default"
                       href="#pablo"
                       onClick={() => this.toggleModal("exitModal")}
@@ -136,7 +170,7 @@ class GroupProfile extends React.Component {
                       خروج
                     </Button>
                     <Button
-                      className="group-profile-btn m-auto"
+                      className="profile-btn my-auto"
                       href="#pablo"
                       onClick={() => this.toggleModal("deleteAccountModal")}
                       color="warning"
@@ -146,7 +180,7 @@ class GroupProfile extends React.Component {
                   </div>
                 </Col>
                 <Col
-                  className="order-lg-1 "
+                      className="order-lg-1 text-lg-right d-flex justify-content-center p-0"
                   lg="4">
                   <div className="card-profile-stats d-flex justify-content-center">
                     <div>
@@ -202,13 +236,6 @@ class GroupProfile extends React.Component {
               </div>
             </div>
           </Card>
-
-        </Container>
-      </section>
-
-
-
-
 
     );
   }

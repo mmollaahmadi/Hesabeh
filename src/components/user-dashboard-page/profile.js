@@ -3,7 +3,6 @@ import {
   Button,
   Modal,
   Card,
-  Container,
   Row,
   Col,
   CardHeader,
@@ -20,12 +19,41 @@ import { Link } from "react-router-dom";
 import AOS from 'aos';
 
 class Profile extends React.Component {
-  state = {};
+  constructor(props){
+    super(props);
+    this.state={
+      exitModal: false,
+    };
+    this.fileInputRef = React.createRef();
+    this.openFileDialog = this.openFileDialog.bind(this);
+     this.onFilesAdded = this.onFilesAdded.bind(this);
+  }
+
   toggleModal = state => {
     this.setState({
       [state]: !this.state[state]
     });
   };
+
+
+
+
+  openFileDialog() {
+    if (this.props.disabled) return;
+    this.fileInputRef.current.click();
+  }
+  onFilesAdded(evt) {
+  if (this.props.disabled) return;
+  const files = evt.target.files;
+  if (this.props.onFilesAdded) {
+    const array = this.fileListToArray(files);
+    this.props.onFilesAdded(array);
+  }
+}
+
+
+
+
   componentDidMount() {
     AOS.refresh();
   }
@@ -41,15 +69,22 @@ class Profile extends React.Component {
                 data-aos-delay="50"
                 className="card-profile my-card-profile shadow">
             <div className="px-4">
-              <Row className="justify-content-center">
+              <Row className="justify-content-center mt-3">
                 <Col className="order-lg-2" lg="3">
                   <div className="card-profile-image">
-                    <a href="#pablo" onClick={e => e.preventDefault()}>
+                    <a href="#pablo"   onClick={this.openFileDialog}>
                       <img
                         alt="..."
                         className="rounded-circle profile-image"
                         src={require("../../assets/img/users/user01.jpg")}
                       />
+                      <input
+                      ref={this.fileInputRef}
+                      className="FileInput"
+                      type="file"
+                      // multiple
+                      onChange={this.onFilesAdded}
+                    />
                     </a>
                   </div>
                 </Col>
@@ -301,7 +336,7 @@ class Profile extends React.Component {
                                     <InputGroup className="input-group-alternative">
                                       <InputGroupAddon addonType="prepend">
                                         <InputGroupText>
-                                          <i className="ni ni-email-83" />
+                                          <i className="fa fa-user" />
                                         </InputGroupText>
                                       </InputGroupAddon>
 
@@ -317,7 +352,7 @@ class Profile extends React.Component {
                                     <InputGroup className="input-group-alternative">
                                       <InputGroupAddon addonType="prepend">
                                         <InputGroupText>
-                                          <i className="ni ni-email-83" />
+                                          <i className="fa fa-phone" />
                                         </InputGroupText>
                                       </InputGroupAddon>
 

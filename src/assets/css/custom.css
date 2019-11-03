@@ -42,7 +42,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .my-body {
-  margin-top: 15vmin;
+  margin-top: 5rem;
   margin-bottom: 5rem;
 }
 
@@ -63,7 +63,7 @@ body.modal-open {
 /* ============================== BUTTONS =================================== */
 /* ========================================================================== */
 .btn-primary {
-  font-size: 2vmin;
+  font-size: 1rem;
   padding: 0.5rem 0.7rem;
   color: #fff;
   background-color: #00e5ac;
@@ -102,7 +102,7 @@ body.modal-open {
 /* --------------------- */
 
 .btn-default {
-  font-size: 2vmin;
+  font-size: 1rem;
   padding: 0.5rem 0.7rem;
   color: #fff;
   background-color: #03091e;
@@ -140,7 +140,7 @@ body.modal-open {
 
 /* ------------------------ */
 .btn-secondary {
-  font-size: 2vmin;
+  font-size: 1rem;
   padding: 0.5rem 0.7rem;
   color: #424242;
   background-color: #d7d7d6;
@@ -174,6 +174,44 @@ body.modal-open {
 .btn-secondary:not(:disabled):not(.disabled).active:focus,
 .show > .btn-default.dropdown-toggle:focus {
   box-shadow: none, 0 0 0 0 rgba(23, 43, 77, 0.5);
+}
+/* ------------------------ */
+.btn-delete {
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.5rem 0.7rem;
+  color: #fff;
+  background-color: #ffc107;
+  border-color: #ffc107;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.btn-delete:hover {
+  color: #fff;
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+.btn-delete:focus,
+.btn-delete.focus {
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08),
+    0 0 0 0 rgba(94, 114, 228, 0.5);
+}
+.btn-delete.disabled,
+.btn-delete:disabled {
+  color: #fff;
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+.btn-delete:not(:disabled):not(.disabled):active,
+.btn-delete:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+  color: #fff;
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+.btn-delete:not(:disabled):not(.disabled):active:focus,
+.btn-delete:not(:disabled):not(.disabled).active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+  box-shadow: none, 0 0 0 0 rgba(94, 114, 228, 0.5);
 }
 /* ------------------------ */
 .btn-dark-green {

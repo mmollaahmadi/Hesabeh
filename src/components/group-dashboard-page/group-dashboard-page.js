@@ -7,32 +7,16 @@ import {
   CardHeader,
   Container, Row
 } from "reactstrap";
+import GroupUsers from './group-users'
 
 class GroupDashboardPage extends React.Component {
   render() {
     return (
-      <main className="profile-page pb-5" ref="main">
-        <div className="my-body">
+
+        <div className="my-body profile-page">
           <Container>
             <GroupProfile/>
-
-            <Card data-aos="fade-up"
-                  data-aos-duration="1000"
-                  data-aos-delay="50"
-                  className=' shadow mt-0'>
-              <CardHeader>
-                کاربران
-              </CardHeader>
-              <CardBody>
-                <Row className='m-0'>
-                  <GroupUser/>
-                  <GroupUser/>
-                  <GroupUser/>
-                  <GroupUser/>
-                </Row>
-              </CardBody>
-            </Card>
-
+            <GroupUsers />
             <div className="landing-position-relative">
               <section className="section pt-0 pb-200">
 
@@ -40,7 +24,6 @@ class GroupDashboardPage extends React.Component {
             </div>
           </Container>
         </div>
-      </main>
     );
   }
 }
