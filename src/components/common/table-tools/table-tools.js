@@ -73,7 +73,7 @@ class TableTools extends React.Component {
         <Col xs='6' lg="2"
         className={`order-2 order-lg-1 d-flex justify-content-center mb-3 my-lg-auto ${this.props.isAnyChecked ? 'disabled' : ''}`}>
           <Button
-          disabled={true}
+          disabled={!this.props.isAnyChecked}
             color="delete"
             className="p-2"
             tag={Link}

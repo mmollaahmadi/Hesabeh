@@ -2,6 +2,7 @@ import React from 'react'
 import {Col, Row} from "reactstrap";
 
 class PaymentsTableHeader extends React.Component {
+
   render() {
     return (
       <Col lg='12' className='d-none d-lg-block px-0'>
@@ -13,6 +14,7 @@ class PaymentsTableHeader extends React.Component {
                 className="custom-control-input"
                 id=" customCheckLogin"
                 type="checkbox"
+                onChange={() => this.props.handleAllChecked()}
               />
               <label
                 className="custom-control-label pr-1"
