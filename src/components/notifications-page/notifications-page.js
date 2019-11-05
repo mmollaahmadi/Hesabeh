@@ -7,8 +7,8 @@ const DATA = [
     dateRequest: "شنبه 98/05/02",
     sender: "mollaahmadi",
     type: "buy-list",
-    "targetGroup": "mollaahmadi-family",
-    "buy-list": [
+    targetGroup: "mollaahmadi-family",
+    buyList: [
       {
         id: "1",
         name: "شامپو تخم مرغی صحت",
@@ -26,32 +26,32 @@ const DATA = [
     dateRequest: "شنبه 98/05/02",
     sender: "mahlagha",
     type: "join-to-my-group",
-    "targetGroup": "hamsayeha",
-    "buy-list": []
+    targetGroup: "hamsayeha",
+    buyList: []
   },
   {
     id: "3",
     dateRequest: "شنبه 98/05/02",
     sender: "ali",
     type: "join-me-to-other-group",
-    "targetGroup": "itc",
-    "buy-list": []
+    targetGroup: "itc",
+    buyList: []
   },
   {
     id: "4",
     dateRequest: "شنبه 98/05/02",
     sender: "sepanta",
     type: "disjoin-from-my-group",
-    "targetGroup": "khabgah",
-    "buy-list": []
+    targetGroup: "khabgah",
+    buyList: []
   },
   {
     id: "5",
     dateRequest: "شنبه 98/05/02",
     sender: "mahlagha",
     type: "disjoin-me-from-other-group",
-    "targetGroup": "غضنفر و دوستان",
-    "buy-list": []
+    targetGroup: "غضنفر و دوستان",
+    buyList: []
   }
 ];
 
@@ -59,7 +59,7 @@ class NotificationsPage extends React.Component {
   render() {
     return (
       <div className="my-body">
-        <NotificationsTable data={DATA}/>
+        <NotificationsTable notifications={DATA}/>
       </div>
     );
   }

@@ -93,9 +93,10 @@ getCheckedStatus(id){
 
     this.props.payments.forEach(payment => {
       payments.push(<PaymentsTableRow
-        checked={this.getCheckedStatus(payment.id)}
         data={payment}
-        updateCheckBoxesStatusList={this.updateCheckBoxesStatusList}/>);
+        checked={this.getCheckedStatus(payment.id)}
+        updateCheckBoxesStatusList={this.updateCheckBoxesStatusList}
+        />);
     });
     return (
       <section className="section pt-0">

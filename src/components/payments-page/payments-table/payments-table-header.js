@@ -7,6 +7,7 @@ class PaymentsTableHeader extends React.Component {
     return (
       <Col lg='12' className='d-none d-lg-block px-0'>
         <Row className="table-header m-0">
+        
           <Col  className="table-header-col px-0 check-width">
             <div
               className="p-0 px-1 custom-control custom-control-alternative custom-checkbox">

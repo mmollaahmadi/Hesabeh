@@ -3,6 +3,27 @@ import {Row, Col, Button} from "reactstrap";
 import Chip from "../../common/chip/chip.js";
 
 class NotificationsTableRow extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {isChecked:false};
+    this.handleCheckBoxChange = this.handleCheckBoxChange.bind(this);
+  }
+  componentDidUpdate(prevProps,prevState){
+    if(prevProps.checked !== this.props.checked && this.props.checked){
+      this.setState({isChecked: true});
+    }
+    if(prevProps.checked !== this.props.checked && !this.props.checked){
+      this.setState({isChecked: false});
+    }
+  }
+
+  handleCheckBoxChange(){
+    this.props.updateCheckBoxesStatusList(this.props.rowData.id);
+    this.setState({
+      isChecked: !this.state.isChecked
+    });
+  }
+
   render() {
 
     let requestCol = null;
@@ -172,7 +193,7 @@ class NotificationsTableRow extends React.Component {
     }
 
     return (
-      <Col xs='12' className='px-2 p-lg-0 m-1 m-lg-0'>
+      <Col xs='12' className={`px-2 p-lg-0 m-1 m-lg-0 ${this.state.isChecked ? 'checked' : 'un-checked'}`}>
         <Row className="m-0">
           <Col xs='12' lg='auto'
                className="table-row-col justify-content-lg-center check-width px-lg-0">
@@ -183,6 +204,8 @@ class NotificationsTableRow extends React.Component {
                 className="custom-control-input"
                 id={rowData.id}
                 type="checkbox"
+                onChange={this.handleCheckBoxChange}
+                checked={this.state.isChecked}
               />
               <label
                 className="custom-control-label pr-1"

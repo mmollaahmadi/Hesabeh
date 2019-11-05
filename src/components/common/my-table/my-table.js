@@ -36,7 +36,6 @@ class MyTable extends React.Component {
       checkboxesStatusList: _checkedList
     });
   }
-
   updateCheckboxesStatusList(id){
     let _checkedList = this.state.checkboxesStatusList;
     _checkedList.forEach(el => {
@@ -57,7 +56,6 @@ class MyTable extends React.Component {
     });
     return flag;
   }
-
   isAnyCheckBoxChecked(){
     let _checkedList = this.state.checkboxesStatusList;
     let flag = false;
@@ -68,7 +66,6 @@ class MyTable extends React.Component {
     });
     return flag;
   }
-
 handleAllCheckboxesStatusChange(){
   let _checkedList = this.state.checkboxesStatusList;
   _checkedList.forEach(el => {
@@ -88,10 +85,11 @@ getCheckStatus(id){
   });
   return status;
 }
+
   render() {
     let rows = [];
 
-    this.props.data.rowsData.forEach(row => {
+    this.props.data.rows.forEach(row => {
       rows.push(<MyTableRow
         checkedStatus={this.getCheckStatus(row.id)}
         data={row}
@@ -117,7 +115,7 @@ getCheckStatus(id){
               <TableFilters data={this.props.data.filters}/>
               <Row className="justify-content-center py-1">
                 <MyTableHeader
-                columns = {this.props.data.headerColumns}
+                columns = {this.props.data.header.columns}
                 handleAllCheckboxesStatusChange={this.handleAllCheckboxesStatusChange}
                 allCheckboxesStatus={this.state.allCheckboxesStatus}
                 />

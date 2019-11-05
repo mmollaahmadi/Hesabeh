@@ -13,6 +13,8 @@ class MyGroupsTableHeader extends React.Component {
                 className="custom-control-input"
                 id=" customCheckLogin"
                 type="checkbox"
+                checked={this.props.allCheckBoxesChecked}
+                onChange={() => this.props.handleAllCheckedChange()}
               />
               <label
                 className="custom-control-label pr-1"
