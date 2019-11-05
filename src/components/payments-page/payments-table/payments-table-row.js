@@ -6,35 +6,19 @@ class PaymentsTableRow extends React.Component {
   constructor(props){
     super(props);
     this.state = {isChecked:false};
-    this.handleChecked = this.handleChecked.bind(this);
+    this.handleCheckBoxChange = this.handleCheckBoxChange.bind(this);
   }
   componentDidUpdate(prevProps,prevState){
-
-    if(this.props.allChecked !== prevProps.allChecked &&
-      this.props.allChecked===true){
-      this.setState({
-        isChecked: true
-      });
+    if(prevProps.checked !== this.props.checked && this.props.checked){
+      this.setState({isChecked: true});
     }
-    if(this.props.allChecked !== prevProps.allChecked && this.props.allChecked===false){
-      this.setState({
-        isChecked: false
-      });
+    if(prevProps.checked !== this.props.checked && !this.props.checked){
+      this.setState({isChecked: false});
     }
-
-        if( prevState.isChecked !== this.state.isChecked && !prevState.isChecked){
-            this.setState({
-              isChecked: true
-            });
-          }
-          if( prevState.isChecked !== this.state.isChecked && !this.state.isChecked){
-              this.setState({
-                isChecked: false
-              });
-            }
   }
-  handleChecked(){
-    this.props.updateCheckedList(this.props.data.id);
+
+  handleCheckBoxChange(){
+    this.props.updateCheckBoxesStatusList(this.props.data.id);
     this.setState({
       isChecked: !this.state.isChecked
     });
@@ -68,8 +52,8 @@ class PaymentsTableRow extends React.Component {
                 className="custom-control-input"
                 id={this.props.data.id}
                 type="checkbox"
-                onChange={this.handleChecked}
-                checked={this.props.allChecked || this.state.isChecked}
+                onChange={this.handleCheckBoxChange}
+                checked={this.state.isChecked}
               />
               <label
                 className="custom-control-label pr-1"

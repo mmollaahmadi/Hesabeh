@@ -1,9 +1,17 @@
 import React from 'react'
 import {Col, Row} from "reactstrap";
 
-class PaymentsTableHeader extends React.Component {
+class MyTableHeader extends React.Component {
 
   render() {
+    let columns = [];
+    this.props.columns.forEach((col, index, array) => {
+      columns.push(
+        <Col lg={col.size} className={`table-header-col ${array.length - 1 === index ? 'flex-grow-1' : ''}`}>
+          <p>{col.title}</p>
+        </Col>
+      );
+    });
     return (
       <Col lg='12' className='d-none d-lg-block px-0'>
         <Row className="table-header m-0">
@@ -14,8 +22,8 @@ class PaymentsTableHeader extends React.Component {
                 className="custom-control-input"
                 id=" customCheckLogin"
                 type="checkbox"
-                checked={this.props.allCheckBoxesChecked}
-                onChange={() => this.props.handleAllCheckedChange()}
+                onChange={() => this.props.handleAllCheckboxesStatusChange()}
+                checked={this.props.allCheckboxesStatus}
               />
               <label
                 className="custom-control-label pr-1"
@@ -27,21 +35,8 @@ class PaymentsTableHeader extends React.Component {
             </div>
           </Col>
 
-          <Col lg="1" className="table-header-col">
-            <p>تاریخ</p>
-          </Col>
-          <Col lg="3" className="table-header-col">
-            <p>نام</p>
-          </Col>
-          <Col lg="2" className="table-header-col">
-            <p>قیمت</p>
-          </Col>
-          <Col lg="3" className="table-header-col">
-            <p>انجام دهندگان</p>
-          </Col>
-          <Col lg="2" className="table-header-col flex-grow-1">
-            <p>مصرف کنندگان</p>
-          </Col>
+          {columns}
+
           <Col sm="12" className="table-header-line"/>
         </Row>
       </Col>
@@ -49,4 +44,4 @@ class PaymentsTableHeader extends React.Component {
   }
 }
 
-export default PaymentsTableHeader;
+export default MyTableHeader;

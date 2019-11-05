@@ -16,12 +16,14 @@ class PaymentsTable extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      allChecked: false,
-      checkedList: []
+      allCheckBoxesChecked: false,
+      checkBoxesStatusList: []
     };
-    this.updateCheckedList = this.updateCheckedList.bind(this);
-    this.isAnyChecked = this.isAnyChecked.bind(this);
-    this.handleAllChecked = this.handleAllChecked.bind(this);
+    this.updateCheckBoxesStatusList = this.updateCheckBoxesStatusList.bind(this);
+    this.isAnyCheckBoxTrue = this.isAnyCheckBoxTrue.bind(this);
+    this.handleAllCheckedChange = this.handleAllCheckedChange.bind(this);
+    this.allCheckBoxesChecked = this.allCheckBoxesChecked.bind(this);
+    this.getCheckedStatus = this.getCheckedStatus.bind(this);
   }
   componentDidMount(){
     let _checkedList = [];
@@ -32,27 +34,33 @@ class PaymentsTable extends React.Component {
       });
     });
     this.setState({
-      checkedList: _checkedList
+      checkBoxesStatusList: _checkedList
     });
   }
 
-  updateCheckedList(id){
-    let _checkedList = this.state.checkedList;
+  updateCheckBoxesStatusList(id){
+    let _checkedList = this.state.checkBoxesStatusList;
     _checkedList.forEach(el => {
       if(el.id === id){
         el.checked = !el.checked
       }
     });
     this.setState({
-      checkedList: _checkedList,
-      allChecked: false
+      checkBoxesStatusList: _checkedList,
+      allCheckBoxesChecked: this.allCheckBoxesChecked(_checkedList)
     });
   }
+  allCheckBoxesChecked(list){
+    let flag = true;
+    this.state.checkBoxesStatusList.forEach(el => {
+      if(!el.checked)
+        flag = false;
+    });
+    return flag;
+  }
 
-  isAnyChecked(){
-    // if(this.state.allChecked === true) return true;
-
-    let _checkedList = this.state.checkedList;
+  isAnyCheckBoxTrue(){
+    let _checkedList = this.state.checkBoxesStatusList;
     let flag = false;
     _checkedList.forEach(el => {
       if(el.checked === true){
@@ -62,19 +70,32 @@ class PaymentsTable extends React.Component {
     return flag;
   }
 
-handleAllChecked(){
-  this.setState({
-    allChecked: !this.state.allChecked
+handleAllCheckedChange(){
+  let _checkedList = this.state.checkBoxesStatusList;
+  _checkedList.forEach(el => {
+      el.checked = !this.state.allCheckBoxesChecked
   });
+  this.setState({
+    allCheckBoxesChecked: !this.state.allCheckBoxesChecked,
+    checkBoxesStatusList: _checkedList,
+  });
+}
+getCheckedStatus(id){
+  let flag = false;
+  this.state.checkBoxesStatusList.forEach(el => {
+    if(el.id == id)
+      flag = el.checked;
+  });
+  return flag;
 }
   render() {
     let payments = [];
 
     this.props.payments.forEach(payment => {
       payments.push(<PaymentsTableRow
-        allChecked={this.state.allChecked}
+        checked={this.getCheckedStatus(payment.id)}
         data={payment}
-        updateCheckedList={this.updateCheckedList}/>);
+        updateCheckBoxesStatusList={this.updateCheckBoxesStatusList}/>);
     });
     return (
       <section className="section pt-0">
@@ -88,12 +109,15 @@ handleAllChecked(){
             </CardHeader>
             <CardBody>
               <TableTools
-              isAnyChecked={this.isAnyChecked()}
+              isAnyChecked={this.isAnyCheckBoxTrue()}
               buttonTitle="افزودن هزینه"
               buttonLink="/add-new-payment"/>
               <TableFilters data={FILTERS}/>
               <Row className="justify-content-center py-1">
-                <PaymentsTableHeader handleAllChecked={this.handleAllChecked}/>
+                <PaymentsTableHeader
+                allCheckBoxesChecked={this.state.allCheckBoxesChecked}
+                handleAllCheckedChange={this.handleAllCheckedChange}
+                />
                 {payments}
               </Row>
             </CardBody>
