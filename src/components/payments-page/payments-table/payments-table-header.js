@@ -14,7 +14,8 @@ class PaymentsTableHeader extends React.Component {
                 className="custom-control-input"
                 id=" customCheckLogin"
                 type="checkbox"
-                onChange={() => this.props.handleAllChecked()}
+                onChange={() => this.props.handleAllCheckboxesStatusChange()}
+                checked={this.props.allCheckboxesStatus}
               />
               <label
                 className="custom-control-label pr-1"

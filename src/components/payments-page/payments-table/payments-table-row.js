@@ -9,32 +9,19 @@ class PaymentsTableRow extends React.Component {
     this.handleChecked = this.handleChecked.bind(this);
   }
   componentDidUpdate(prevProps,prevState){
-
-    if(this.props.allChecked !== prevProps.allChecked &&
-      this.props.allChecked===true){
+    if(prevProps.checkedStatus !== this.props.checkedStatus && this.props.checkedStatus===true){
       this.setState({
-        isChecked: true
-      });
+         isChecked: true
+       });
     }
-    if(this.props.allChecked !== prevProps.allChecked && this.props.allChecked===false){
+    if(prevProps.checkedStatus !== this.props.checkedStatus && this.props.checkedStatus===false){
       this.setState({
-        isChecked: false
-      });
+         isChecked: false
+       });
     }
-
-        if( prevState.isChecked !== this.state.isChecked && !prevState.isChecked){
-            this.setState({
-              isChecked: true
-            });
-          }
-          if( prevState.isChecked !== this.state.isChecked && !this.state.isChecked){
-              this.setState({
-                isChecked: false
-              });
-            }
   }
   handleChecked(){
-    this.props.updateCheckedList(this.props.data.id);
+    this.props.updateCheckboxesStatusList(this.props.data.id);
     this.setState({
       isChecked: !this.state.isChecked
     });
@@ -69,7 +56,7 @@ class PaymentsTableRow extends React.Component {
                 id={this.props.data.id}
                 type="checkbox"
                 onChange={this.handleChecked}
-                checked={this.props.allChecked || this.state.isChecked}
+                checked={this.state.isChecked}
               />
               <label
                 className="custom-control-label pr-1"
