@@ -21,7 +21,7 @@ constructor(){
            data-aos-delay="50"
            lg="3" xs="12" md='6'
            className="m-0 d-flex justify-content-center">
-        <Row className='pt-1 justify-content-center learning-card'>
+        <Row className='py-1 justify-content-center learning-card'>
           <Col xs="12 mt-3">
             <img
               className="rounded-circle account-circle-image"
