@@ -175,16 +175,23 @@
 }
 
 .group-unit-name-text {
-    background-color: #00e5ac;
-    text-align: center;
-    padding: 0.5rem auto !important;
+    /* background-color: #00e5ac; */
+    text-align: right;
+    padding: .1rem auto !important;
     width: 100%;
     border-radius: 20px;
     /*border: dashed #03091e66 1px;*/
     font-family: Samim, Tahoma, serif;
     font-size: 0.8rem !important;
 }
-
+.group-unit-username-text {
+    text-align: right;
+    padding: .1rem auto !important;
+    width: 100%;
+    font-family: Samim, Tahoma, serif;
+    font-size: 0.7rem !important;
+    color: #121314;
+}
 
 
 .DatePicker__input {

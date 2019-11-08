@@ -112,7 +112,8 @@ getCheckedStatus(id){
               <TableTools
               isAnyChecked={this.isAnyCheckBoxTrue()}
               buttonTitle="افزودن هزینه"
-              buttonLink="/add-new-payment"/>
+              buttonLink="/add-new-payment"
+              />
               <TableFilters data={FILTERS}/>
               <Row className="justify-content-center py-1">
                 <PaymentsTableHeader
