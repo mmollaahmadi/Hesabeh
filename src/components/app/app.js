@@ -176,7 +176,7 @@ class App extends Component {
               <Route
                 path="/add-new-payment"
                 exact
-                render={props => <AddPaymentPage {...props} />}
+                render={props => <AddPaymentPage currentUser={this.state.currentUser} />}
               />
               <Route
                 path="/dashboard"
