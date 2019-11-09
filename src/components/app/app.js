@@ -64,8 +64,17 @@ class App extends Component {
     this.handleLogout = this.handleLogout.bind(this);
     this.loadCurrentUser = this.loadCurrentUser.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
+    this.getUser = this.getUser.bind(this);
   }
-
+getUser(usernameOrEmailOrPhoneNumber){
+  let _user = null;
+  USERS.forEach(user => {
+    if(user.username === usernameOrEmailOrPhoneNumber || user.email === usernameOrEmailOrPhoneNumber ||
+    user.phoneNumber === usernameOrEmailOrPhoneNumber)
+    _user = user;
+  });
+  return _user;
+}
   loadCurrentUser(emailOrUsernameOrPhoneNumber, password) {
     let user = null;
     // eslint-disable-next-line array-callback-return
@@ -191,7 +200,7 @@ class App extends Component {
               <Route
                 path="/create-new-request"
                 exact
-                render={props => <CreateNewRequestPage currentUser={this.state.currentUser}{...props} />}
+                render={props => <CreateNewRequestPage getUser={this.getUser} currentUser={this.state.currentUser}{...props} />}
               />
               <Route
                 path="/mygroups"
@@ -206,7 +215,7 @@ class App extends Component {
               <Route
                 path="/create-new-group"
                 exact
-                render={props => <CreateNewGroupPage {...props} />}
+                render={props => <CreateNewGroupPage getUser={this.getUser}currentUser={this.state.currentUser}{...props} />}
               />
             </Switch>
         </div>

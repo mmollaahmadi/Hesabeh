@@ -50,7 +50,7 @@ class CreateNewRequestPage extends React.Component {
                 </Col>
 
                 <Col lg="7">
-                  <InviteOthersToMyGroup/>
+                  <InviteOthersToMyGroup getUser={this.props.getUser}/>
                 </Col>
 
                 <Col lg="7" className='offset-5'>

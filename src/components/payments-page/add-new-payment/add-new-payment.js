@@ -418,24 +418,27 @@ class AddPaymentPage extends React.Component {
                         </Col>
                       </Row>
                     </Row>
+
+                    <Card
+                      data-aos="fade-up"
+                      data-aos-duration="1000"
+                      data-aos-delay="50"
+                      className="mt-5 shadow"
+                    >
+                      <CardHeader>هزینه‌های اضافه شده</CardHeader>
+                      <CardBody>
+                        <Row className="m-0 d-flex justify-content-center">
+                          {tempTablePayments}
+                        </Row>
+                      </CardBody>
+                    </Card>
+                    
                   </Form>
                 </Col>
               </Row>
             </CardBody>
           </Card>
-          <Card
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="50"
-            className="mt-5 shadow"
-          >
-            <CardHeader>هزینه‌های اضافه شده</CardHeader>
-            <CardBody>
-              <Row className="m-0 d-flex justify-content-center">
-                {tempTablePayments}
-              </Row>
-            </CardBody>
-          </Card>
+
         </Container>
       </div>
     );

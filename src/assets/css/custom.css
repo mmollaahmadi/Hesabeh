@@ -56,7 +56,19 @@ h1, h2, h3, h4, h5, h6{
 .my-card-profile{
   margin-top: 5rem !important;
 }
-
+.dropdown-menu{
+  width: 100%;
+  /* display: flex !important; */
+  justify-content: flex-start;
+  padding-right: 1rem;
+}
+.dropdown{
+  flex: 1;
+}
+.no-user{
+  font-size: .8rem;
+  color: #14131255;
+}
 /* ============================== MODALS ==================================== */
 /* ========================================================================== */
 
@@ -541,7 +553,7 @@ border-radius: 10px 10px 0 0 !important;
 }
 .notification-table-row-btn{
   padding: 0.1rem 1rem;
-  margin: 0 0.2rem;
+  margin: 0 0.2rem !important;
 }
 .date-request{
   margin: auto 0;
