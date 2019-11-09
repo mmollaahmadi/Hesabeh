@@ -12,6 +12,7 @@ import {
 import Chip from "../../common/chip/chip";
 import UserGroupAccount from "../../common/user-group-account/user-group-account";
 import Dropzone from "../../common/dropzone/dropzone";
+import ChooseUsers from '../../common/choose-users/choose-users'
 
 class RequirementsListRequest extends React.Component {
   constructor(props) {
@@ -69,44 +70,8 @@ class RequirementsListRequest extends React.Component {
                 </Row>*/}
 
                 <Row className=" m-0 text-center justify-content-center">
-                  <Col lg="12" className="m-0 mt-3">
-                    <Row className="m-0 d-flex justify-content-right">
-                      <p className='p-0 mx-3'>مخاطبین: </p>
-                      <Chip
-                        class="mb-2 ml-2"
-                        haveCloseButton="true"
-                        avatarSrc={require("../../../assets/img/users/user01.jpg")}
-                        label="محمد ملااحمدی"
-                        // onDelete={() => this.deleteUser()}
-                      />
-                      <Chip
-                        class="mb-2 ml-2"
-                        haveCloseButton="true"
-                        avatarSrc={require("../../../assets/img/users/user01.jpg")}
-                        label="محمد ملااحمدی"
-                        // onDelete={() => this.deleteUser()}
-                      />
-                      <Chip
-                        class="mb-2 ml-2"
-                        haveCloseButton="true"
-                        avatarSrc={require("../../../assets/img/users/user01.jpg")}
-                        label="محمد ملااحمدی"
-                        // onDelete={() => this.deleteUser()}
-                      />
-                      <Button
-                        className="btn btn-icon payments-btn-lv2 mt-0"
-                        type="button"
-                        color="dark-green">
-                          <span className="btn-inner--icon">
-                            <i className="fa fa-group"/>
-                          </span>
-                        {/*<span className="btn-inner--text">مصرف کنندگان</span>*/}
-                      </Button>
-                    </Row>
-
-                  </Col>
-
-
+                  <ChooseUsers currentUser={this.props.currentUser} title={'*مخاطبین:'} />
+                                    
                   <Col lg="5" className="m-0">
                     <FormGroup className="mb-3">
                       <InputGroup className="input-group-alternative">

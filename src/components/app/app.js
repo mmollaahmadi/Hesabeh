@@ -191,7 +191,7 @@ class App extends Component {
               <Route
                 path="/create-new-request"
                 exact
-                render={props => <CreateNewRequestPage {...props} />}
+                render={props => <CreateNewRequestPage currentUser={this.state.currentUser}{...props} />}
               />
               <Route
                 path="/mygroups"

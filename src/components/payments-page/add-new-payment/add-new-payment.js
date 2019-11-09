@@ -25,12 +25,7 @@ import DatePicker from "react-persian-calendar-date-picker";
 import AOS from "aos";
 import GroupUnit from "./group-unit";
 import UserUnit from "./user-unit";
-// import DefaultExample from './example.js';
-const GROUP = {
-  id: "1",
-  name: "",
-  username: ""
-};
+import ChooseUsers from '../../common/choose-users/choose-users'
 class AddPaymentPage extends React.Component {
   constructor(props) {
     super(props);
@@ -254,7 +249,7 @@ class AddPaymentPage extends React.Component {
           );
         });
       }
-    });    
+    });
 
     let consumers = [];
     if (this.state.isSelectedConsumers) {
@@ -371,122 +366,7 @@ class AddPaymentPage extends React.Component {
                           </InputGroup>
                         </FormGroup>
                       </Col>
-                      <Col lg="12" className="m-0 mt-3">
-                        <Row className="m-0 d-flex justify-content-right">
-                          <p className="p-0 mx-3 consumers-text">
-                            مصرف‌کنندگان:{" "}
-                          </p>
-                          {consumers}
-                          <Button
-                            className="btn btn-icon payments-btn-lv2 mt-0"
-                            type="button"
-                            color="dark-green"
-                            onClick={() =>
-                              this.toggleModal("consumersCollapse")
-                            }
-                          >
-                            <span className="btn-inner--icon">
-                              <i className="fa fa-user-plus" />
-                            </span>
-                            {/*<span className="btn-inner--text">مصرف کنندگان</span>*/}
-                          </Button>
-
-                          <Modal
-                            className="modal-dialog-centered"
-                            isOpen={this.state.consumersCollapse}
-                            toggle={() => this.toggleModal("consumersCollapse")}
-                          >
-                            <div className="modal-body p-0">
-                              <Card className="bg-secondary shadow border-0">
-                                <CardHeader className="bg-transparent p-1">
-                                  {/* <Row className="justify-content-center"> */}
-                                  <div className="text-muted  mt-3 mb-2">
-                                    <h5
-                                      className={`selectGroupCardHeader my-modal-header ${
-                                        this.state.isStepOne ? "" : "d-none"
-                                      }`}
-                                    >
-                                      انتخاب گروه
-                                    </h5>
-                                    <h5
-                                      className={`selectUsersCardHeader my-modal-header ${
-                                        this.state.isStepOne ? "d-none" : ""
-                                      }`}
-                                    >
-                                      انتخاب کاربران
-                                    </h5>
-                                  </div>
-                                  {/* </Row> */}
-                                </CardHeader>
-                                <CardBody
-                                  className={`selectGroupCardBody px-lg-3 py-lg-3 ${
-                                    this.state.isStepOne ? "" : "d-none"
-                                  }`}
-                                >
-                                  <Row className={"groups m-0"}>{groups}</Row>
-                                  <Row className="text-center my-4">
-                                    <Col>
-                                      <Button
-                                        className="profile-modal-btn"
-                                        // className={'continueBtn profile-modal-btn'}
-                                        color="primary"
-                                        disabled={
-                                          !this.state.isAnyGroupSelected
-                                        }
-                                        onClick={this.handleBackOrNextStep}
-                                      >
-                                        مرحله بعد
-                                      </Button>
-                                      <Button
-                                        className="profile-modal-btn"
-                                        color="default"
-                                        to="/dashboard"
-                                        tag={Link}
-                                      >
-                                        بیخیال
-                                      </Button>
-                                    </Col>
-                                  </Row>
-                                </CardBody>
-                                <CardBody
-                                  className={`selectUsersCardBody px-lg-3 py-lg-3 ${
-                                    this.state.isStepOne ? "d-none" : ""
-                                  }`}
-                                >
-                                  <Row className={"groups m-0"}>{users}</Row>
-                                  <Row className="text-center my-4">
-                                    <Col>
-                                      <Button
-                                        className="profile-modal-btn"
-                                        color="primary"
-                                        disabled={!this.state.isAnyUserSelected}
-                                        onClick={this.handleSelectConsumers}
-                                      >
-                                        انتخاب
-                                      </Button>
-                                      <Button
-                                        className="profile-modal-btn"
-                                        color="default"
-                                        onClick={this.handleBackOrNextStep}
-                                      >
-                                        بازگشت
-                                      </Button>
-                                      <Button
-                                        className="profile-modal-btn"
-                                        color="default"
-                                        to="/dashboard"
-                                        tag={Link}
-                                      >
-                                        بیخیال
-                                      </Button>
-                                    </Col>
-                                  </Row>
-                                </CardBody>
-                              </Card>
-                            </div>
-                          </Modal>
-                        </Row>
-                      </Col>
+                      <ChooseUsers currentUser={this.props.currentUser} title={'*مصرف کنندگان:'} />
 
                       <Col lg="12" className="m-0 mt-2" id="image-upload-body">
                         <div className="example">

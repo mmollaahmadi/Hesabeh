@@ -46,7 +46,7 @@ class CreateNewRequestPage extends React.Component {
             <Container>
               <Row>
                 <Col lg="12">
-                  <RequirementsListRequest groups={GROUPS}/>
+                  <RequirementsListRequest currentUser={this.props.currentUser} groups={GROUPS}/>
                 </Col>
 
                 <Col lg="7">
