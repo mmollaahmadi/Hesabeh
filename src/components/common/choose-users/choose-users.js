@@ -232,7 +232,7 @@ class ChooseUsers extends React.Component {
     return(
       <Col lg="12" className="m-0 mt-3">
         <Row className="m-0 d-flex justify-content-right">
-          <p className="p-0 mx-3 consumers-text">
+          <p className="p-0 mx-3 my-auto consumers-text">
             {this.props.title}
           </p>
           {consumers}

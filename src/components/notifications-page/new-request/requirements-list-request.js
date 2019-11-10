@@ -190,10 +190,7 @@ class RequirementsListRequest extends React.Component {
                   </Row>
                 </Row>
 
-                <Card
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                  data-aos-delay="50"
+                <Card                
                   className="mt-5 shadow"
                 >
                   <CardHeader>نیازمندیهای اضافه شده</CardHeader>

@@ -67,6 +67,41 @@ export const USERS = [
           },
         ]
       },
+    ],
+    labels:[
+      {
+        id:'1',
+        name:'hih',
+        color: {
+          r:'20',
+          g:'200',
+          b:'20',
+          a:'1'
+        },
+        isTextColorDark:true
+      },
+      {
+        id:'2',
+        name:'aaa',
+        color: {
+          r:'20',
+          g:'200',
+          b:'20',
+          a:'1'
+        },
+        isTextColorDark: false
+      },
+      {
+        id:'3',
+        name:'kkk',
+        color: {
+          r:'20',
+          g:'200',
+          b:'20',
+          a:'1'
+        },
+        isTextColorDark: true
+      },
     ]
   },
   {

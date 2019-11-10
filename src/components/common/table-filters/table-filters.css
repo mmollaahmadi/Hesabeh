@@ -3,6 +3,7 @@
   padding: 0.5vmin 2vmin;
   background-color: #f0f0f0;
   box-shadow: none;
+      font-size: 0.875rem;
 }
 .table-filters-btn:focus{
   box-shadow: none;

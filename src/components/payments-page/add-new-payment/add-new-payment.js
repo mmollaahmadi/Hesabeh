@@ -26,6 +26,7 @@ import AOS from "aos";
 import GroupUnit from "./group-unit";
 import UserUnit from "./user-unit";
 import ChooseUsers from '../../common/choose-users/choose-users'
+import DefaultExample from './example'
 class AddPaymentPage extends React.Component {
   constructor(props) {
     super(props);
@@ -280,7 +281,7 @@ class AddPaymentPage extends React.Component {
       tempTablePayments = <p>hihhihhi</p>;
     }
 
-    // const dragBody = document.getElementById('image-upload-body');
+    const dragBody = document.getElementById('image-upload-body');
 
     return (
       <div className="my-body">
@@ -366,12 +367,13 @@ class AddPaymentPage extends React.Component {
                           </InputGroup>
                         </FormGroup>
                       </Col>
+
                       <ChooseUsers currentUser={this.props.currentUser} title={'*مصرف کنندگان:'} />
 
                       <Col lg="12" className="m-0 mt-2" id="image-upload-body">
-                        <div className="example">
-                          <Dropzone onFilesAdded={console.log} />
-                          {/* <DefaultExample ii={dragBody}/>                            */}
+                        <div className="example w-100">
+                          {/*<Dropzone onFilesAdded={console.log} />*/}
+                           <DefaultExample ii={dragBody}/>
                         </div>
                       </Col>
 
@@ -432,7 +434,7 @@ class AddPaymentPage extends React.Component {
                         </Row>
                       </CardBody>
                     </Card>
-                    
+
                   </Form>
                 </Col>
               </Row>

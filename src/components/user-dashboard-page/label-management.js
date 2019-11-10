@@ -18,8 +18,82 @@ import {
   InputGroupAddon
 } from "reactstrap";
 import { GithubPicker } from "react-color";
+import ColorPicker from '../common/color-picker/color-picker.js'
+import reactCSS from 'reactcss'
+
 class LabelManagement extends React.Component {
+  constructor(){
+    super();
+    this.state={
+      labels:[],
+      textLabel:'',
+      isTextColorDark:true,
+      colorPicked:{
+        r:'20',
+        g:'200',
+        b:'20',
+        a:'1'
+      }
+    };
+    this.handleAddLabel = this.handleAddLabel.bind(this);
+  }
+  handleCreateLabel = () => {
+    let _labels = this.state.labels;
+    _labels.push(
+      {
+        name: this.state.textLabel,
+        color: this.state.colorPicked,
+        isTextColorDark: this.state.isTextColorDark
+      }
+    );
+    this.setState({labels: _labels});
+  }
+  handleInputChange = (event) => {
+    this.setState({textLabel: event.target.value});
+  };
+  handleChangeTextColor = () => {
+    this.setState({isTextColorDark: !this.state.isTextColorDark});
+  };
+  handleChangeColor = (color) => {
+    this.setState({colorPicked: color.rgb});
+  };
+  componentDidMount(){
+    let _labels = this.state.labels;
+    this.props.currentUser.labels.forEach(label => {
+      _labels.push(label);
+    });
+    this.setState({
+      labels: _labels
+    });
+  }
+  handleAddLabel(){
+
+  }
   render() {
+    const styles = reactCSS({
+      'default':{
+        color:{
+          color:`${this.state.isTextColorDark ? 'rgb(0,0,0,1)' : 'rgb(255,255,255,1)'}`,
+          background:`rgba(${this.state.colorPicked.r},${this.state.colorPicked.g},${this.state.colorPicked.b},${this.state.colorPicked.a})`,
+        },
+        textColor:{
+          color:`${this.state.isTextColorDark ? 'rgb(0,0,0,1)' : 'rgb(255,255,255,1)'}`,
+        }
+      },
+    });
+    let labels = [];
+    this.state.labels.forEach(label => {
+      labels.push(
+        <Badge
+        style={{background:`rgba(${label.color.r},${label.color.g},${label.color.b},${label.color.a})`,
+      color:`${label.isTextColorDark ? 'rgb(0,0,0,1)' : 'rgb(255,255,255,1)'}`}}
+        color="primary"
+        className="profile-label align-self-center">
+          {label.name}
+          <i className="fa fa-close mr-2"></i>
+        </Badge>
+      );
+    });
     return (
       <>
       <Col lg="7" className="order-2 mt-3">
@@ -38,27 +112,30 @@ class LabelManagement extends React.Component {
                       <i className="fa fa-tag"/>
                     </InputGroupText>
                   </InputGroupAddon>
-                    <Input className="audit-input" placeholder="نام برچسب" />
+                    <Input
+                    className="audit-input"
+                    placeholder="نام برچسب"
+                    onChange={this.handleInputChange} />
                   </InputGroup>
                 </FormGroup>
               </Col>
 
               <Col lg="auto" className="d-flex align-items-center">
-                <UncontrolledDropdown nav>
-                  <DropdownToggle className="p-0 btn-circle m-0">
-                    <i className="fa fa-paint-brush"></i>
-                  </DropdownToggle>
-                  <DropdownMenu className="p-0">
-                    <DropdownItem className="p-0">
-                      <GithubPicker className="color-picker" />
-                    </DropdownItem>
-                  </DropdownMenu>
-                </UncontrolledDropdown>
+                <ColorPicker handleChangeColor={this.handleChangeColor}/>
+                <Button
+                style={styles.color}
+                className="p-0 btn-circle m-0"
+                onClick={this.handleChangeTextColor}>
+                  <i style={styles.textColor} className="fa fa-pencil"/>
+                </Button>
               </Col>
 
               <Col lg="auto" className="">
                 <FormGroup className="m-0">
-                  <Button color="primary" type="button">
+                  <Button
+                  color="primary"
+                  type="button"
+                  onClick={this.handleCreateLabel}>
                     ایجاد برچسب
                   </Button>
                 </FormGroup>
@@ -68,12 +145,7 @@ class LabelManagement extends React.Component {
 
           <Row className="justify-content-start">
             <h6 className="m-0"> برچسبها:</h6>
-            <Badge color="primary" className="profile-label align-self-center">
-              برچسب 1<i className="fa fa-close mr-2"></i>
-            </Badge>
-            <Badge color="primary" className="profile-label align-self-center">
-              برچسب 1<i className="fa fa-close mr-2"></i>
-            </Badge>
+            {labels}
           </Row>
         </CardBody>
       </Card>

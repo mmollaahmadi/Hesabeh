@@ -1,3 +1,38 @@
 .dropzone .dz-preview.dz-image-preview {
     background: #E1E1E1;
 }
+div.filepicker{
+  background-color: transparent;
+  /* background-image: url('../../../assets/img/upload-img.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center; */
+}
+.dz-remove{
+  font-family: Samim;
+  padding-top: .3rem;
+}
+.dropzone .dz-message{
+  font-family: Samim;
+  color: #14131255;
+  margin: 0 0 1rem 0;
+}
+.dropzone .dz-preview.dz-image-preview{
+  background-color: transparent;
+}
+.filepicker-file-icon::before{
+  border-color: #14131255;
+}
+.filepicker-file-icon::after{
+  background-color: #14131299;
+  direction: ltr;
+}
+.filepicker-file-icon:first-child{
+  padding-left: 25px;
+}
+/* .filepicker-file-icon:not(:first-child){
+  margin: 1.5rem 2rem 2.5rem 2rem;
+}
+.filepicker-file-icon{
+  margin-right: 0;
+} */
