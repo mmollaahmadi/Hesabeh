@@ -33,25 +33,31 @@ class AddPaymentPage extends React.Component {
     this.state = {
       paymentName: {
         placeholder: "نام هزینه",
-        value: ""
+        value: "",
+        isSave: false
       },
       paymentCost: {
         placeholder: "میزان هزینه به تومان",
-        value: ""
+        value: "",
+        isSave: false
       },
       paymentDescription: {
         placeholder: "توضیحات",
-        value: ""
+        value: "",
+        isSave: false
       },
       paymentDate: {
         placeholder: "امروز",
-        value: ""
+        value: "",
+        isSave: false
       },
       paymentConsumers: {
-        value: []
+        value: [],
+        isSave: false
       },
-      paymentPicture: {
-        value: []
+      paymentPictures: {
+        value: [],
+        isSave: false
       },
       payments: [],
       consumersCollapse: false,
@@ -75,7 +81,79 @@ class AddPaymentPage extends React.Component {
       this
     );
     this.handleSelectConsumers = this.handleSelectConsumers.bind(this);
+    this.handleSaveInputvalueCheckbox = this.handleSaveInputvalueCheckbox.bind(this);
+    this.resetInputs = this.resetInputs.bind(this);
+    this.handleAddPaymentClick = this.handleAddPaymentClick.bind(this);
+    this.setUsers=this.setUsers.bind(this);
     AOS.init();
+  }
+  setUsers(users){
+    this.setState({
+      paymentConsumers: {
+        ...this.state.paymentConsumers,
+        value: users,
+      },
+    });
+  }
+  handleAddPaymentClick(){
+    this.resetInputs();
+  }
+  resetInputs(){
+    this.setState({
+      paymentName: {
+        ...this.state.paymentName,
+        value: (!this.state.paymentName.isSave ? '' : this.state.paymentName.value)
+      },
+      paymentCost: {
+        ...this.state.paymentCost,
+        value: (!this.state.paymentCost.isSave ? '' : this.state.paymentCost.value)
+      },
+      paymentDescription: {
+        ...this.state.paymentDescription,
+        value: (!this.state.paymentDescription.isSave ? '' : this.state.paymentDescription.value)
+      },
+      paymentDate: {
+        ...this.state.paymentDate,
+        value: (!this.state.paymentDate.isSave ? '' : this.state.paymentDate.value)
+      },
+      paymentConsumers: {
+        ...this.state.paymentConsumers,
+        value: (!this.state.paymentConsumers.isSave ? '' : this.state.paymentConsumers.value)
+      },
+      paymentPictures: {
+        ...this.state.paymentPictures,
+        value: (!this.state.paymentPictures.isSave ? '' : this.state.paymentPictures.value)
+      },
+    });
+  }
+  handleSaveInputvalueCheckbox(){
+    this.setState({
+      saveInputsValue: !this.state.saveInputsValue,
+      paymentName: {
+        ...this.state.paymentName,
+        isSave: ((this.state.paymentName.value!==''&&!this.state.saveInputsValue) ? true : false)
+      },
+      paymentCost: {
+        ...this.state.paymentCost,
+        isSave: ((this.state.paymentCost.value!==''&&!this.state.saveInputsValue) ? true : false)
+      },
+      paymentDescription: {
+        ...this.state.paymentDescription,
+        isSave: !this.state.saveInputsValue
+      },
+      paymentDate: {
+        ...this.state.paymentDate,
+        isSave: !this.state.saveInputsValue
+      },
+      paymentConsumers: {
+        ...this.state.paymentConsumers,
+        isSave: !this.state.saveInputsValue
+      },
+      paymentPictures: {
+        ...this.state.paymentPictures,
+        isSave: !this.state.saveInputsValue
+      },
+    });
   }
   handleSelectConsumers() {
     if (this.state.isAnyGroupSelected && this.state.isAnyUserSelected) {
@@ -114,7 +192,6 @@ class AddPaymentPage extends React.Component {
       // usersOfGroupsList: usersList
     });
   }
-
   handleBackOrNextStep() {
     let fadeAnimation = "fadeOut";
     if (this.state.isStepOne) {
@@ -126,7 +203,6 @@ class AddPaymentPage extends React.Component {
       this.animateCSS(".selectUsersCardBody", fadeAnimation, this.myCallBack);
     }
   }
-
   myCallBack() {
     let fadeInAnimation = "fadeIn";
     // let fadeAnimation = 'fadeOut';
@@ -226,6 +302,7 @@ class AddPaymentPage extends React.Component {
       usersOfSelectedGroupsList: _users
     });
   }
+
   render() {
     // let _groups = this.props.currentUser.groups;
     let _groups = this.state.groupsList;
@@ -332,6 +409,9 @@ class AddPaymentPage extends React.Component {
                             <Input
                               className="audit-input"
                               placeholder={this.state.paymentCost.placeholder}
+                              name="paymentCost"
+                              value={this.state.paymentCost.value}
+                              onChange={this.handleInputChange}
                             />
                           </InputGroup>
                         </FormGroup>
@@ -362,13 +442,19 @@ class AddPaymentPage extends React.Component {
                               placeholder={
                                 this.state.paymentDescription.placeholder
                               }
+                              name="paymentDescription"
+                              value={this.state.paymentDescription.value}
+                              onChange={this.handleInputChange}
                               type="email"
                             />
                           </InputGroup>
                         </FormGroup>
                       </Col>
 
-                      <ChooseUsers currentUser={this.props.currentUser} title={'*مصرف کنندگان:'} />
+                      <ChooseUsers
+                      currentUser={this.props.currentUser}
+                      title={'*مصرف کنندگان:'}
+                      setUsers={this.setUsers} />
 
                       <Col lg="12" className="m-0 mt-2" id="image-upload-body">
                         <div className="example w-100">
@@ -391,12 +477,14 @@ class AddPaymentPage extends React.Component {
                           <div className="custom-control custom-control-alternative custom-checkbox">
                             <input
                               className="custom-control-input"
-                              id=" customCheckLogin"
+                              id=" saveInputsValueCheckbox"
                               type="checkbox"
+                              checked={this.saveInputsValue}
+                              onChange={this.handleSaveInputvalueCheckbox}
                             />
                             <label
                               className="custom-control-label pr-1"
-                              htmlFor=" customCheckLogin"
+                              htmlFor=" saveInputsValueCheckbox"
                             >
                               <span className="signin-modal-text mr-4">
                                 ذخیره مقادیر ورودی
@@ -412,7 +500,7 @@ class AddPaymentPage extends React.Component {
                             className=""
                             color="primary"
                             href="#pablo"
-                            onClick={() => this.toggle("password")}
+                            onClick={this.handleAddPaymentClick}
                             name="email"
                           >
                             افزودن هزینه

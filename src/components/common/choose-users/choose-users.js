@@ -33,6 +33,7 @@ class ChooseUsers extends React.Component {
       groupsList: [],
       usersOfGroupsList: [],
       usersOfSelectedGroupsList: [],
+      selectedUsers:[],
       isAnyGroupSelected: false,
       isAnyUserSelected: false,
       isSelectedConsumers: false
@@ -51,14 +52,21 @@ class ChooseUsers extends React.Component {
 
   }
   handleSelectConsumers() {
+    let selectedUsers = [];
     if (this.state.isAnyGroupSelected && this.state.isAnyUserSelected) {
       let _groupsList = this.state.groupsList;
       _groupsList.forEach(group => {
         group.users.forEach(user => {
           user.selected = user.checked;
+          if(user.selected)
+            selectedUsers.push(user);
         });
       });
+      if(this.props.setUsers){
+        this.props.setUsers(selectedUsers);
+      }
       this.setState({
+        selectedUsers:selectedUsers,
         groupsList:_groupsList,
         isSelectedConsumers: true,
         consumersCollapse: false
