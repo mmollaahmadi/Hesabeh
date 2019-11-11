@@ -27,6 +27,9 @@ import GroupUnit from "./group-unit";
 import UserUnit from "./user-unit";
 import ChooseUsers from '../../common/choose-users/choose-users'
 import DefaultExample from './example'
+// import PaymentsTable from '../payments-table/payments-table'
+import TempTable from './temp-table/temp-table'
+
 class AddPaymentPage extends React.Component {
   constructor(props) {
     super(props);
@@ -85,7 +88,25 @@ class AddPaymentPage extends React.Component {
     this.resetInputs = this.resetInputs.bind(this);
     this.handleAddPaymentClick = this.handleAddPaymentClick.bind(this);
     this.setUsers=this.setUsers.bind(this);
+    this.setSelectedDay = this.setSelectedDay.bind(this);
+    this.setFiles=this.setFiles.bind(this);
     AOS.init();
+  }
+  setFiles(files){
+    this.setState({
+      paymentPictures:{
+        ...this.state.paymentPictures,
+        value:files
+      }
+    });
+  }
+  setSelectedDay(value){
+    this.setState({
+      paymentDate:{
+        ...this.state.paymentDate,
+        value:value
+      }
+    });
   }
   setUsers(users){
     this.setState({
@@ -96,7 +117,48 @@ class AddPaymentPage extends React.Component {
     });
   }
   handleAddPaymentClick(){
-    this.resetInputs();
+    let payments = this.state.payments;
+    payments.push({
+      name: this.state.paymentName.value,
+      cost: this.state.paymentCost.value,
+      description: this.state.paymentDescription.value,
+      date: this.state.paymentDate.value,
+      consumers:this.state.paymentConsumers.value,
+      pictures:this.state.paymentPictures.value,
+    });
+
+    // this.resetInputs();
+    this.setState({
+      payments:payments,
+      paymentName: {
+        ...this.state.paymentName,
+        value: (!this.state.paymentName.isSave ? '' : this.state.paymentName.value)
+      },
+      paymentCost: {
+        ...this.state.paymentCost,
+        value: (!this.state.paymentCost.isSave ? '' : this.state.paymentCost.value)
+      },
+      paymentDescription: {
+        ...this.state.paymentDescription,
+        value: (!this.state.paymentDescription.isSave ? '' : this.state.paymentDescription.value)
+      },
+      paymentDate: {
+        ...this.state.paymentDate,
+        value: (!this.state.paymentDate.isSave ? '' : this.state.paymentDate.value)
+      },
+      paymentConsumers: {
+        ...this.state.paymentConsumers,
+        value: (!this.state.paymentConsumers.isSave ? [] : this.state.paymentConsumers.value)
+      },
+      paymentPictures: {
+        ...this.state.paymentPictures,
+        value: (!this.state.paymentPictures.isSave ? '' : this.state.paymentPictures.value)
+      },
+    });
+
+    // this.setState({
+    //   payments:payments
+    // });
   }
   resetInputs(){
     this.setState({
@@ -350,12 +412,17 @@ class AddPaymentPage extends React.Component {
     // Dropzone class:
     // var myDropzone = new Dropzone("div#myId", { url: "/file/post"});
 
-    const payments = this.state;
-    let tempTablePayments = (
-      <p className="nothing">هیچ هزینه ای اضافه نشده است.</p>
-    );
-    if (payments.length > 0) {
-      tempTablePayments = <p>hihhihhi</p>;
+    let payments = this.state.payments;
+    let tempTablePayments = null;
+    if(payments.length === 0){
+        tempTablePayments = (
+          <p className="nothing">هیچ هزینه ای اضافه نشده است.</p>
+        );
+    }
+    else {
+      tempTablePayments = (
+        <TempTable payments={payments}/>
+      );
     }
 
     const dragBody = document.getElementById('image-upload-body');
@@ -424,7 +491,17 @@ class AddPaymentPage extends React.Component {
                                 <i className="fa fa-calendar" />
                               </InputGroupText>
                             </InputGroupAddon>
-                            <PersianCalendar />
+                            {/*<PersianCalendar />*/}
+                            <DatePicker
+                              selectedDay={this.state.paymentDate.value}
+                              onChange={this.setSelectedDay}
+                              colorPrimary="#01cd9a"
+                              calendarClassName="custom-calendar"
+                              calendarTodayClassName="custom-today-day"
+                              inputPlaceholder="انتخاب روز"
+                              // renderInput={renderCustomInput}
+                              // inputClassName='input-group-alternative1'
+                            />
                           </InputGroup>
                         </FormGroup>
                       </Col>
@@ -459,7 +536,7 @@ class AddPaymentPage extends React.Component {
                       <Col lg="12" className="m-0 mt-2" id="image-upload-body">
                         <div className="example w-100">
                           {/*<Dropzone onFilesAdded={console.log} />*/}
-                           <DefaultExample ii={dragBody}/>
+                           <DefaultExample setFiles={this.setFiles}ii={dragBody}/>
                         </div>
                       </Col>
 
@@ -510,9 +587,7 @@ class AddPaymentPage extends React.Component {
                     </Row>
 
                     <Card
-                      data-aos="fade-up"
-                      data-aos-duration="1000"
-                      data-aos-delay="50"
+                      
                       className="mt-5 shadow"
                     >
                       <CardHeader>هزینه‌های اضافه شده</CardHeader>
@@ -535,31 +610,31 @@ class AddPaymentPage extends React.Component {
   }
 }
 
-const PersianCalendar = () => {
-  const [selectedDay, setSelectedDay] = useState(null);
-
-  // render regular HTML input element
-  // const renderCustomInput = ({ ref, onFocus, onBlur }) => (
-  //   <input
-  //     readOnly
-  //     ref={ref} // necessary
-  //     onFocus={onFocus} // necessary
-  //     onBlur={onBlur} // necessary
-  //     className="input-group-alternative1" // a styling class
-  //   />
-  // );
-
-  return (
-    <DatePicker
-      selectedDay={selectedDay}
-      onChange={setSelectedDay}
-      colorPrimary="#01cd9a"
-      calendarClassName="custom-calendar"
-      calendarTodayClassName="custom-today-day"
-      inputPlaceholder="انتخاب روز"
-      // renderInput={renderCustomInput}
-      // inputClassName='input-group-alternative1'
-    />
-  );
-};
+// const PersianCalendar = () => {
+//   const [selectedDay, setSelectedDay] = useState(null);
+//
+//   // render regular HTML input element
+//   // const renderCustomInput = ({ ref, onFocus, onBlur }) => (
+//   //   <input
+//   //     readOnly
+//   //     ref={ref} // necessary
+//   //     onFocus={onFocus} // necessary
+//   //     onBlur={onBlur} // necessary
+//   //     className="input-group-alternative1" // a styling class
+//   //   />
+//   // );
+//
+//   return (
+//     <DatePicker
+//       selectedDay={selectedDay}
+//       onChange={setSelectedDay}
+//       colorPrimary="#01cd9a"
+//       calendarClassName="custom-calendar"
+//       calendarTodayClassName="custom-today-day"
+//       inputPlaceholder="انتخاب روز"
+//       // renderInput={renderCustomInput}
+//       // inputClassName='input-group-alternative1'
+//     />
+//   );
+// };
 export default AddPaymentPage;

@@ -48,36 +48,40 @@ handleInputChange(value){
         userOrMessage=(<p className='no-user p-0 my-2 mx-1'>کاربری با این مشخصات وجود ندارد!</p>);
       }else{
         userOrMessage=(
-          <>
           <Chip
           class="mx-1 my-2"
           haveCloseButton="true"
             avatarSrc={require("../../../assets/img/users/user01.jpg")}
             label={this.state.user.name}
+            clickable={true}
+            onClick={this.handleAddButton}
             // onDelete={() => this.deleteUser()}
           />
-          <Button
-          className='p-0 my-auto'
-          color='primary'
-          onClick={this.handleAddButton}>
-          افزودن کاربر
-          </Button>
-          </>
         );
       }
 
-      let users = [];
-      this.state.users.forEach(user => {
-          users.push(
-            <Chip
-            class="mb-2 ml-2"
-            haveCloseButton="true"
-              avatarSrc={require("../../../assets/img/users/user01.jpg")}
-              label={user.name}
-              // onDelete={() => this.deleteUser()}
-            />
-          );
-      });
+let users = null;
+if(this.state.users.length > 0){
+  users = [];
+  this.state.users.forEach(user => {
+      users.push(
+        <Chip
+        class="mb-2 ml-2"
+        haveCloseButton="true"
+          avatarSrc={require("../../../assets/img/users/user01.jpg")}
+          label={user.name}
+          // onDelete={() => this.deleteUser()}
+        />
+      );
+  });
+}else{
+  users = (
+    <p className="p-0 ml-3 mr-0 my-auto consumers-text">
+      هیچ کاربری انتخاب نشده است!
+    </p>
+  );
+}
+
 
         return(
             <Card data-aos="fade-up"

@@ -18,31 +18,61 @@ import Chip from "../../common/chip/chip";
 import UserGroupAccount from "../../common/user-group-account/user-group-account";
 import Dropzone from "../../common/dropzone/dropzone";
 import ChooseUsers from "../../common/choose-users/choose-users";
+import DefaultExample from '../../payments-page/add-new-payment/example'
+import RTempTable from './temp-table/r-temp-table'
 
 class RequirementsListRequest extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      orderName: {
-        placeholder: "نام سفارش",
-        value: ""
-      },
-      orderDescription: {
-        placeholder: "توضیحات",
+      orderNameAndDescription: {
+        placeholder: "نام و توضیحات نیازمندی",
         value: ""
       },
       orderSupplier: {
         value: []
       },
-      orderPicture: {
+      orderPictures: {
         value: []
       },
       requirements:[]
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleAddRequirementClick = this.handleAddRequirementClick.bind(this);
+    this.setFiles = this.setFiles.bind(this);
   }
+handleAddRequirementClick(){
+  let requirements = this.state.requirements;
+  requirements.push({
+    name: this.state.orderNameAndDescription.value,
+    consumers:this.state.orderSupplier.value,
+    pictures:this.state.orderPictures.value,
+  });
 
+  // this.resetInputs();
+  this.setState({
+    requirements:requirements,
+    orderNameAndDescription: {
+      ...this.state.orderNameAndDescription,
+      value: ''
+    },
+    // orderSupplier: {
+    //   ...this.state.orderSupplier,
+    //   value: []
+    // },
+    orderPictures: {
+      value:[]
+    },
+  });
+}
+setFiles(files){
+  this.setState({
+    orderPictures:{
+      value:files
+    }
+  });
+}
   handleInputChange(event) {
     let name = event.target.name;
     let value = event.target.value;
@@ -61,12 +91,17 @@ class RequirementsListRequest extends React.Component {
       groups.push(<UserGroupAccount username={group.username} />);
     });
 
-    const requirements = this.state;
-    let tempTableRequirements = (
-      <p className="nothing">هیچ هزینه ای اضافه نشده است.</p>
-    );
-    if (requirements.length > 0) {
-      tempTableRequirements = <p>hihhihhi</p>;
+    let requirements = this.state.requirements;
+    let tempTableRequirements = null;
+    if(requirements.length === 0){
+        tempTableRequirements = (
+          <p className="nothing">هیچ نیازمندی ای ضافه نشده است.</p>
+        );
+    }
+    else {
+      tempTableRequirements = (
+        <RTempTable requirements={requirements}/>
+      );
     }
 
     return (
@@ -90,27 +125,7 @@ class RequirementsListRequest extends React.Component {
                     title={"*مخاطبین:"}
                   />
 
-                  <Col lg="5" className="m-0">
-                    <FormGroup className="mb-3">
-                      <InputGroup className="input-group-alternative">
-                        <InputGroupAddon addonType="prepend">
-                          <InputGroupText>
-                            <i className="ni ni-email-83" />
-                          </InputGroupText>
-                        </InputGroupAddon>
-
-                        <Input
-                          className="audit-input"
-                          placeholder={this.state.orderName.placeholder}
-                          name="orderName"
-                          value={this.state.orderName.value}
-                          onChange={this.handleInputChange}
-                        />
-                      </InputGroup>
-                    </FormGroup>
-                  </Col>
-
-                  <Col lg="7" className="m-0">
+                  <Col lg="12" className="m-0">
                     <FormGroup className="mb-2 p-0">
                       <InputGroup className="input-group-alternative">
                         <InputGroupAddon addonType="prepend">
@@ -121,8 +136,11 @@ class RequirementsListRequest extends React.Component {
 
                         <Input
                           className="audit-input"
-                          placeholder={this.state.orderDescription.placeholder}
-                          type="email"
+                          placeholder={this.state.orderNameAndDescription.placeholder}
+                          type="text"
+                          name="orderNameAndDescription"
+                          value={this.state.orderNameAndDescription.value}
+                          onChange={this.handleInputChange}
                         />
                       </InputGroup>
                     </FormGroup>
@@ -130,30 +148,17 @@ class RequirementsListRequest extends React.Component {
 
                   <Col lg="12" className="m-0 mt-2" id="image-upload-body">
                     <div className="example">
-                      <Dropzone onFilesAdded={console.log} />
-                      {/* <DefaultExample ii={dragBody}/>                            */}
+                      {/*<Dropzone onFilesAdded={console.log} />*/}
+                       <DefaultExample setFiles={this.setFiles}/>
                     </div>
                   </Col>
-                  {/*<Col lg="12" className="m-0">
-                    <div className='drag-pic'>
-                      <p className='m-0'>افزودن تصویر</p>
-                      <Button className="btn btn-icon payments-btn-lv2"
-                              type="button"
-                              color="dark-green">
-                                                                <span className="btn-inner--icon">
-                                                                  <i className="fa fa-camera"/>
-                                                                </span>
-                        //<span className="btn-inner--text">افزودن عکس</span>
-                      </Button>
-                    </div>
-                  </Col>*/}
 
                   <Col lg="12" className="m-0">
                     <Collapse isOpen={this.state.consumersCollapse}></Collapse>
                   </Col>
 
                   <Row className="m-0 mt-3 d-flex justify-content-center w-100">
-                    <Col
+                    {/*<Col
                       lg="auto"
                       className="d-flex align-items-center justify-content-center"
                     >
@@ -172,7 +177,7 @@ class RequirementsListRequest extends React.Component {
                           </span>
                         </label>
                       </div>
-                    </Col>
+                    </Col>*/}
                     <Col
                       lg="auto"
                       className="d-flex align-items-center justify-content-center"
@@ -181,7 +186,7 @@ class RequirementsListRequest extends React.Component {
                         className="payments-btn-lv2"
                         color="primary"
                         href="#pablo"
-                        onClick={() => this.toggle("password")}
+                        onClick={this.handleAddRequirementClick}
                         name="email"
                       >
                         افزودن نیازمندی
@@ -190,7 +195,7 @@ class RequirementsListRequest extends React.Component {
                   </Row>
                 </Row>
 
-                <Card                
+                <Card
                   className="mt-5 shadow"
                 >
                   <CardHeader>نیازمندیهای اضافه شده</CardHeader>

@@ -9,6 +9,9 @@ import reuqest from 'superagent'
 export default class Example extends React.Component {
     constructor(props) {
         super(props);
+        this.state={
+          files:[]
+        };
         // For a full list of possible configurations,
         // please consult http://www.dropzonejs.com/#configuration
         this.djsConfig = {
@@ -31,19 +34,32 @@ export default class Example extends React.Component {
 
         // Simple callbacks work too, of course
         // this.callback = () => console.log('Hello!');
-        this.callback = (file) => {
-          const req = reuqest.post('https://httpbin.org/post');
-          req.attach(file.name, file);
-          req.end();
-          console.log('end', file);
-        };
 
-        this.success = file => console.log('uploaded', file);
+
+
 
         this.removedfile = file => console.log('removing...', file);
 
         this.dropzone = null;
+
+        this.callback=this.callback.bind(this);
+        this.success =this.success.bind(this);
     }
+    success(file){
+      console.log('uploaded', file);
+      let files = this.state.files;
+      files.push(file.name)
+      this.props.setFiles(files);
+      this.setState({
+        files:files
+      });
+    }
+    callback = (file) => {
+      const req = reuqest.post('https://httpbin.org/post');
+      req.attach(file.name, file);
+      req.end();
+      console.log('end', file);
+    };
 
     render() {
         const config = this.componentConfig;

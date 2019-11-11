@@ -17,6 +17,7 @@ import {
 import "./profile.css";
 import { Link } from "react-router-dom";
 import AOS from 'aos';
+import Avatar from '../common/avatar/avatar'
 
 class Profile extends React.Component {
   constructor(props){
@@ -45,6 +46,7 @@ class Profile extends React.Component {
   onFilesAdded(evt) {
   if (this.props.disabled) return;
   const files = evt.target.files;
+  console.log('hi');
   if (this.props.onFilesAdded) {
     const array = this.fileListToArray(files);
     this.props.onFilesAdded(array);
@@ -73,6 +75,7 @@ class Profile extends React.Component {
                 <Col className="order-lg-2" lg="3">
                   <div className="card-profile-image">
                     <a href="#pablo"   onClick={this.openFileDialog}>
+
                       <img
                         alt="..."
                         className="rounded-circle profile-image"

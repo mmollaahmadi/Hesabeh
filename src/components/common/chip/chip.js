@@ -33,7 +33,11 @@ class Chip extends React.Component {
     }
     const chipClassName = this.props.class;
     return (
-      <Badge className={`chip-body ${chipClassName}`} color="default" pill>
+      <Badge
+      className={`chip-body ${this.props.clickable ? 'chip-clickable' : ''} ${chipClassName}`}
+      color="default"
+      onClick={this.props.clickable ? this.props.onClick : null}
+      pill>
         <Row className="m-0 d-flex align-items-center">
           <img
             alt=""

@@ -18,7 +18,14 @@ class HelpPage extends React.Component {
                  data-aos-delay="50">
               <CardBody>
                 <Row>
-                  <Col lg="3" className="help-image-col"></Col>
+                  <Col lg="3" className="help-image-col">
+                  <img
+                    className=" number-image"
+                    top
+                    src={require('../../assets/img/utils/1.png')}
+                    alt=""
+                  />
+                  </Col>
                   <Col lg="9" className="help-text-col">
                     <p className="text-justify">
                       اولین قدم ایجاد حساب کاربری توی حسابه هست. شما میتونید این
@@ -38,14 +45,21 @@ class HelpPage extends React.Component {
                  data-aos-delay="50">
               <CardBody>
                 <Row>
-                  <Col lg="9" className="help-image-col">
+                  <Col lg="9" className="help-text-col">
                     <p className="text-justify">
                       قدم بعدی وارد کردن هزینه های روزانه در حساب کاربری خودتون
                       هست. شما میتونید این کار رو از قسمت حساب من و افزودن هزینه
                       انجام بدید
                     </p>
                   </Col>
-                  <Col lg="3" className="help-text-col"></Col>
+                  <Col lg="3" className="help-image-col">
+                  <img
+                    className=" number-image"
+                    top
+                    src={require('../../assets/img/utils/2.png')}
+                    alt=""
+                  />
+                  </Col>
                 </Row>
               </CardBody>
             </Card>

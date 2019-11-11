@@ -70,14 +70,18 @@ h1, h2, h3, h4, h5, h6{
   color: #14131255;
 }
 
-/* colors */
-._fff{
-  background-color: #fff;
-  color: #000;
+
+.number-image{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
 }
-._141312{
-  background-color: #141312;
-  color: #fff;
+
+.help-text-col{
+  display: flex;
+  margin: auto 0;
+  padding: 0 2rem; 
 }
 /* ============================== MODALS ==================================== */
 /* ========================================================================== */

@@ -29,7 +29,7 @@ class TableTools extends React.Component {
   render() {
 
     return (
-      <Row className="justify-content-center d-flex m-0 mb-4">
+      <Row className="w-100 justify-content-center d-flex m-0 mb-4">
         {/*<Col xs='6' lg="2" className='order-1 order-lg-1 d-flex justify-content-center my-auto'>
           <Button
             className='table-tools-sort-filter-btn'
