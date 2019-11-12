@@ -62,6 +62,13 @@ class RegisterPage extends React.Component {
       this.handleInputBlur = this.handleInputBlur.bind(this);
       this.register = this.register.bind(this);
       this.animateCSS = this.animateCSS.bind(this);
+      this.handleKeyPress = this.handleKeyPress.bind(this);
+  }
+  handleKeyPress(e){
+    if(e.key === 'Enter')
+    {
+      this.register();
+    }
   }
   checkEmail(email){
     return email === 'm@g.com';
@@ -257,6 +264,7 @@ class RegisterPage extends React.Component {
                       onChange={this.handleInputChange}
                       onFocus={this.handleInputFocus}
                       onBlur={this.handleInputBlur}
+                        onKeyPress={this.handleKeyPress}
                       name='email'
                       type="email"
                     />
@@ -279,6 +287,7 @@ class RegisterPage extends React.Component {
                       onBlur={this.handleInputBlur}
                       name='password'
                       type="password"
+                        onKeyPress={this.handleKeyPress}
                     />
                   </InputGroup>
                 </FormGroup>
@@ -299,6 +308,7 @@ class RegisterPage extends React.Component {
                       onBlur={this.handleInputBlur}
                       name='confirm-password'
                       type="password"
+                        onKeyPress={this.handleKeyPress}
                     />
                   </InputGroup>
                 </FormGroup>
@@ -401,7 +411,9 @@ class RegisterPage extends React.Component {
                     </Col>
                   </Row>
                 </FormGroup>
-
+                <FormGroup>
+                  <Row className="justify-item-center d-flex">
+                    <Col className="lg-9 m-0 text-center">
                 <Button
                   className="btn-icon audit-button"
                   color="secondary"
@@ -409,16 +421,19 @@ class RegisterPage extends React.Component {
                   onClick={() => this.toggle("password")}
                   name="email"
                 >
-                  <span className="btn-inner--icon">
+                  <span className="btn-inner--icon ml-2">
                     <img
                       alt="..."
                       src={googleIcon}
                     />
                   </span>
-                  <span className="btn-inner--text pr-2 pt-1 m-0">
+                  {/*<span className="btn-inner--text pr-2 pt-1 m-0">*/}
                     ثبت نام با حساب کاربری گوگل
-                  </span>
+
                 </Button>
+                </Col>
+              </Row>
+            </FormGroup>
               </Form>
               <Row className="text-center justify-content-center">
                 <Col lg="12">

@@ -81,7 +81,7 @@ h1, h2, h3, h4, h5, h6{
 .help-text-col{
   display: flex;
   margin: auto 0;
-  padding: 0 2rem; 
+  padding: 0 2rem;
 }
 /* ============================== MODALS ==================================== */
 /* ========================================================================== */
@@ -172,7 +172,7 @@ body.modal-open {
 
 /* ------------------------ */
 .btn-secondary {
-  font-size: 1rem;
+  font-size: .8rem;  
   padding: 0.5rem 0.7rem;
   color: #424242;
   background-color: #d7d7d6;
@@ -247,6 +247,7 @@ body.modal-open {
 }
 /* ------------------------ */
 .btn-dark-green {
+  font-size: 1rem;
   color: #424242;
   background-color: #a7ddcd;
   border-color: #a7ddcd;

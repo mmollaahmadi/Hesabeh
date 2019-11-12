@@ -14,7 +14,7 @@ class MainPage extends React.Component {
     if (this.props.isLogin === "false") {
       mainPage = (
         <div>
-          <Landing />
+          <Landing onChangePage={this.props.onChangePage}/>
           <AboutUs />
           <OnBoarding />
           <Features />

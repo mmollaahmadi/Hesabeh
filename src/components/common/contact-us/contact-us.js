@@ -31,7 +31,7 @@ class ContactUs extends React.Component {
             </InputGroupAddon>
             <Input
             className=" cuntactus-input cuntactus-email-input"
-              placeholder="ایمیل"
+              placeholder="رایانامه"
               type="email"
               onFocus={e => this.setState({ emailFocused: true })}
               onBlur={e => this.setState({ emailFocused: false })}

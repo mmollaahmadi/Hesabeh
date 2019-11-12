@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 // import OnboardingUnit from "./OnboardingUnit.js";
 
 class Landing extends React.Component {
+  constructor(){super();}
   componentDidMount() {
     AOS.refresh();
   }
@@ -41,14 +42,15 @@ class Landing extends React.Component {
             <p className="p-hesabeh">
               هزینه‌های روزمره رو اینجا ثبت کن و به راحتی مدیریتشون کن
             </p>
-            {/*<Button
+            <Button
             color="primary"
             className="py-1 px-4 primary-button"
             to='/help'
             tag={Link}
+            onClick={() => this.props.onChangePage('help')}
             >
               بیشتر
-            </Button>*/}
+            </Button>
           </div>
         </Col>
         <Col md="7" className="" />

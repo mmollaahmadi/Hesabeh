@@ -43,8 +43,14 @@ class SignInPage extends React.Component {
     AOS.init();
     this.handleInputChange = this.handleInputChange.bind(this);
     this.signInHandle = this.signInHandle.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
   }
-
+handleKeyPress(e){
+  if(e.key === 'Enter')
+  {
+    this.signInHandle();
+  }
+}
   signInHandle(){
     let emailOrUsername = this.state.emailOrUsername.value;
     let password = this.state.password.value;
@@ -146,6 +152,7 @@ class SignInPage extends React.Component {
                       placeholder={this.state.emailOrUsername.placeholder}
                       value={this.state.emailOrUsername.value}
                       onChange={this.handleInputChange}
+                      onKeyPress={this.handleKeyPress}
                     />
                   </InputGroup>
                   <Collapse isOpen={this.state.emailOrUsername.errorCollapse}>
@@ -172,6 +179,7 @@ class SignInPage extends React.Component {
                       placeholder={this.state.password.placeholder}
                       value={this.state.password.value}
                       onChange={this.handleInputChange}
+                      onKeyPress={this.handleKeyPress}
                     />
                   </InputGroup>
                   <Row className="d-flex justify-content-end mb-2 mx-0">
@@ -206,24 +214,29 @@ class SignInPage extends React.Component {
                     </Col>
                   </Row>
                 </FormGroup>
-
+                <FormGroup>
+                  <Row className="justify-item-center d-flex">
+                    <Col className="lg-9 m-0 text-center">
                 <Button
                   className="btn-icon audit-button"
                   color="secondary"
                   href="#pablo"
-                  name='password'
-                  onClick={this.toggle}
+                  onClick={() => this.toggle("password")}
+                  name="email"
                 >
-                  <span className="btn-inner--icon">
+                  <span className="btn-inner--icon ml-2">
                     <img
                       alt="..."
                       src={googleIcon}
                     />
                   </span>
-                  <span className="btn-inner--text pr-2 pt-1 m-0">
-                    ورود با حساب کاربری گوگل
-                  </span>
+                  {/*<span className="btn-inner--text pr-2 pt-1 m-0">*/}
+                    ثبت نام با حساب کاربری گوگل
+
                 </Button>
+                </Col>
+                </Row>
+                </FormGroup>
               </Form>
               <Row className="text-center justify-content-center">
                 <Col lg="12">

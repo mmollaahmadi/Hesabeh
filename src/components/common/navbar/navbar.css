@@ -93,6 +93,9 @@
   font-size: 1rem !important;
   width: fit-content;
 }
+.nav-bar-link-disable{
+  color: #888 !important;
+}
 .signup-button {
   /* border-radius: 3rem; */
   /*font-size: 0.75rem !important;*/

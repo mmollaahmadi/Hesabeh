@@ -23,19 +23,23 @@ class TableFilters extends React.Component {
 
     this.props.data.map(filter => {
         filters.push(
+          <Col xs='6' sm='3' className='d-flex justify-content-center my-auto'>
           <Button
-            className={`table-filters-btn ${this.state.selectedItem === filter.value ? 'selected-btn' : ''}`}
+            className={`table-filters-btn mb-3 w-100 ${this.state.selectedItem === filter.value ? 'selected-btn' : ''}`}
             color='secondary'
             onClick={() => this.selectSort(filter.value)}
             >
             {filter.value}
           </Button>
+          </Col>
         );
     });
     return (
       <Row className="justify-content-center d-flex m-0 mb-3">
         <Col xs='12' className='d-flex justify-content-center my-auto'>
+        <Row className="justify-content-center d-flex m-0 mb-3">
           {filters}
+          </Row>
         </Col>
       </Row>
     );

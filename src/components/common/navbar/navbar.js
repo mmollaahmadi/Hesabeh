@@ -145,7 +145,7 @@ componentDidUpdate(prevProps){
           </NavLink>
 
           <NavLink
-            className={`d-block ml-auto pl-3 pr-3 ${
+            className={`d-block ml-auto pl-3 pr-3 nav-bar-link-disable ${
               pageSelection === "report" ? "nav-bar-link-active" : "navbar-link"
             }`}
             onClick={() => this.togglePage("report")}

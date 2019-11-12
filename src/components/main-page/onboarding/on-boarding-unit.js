@@ -5,15 +5,15 @@ class OnBoardingUnit extends React.Component {
   render() {
     let dataAosDelay = 200;
     if(this.props.number === "1")
-      dataAosDelay = 1000;
+      dataAosDelay = 700;
     if(this.props.number === '2')
-      dataAosDelay = 2000;
+      dataAosDelay = 1200;
     if(this.props.number === '3')
-      dataAosDelay = 3000;
+      dataAosDelay = 1700;
     return (
       <Col lg="3" sm="6" xs="12" className="m-0 d-flex justify-content-center">
         <Row data-aos="fade-up"
-             data-aos-duration="1000"
+             data-aos-duration="700"
              data-aos-delay={dataAosDelay}
              className="justify-content-center learning-card">
           <Col xs='12'>

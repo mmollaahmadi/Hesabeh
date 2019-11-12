@@ -9,10 +9,9 @@ class OurStatistics extends React.Component {
       numberOfUsers: 0,
       numberOfGroups: 0,
       numberOfTransactions: 0,
-      numberOfActiveUsers: 0
+      numberOfActiveUsers: 0,
     };
   }
-
   isBottom(el) {
     return el.getBoundingClientRect().bottom <= window.innerHeight;
   }
@@ -54,7 +53,7 @@ class OurStatistics extends React.Component {
                className="section-title">به حسابِه بپیوندید</p>
           </Row>
           <Row className="mx-0 my-1">
-            <StatisticUnit
+            <StatisticUnit            
               title="کاربر"
               value={numberOfUsers}
               img_url={require("../../../assets/img/theme/team-4-800x800.jpg")}

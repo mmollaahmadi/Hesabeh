@@ -158,7 +158,7 @@ getUser(usernameOrEmailOrPhoneNumber){
         <div className="app-content">
 
             <Switch>
-              <Route path="/" exact render={props => <MainPage isLogin='false'/>}/>
+              <Route path="/" exact render={props => <MainPage onChangePage={this.handleChangePage} isLogin='false'/>}/>
               <Route
                 path="/register"
                 exact

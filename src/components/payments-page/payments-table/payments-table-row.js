@@ -39,11 +39,13 @@ class PaymentsTableRow extends React.Component {
     });
     return (
       <Col xs="12"
+      onClick={this.props.onClick}
       className={`px-2 p-lg-0 m-1 m-lg-0 ${this.state.isChecked ? 'checked' : 'un-checked'}`}>
         <Row className="m-0">
           <Col
             xs="12"
             lg="auto"
+
             className="table-row-col justify-content-lg-center check-width px-lg-0"
           >
             <span className="d-lg-none ml-auto">{this.props.data.date}</span>
@@ -68,7 +70,7 @@ class PaymentsTableRow extends React.Component {
             lg="1"
             className="d-none d-lg-flex table-row-col justify-content-lg-center date-request"
           >
-            <span>{this.props.data.date}</span>
+            <span >{this.props.data.date}</span>
           </Col>
 
           <Col
