@@ -36,8 +36,21 @@ class MyNavbar extends React.Component {
     //
     //   this.toggleCollapse();
     }
-
+componentDidMount(){
+  this.setState({
+    pageSelection: this.props.selectedPage
+  });
+}
+componentDidUpdate(prevProps){
+  if(prevProps.selectedPage !== this.props.selectedPage)
+  {
+    this.setState({
+      pageSelection: this.props.selectedPage
+    });
+  }
+}
   togglePage = state => {
+    this.props.onChangePage(state);
     this.setState({
       pageSelection: state,
       collapse: false
@@ -161,7 +174,11 @@ class MyNavbar extends React.Component {
         id="navbar-main"
       >
         {/* BRAND */}
-        <NavbarBrand className="mr-0 pt-0 pb-0" to="/" tag={Link}>
+        <NavbarBrand
+        className="mr-0 pt-0 pb-0"
+        onClick={() => this.togglePage("Hesabeh")}
+        to="/"
+        tag={Link}>
           {/*  <img
             alt="..."
             className="rounded-circle  logo brand-logo"
@@ -170,9 +187,15 @@ class MyNavbar extends React.Component {
           <p className="navbar-brand-title">حسابِه</p>
         </NavbarBrand>
 
-        {/* TOGGLER */}
+        {/* TOGGLER
         <button className="navbar-toggler" onClick={() => this.toggleCollapse()}>
           <span className="navbar-toggler-icon" />
+        </button>*/}
+
+        <button className={`navbar-toggle ${this.state.collapse ? '' : 'navbar-toggle-collapsed'}`} onClick={() => this.toggleCollapse()}>
+          <span className="icon-bar top-bar" ></span>
+          <span className="icon-bar middle-bar" />
+          <span className="icon-bar bottom-bar" />
         </button>
         <Collapse navbar isOpen={this.state.collapse} className='px--5'>
           <Nav className="d-flex w-100 pr-0" navbar>

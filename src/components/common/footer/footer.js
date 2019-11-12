@@ -13,6 +13,13 @@ import ContactUs from "../contact-us/contact-us.js";
 import "./footer.css";
 
 class Footer extends React.Component {
+  constructor(){
+    super();
+    this.onChangePage = this.onChangePage.bind(this);
+  }
+  onChangePage(page){
+    this.props.onChangePage(page);
+  }
   render() {
     return (
       <div>
@@ -44,10 +51,16 @@ class Footer extends React.Component {
               <Col className="px-3 text-center mt-2 order-3" lg="4">
                 <Row className="">
                   <Col className="lg-auto">
-                    <NavLink to="/support" tag={Link} className="footer-links">
+                    <NavLink
+                      onClick={() => this.onChangePage("support")}
+                      to="/support"
+                      tag={Link}
+                      className="footer-links">
                       پشتیبانی
                     </NavLink>
-                    <NavLink to="/‌help" tag={Link} className="footer-links">
+                    <NavLink to="/help" tag={Link}
+                    className="footer-links"
+                    onClick={() => this.onChangePage("help")}>
                       راهنما
                     </NavLink>
                   </Col>

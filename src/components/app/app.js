@@ -59,12 +59,17 @@ class App extends Component {
     this.state = {
       currentUser: USERS[0],
       isAuthenticated: true,
-      isLoading: false
+      isLoading: false,
+      selectedPage:'my-account',
     };
     this.handleLogout = this.handleLogout.bind(this);
     this.loadCurrentUser = this.loadCurrentUser.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
     this.getUser = this.getUser.bind(this);
+    this.handleChangePage = this.handleChangePage.bind(this);
+  }
+  handleChangePage(_selectedPage){
+    this.setState({selectedPage:_selectedPage});
   }
 getUser(usernameOrEmailOrPhoneNumber){
   let _user = null;
@@ -146,6 +151,8 @@ getUser(usernameOrEmailOrPhoneNumber){
         <NavBar isLogin={this.state.isAuthenticated}
                 currentUser={this.state.currentUser}
                 onLogout={this.handleLogout}
+                onChangePage={this.handleChangePage}
+                selectedPage={this.state.selectedPage}
                 />
 
         <div className="app-content">
@@ -219,7 +226,7 @@ getUser(usernameOrEmailOrPhoneNumber){
               />
             </Switch>
         </div>
-        <Footer/>
+        <Footer onChangePage={this.handleChangePage}/>
       </div>
     );
   }

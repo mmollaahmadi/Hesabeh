@@ -3,6 +3,7 @@ import React from "react";
 // reactstrap components
 import {Row, Button, Col} from "reactstrap";
 import AOS from "aos";
+import { Link } from "react-router-dom";
 // import SignupButton from '../common/signup-button/SignupButton.js';
 // import SigninButton from "../../common/signin-button/SigninButton.js";
 // import OnboardingUnit from "./OnboardingUnit.js";
@@ -40,9 +41,14 @@ class Landing extends React.Component {
             <p className="p-hesabeh">
               هزینه‌های روزمره رو اینجا ثبت کن و به راحتی مدیریتشون کن
             </p>
-            <Button color="primary" className="py-1 px-4 primary-button">
+            {/*<Button
+            color="primary"
+            className="py-1 px-4 primary-button"
+            to='/help'
+            tag={Link}
+            >
               بیشتر
-            </Button>
+            </Button>*/}
           </div>
         </Col>
         <Col md="7" className="" />
