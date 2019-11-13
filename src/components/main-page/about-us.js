@@ -1,9 +1,10 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
-
+import ScrollableAnchor from 'react-scrollable-anchor'
 class AboutUs extends React.Component {
   render() {
     return (
+<ScrollableAnchor id={'about-us'}>
       <section className="section dark-section bg pb-6 pt-5">
         <Container className="pt-30 pb-30">
           <Row className="text-center justify-content-center">
@@ -44,6 +45,7 @@ class AboutUs extends React.Component {
               </svg>
             </div>
       </section>
+      </ScrollableAnchor>
     );
   }
 }

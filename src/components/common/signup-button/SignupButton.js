@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {
-  Button,    
+  Button,
 } from "reactstrap";
 import "../modal.css";
 import "../navbar/navbar.css";
@@ -48,7 +48,9 @@ class SignupButton extends React.Component {
       [state]: !this.state[state]
     });
   };
-
+handleSignUp=()=>{
+  this.props.togglePage('sign-up');
+};
   render() {
     return (
 
@@ -57,6 +59,7 @@ class SignupButton extends React.Component {
         color="primary"
         to="/register"
         tag={Link}
+        onClick={this.handleSignUp}
       >
         ثبت نام
       </Button>

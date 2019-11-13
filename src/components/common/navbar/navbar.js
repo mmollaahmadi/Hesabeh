@@ -162,7 +162,11 @@ componentDidUpdate(prevProps){
       );
     } else {
       profile = null;
-      auditButtons =  <NavBarButtons />;
+      auditButtons =  <NavBarButtons
+      pageSelection={this.state.pageSelection}
+      resetPageSelection={this.resetPageSelection}
+      togglePage={this.togglePage}
+      />;
       links = null;
     }
     return (

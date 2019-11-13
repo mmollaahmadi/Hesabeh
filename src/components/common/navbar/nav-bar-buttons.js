@@ -10,10 +10,19 @@ class NavBarButtons extends React.Component {
     return (
       <Row className=" m-0 d-lg-flex align-items-center">
 
-        <SignInButton/>
+        <SignInButton
+          pageSelection={this.props.pageSelection}
+          togglePage={this.props.togglePage}
+        />
         <p className="d-inline d-lg-none m-0 slash">/</p>
-        <SignUpButton/>
-        <SignUpLink/>
+        <SignUpButton
+        pageSelection={this.props.pageSelection}
+        togglePage={this.props.togglePage}
+        />
+        <SignUpLink
+        pageSelection={this.props.pageSelection}
+        togglePage={this.props.togglePage}
+        />
 
       </Row>
     );

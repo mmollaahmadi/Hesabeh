@@ -1,7 +1,7 @@
 import React from "react";
 import {Container, Row, Col} from "reactstrap";
 import FeaturesButton from "./features-btn";
-
+import ScrollableAnchor from 'react-scrollable-anchor'
 class Features extends React.Component {
   constructor(prop) {
     super(prop);
@@ -35,6 +35,7 @@ class Features extends React.Component {
     }
 
     return (
+      <ScrollableAnchor id={'features'}>
       <section className=" dark-section section section-lg mt-1 pt-6 pb-6">
         <Container>
           <Row className="text-center justify-content-center">
@@ -118,6 +119,7 @@ class Features extends React.Component {
           </Row>
         </Container>
       </section>
+      </ScrollableAnchor>
     );
   }
 }

@@ -47,7 +47,7 @@ class Landing extends React.Component {
             className="py-1 px-4 primary-button"
             to='/help'
             tag={Link}
-            onClick={() => this.props.onChangePage('help')}
+            onClick={() => this.props.onChangePage('help')}            
             >
               بیشتر
             </Button>

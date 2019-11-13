@@ -9,17 +9,19 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import ContactUs from "../contact-us/contact-us.js";
-
+import { goToAnchor } from 'react-scrollable-anchor'
 import "./footer.css";
 
 class Footer extends React.Component {
   constructor(){
     super();
     this.onChangePage = this.onChangePage.bind(this);
+    // this.goto = this.goto.bind(this);
   }
   onChangePage(page){
     this.props.onChangePage(page);
   }
+
   render() {
     return (
       <div>
@@ -73,10 +75,20 @@ class Footer extends React.Component {
                     </NavLink>
                   </Col>
                   <Col className="lg-auto">
-                    <NavLink to="/‌‌help" tag={Link} className="footer-links">
+                    <NavLink
+                      // to="/#features"
+                      // tag={Link}
+                      className="footer-links"
+                      onClick={() => this.props.goto('/','features')}
+                      >
                       امکانات
                     </NavLink>
-                    <NavLink to="/‌‌help" tag={Link} className="footer-links">
+                    <NavLink
+                    // to="/#about-us"
+                    // tag={Link}
+                    className="footer-links"
+                    onClick={() => this.props.goto('/','about-us')}
+                    >
                       درباره ما
                     </NavLink>
                   </Col>

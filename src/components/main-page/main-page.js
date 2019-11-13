@@ -4,12 +4,28 @@ import AboutUs from "./about-us";
 import Features from "./features/features.js";
 import OurStatistics from "./statistics/OurStatistics.js";
 import OnBoarding from "./onboarding/onBoarding.js";
-
+import { goToAnchor,configureAnchors } from 'react-scrollable-anchor'
 import './main-page.css';
 
 class MainPage extends React.Component {
-
+// componentDidUpdate(prevProps){
+  // configureAnchors({offset: 0, scrollDuration: 2000});
+  // if(prevProps.goto !== this.props.goto && this.props.goto === 'features'){
+    // goToAnchor('features');
+  // }
+  // if(this.props.goto === 'about-us'){
+  //   goToAnchor('about-us');
+  // }
+// }
+componentDidMount(){
+  configureAnchors({offset: 0, scrollDuration: 2000});
+  if(this.props.goto === 'features'){
+    goToAnchor('features');
+  }}
   render() {
+    // if(this.props.goto === 'features'){
+    //   goToAnchor('features');
+    // }
     let mainPage = null;
     if (this.props.isLogin === "false") {
       mainPage = (
