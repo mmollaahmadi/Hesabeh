@@ -423,6 +423,14 @@ body.modal-open {
 .audit-input::placeholder {
   color: #42424280;
 }
+.audit-input.email {
+  text-align: left;
+  direction: ltr;
+}
+.audit-input.email::placeholder{
+  text-align: right;
+  direction: rtl;
+}
 .audit-form .input-group-prepend{
   background-color: #33393f10 !important;
 }

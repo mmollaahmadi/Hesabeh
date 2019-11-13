@@ -49,8 +49,9 @@ constructor(){
                     </InputGroupAddon>
 
                     <Input
-                      className="audit-input"
-                      placeholder="ایمیل"
+                    id={'support-email'}
+                      className="audit-input email"
+                      placeholder="رایانامه"
                       type="email"
                     />
                   </InputGroup>
@@ -76,7 +77,7 @@ constructor(){
                         color="primary"
 
                       >
-                        ارسال
+                        ارسال پیام
                       </Button>
                     </Col>
                   </Row>
