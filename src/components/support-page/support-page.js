@@ -19,6 +19,7 @@ import {
 import "../../assets/css/custom.css";
 import Header from "../common/header.js";
 import AOS from 'aos'
+import ScrollableAnchor from 'react-scrollable-anchor'
 class SupportPage extends React.Component {
 constructor(){
   super();
@@ -26,6 +27,7 @@ constructor(){
 }
   render() {
     return (
+      <ScrollableAnchor id={'support'}>
       <div className="my-section">
         <Container className="pt-10 pb-30  h-100">
           <Row className="text-center justify-content-center">
@@ -72,7 +74,7 @@ constructor(){
                       <Button
                         className="audit-button"
                         color="primary"
-                      
+
                       >
                         ارسال
                       </Button>
@@ -174,6 +176,7 @@ constructor(){
           </Row>
         </Container>
       </div>
+      </ScrollableAnchor>
     );
   }
 }

@@ -39,11 +39,14 @@ import NotificationsPage from "../notifications-page/notifications-page.js";
 import CreateNewRequestPage from "../notifications-page/new-request/create-new-request-page.js";
 import AddPaymentPage from "../payments-page/add-new-payment/add-new-payment.js";
 import HelpPage from "../help-page/help-page";
+import UpButton from "../up-button/up-button.js";
 
 // import { Layout, notification } from 'antd';
 import NavBar from "../common/navbar/navbar";
 import Footer from "../common/footer/footer";
-import { goToAnchor, removeHash } from "react-scrollable-anchor";
+import { goToAnchor, configureAnchors } from "react-scrollable-anchor";
+
+
 // const { Content } = Layout;
 import { USERS } from "../../constants/constants";
 
@@ -57,6 +60,7 @@ class App extends Component {
       selectedPage: "my-account",
       goto: ""
     };
+    configureAnchors({offset:-70, scrollDuration: 300});
     this.handleLogout = this.handleLogout.bind(this);
     this.loadCurrentUser = this.loadCurrentUser.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
@@ -72,7 +76,7 @@ class App extends Component {
     // console.log(this.props.history.location);
     if (this.props.history.location.pathname === pathname) {
       // console.log('hi');
-      this.props.history.replace("/", "1");
+      this.props.history.replace(pathname, "1");
       goToAnchor(hash);
       // console.log(this.props.history.location);
     } else {
@@ -281,7 +285,12 @@ class App extends Component {
             />
           </Switch>
         </div>
-        <Footer goto={this.goto} onChangePage={this.handleChangePage} />
+        <Footer
+          currentUser={this.state.currentUser}
+          goto={this.goto}
+          onChangePage={this.handleChangePage}
+         />
+        <UpButton/>
       </div>
     );
   }

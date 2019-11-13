@@ -11,6 +11,23 @@ import {
 import './contact-us.css';
 
 class ContactUs extends React.Component {
+  constructor(){
+    super();
+    this.state={
+      email:''
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(event){
+    this.setState({
+      email: event.target.value
+    });
+  }
+  componentDidMount(){
+    this.setState({
+      email: this.props.currentUser ? this.props.currentUser.email : ''
+    });
+  }
   state = {};
   render() {
     return (
@@ -33,8 +50,10 @@ class ContactUs extends React.Component {
             className=" cuntactus-input cuntactus-email-input"
               placeholder="رایانامه"
               type="email"
+              value={this.state.email}
               onFocus={e => this.setState({ emailFocused: true })}
               onBlur={e => this.setState({ emailFocused: false })}
+              onChange={this.handleChange}
             />
           </InputGroup>
         </FormGroup>

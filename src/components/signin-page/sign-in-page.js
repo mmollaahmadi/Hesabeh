@@ -22,6 +22,7 @@ import Header from "../common/header.js";
 import googleIcon from "../../assets/img/icons/common/google.svg"
 import {doesExistUser, isCurrectUser} from '../../utils/auditUtils'
 import AOS from 'aos'
+import ScrollableAnchor from 'react-scrollable-anchor'
 class SignInPage extends React.Component {
   constructor(props) {
     super(props);
@@ -128,6 +129,7 @@ handleKeyPress(e){
 
   render() {
     return (
+      <ScrollableAnchor id={'sign-in'}>
       <div className="my-section">
         <Container className="pt-1 pb-30  h-100">
           <Row className="text-center justify-content-center">
@@ -276,6 +278,7 @@ handleKeyPress(e){
           </Row>
         </Container>
       </div>
+      </ScrollableAnchor>
     );
   }
 }

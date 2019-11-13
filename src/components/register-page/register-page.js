@@ -20,6 +20,7 @@ import "../../assets/css/custom.css";
 import Header from "../common/header.js";
 import googleIcon from "../../assets/img/icons/common/google.svg"
 import AOS from 'aos'
+import ScrollableAnchor from 'react-scrollable-anchor'
 class RegisterPage extends React.Component {
   constructor(props) {
     super(props);
@@ -239,6 +240,7 @@ class RegisterPage extends React.Component {
   render() {
 
     return (
+      <ScrollableAnchor id={'register'}>
       <div className="my-section">
         <Container className="pt-10 pb-30  h-100">
           <Row className="text-center justify-content-center">
@@ -473,6 +475,7 @@ class RegisterPage extends React.Component {
           </Row>
         </Container>
       </div>
+      </ScrollableAnchor>
     );
   }
 }

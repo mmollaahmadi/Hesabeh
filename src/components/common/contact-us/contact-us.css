@@ -15,12 +15,16 @@
   border-right-style: solid !important;
   border-right-color: #42424230 !important;
   border-right-width: 1px !important;
+  text-align: center;
+  direction: ltr;
 }
 .cuntactus-input:focus{
   color: #424242;
 }
 .cuntactus-input:focus::placeholder{
   color: #42424280;
+  text-align: right;
+  direction: rtl;
 }
 .contactus-form .input-group-text{
   background-color: #d7d7d650 !important;

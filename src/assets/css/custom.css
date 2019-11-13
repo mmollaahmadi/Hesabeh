@@ -83,6 +83,16 @@ h1, h2, h3, h4, h5, h6{
   margin: auto 0;
   padding: 0 2rem;
 }
+.up-btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+
+}
 /* ============================== MODALS ==================================== */
 /* ========================================================================== */
 
@@ -172,7 +182,7 @@ body.modal-open {
 
 /* ------------------------ */
 .btn-secondary {
-  font-size: .8rem;  
+  font-size: .8rem;
   padding: 0.5rem 0.7rem;
   color: #424242;
   background-color: #d7d7d6;

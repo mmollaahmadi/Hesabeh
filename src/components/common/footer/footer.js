@@ -44,7 +44,7 @@ class Footer extends React.Component {
                 className="justify-content-right btn-wrapper mt-2 px-3 order-5 order-lg-1"
                 lg="6"
               >
-                <ContactUs />
+                <ContactUs currentUser={this.props.currentUser} />
               </Col>
 
 
@@ -54,23 +54,33 @@ class Footer extends React.Component {
                 <Row className="">
                   <Col className="lg-auto">
                     <NavLink
-                      onClick={() => this.onChangePage("support")}
-                      to="/support"
-                      tag={Link}
+                      onClick={() => {this.onChangePage("support"); this.props.goto('/support','support')}}
+                      // to="/support"
+                      // tag={Link}
                       className="footer-links">
                       پشتیبانی
                     </NavLink>
-                    <NavLink to="/help" tag={Link}
+                    <NavLink
+                    // to="/help" tag={Link}
                     className="footer-links"
-                    onClick={() => this.onChangePage("help")}>
+                    onClick={() => {this.onChangePage("help"); this.props.goto('/help','help')}}>
                       راهنما
                     </NavLink>
                   </Col>
                   <Col className="lg-auto">
-                    <NavLink to="/register" tag={Link} className="footer-links">
+                    <NavLink
+                    // to="/register"
+                    // tag={Link}
+                    className="footer-links"
+                    onClick={() => this.props.goto('/register','register')}
+                    >
                       ثبت نام
                     </NavLink>
-                    <NavLink to="/signin" tag={Link} className="footer-links">
+                    <NavLink
+                    // to="/signin"
+                    // tag={Link}
+                    className="footer-links"
+                    onClick={() => this.props.goto('/signin','sign-in')}>
                       ورود
                     </NavLink>
                   </Col>

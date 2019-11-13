@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Card, CardBody } from "reactstrap";
 import AOS from 'aos'
-
+import ScrollableAnchor from 'react-scrollable-anchor'
 class HelpPage extends React.Component {
   constructor(){
     super();
@@ -9,6 +9,7 @@ class HelpPage extends React.Component {
   }
   render() {
     return (
+      <ScrollableAnchor id={'help'}>
       <div className="my-body">
         <Container>
 
@@ -66,6 +67,7 @@ class HelpPage extends React.Component {
 
         </Container>
       </div>
+      </ScrollableAnchor>
     );
   }
 }
