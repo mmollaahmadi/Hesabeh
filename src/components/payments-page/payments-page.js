@@ -38,6 +38,83 @@ const PAYMENTS = [
         username: "saadat",
         sahm: "1",
         value: "2700 تومان"
+      },
+      {
+        username: "saadat",
+        sahm: "1",
+        value: "2700 تومان"
+      },
+      {
+        username: "saadat",
+        sahm: "1",
+        value: "2700 تومان"
+      },,
+      {
+        username: "saadat",
+        sahm: "1",
+        value: "2700 تومان"
+      },,
+      {
+        username: "saadat",
+        sahm: "1",
+        value: "2700 تومان"
+      },
+    ]
+  },
+  {
+    id: "2",
+    name: "برنج",
+    value: "5400 تومان",
+    date: "شنبه 98/03/21",
+    group: "اتاق 401 کشاورز",
+    consumers: [
+      {
+        username: "mohammad",
+        sahm: "1",
+        value: "2700 تومان"
+      },
+      {
+        username: "saadat",
+        sahm: "1",
+        value: "2700 تومان"
+      }
+    ]
+  },
+  {
+    id: "2",
+    name: "برنج",
+    value: "5400 تومان",
+    date: "شنبه 98/03/21",
+    group: "اتاق 401 کشاورز",
+    consumers: [
+      {
+        username: "mohammad",
+        sahm: "1",
+        value: "2700 تومان"
+      },
+      {
+        username: "saadat",
+        sahm: "1",
+        value: "2700 تومان"
+      }
+    ]
+  },
+  {
+    id: "2",
+    name: "برنج",
+    value: "5400 تومان",
+    date: "شنبه 98/03/21",
+    group: "اتاق 401 کشاورز",
+    consumers: [
+      {
+        username: "mohammad",
+        sahm: "1",
+        value: "2700 تومان"
+      },
+      {
+        username: "saadat",
+        sahm: "1",
+        value: "2700 تومان"
       }
     ]
   }

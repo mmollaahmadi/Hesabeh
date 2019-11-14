@@ -20,30 +20,40 @@ import PaymentsTableRow from "./payments-table-row.js";
 import TableTools from "../../common/table-tools/table-tools";
 import TableFilters from "../../common/table-filters/table-filters";
 import PaymentsTableHeader from "./payments-table-header";
-import {FILTERS} from '../../../constants/constants'
+import { FILTERS } from "../../../constants/constants";
+import Masonry from "react-masonry-css";
+
+const breakpointColumnsObj = {
+  default: 4,
+  1900: 3,
+  992: 2,
+  767: 1
+};
 
 class PaymentsTable extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       allCheckBoxesChecked: false,
       checkBoxesStatusList: [],
       editModalShow: false,
-      paymentIDForEdit:'',
+      paymentIDForEdit: ""
     };
-    this.updateCheckBoxesStatusList = this.updateCheckBoxesStatusList.bind(this);
+    this.updateCheckBoxesStatusList = this.updateCheckBoxesStatusList.bind(
+      this
+    );
     this.isAnyCheckBoxTrue = this.isAnyCheckBoxTrue.bind(this);
     this.handleAllCheckedChange = this.handleAllCheckedChange.bind(this);
     this.allCheckBoxesChecked = this.allCheckBoxesChecked.bind(this);
     this.getCheckedStatus = this.getCheckedStatus.bind(this);
     this.toggleEditPaymentModal = this.toggleEditPaymentModal.bind(this);
   }
-toggleEditPaymentModal(){
-  this.setState({
-    editModalShow: !this.state.editModalShow,
-  });
-}
-  componentDidMount(){
+  toggleEditPaymentModal() {
+    this.setState({
+      editModalShow: !this.state.editModalShow
+    });
+  }
+  componentDidMount() {
     let _checkedList = [];
     this.props.payments.forEach(payment => {
       _checkedList.push({
@@ -56,11 +66,11 @@ toggleEditPaymentModal(){
     });
   }
 
-  updateCheckBoxesStatusList(id){
+  updateCheckBoxesStatusList(id) {
     let _checkedList = this.state.checkBoxesStatusList;
     _checkedList.forEach(el => {
-      if(el.id === id){
-        el.checked = !el.checked
+      if (el.id === id) {
+        el.checked = !el.checked;
       }
     });
     this.setState({
@@ -68,80 +78,86 @@ toggleEditPaymentModal(){
       allCheckBoxesChecked: this.allCheckBoxesChecked(_checkedList)
     });
   }
-  allCheckBoxesChecked(list){
+  allCheckBoxesChecked(list) {
     let flag = true;
     this.state.checkBoxesStatusList.forEach(el => {
-      if(!el.checked)
-        flag = false;
+      if (!el.checked) flag = false;
     });
     return flag;
   }
 
-  isAnyCheckBoxTrue(){
+  isAnyCheckBoxTrue() {
     let _checkedList = this.state.checkBoxesStatusList;
     let flag = false;
     _checkedList.forEach(el => {
-      if(el.checked === true){
+      if (el.checked === true) {
         flag = true;
       }
     });
     return flag;
   }
 
-handleAllCheckedChange(){
-  let _checkedList = this.state.checkBoxesStatusList;
-  _checkedList.forEach(el => {
-      el.checked = !this.state.allCheckBoxesChecked
-  });
-  this.setState({
-    allCheckBoxesChecked: !this.state.allCheckBoxesChecked,
-    checkBoxesStatusList: _checkedList,
-  });
-}
-getCheckedStatus(id){
-  let flag = false;
-  this.state.checkBoxesStatusList.forEach(el => {
-    if(el.id == id)
-      flag = el.checked;
-  });
-  return flag;
-}
+  handleAllCheckedChange() {
+    let _checkedList = this.state.checkBoxesStatusList;
+    _checkedList.forEach(el => {
+      el.checked = !this.state.allCheckBoxesChecked;
+    });
+    this.setState({
+      allCheckBoxesChecked: !this.state.allCheckBoxesChecked,
+      checkBoxesStatusList: _checkedList
+    });
+  }
+  getCheckedStatus(id) {
+    let flag = false;
+    this.state.checkBoxesStatusList.forEach(el => {
+      if (el.id == id) flag = el.checked;
+    });
+    return flag;
+  }
 
   render() {
     let payments = [];
 
     this.props.payments.forEach(payment => {
-      payments.push(<PaymentsTableRow
-        data={payment}
-        checked={this.getCheckedStatus(payment.id)}
-        updateCheckBoxesStatusList={this.updateCheckBoxesStatusList}
-        onClick={this.toggleEditPaymentModal}
-        />);
+      payments.push(
+        <PaymentsTableRow
+          data={payment}
+          checked={this.getCheckedStatus(payment.id)}
+          updateCheckBoxesStatusList={this.updateCheckBoxesStatusList}
+          onClick={this.toggleEditPaymentModal}
+        />
+      );
     });
     return (
       <section className="section pt-0">
         <Container>
-          <Card data-aos="fade-up"
-                data-aos-duration="1000"
-                data-aos-delay="200"
-                className="card-profile shadow mt-4">
-            <CardHeader>
-              هزینه‌ها
-            </CardHeader>
+          <Card
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+            className="card-profile shadow mt-4"
+          >
+            <CardHeader>هزینه‌ها</CardHeader>
             <CardBody>
               <TableTools
-              isAnyChecked={this.isAnyCheckBoxTrue()}
-              buttonTitle="افزودن هزینه"
-              buttonLink="/add-new-payment"
-              // handleDelete={this.handleDelete}
+                isAnyChecked={this.isAnyCheckBoxTrue()}
+                buttonTitle="افزودن هزینه"
+                buttonLink="/add-new-payment"
+                // handleDelete={this.handleDelete}
               />
-              <TableFilters data={FILTERS}/>
-              <Row className="justify-content-center py-1">
-                <PaymentsTableHeader
+              <TableFilters data={FILTERS} />
+              <Row className="justify-content-start py-1">
+                {/*<PaymentsTableHeader
                 allCheckBoxesChecked={this.state.allCheckBoxesChecked}
                 handleAllCheckedChange={this.handleAllCheckedChange}
-                />
-                {payments}
+                />*/}
+                <Masonry
+                  breakpointCols={breakpointColumnsObj}
+                  className="my-masonry-grid"
+                  columnClassName="my-masonry-grid_column"
+                >
+                  {payments}
+                </Masonry>
               </Row>
               <Modal
                 className="modal-dialog-centered"
