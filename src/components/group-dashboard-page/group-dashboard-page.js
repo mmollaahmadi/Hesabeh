@@ -1,11 +1,7 @@
 import React from "react";
 import GroupProfile from "./group-profile.js";
-import GroupUser from './group-users'
 import {
-  Card,
-  CardBody,
-  CardHeader,
-  Container, Row
+  Container
 } from "reactstrap";
 import GroupUsers from './group-users'
 

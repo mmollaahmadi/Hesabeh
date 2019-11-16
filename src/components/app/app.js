@@ -29,20 +29,20 @@ import MainPage from "../main-page/main-page";
 import UserDashboardPage from "../user-dashboard-page/user-dashboard-page.js";
 import GroupDashboardPage from "../group-dashboard-page/group-dashboard-page.js";
 import MyGroupsPage from "../my-groups-page/my-groups-page.js";
-import NewPasswordRequestPage from "../forgot-password-pages/new-password-request-page.js";
+import NewPasswordRequestPage from "../audit-pages/forgot-password-pages/new-password-request-page.js";
 import SupportPage from "../support-page/support-page.js";
-import SignInPage from "../signin-page/sign-in-page.js";
-import RegisterPage from "../register-page/register-page.js";
-import PaymentsPage from "../payments-page/payments-page.js";
+import LoginPage from "../audit-pages/login-page/login-page.js";
+import RegisterPage from "../audit-pages/register-page/register-page.js";
+import PaymentsPage from "../my-account-page/payments-page.js";
 import CreateNewGroupPage from "../my-groups-page/create-new-group-page.js";
 import NotificationsPage from "../notifications-page/notifications-page.js";
 import CreateNewRequestPage from "../notifications-page/new-request/create-new-request-page.js";
-import AddPaymentPage from "../payments-page/add-new-payment/add-new-payment.js";
+import AddPaymentPage from "../my-account-page/add-new-payment/add-new-payment.js";
 import HelpPage from "../help-page/help-page";
-import UpButton from "../up-button/up-button.js";
+import GoToUp from "../common/go-to-up/go-to-up.js";
 
 // import { Layout, notification } from 'antd';
-import NavBar from "../common/navbar/navbar";
+import NavBar from "../common/nav-bar/nav-bar";
 import Footer from "../common/footer/footer";
 import { goToAnchor, configureAnchors } from "react-scrollable-anchor";
 
@@ -69,23 +69,15 @@ class App extends Component {
     this.goto = this.goto.bind(this);
   }
   goto(pathname, hash) {
-    // console.log('path '+pathname);
-    // console.log('hash '+hash);
-    // console.log('gh'+this.props.history.location.pathname);
-    // console.log('gh'+this.props.history.location.hash);
-    // console.log(this.props.history.location);
     if (this.props.history.location.pathname === pathname) {
-      // console.log('hi');
       this.props.history.replace(pathname, "1");
       goToAnchor(hash);
-      // console.log(this.props.history.location);
     } else {
       this.props.history.push({
         pathname: pathname,
         hash: "#" + hash,
         state: "1"
       });
-      // console.log(this.props.history.location);
     }
   }
   handleChangePage(_selectedPage) {
@@ -207,7 +199,7 @@ class App extends Component {
             <Route
               path="/signin"
               exact
-              render={props => <SignInPage onLogin={this.handleLogin} />}
+              render={props => <LoginPage onLogin={this.handleLogin} />}
             />
             <Route
               path="/forgot-password"
@@ -290,7 +282,7 @@ class App extends Component {
           goto={this.goto}
           onChangePage={this.handleChangePage}
          />
-        <UpButton/>
+        <GoToUp/>
       </div>
     );
   }

@@ -4,7 +4,6 @@ import NotificationsTableHeader from "./notifications-table-header";
 import NotificationsTableRow from "./notifications-table-row.js";
 import TableTools from "../../common/table-tools/table-tools";
 import TableFilters from "../../common/table-filters/table-filters";
-import MyTable from "../../common/my-table/my-table";
 import AOS from "aos";
 import { FILTERS } from "../../../constants/constants";
 
@@ -87,7 +86,7 @@ class NotificationsTable extends React.Component {
   getCheckedStatus(id) {
     let flag = false;
     this.state.checkBoxesStatusList.forEach(el => {
-      if (el.id == id) flag = el.checked;
+      if (el.id === id) flag = el.checked;
     });
     return flag;
   }

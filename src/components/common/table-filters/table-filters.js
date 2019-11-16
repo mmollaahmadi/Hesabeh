@@ -21,7 +21,7 @@ class TableFilters extends React.Component {
   render() {
     let filters = [];
 
-    this.props.data.map(filter => {
+    this.props.data.forEach(filter => {
         filters.push(
           <Col xs='6' sm='3' className='d-flex justify-content-center my-auto'>
           <Button

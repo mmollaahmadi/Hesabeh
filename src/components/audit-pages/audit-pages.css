@@ -1,0 +1,40 @@
+/*--------------------------------------------*/
+.forgot-password-link{
+    padding: 0.5rem 0;
+    font-size: 12px;
+    text-align: left;
+}
+.forgot-password-link:hover{
+    color: #03091e !important;
+}
+
+/*--------------------------------------------*/
+.password-condition-icon {
+}
+
+.password-condition-text {
+    font-size: 10px;
+}
+
+.condition {
+    padding: 0;
+}
+
+.condition-satisfied {
+    color: #01cd9a !important;
+    padding: 0;
+}
+
+.condition-unsatisfied {
+    color: #b67b81 !important;
+    padding: 0;
+}
+
+.password-condition-fake-icon {
+    padding: 0;
+    margin: 0;
+    font-family: Baloo, serif;
+    font-size: 0.95rem;
+}
+
+/*--------------------------------------------*/

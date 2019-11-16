@@ -17,7 +17,7 @@ import {
   NavLink
 } from "reactstrap";
 import "../../assets/css/custom.css";
-import Header from "../common/header.js";
+import AuditColumnHeader from "../audit-pages/audit-column-header.js";
 import AOS from 'aos'
 import ScrollableAnchor from 'react-scrollable-anchor'
 class SupportPage extends React.Component {
@@ -36,8 +36,8 @@ constructor(){
                  data-aos-duration="1000"
                  data-aos-delay="50"
             >
-            <Header needBrand={false}
-                    title="مشکلات، نظرات و پیشنهادات خود را با ما در میان بگذارید" />
+            <AuditColumnHeader needBrand={false}
+                               title="مشکلات، نظرات و پیشنهادات خود را با ما در میان بگذارید" />
 
               <Form role="form" className="audit-form">
                 <FormGroup className="mb-3">

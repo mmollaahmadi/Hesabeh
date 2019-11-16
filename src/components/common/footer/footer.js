@@ -7,9 +7,7 @@ import {
   UncontrolledTooltip,
   NavLink
 } from "reactstrap";
-import { Link } from "react-router-dom";
 import ContactUs from "../contact-us/contact-us.js";
-import { goToAnchor } from 'react-scrollable-anchor'
 import "./footer.css";
 
 class Footer extends React.Component {

@@ -1,6 +1,5 @@
 import React from "react";
 import { DropdownMenu, DropdownToggle, Dropdown, Input } from "reactstrap";
-import Chip from "../chip/chip";
 class InputAutoSuggestion extends React.Component {
   constructor() {
     super();

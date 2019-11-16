@@ -40,7 +40,7 @@ registerServiceWorker();
 // import MyGroupsPage from './components/my-groups-page/my-groups-page.js';
 // import NewPasswordRequestPage from './components/forgot-password-pages/new-password-request-page.js';
 // import SupportPage from './components/support-page/support-page.js';
-// import SignInPage from './components/signin-page/sign-in-page.js';
+// import LoginPage from './components/signin-page/login-page.js';
 // import RegisterPage from './components/register-page/register-page.js';
 // import PaymentsPage from './components/payments-page/payments-page.js';
 // import CreateNewGroupPage from './components/my-groups-page/create-new-group-page.js';
@@ -61,7 +61,7 @@ registerServiceWorker();
 //       <Route
 //         path="/signin"
 //         exact
-//         render={props => <SignInPage {...props} />}
+//         render={props => <LoginPage {...props} />}
 //       />
 //       <Route
 //         path="/forgot-password"

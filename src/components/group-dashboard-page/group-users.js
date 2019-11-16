@@ -1,7 +1,7 @@
 import React from "react";
 import {
   Row,
-  UncontrolledTooltip, Card, CardBody, CardHeader
+  Card, CardBody, CardHeader
 } from "reactstrap";
 import "./group-dashboard.css";
 import GroupUserUnit from './group-user-unit';

@@ -14,11 +14,9 @@ import {
   Input,
   Collapse
 } from "reactstrap";
-import Chip from "../../common/chip/chip";
 import UserGroupAccount from "../../common/user-group-account/user-group-account";
-import Dropzone from "../../common/dropzone/dropzone";
-import ChooseUsers from "../../common/choose-users/choose-users";
-import DefaultExample from '../../payments-page/add-new-payment/example'
+import SelectionUsers from "../../common/selection-users/selection-users";
+import DefaultExample from '../../my-account-page/add-new-payment/example'
 import RTempTable from './temp-table/r-temp-table'
 
 class RequirementsListRequest extends React.Component {
@@ -120,7 +118,7 @@ setFiles(files){
                 </Row>*/}
 
                 <Row className=" m-0 text-center justify-content-center">
-                  <ChooseUsers
+                  <SelectionUsers
                     currentUser={this.props.currentUser}
                     title={"*مخاطبین:"}
                   />

@@ -27,16 +27,16 @@ class StatisticUnit extends React.Component {
               start={1}
               end={this.props.value}
               delay={1}
-              duration={2}
-              // onEnd={({pauseResume,reset, start, update}) => {
-              //   if(!this.props.isShow){
-              //     start();
-              //     this.onChangeShowing();
-              //   }
-              //
-              // }}
-              // onStart={this.onChangeShowing}
-              start={this.props.start}/>
+              duration={2}/>
+              {/*  onEnd={({pauseResume,reset, start, update}) => {
+                if(!this.props.isShow){
+                  start();
+                  this.onChangeShowing();
+                }
+
+              }}
+               onStart={this.onChangeShowing}*/}
+
               {` ${this.props.title}`}
             </p>
           </div>

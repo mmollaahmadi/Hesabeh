@@ -1,9 +1,5 @@
 import React from "react";
 import {
-  Card,
-  Container,
-  CardHeader,
-  CardBody,
   Row,
 } from "reactstrap";
 import RTempTableRow from "./r-temp-table-row.js";
@@ -81,7 +77,7 @@ handleAllCheckedChange(){
 getCheckedStatus(id){
   let flag = false;
   this.state.checkBoxesStatusList.forEach(el => {
-    if(el.id == id)
+    if(el.id === id)
       flag = el.checked;
   });
   return flag;

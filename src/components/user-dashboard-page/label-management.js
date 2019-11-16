@@ -6,10 +6,6 @@ import {
   FormGroup,
   InputGroup,
   Input,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
   Button,
   Badge,
   Card,
@@ -17,7 +13,6 @@ import {
   InputGroupText,
   InputGroupAddon
 } from "reactstrap";
-import { GithubPicker } from "react-color";
 import ColorPicker from '../common/color-picker/color-picker.js'
 import reactCSS from 'reactcss'
 

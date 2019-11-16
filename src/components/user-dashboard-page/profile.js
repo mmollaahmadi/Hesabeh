@@ -17,7 +17,6 @@ import {
 import "./profile.css";
 import { Link } from "react-router-dom";
 import AOS from 'aos';
-import Avatar from '../common/avatar/avatar'
 
 class Profile extends React.Component {
   constructor(props){

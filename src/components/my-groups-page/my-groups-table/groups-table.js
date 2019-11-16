@@ -85,7 +85,7 @@ handleAllCheckedChange(){
 getCheckedStatus(id){
   let flag = false;
   this.state.checkBoxesStatusList.forEach(el => {
-    if(el.id == id)
+    if(el.id === id)
       flag = el.checked;
   });
   return flag;

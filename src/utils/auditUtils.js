@@ -10,7 +10,7 @@ export function doesExistUser(emailOrUsernameOrPhoneNumber) {
     });
     return flag;
 }
-export function isCurrectUser(emailOrUsernameOrPhoneNumber, password){
+export function isCorrectUser(emailOrUsernameOrPhoneNumber, password){
   let flag = false;
   // eslint-disable-next-line array-callback-return
   USERS.map((u) => {

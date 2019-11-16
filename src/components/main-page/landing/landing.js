@@ -4,12 +4,11 @@ import React from "react";
 import {Row, Button, Col} from "reactstrap";
 import AOS from "aos";
 import { Link } from "react-router-dom";
-// import SignupButton from '../common/signup-button/SignupButton.js';
+// import RegisterButton from '../common/signup-button/register-button.jsjs';
 // import SigninButton from "../../common/signin-button/SigninButton.js";
 // import OnboardingUnit from "./OnboardingUnit.js";
 
 class Landing extends React.Component {
-  constructor(){super();}
   componentDidMount() {
     AOS.refresh();
   }
