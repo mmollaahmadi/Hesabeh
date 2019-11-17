@@ -65,12 +65,12 @@ class Footer extends React.Component {
                       راهنما
                     </NavLink>
                   </Col>
-                  <Col className="lg-auto">
+                  <Col className={`lg-auto ${this.props.isLogin ? 'd-none' : ''}`}>
                     <NavLink
                     // to="/register"
                     // tag={Link}
                     className="footer-links"
-                    onClick={() => this.props.goto('/register','register')}
+                    onClick={() => {this.props.goto('/register','register');this.onChangePage('sign-up')}}
                     >
                       ثبت نام
                     </NavLink>
@@ -78,7 +78,7 @@ class Footer extends React.Component {
                     // to="/signin"
                     // tag={Link}
                     className="footer-links"
-                    onClick={() => this.props.goto('/signin','sign-in')}>
+                    onClick={() => {this.props.goto('/login','sign-in');this.onChangePage('sign-in')}}>
                       ورود
                     </NavLink>
                   </Col>
@@ -87,7 +87,7 @@ class Footer extends React.Component {
                       // to="/#features"
                       // tag={Link}
                       className="footer-links"
-                      onClick={() => this.props.goto('/','features')}
+                      onClick={() => {this.props.goto('/','features');this.onChangePage('Hesabeh')}}
                       >
                       امکانات
                     </NavLink>
@@ -95,7 +95,7 @@ class Footer extends React.Component {
                     // to="/#about-us"
                     // tag={Link}
                     className="footer-links"
-                    onClick={() => this.props.goto('/','about-us')}
+                    onClick={() => {this.props.goto('/','about-us'); this.onChangePage('Hesabeh')}}
                     >
                       درباره ما
                     </NavLink>

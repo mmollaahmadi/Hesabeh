@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import {
   Row,
   Col,
@@ -26,7 +26,7 @@ class SelectionUsers extends React.Component {
       groupsList: [],
       usersOfGroupsList: [],
       usersOfSelectedGroupsList: [],
-      selectedUsers:[],
+      selectedUsers: [],
       isAnyGroupSelected: false,
       isAnyUserSelected: false,
       isSelectedConsumers: false
@@ -40,9 +40,35 @@ class SelectionUsers extends React.Component {
       this
     );
     this.handleSelectConsumers = this.handleSelectConsumers.bind(this);
+    this.handleSelectAllConsumersOfGroups = this.handleSelectAllConsumersOfGroups.bind(this);
     AOS.init();
 
   }
+
+  handleSelectAllConsumersOfGroups() {
+    let selectedUsers = [];
+    if (this.state.isAnyGroupSelected) {
+      let _groupsList = this.state.groupsList;
+      _groupsList.forEach(group => {
+        group.users.forEach(user => {
+          user.checked = group.checked;
+          user.selected = group.checked;
+          if (user.selected)
+            selectedUsers.push(user);
+        });
+      });
+      if (this.props.setUsers) {
+        this.props.setUsers(selectedUsers);
+      }
+      this.setState({
+        selectedUsers: selectedUsers,
+        groupsList: _groupsList,
+        isSelectedConsumers: true,
+        consumersCollapse: false
+      });
+    }
+  }
+
   handleSelectConsumers() {
     let selectedUsers = [];
     if (this.state.isAnyGroupSelected && this.state.isAnyUserSelected) {
@@ -50,21 +76,22 @@ class SelectionUsers extends React.Component {
       _groupsList.forEach(group => {
         group.users.forEach(user => {
           user.selected = user.checked;
-          if(user.selected)
+          if (user.selected)
             selectedUsers.push(user);
         });
       });
-      if(this.props.setUsers){
+      if (this.props.setUsers) {
         this.props.setUsers(selectedUsers);
       }
       this.setState({
-        selectedUsers:selectedUsers,
-        groupsList:_groupsList,
+        selectedUsers: selectedUsers,
+        groupsList: _groupsList,
         isSelectedConsumers: true,
         consumersCollapse: false
       });
     }
   }
+
   componentDidMount() {
     let groupsList = [];
     this.props.currentUser.groups.forEach(group => {
@@ -86,6 +113,7 @@ class SelectionUsers extends React.Component {
       groupsList: groupsList
     });
   }
+
   handleBackOrNextStep() {
     let fadeAnimation = "fadeOut";
     if (this.state.isStepOne) {
@@ -121,6 +149,7 @@ class SelectionUsers extends React.Component {
       isStepOne: true
     });
   };
+
   updateSelectedGroupsList(id) {
     let _groupsList = this.state.groupsList;
     _groupsList.forEach(group => {
@@ -140,6 +169,7 @@ class SelectionUsers extends React.Component {
       isAnyGroupSelected: _isAnyGroupSelected
     });
   }
+
   updateSelectedUsersList(id) {
     let _groupsList = this.state.groupsList;
     let _isAnyUserSelected = false;
@@ -159,6 +189,7 @@ class SelectionUsers extends React.Component {
       isAnyUserSelected: _isAnyUserSelected
     });
   }
+
   updateUsersOfSelectedGroupsList() {
     let _users = [];
     this.state.groupsList.forEach(group => {
@@ -216,7 +247,7 @@ class SelectionUsers extends React.Component {
       });
     }
 
-    return(
+    return (
       <Col lg="12" className="m-0 mt-3">
         <Row className="m-0 d-flex justify-content-right">
           <p className="p-0 mx-3 my-auto consumers-text">
@@ -232,7 +263,7 @@ class SelectionUsers extends React.Component {
             }
           >
             <span className="btn-inner--icon">
-              <i className="fa fa-user-plus" />
+              <i className="fa fa-user-plus"/>
             </span>
             {/*<span className="btn-inner--text">مصرف کنندگان</span>*/}
           </Button>
@@ -282,6 +313,17 @@ class SelectionUsers extends React.Component {
                         onClick={this.handleBackOrNextStep}
                       >
                         مرحله بعد
+                      </Button>
+                      <Button
+                        className="profile-modal-btn"
+                        // className={'continueBtn profile-modal-btn'}
+                        color="primary"
+                        disabled={
+                          !this.state.isAnyGroupSelected
+                        }
+                        onClick={this.handleSelectAllConsumersOfGroups}
+                      >
+                        انتخاب
                       </Button>
                       <Button
                         className="profile-modal-btn"

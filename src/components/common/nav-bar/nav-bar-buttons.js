@@ -19,7 +19,7 @@ class NavBarButtons extends React.Component {
           }`}
           color="primary"
           id="navbar-signin"
-          to="/signin"
+          to="/login"
           tag={Link}
           onClick={() => this.togglePage('sign-in')}
         >
@@ -46,7 +46,7 @@ class NavBarButtons extends React.Component {
               : "navbar-link"
           }`}
           color="primary"
-          to="/signup"
+          to="/register"
           tag={Link}
           onClick={() => this.togglePage('sign-up')}
         >

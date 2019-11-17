@@ -38,3 +38,10 @@
 }
 
 /*--------------------------------------------*/
+.forgot-password-footer-nav-link{
+    font-size: 14px;
+    margin: 0 auto;
+}
+.forgot-password-footer-nav-link:hover {
+    color: #03091e !important;
+}

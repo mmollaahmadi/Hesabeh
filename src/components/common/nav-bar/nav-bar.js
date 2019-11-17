@@ -196,7 +196,7 @@ componentDidUpdate(prevProps){
         </button>*/}
 
         <button className={`navbar-toggle ${this.state.collapse ? '' : 'navbar-toggle-collapsed'}`} onClick={() => this.toggleCollapse()}>
-          <span className="icon-bar top-bar" ></span>
+          <span className="icon-bar top-bar" />
           <span className="icon-bar middle-bar" />
           <span className="icon-bar bottom-bar" />
         </button>

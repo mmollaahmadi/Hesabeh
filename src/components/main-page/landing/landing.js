@@ -1,12 +1,7 @@
 import React from "react";
-
-// reactstrap components
 import {Row, Button, Col} from "reactstrap";
 import AOS from "aos";
 import { Link } from "react-router-dom";
-// import RegisterButton from '../common/signup-button/register-button.jsjs';
-// import SigninButton from "../../common/signin-button/SigninButton.js";
-// import OnboardingUnit from "./OnboardingUnit.js";
 
 class Landing extends React.Component {
   componentDidMount() {
@@ -44,9 +39,9 @@ class Landing extends React.Component {
             <Button
             color="primary"
             className="py-1 px-4 primary-button"
-            to='/help'
-            tag={Link}
-            onClick={() => this.props.onChangePage('help')}            
+            // to='/help'
+            // tag={Link}
+            onClick={() => {this.props.goto('/help','help');this.props.onChangePage('help')}}
             >
               بیشتر
             </Button>

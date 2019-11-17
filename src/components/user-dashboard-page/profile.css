@@ -1,17 +1,23 @@
 .profile-data-title{
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   text-align: right;
   margin: 0;
 }
+.profile-data-col{
+  padding-right: 48px;
+}
 .profile-data-value{
   padding-top: 0;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   text-align: right;
 }
 @media (max-width: 768px) {
   .profile-data-value,
   .profile-data-title{
     text-align: center;
+  }
+  .profile-data-col{
+    padding-right: 15px;
   }
 }
 .modal{

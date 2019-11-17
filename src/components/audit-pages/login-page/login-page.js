@@ -239,7 +239,7 @@ class LoginPage extends React.Component {
                     </Row>
                   </FormGroup>
                 </Form>
-                <AuditColumnFooter isLoginPage={true}/>
+                <AuditColumnFooter isLoginPage={true} handleChangePage={this.props.onChangePage}/>
 
               </Col>
             </Row>

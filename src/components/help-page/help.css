@@ -1,0 +1,6 @@
+.help-tabs-nav-link{
+    margin: 0 1rem;
+}
+.help-tabs-nav-link:hover{
+    cursor: pointer;
+}

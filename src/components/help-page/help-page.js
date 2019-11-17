@@ -2,17 +2,26 @@ import React from "react";
 import { Container, Row, Col, Card, CardBody } from "reactstrap";
 import AOS from 'aos'
 import ScrollableAnchor from 'react-scrollable-anchor'
+import HelpTabs from "./help-tabs"
+
 class HelpPage extends React.Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
+    this.state={
+      selectedTab:'register-login'
+    };
+    this.handleSelectTab = this.handleSelectTab.bind(this);
     AOS.init();
+  }
+  handleSelectTab(){
+
   }
   render() {
     return (
       <ScrollableAnchor id={'help'}>
       <div className="my-body">
         <Container>
-
+            <HelpTabs />
             <Card className='my-3'
             data-aos="fade-up"
                  data-aos-duration="1000"

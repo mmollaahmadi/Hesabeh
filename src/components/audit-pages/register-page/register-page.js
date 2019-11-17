@@ -425,7 +425,7 @@ class RegisterPage extends React.Component {
                     </Row>
                   </FormGroup>
                 </Form>
-                <AuditColumnFooter isRegisterPage={true}/>
+                <AuditColumnFooter isRegisterPage={true} handleChangePage={this.props.onChangePage}/>
               </Col>
             </Row>
           </Container>

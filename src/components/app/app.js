@@ -188,28 +188,29 @@ class App extends Component {
                 <MainPage
                   onChangePage={this.handleChangePage}
                   isLogin="false"
+                  goto={this.goto}
                 />
               )}
             />
             <Route
               path="/register"
               exact
-              render={props => <RegisterPage {...props} />}
+              render={props => <RegisterPage onChangePage={this.handleChangePage} />}
             />
             <Route
-              path="/signin"
+              path="/login"
               exact
-              render={props => <LoginPage onLogin={this.handleLogin} />}
+              render={props => <LoginPage onLogin={this.handleLogin} onChangePage={this.handleChangePage}/>}
             />
             <Route
               path="/forgot-password"
               exact
-              render={props => <NewPasswordRequestPage {...props} />}
+              render={props => <NewPasswordRequestPage onChangePage={this.handleChangePage} />}
             />
             <Route
               path="/support"
               exact
-              render={props => <SupportPage {...props} />}
+              render={props => <SupportPage isLogin={this.state.isAuthenticated} onChangePage={this.handleChangePage} />}
             />
             <Route
               path="/help"
@@ -279,6 +280,7 @@ class App extends Component {
         </div>
         <Footer
           currentUser={this.state.currentUser}
+          isLogin={this.state.isAuthenticated}
           goto={this.goto}
           onChangePage={this.handleChangePage}
          />

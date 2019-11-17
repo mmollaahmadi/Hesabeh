@@ -30,7 +30,10 @@ componentDidMount(){
     if (this.props.isLogin === "false") {
       mainPage = (
         <div>
-          <Landing onChangePage={this.props.onChangePage}/>
+          <Landing
+            onChangePage={this.props.onChangePage}
+            goto={this.props.goto}
+          />
           <AboutUs />
           <OnBoarding />
           <Features />

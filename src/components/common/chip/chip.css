@@ -5,6 +5,7 @@
   margin: 0 0 0 0;
   background-color: #33393f10 !important;
   max-height: 32px !important;
+  text-transform: inherit !important;
 }
 .chip-clickable:hover{
   cursor: pointer;
@@ -17,7 +18,7 @@
 .chip-label{
   margin: 0 0.5rem 0 0.1rem;
   font-family: Samim, Tahoma, serif;
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: #414141 !important;
   align-items: center;
   display: flex;
@@ -25,7 +26,7 @@
 .chip-label-link{
   padding: 0;
   margin: 0 0.3rem 0 0.1rem;
-  font-size: 0.7rem;
+  font-size: .8rem;
   color: #01cd9a !important;
 }
 .chip-label-link:hover{

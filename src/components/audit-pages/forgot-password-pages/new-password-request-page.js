@@ -141,7 +141,7 @@ class NewPasswordRequestPage extends React.Component {
                 </FormGroup>
               </Form>
 
-              <AuditColumnFooter isForgotPasswordPage={true}/>
+              <AuditColumnFooter isForgotPasswordPage={true} handleChangePage={this.props.onChangePage}/>
 
             </Col>
           </Row>

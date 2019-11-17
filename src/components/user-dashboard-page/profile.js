@@ -414,22 +414,22 @@ class Profile extends React.Component {
                 </Col>
               </Row>
               <div className="text-center mt-0 mt-sm-5 pt-5 pb-5">
-                <Row>
-                  <Col lg="6" className="pr-5">
+                <Row >
+                  <Col md="6" className="profile-data-col">
                     <p className="profile-data-title">نام و نام خانوادگی</p>
                     <h3 className="profile-data-value">{this.props.currentUser ? this.props.currentUser.name : ''}</h3>
                   </Col>
-                  <Col lg="6" className="pr-5">
+                  <Col md="6" className="profile-data-col">
                     <p className="profile-data-title">نام کاربری</p>
                     <h3 className="profile-data-value">{this.props.currentUser ? this.props.currentUser.username : ''}@</h3>
                   </Col>
-                  <Col lg="6" className="pr-5">
+                  <Col md="6" className="profile-data-col">
                     <p className="profile-data-title">پست الکترونیکی</p>
                     <h3 className="profile-data-value">
                       {this.props.currentUser ? this.props.currentUser.email : ''}
                     </h3>
                   </Col>
-                  <Col lg="6" className="pr-5">
+                  <Col md="6" className="profile-data-col">
                     <p className="profile-data-title">شماره همراه</p>
                     <h3 className="profile-data-value">{this.props.currentUser ? this.props.currentUser.phoneNumber : ''}</h3>
                   </Col>

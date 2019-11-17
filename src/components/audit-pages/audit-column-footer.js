@@ -8,31 +8,35 @@ class AuditColumnFooter extends React.Component{
       <Row className="text-center justify-content-center">
         <Col lg="12">
           <hr className="mt-5 mb-1"/>
-          <Row className="text-center justify-content-between px-4">
+          <Row className="text-center justify-content-center px-4">
             <NavLink
               to="/"
               tag={Link}
               activeClassName="link-active"
               className="forgot-password-footer-nav-link"
               color="primary"
+              onClick={() => this.props.handleChangePage("Hesabeh")}
             >
               حسابه
             </NavLink>
+
             <NavLink
               to="/register"
               tag={Link}
               activeClassName="link-active"
-              className={`forgot-password-footer-nav-link ${this.props.isRegisterPage ? 'd-none' : ''}`}
+              className={`forgot-password-footer-nav-link ${(this.props.isRegisterPage || this.props.isLogin) ? 'd-none' : ''}`}
               color="primary"
+              onClick={() => this.props.handleChangePage("sign-up")}
             >
               ثبت نام
             </NavLink>
             <NavLink
-              to="/signin"
+              to="/login"
               tag={Link}
               activeClassName="link-active"
-              className={`forgot-password-footer-nav-link ${this.props.isLoginPage ? 'd-none' : ''}`}
+              className={`forgot-password-footer-nav-link ${(this.props.isLoginPage || this.props.isLogin) ? 'd-none' : ''}`}
               color="primary"
+              onClick={() => this.props.handleChangePage("sign-in")}
             >
               ورود
             </NavLink>
@@ -41,8 +45,9 @@ class AuditColumnFooter extends React.Component{
               to="/support"
               tag={Link}
               activeClassName="link-active"
-              className="forgot-password-footer-nav-link"
+              className={`forgot-password-footer-nav-link ${this.props.isSupportPage ? 'd-none' : ''}`}
               color="primary"
+              onClick={() => this.props.handleChangePage("support")}
             >
               پشتیبانی
             </NavLink>

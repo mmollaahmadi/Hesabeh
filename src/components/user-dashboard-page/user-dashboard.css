@@ -126,9 +126,11 @@ border-radius: 26px;
 .profile-label{
   text-align: center;
   padding: 0.4rem 1rem;
-  margin: 0rem 1rem 0rem 0.2rem;
+  margin: 0 1rem 0 0.2rem;
 }
-
+.profile-label-close-btn:hover{
+    cursor: pointer;
+}
 .color-picker{
   width: 212px !important;
 }

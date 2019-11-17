@@ -20,6 +20,7 @@ import "../../assets/css/custom.css";
 import AuditColumnHeader from "../audit-pages/audit-column-header.js";
 import AOS from 'aos'
 import ScrollableAnchor from 'react-scrollable-anchor'
+import AuditColumnFooter from "../audit-pages/audit-column-footer";
 class SupportPage extends React.Component {
 constructor(){
   super();
@@ -156,23 +157,8 @@ constructor(){
                 Follow Us
               </UncontrolledTooltip>
               </div>
+              <AuditColumnFooter isSupportPage={true} isLogin={this.props.isLogin} handleChangePage={this.props.onChangePage}/>
 
-              <Row className="text-center justify-content-center">
-                <Col lg="12">
-                  <hr className="mt-5 mb-1" />
-                  <Row className="text-center justify-content-center px-4">
-                    <NavLink
-                      to="/"
-                      tag={Link}
-                      className="forgot-password-footer-nav-link"
-                      color="primary"
-                    >
-                      حسابه
-                    </NavLink>
-
-                  </Row>
-                </Col>
-              </Row>
             </Col>
           </Row>
         </Container>

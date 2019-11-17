@@ -145,116 +145,120 @@ class PaymentsTable extends React.Component {
                 // handleDelete={this.handleDelete}
               />
               <TableFilters data={FILTERS} />
-              <Row className="justify-content-start py-1">
-                {/*<PaymentsTableHeader
+
+
+            </CardBody>
+          </Card>
+
+          <Row className="justify-content-start py-1">
+            {/*<PaymentsTableHeader
                 allCheckBoxesChecked={this.state.allCheckBoxesChecked}
                 handleAllCheckedChange={this.handleAllCheckedChange}
                 />*/}
-                <Masonry
-                  breakpointCols={breakpointColumnsObj}
-                  className="my-masonry-grid"
-                  columnClassName="my-masonry-grid_column"
-                >
-                  {payments}
-                </Masonry>
-              </Row>
-              <Modal
-                className="modal-dialog-centered"
-                isOpen={this.state.editModalShow}
-                toggle={() => this.toggleEditPaymentModal()}
-              >
-                <div className="modal-body p-0">
-                  <Card className="bg-secondary shadow border-0">
-                    <CardHeader className="bg-transparent p-1">
-                      <div className="text-muted  mt-3 mb-2">
-                        <h5 className="my-modal-header">
-                          ویرایش اطلاعات کاربری
-                        </h5>
-                      </div>
-                    </CardHeader>
-                    <CardBody className=" py-lg-3">
-                      <Form role="form" className="audit-form">
-                        <Row className="text-center justify-content-center">
-                          <Col lg="10">
-                            <FormGroup className="mb-3">
-                              <InputGroup className="input-group-alternative">
-                                <InputGroupAddon addonType="prepend">
-                                  <InputGroupText>
-                                    <i className="ni ni-email-83" />
-                                  </InputGroupText>
-                                </InputGroupAddon>
+            <Masonry
+              breakpointCols={breakpointColumnsObj}
+              className="my-masonry-grid"
+              columnClassName="my-masonry-grid_column"
+            >
+              {payments}
+            </Masonry>
+          </Row>
 
-                                <Input
-                                  className="audit-input"
-                                  value="mollaahmadimohammad@gmail.com"
-                                  type="email"
-                                />
-                              </InputGroup>
-                            </FormGroup>
+        </Container>
+        <Modal
+          className="modal-dialog-centered"
+          isOpen={this.state.editModalShow}
+          toggle={() => this.toggleEditPaymentModal()}
+        >
+          <div className="modal-body p-0">
+            <Card className="bg-secondary shadow border-0">
+              <CardHeader className="bg-transparent p-1">
+                <div className="text-muted  mt-3 mb-2">
+                  <h5 className="my-modal-header">
+                    ویرایش اطلاعات کاربری
+                  </h5>
+                </div>
+              </CardHeader>
+              <CardBody className=" py-lg-3">
+                <Form role="form" className="audit-form">
+                  <Row className="text-center justify-content-center">
+                    <Col lg="10">
+                      <FormGroup className="mb-3">
+                        <InputGroup className="input-group-alternative">
+                          <InputGroupAddon addonType="prepend">
+                            <InputGroupText>
+                              <i className="ni ni-email-83" />
+                            </InputGroupText>
+                          </InputGroupAddon>
 
-                            <FormGroup className="mb-3">
-                              <InputGroup className="input-group-alternative">
-                                <InputGroupAddon addonType="prepend">
-                                  <InputGroupText>
-                                    <i className="fa fa-user" />
-                                  </InputGroupText>
-                                </InputGroupAddon>
+                          <Input
+                            className="audit-input"
+                            value="mollaahmadimohammad@gmail.com"
+                            type="email"
+                          />
+                        </InputGroup>
+                      </FormGroup>
 
-                                <Input
-                                  className="audit-input"
-                                  value="محمد ملااحمدی"
-                                  type="email"
-                                />
-                              </InputGroup>
-                            </FormGroup>
+                      <FormGroup className="mb-3">
+                        <InputGroup className="input-group-alternative">
+                          <InputGroupAddon addonType="prepend">
+                            <InputGroupText>
+                              <i className="fa fa-user" />
+                            </InputGroupText>
+                          </InputGroupAddon>
 
-                            <FormGroup className="mb-3">
-                              <InputGroup className="input-group-alternative">
-                                <InputGroupAddon addonType="prepend">
-                                  <InputGroupText>
-                                    <i className="fa fa-phone" />
-                                  </InputGroupText>
-                                </InputGroupAddon>
+                          <Input
+                            className="audit-input"
+                            value="محمد ملااحمدی"
+                            type="email"
+                          />
+                        </InputGroup>
+                      </FormGroup>
 
-                                <Input
-                                  className="audit-input"
-                                  value="۰۹۱۸۳۶۹۴۸۵۸"
-                                />
-                              </InputGroup>
-                            </FormGroup>
+                      <FormGroup className="mb-3">
+                        <InputGroup className="input-group-alternative">
+                          <InputGroupAddon addonType="prepend">
+                            <InputGroupText>
+                              <i className="fa fa-phone" />
+                            </InputGroupText>
+                          </InputGroupAddon>
 
-                            <FormGroup>
-                              <Row className="justify-item-center d-flex">
-                                <Col>
-                                  <Button
-                                    className="profile-modal-btn"
-                                    color="primary"
-                                    to="/dashboard"
-                                    tag={Link}
-                                  >
-                                    ثبت تغییرات
-                                  </Button>
-                                  <Button
-                                    className="profile-modal-btn"
-                                    color="default"
-                                    to="/dashboard"
-                                    tag={Link}
-                                  >
-                                    بیخیال
-                                  </Button>
-                                </Col>
-                              </Row>
-                            </FormGroup>
+                          <Input
+                            className="audit-input"
+                            value="۰۹۱۸۳۶۹۴۸۵۸"
+                          />
+                        </InputGroup>
+                      </FormGroup>
+
+                      <FormGroup>
+                        <Row className="justify-item-center d-flex">
+                          <Col>
+                            <Button
+                              className="profile-modal-btn"
+                              color="primary"
+                              to="/dashboard"
+                              tag={Link}
+                            >
+                              ثبت تغییرات
+                            </Button>
+                            <Button
+                              className="profile-modal-btn"
+                              color="default"
+                              to="/dashboard"
+                              tag={Link}
+                            >
+                              بیخیال
+                            </Button>
                           </Col>
                         </Row>
-                      </Form>
-                    </CardBody>
-                  </Card>
-                </div>
-              </Modal>
-            </CardBody>
-          </Card>
-        </Container>
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                </Form>
+              </CardBody>
+            </Card>
+          </div>
+        </Modal>
       </section>
     );
   }

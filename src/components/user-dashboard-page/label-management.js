@@ -17,20 +17,31 @@ import ColorPicker from '../common/color-picker/color-picker.js'
 import reactCSS from 'reactcss'
 
 class LabelManagement extends React.Component {
-  constructor(){
+  constructor() {
     super();
-    this.state={
-      labels:[],
-      textLabel:'',
-      isTextColorDark:true,
-      colorPicked:{
-        r:'20',
-        g:'200',
-        b:'20',
-        a:'1'
+    this.state = {
+      labels: [],
+      textLabel: '',
+      isTextColorDark: true,
+      colorPicked: {
+        r: '20',
+        g: '200',
+        b: '20',
+        a: '1'
       }
     };
-    this.handleAddLabel = this.handleAddLabel.bind(this);
+    this.handleDeleteLabel = this.handleDeleteLabel.bind(this);
+  }
+
+  handleDeleteLabel(id){
+
+    let labels = this.state.labels.filter(function(label) {
+      return label.id !== id;
+    });
+    this.setState({
+      labels: labels,
+      textLabel:id
+    });
   }
   handleCreateLabel = () => {
     let _labels = this.state.labels;
@@ -42,7 +53,7 @@ class LabelManagement extends React.Component {
       }
     );
     this.setState({labels: _labels});
-  }
+  };
   handleInputChange = (event) => {
     this.setState({textLabel: event.target.value});
   };
@@ -52,7 +63,8 @@ class LabelManagement extends React.Component {
   handleChangeColor = (color) => {
     this.setState({colorPicked: color.rgb});
   };
-  componentDidMount(){
+
+  componentDidMount() {
     let _labels = this.state.labels;
     this.props.currentUser.labels.forEach(label => {
       _labels.push(label);
@@ -61,18 +73,16 @@ class LabelManagement extends React.Component {
       labels: _labels
     });
   }
-  handleAddLabel(){
 
-  }
   render() {
     const styles = reactCSS({
-      'default':{
-        color:{
-          color:`${this.state.isTextColorDark ? 'rgb(0,0,0,1)' : 'rgb(255,255,255,1)'}`,
-          background:`rgba(${this.state.colorPicked.r},${this.state.colorPicked.g},${this.state.colorPicked.b},${this.state.colorPicked.a})`,
+      'default': {
+        color: {
+          color: `${this.state.isTextColorDark ? 'rgb(0,0,0,1)' : 'rgb(255,255,255,1)'}`,
+          background: `rgba(${this.state.colorPicked.r},${this.state.colorPicked.g},${this.state.colorPicked.b},${this.state.colorPicked.a})`,
         },
-        textColor:{
-          color:`${this.state.isTextColorDark ? 'rgb(0,0,0,1)' : 'rgb(255,255,255,1)'}`,
+        textColor: {
+          color: `${this.state.isTextColorDark ? 'rgb(0,0,0,1)' : 'rgb(255,255,255,1)'}`,
         }
       },
     });
@@ -80,75 +90,82 @@ class LabelManagement extends React.Component {
     this.state.labels.forEach(label => {
       labels.push(
         <Badge
-        style={{background:`rgba(${label.color.r},${label.color.g},${label.color.b},${label.color.a})`,
-      color:`${label.isTextColorDark ? 'rgb(0,0,0,1)' : 'rgb(255,255,255,1)'}`}}
-        color="primary"
-        className="profile-label align-self-center">
+          style={{
+            background: `rgba(${label.color.r},${label.color.g},${label.color.b},${label.color.a})`,
+            color: `${label.isTextColorDark ? 'rgb(0,0,0,1)' : 'rgb(255,255,255,1)'}`
+          }}
+          color="primary"
+          className="profile-label align-self-center px-2">
           {label.name}
-          <i className="fa fa-close mr-2"></i>
+          <i className="fa fa-close mr-3 profile-label-close-btn"
+             onClick={() => this.handleDeleteLabel(label.id)}
+          />
         </Badge>
       );
     });
     return (
       <>
-      <Col lg="7" className="order-2 mt-3">
-      <Card data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="50"
-            className="shadow m-0 mt-5">
-        <CardBody>
-          <Form role="form" className="audit-form">
-            <Row className="justify-content-center mb-3">
-              <Col lg="auto">
-                <FormGroup className="m-0">
-                  <InputGroup className="input-group-alternative">
-                  <InputGroupAddon addonType="prepend">
-                    <InputGroupText>
-                      <i className="fa fa-tag"/>
-                    </InputGroupText>
-                  </InputGroupAddon>
-                    <Input
-                    className="audit-input"
-                    placeholder="نام برچسب"
-                    onChange={this.handleInputChange} />
-                  </InputGroup>
-                </FormGroup>
-              </Col>
+        <Col lg="7" className="order-2 mt-3">
+          <Card data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-delay="50"
+                className="shadow m-0 mt-5">
+            <CardBody>
+              <Form role="form" className="audit-form">
+                <Row className="justify-content-center mb-3">
 
-              <Col lg="auto" className="d-flex align-items-center">
-                <ColorPicker handleChangeColor={this.handleChangeColor}/>
-                <Button
-                style={styles.color}
-                className="p-0 btn-circle m-0"
-                onClick={this.handleChangeTextColor}>
-                  <i style={styles.textColor} className="fa fa-pencil"/>
-                </Button>
-              </Col>
+                  <Col lg="auto mb-3">
+                    <FormGroup className="m-0">
+                      <InputGroup className="input-group-alternative">
+                        <InputGroupAddon addonType="prepend">
+                          <InputGroupText>
+                            <i className="fa fa-tag"/>
+                          </InputGroupText>
+                        </InputGroupAddon>
+                        <Input
+                          className="audit-input"
+                          placeholder="نام برچسب"
+                          value={this.state.textLabel}
+                          onChange={this.handleInputChange}/>
+                      </InputGroup>
+                    </FormGroup>
+                  </Col>
 
-              <Col lg="auto" className="">
-                <FormGroup className="m-0">
-                  <Button
-                  color="primary"
-                  type="button"
-                  onClick={this.handleCreateLabel}>
-                    ایجاد برچسب
-                  </Button>
-                </FormGroup>
-              </Col>
-            </Row>
-          </Form>
+                  <Col xs='6' lg="auto" className="d-flex justify-content-center align-items-center mb-3">
+                    <ColorPicker handleChangeColor={this.handleChangeColor}/>
+                    <Button
+                      style={styles.color}
+                      className="p-0 btn-circle m-0"
+                      onClick={this.handleChangeTextColor}>
+                      <i style={styles.textColor} className="fa fa-pencil"/>
+                    </Button>
+                  </Col>
 
-          <Row className="justify-content-start">
-            <h6 className="m-0"> برچسبها:</h6>
-            {labels}
-          </Row>
-        </CardBody>
-      </Card>
-      </Col>
-      <Col lg="5" className="order-1">
-      </Col>
+                  <Col xs='6' lg="auto" className="mb-3 d-flex justify-content-center">
+                    <FormGroup className="m-0">
+                      <Button
+                        color="primary"
+                        type="button"
+                        onClick={this.handleCreateLabel}>
+                        ایجاد برچسب
+                      </Button>
+                    </FormGroup>
+                  </Col>
+                </Row>
+              </Form>
+
+              <Row className="justify-content-start">
+                <h6 className="m-0"> برچسبها:</h6>
+                {labels}
+              </Row>
+            </CardBody>
+          </Card>
+        </Col>
+        <Col lg="5" className="order-1">
+        </Col>
       </>
     );
   }
 }
+
 export default LabelManagement;
