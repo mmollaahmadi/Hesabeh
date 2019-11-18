@@ -1,55 +1,49 @@
 import React from 'react'
-import {Col, NavLink, Row} from "reactstrap";
-import {Link} from "react-router-dom";
+import {Button, Col, Row} from "reactstrap";
+// import {Link} from "react-router-dom";
 import './help.css'
 
 class HelpTabs extends React.Component{
   render() {
     return(
-      <Row className="text-center justify-content-center">
+      <Row data-aos="fade-down"
+           data-aos-duration="700"
+           data-aos-delay="0"
+           className="text-center justify-content-center">
         <Col lg="12">
           <Row className="text-center justify-content-center px-4">
-            <NavLink
-              // to="/"
-              // tag={Link}
-              activeClassName="link-active"
-              className="help-tabs-nav-link"
-              color="primary"
-              onClick={() => this.props.handleChangePage("register-login")}
+            <Button
+              color={'primary'}
+              className={`help-btn-circle ${this.props.selectedTab === 'register-login' ? 'help-btn-circle-active' : ''}`}
+              onClick={() => this.props.handleSelectTab("register-login")}
             >
-              ثبت نام و ورود
-            </NavLink>
+              <p className={'help-btn-circle-text'}>ثبت نام</p>
+              <p className={'help-btn-circle-text'}>ورود</p>
+            </Button>
 
-            <NavLink
-              // to="/register"
-              // tag={Link}
-              activeClassName="link-active"
-              className={`help-tabs-nav-link ${(this.props.isRegisterPage || this.props.isLogin) ? 'd-none' : ''}`}
-              color="primary"
-              onClick={() => this.props.handleChangePage("groups")}
+            <Button
+              color={'primary'}
+              className={`help-btn-circle ${this.props.selectedTab === 'groups' ? 'help-btn-circle-active' : ''}`}
+              onClick={() => this.props.handleSelectTab("groups")}
             >
               گروه ها
-            </NavLink>
-            <NavLink
-              // to="/login"
-              // tag={Link}
-              activeClassName="link-active"
-              className={`help-tabs-nav-link ${(this.props.isLoginPage || this.props.isLogin) ? 'd-none' : ''}`}
-              color="primary"
-              onClick={() => this.props.handleChangePage("payments")}
+            </Button>
+
+            <Button
+              color={'primary'}
+              className={`help-btn-circle ${this.props.selectedTab === 'payments' ? 'help-btn-circle-active' : ''}`}
+              onClick={() => this.props.handleSelectTab("payments")}
             >
               هزینه ها
-            </NavLink>
-            <NavLink
-              // to="/login"
-              // tag={Link}
-              activeClassName="link-active"
-              className={`help-tabs-nav-link ${(this.props.isLoginPage || this.props.isLogin) ? 'd-none' : ''}`}
-              color="primary"
-              onClick={() => this.props.handleChangePage("payments")}
+            </Button>
+
+            <Button
+              color={'primary'}
+              className={`help-btn-circle ${this.props.selectedTab === 'notifications' ? 'help-btn-circle-active' : ''}`}
+              onClick={() => this.props.handleSelectTab("notifications")}
             >
               اعلام ها
-            </NavLink>
+            </Button>
           </Row>
           <hr className="mt-1 mb-4"/>
         </Col>

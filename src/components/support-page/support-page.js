@@ -1,7 +1,5 @@
 import React from "react";
-
 import "./support-page.css";
-import { Link } from "react-router-dom";
 import {
   Container,
   Row,
@@ -14,7 +12,6 @@ import {
   Input,
   UncontrolledTooltip,
   InputGroup,
-  NavLink
 } from "reactstrap";
 import "../../assets/css/custom.css";
 import AuditColumnHeader from "../audit-pages/audit-column-header.js";

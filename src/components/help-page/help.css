@@ -1,6 +1,47 @@
 .help-tabs-nav-link{
     margin: 0 1rem;
+    font-size: .91rem;
+    transition: all 0.15s linear;
 }
 .help-tabs-nav-link:hover{
     cursor: pointer;
+}
+.help-tabs-nav-link-selected{
+
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    position: relative;
+    background-color: #00e5ac;
+    font-family: Samim-Bold, Tahoma, serif !important;
+    cursor: pointer;
+
+    padding: auto 20px !important;
+
+}
+.help-btn-circle {
+    width: 100px;
+    height: 100px;
+    margin: 0 .5rem;
+    background-color: transparent;
+    border: solid 1px #00e5ac;
+    border-radius: 50%;
+    text-align: center;
+    font-size: .9rem;
+    color: #00e5ac;
+    transition: all 0.15s linear;
+}
+.help-btn-circle-active{
+    color: #fff !important;
+    background-color: #00e5ac !important;
+    font-size: 1rem !important;
+    transition: all 0.15s linear;
+}
+.help-btn-circle-text{
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    margin: 0;
+    padding: 0;
 }

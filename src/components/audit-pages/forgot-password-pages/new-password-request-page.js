@@ -86,7 +86,10 @@ class NewPasswordRequestPage extends React.Component {
       <div className="my-section">
         <Container className="pt-10 pb-30  h-100">
           <Row className="text-center justify-content-center">
-            <Col lg="5">
+            <Col lg="5"
+                 data-aos="fade-up"
+                 data-aos-duration="1000"
+                 data-aos-delay="50">
               <AuditColumnHeader needBrand={false}
                                  title="درخواست تغییر رمز عبور"/>
 

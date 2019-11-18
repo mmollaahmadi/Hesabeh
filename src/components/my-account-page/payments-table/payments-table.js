@@ -144,9 +144,10 @@ class PaymentsTable extends React.Component {
                 buttonLink="/add-new-payment"
                 // handleDelete={this.handleDelete}
               />
-              <TableFilters data={FILTERS} />
-
-
+              <TableFilters
+                filters={FILTERS}
+                labels={this.props.labels}
+              />
             </CardBody>
           </Card>
 

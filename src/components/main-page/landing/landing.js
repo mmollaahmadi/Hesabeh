@@ -1,7 +1,6 @@
 import React from "react";
 import {Row, Button, Col} from "reactstrap";
 import AOS from "aos";
-import { Link } from "react-router-dom";
 
 class Landing extends React.Component {
   componentDidMount() {

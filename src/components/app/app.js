@@ -14,15 +14,10 @@ import "../../assets/css/argon-design-system-react.css";
 import "../../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css";
 import "../../assets/vendor/nucleo/css/nucleo.css";
 import "../../assets/vendor/font-awesome/css/font-awesome.min.css";
-
 import "../../assets/css/bootstrap-rtl.css";
-
 import "../../assets/css/custom.css";
-
 import "../../assets/css/animate.css";
-
 import "aos/dist/aos.css";
-
 import "react-persian-calendar-date-picker/lib/DatePicker.css";
 
 import MainPage from "../main-page/main-page";
@@ -40,24 +35,20 @@ import CreateNewRequestPage from "../notifications-page/new-request/create-new-r
 import AddPaymentPage from "../my-account-page/add-new-payment/add-new-payment.js";
 import HelpPage from "../help-page/help-page";
 import GoToUp from "../common/go-to-up/go-to-up.js";
-
-// import { Layout, notification } from 'antd';
 import NavBar from "../common/nav-bar/nav-bar";
 import Footer from "../common/footer/footer";
+
 import { goToAnchor, configureAnchors } from "react-scrollable-anchor";
-
-
-// const { Content } = Layout;
 import { USERS } from "../../constants/constants";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentUser: USERS[0],
-      isAuthenticated: true,
+      currentUser: null,
+      isAuthenticated: false,
       isLoading: false,
-      selectedPage: "my-account",
+      selectedPage: "Hesabeh",
       goto: ""
     };
     configureAnchors({offset:-70, scrollDuration: 300});
@@ -195,22 +186,30 @@ class App extends Component {
             <Route
               path="/register"
               exact
-              render={props => <RegisterPage onChangePage={this.handleChangePage} />}
+              render={props => <RegisterPage
+                onChangePage={this.handleChangePage} />}
             />
             <Route
               path="/login"
               exact
-              render={props => <LoginPage onLogin={this.handleLogin} onChangePage={this.handleChangePage}/>}
+              render={props => <LoginPage
+                onLogin={this.handleLogin}
+                onChangePage={this.handleChangePage}
+              />}
             />
             <Route
               path="/forgot-password"
               exact
-              render={props => <NewPasswordRequestPage onChangePage={this.handleChangePage} />}
+              render={props => <NewPasswordRequestPage
+                onChangePage={this.handleChangePage} />}
             />
             <Route
               path="/support"
               exact
-              render={props => <SupportPage isLogin={this.state.isAuthenticated} onChangePage={this.handleChangePage} />}
+              render={props => <SupportPage
+                isLogin={this.state.isAuthenticated}
+                onChangePage={this.handleChangePage}
+              />}
             />
             <Route
               path="/help"
@@ -220,7 +219,7 @@ class App extends Component {
             <Route
               path="/my-account"
               exact
-              render={props => <PaymentsPage {...props} />}
+              render={props => <PaymentsPage currentUser={this.state.currentUser} />}
             />
             <Route
               path="/add-new-payment"

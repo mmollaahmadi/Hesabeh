@@ -37,16 +37,23 @@
 @media (max-width: 768px) {
     .sec {
         background: none !important;
+        transition: background-size .3s !important;
     }
 }
-
+@media (max-width: 1024px) {
+    .sec {
+        background-size: 140vmin !important;
+        transition: background-size .3s !important;
+    }
+}
 .sec {
     background: url('../../assets/img/theme/cloud01.png') no-repeat left bottom;
-    background-size: 80vmin;
+    background-size: 180vmin;
     height: 100vh;
     width: 100%;
     margin: 0;
     padding-top: 80px;
+    transition: all .3s !important;
 }
 
 .section {

@@ -121,11 +121,21 @@ const PAYMENTS = [
 ];
 
 class PaymentsPage extends React.Component {
+  constructor(props){
+    super(props);
+  }
   render() {
+    let labels=[];
+    this.props.currentUser.labels.forEach(label => {
+      labels.push(label);
+    });
     return (
       <div className="my-body">
         <Account/>
-        <PaymentsTable payments={PAYMENTS}/>
+        <PaymentsTable
+          payments={PAYMENTS}
+          labels={labels}
+        />
       </div>
     );
   }
