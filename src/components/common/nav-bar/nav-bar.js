@@ -136,7 +136,7 @@ componentDidUpdate(prevProps){
             }`}
             onClick={() => this.togglePage("my-groups")}
             color="link"
-            to="/mygroups"
+            to="/my-groups"
             tag={Link}
           >
             <i className="fa fa-users d-lg-none mr-0 ml-2"/>

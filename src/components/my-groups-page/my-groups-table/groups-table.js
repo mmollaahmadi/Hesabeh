@@ -116,7 +116,7 @@ getCheckedStatus(id){
               buttonLink="/create-new-group"
 
               />
-              <TableFilters data={FILTERS}/>
+              <TableFilters filters={FILTERS}/>
               <Row className="justify-content-center py-1">
                 <MyGroupsTableHeader
                 allCheckBoxesChecked={this.state.allCheckBoxesChecked}

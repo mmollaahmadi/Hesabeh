@@ -28,7 +28,7 @@ class DefaultOrderValue extends React.Component {
                   <Col lg="12" className="px-4">
                     <FormGroup>
                       <Badge color='dark' className='default-order-label-badge'>ترتیب پیشفرض نمایش گروه‌ها:</Badge>
-                      <TableFilters data={FILTERS} />
+                      <TableFilters filters={FILTERS} />
                       {/*                  <Input type="select" name="select" id="exampleSelect">
                     <option>1</option>
                     <option>2</option>
@@ -43,13 +43,13 @@ class DefaultOrderValue extends React.Component {
                     <FormGroup>
                       <Badge color='dark' className='default-order-label-badge'>ترتیب پیشفرض نمایش خرج‌ها:</Badge>
 
-                      <TableFilters data={FILTERS} />
+                      <TableFilters filters={FILTERS} />
                     </FormGroup>
                   </Col>
                   <Col lg="12" className="px-4">
                     <FormGroup>
                       <Badge color='dark' className='default-order-label-badge'>ترتیب پیشفرض نمایش اعلام‌ها:</Badge>
-                      <TableFilters data={FILTERS} />
+                      <TableFilters filters={FILTERS} />
                     </FormGroup>
                   </Col>
                 </Row>

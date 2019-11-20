@@ -42,7 +42,7 @@ registerServiceWorker();
 // import SupportPage from './components/support-page/support-page.js';
 // import LoginPage from './components/signin-page/login-page.js';
 // import RegisterPage from './components/register-page/register-page.js';
-// import PaymentsPage from './components/payments-page/payments-page.js';
+// import MyAccountPage from './components/payments-page/my-account-page.js';
 // import CreateNewGroupPage from './components/my-groups-page/create-new-group-page.js';
 // import NotificationsPage from './components/notifications-page/notifications-page.js';
 // import CreateNewRequestPage from './components/notifications-page/new-request/create-new-request-page.js'
@@ -81,7 +81,7 @@ registerServiceWorker();
 //       <Route
 //         path="/my-account"
 //         exact
-//         render={props => <PaymentsPage {...props} />}
+//         render={props => <MyAccountPage {...props} />}
 //       />
 //       <Route
 //         path="/add-new-payment"

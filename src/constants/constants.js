@@ -71,7 +71,7 @@ export const USERS = [
     labels:[
       {
         id:'1',
-        name:'hih',
+        name:'برچسب ۱',
         color: {
           r:'20',
           g:'200',
@@ -82,7 +82,7 @@ export const USERS = [
       },
       {
         id:'2',
-        name:'aaa',
+        name:'برچسب ۲',
         color: {
           r:'20',
           g:'200',
@@ -93,7 +93,7 @@ export const USERS = [
       },
       {
         id:'3',
-        name:'kkk',
+        name:'برچسب ۳',
         color: {
           r:'20',
           g:'200',

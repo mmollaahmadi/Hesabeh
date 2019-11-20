@@ -1,16 +1,10 @@
 import React, { Component } from "react";
-import "./app.css";
 import { Route, withRouter, Switch } from "react-router-dom";
 
 // import { getCurrentUser } from '../util/APIUtils';
 // import { ACCESS_TOKEN } from '../constants';
 
-// import './assets/css/argon-dashboard-react.css';
 import "../../assets/css/argon-design-system-react.css";
-// import './assets/scss/argon-design-system-react.scss'
-
-// import * as serviceWorker from './serviceWorker';
-
 import "../../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css";
 import "../../assets/vendor/nucleo/css/nucleo.css";
 import "../../assets/vendor/font-awesome/css/font-awesome.min.css";
@@ -28,7 +22,7 @@ import NewPasswordRequestPage from "../audit-pages/forgot-password-pages/new-pas
 import SupportPage from "../support-page/support-page.js";
 import LoginPage from "../audit-pages/login-page/login-page.js";
 import RegisterPage from "../audit-pages/register-page/register-page.js";
-import PaymentsPage from "../my-account-page/payments-page.js";
+import MyAccountPage from "../my-account-page/my-account-page.js";
 import CreateNewGroupPage from "../my-groups-page/create-new-group-page.js";
 import NotificationsPage from "../notifications-page/notifications-page.js";
 import CreateNewRequestPage from "../notifications-page/new-request/create-new-request-page.js";
@@ -45,8 +39,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentUser: null,
-      isAuthenticated: false,
+      currentUser: USERS[0],
+      isAuthenticated: true,
       isLoading: false,
       selectedPage: "Hesabeh",
       goto: ""
@@ -133,8 +127,8 @@ class App extends Component {
 
   handleLogout(
     redirectTo = "/",
-    notificationType = "success",
-    description = "You're successfully logged out."
+    // notificationType = "success",
+    // description = "You're successfully logged out."
   ) {
     // localStorage.removeItem(ACCESS_TOKEN);
 
@@ -175,7 +169,7 @@ class App extends Component {
             <Route
               path="/"
               exact
-              render={props => (
+              render={() => (
                 <MainPage
                   onChangePage={this.handleChangePage}
                   isLogin="false"
@@ -186,13 +180,13 @@ class App extends Component {
             <Route
               path="/register"
               exact
-              render={props => <RegisterPage
+              render={() => <RegisterPage
                 onChangePage={this.handleChangePage} />}
             />
             <Route
               path="/login"
               exact
-              render={props => <LoginPage
+              render={() => <LoginPage
                 onLogin={this.handleLogin}
                 onChangePage={this.handleChangePage}
               />}
@@ -200,13 +194,14 @@ class App extends Component {
             <Route
               path="/forgot-password"
               exact
-              render={props => <NewPasswordRequestPage
+              render={() => <NewPasswordRequestPage
                 onChangePage={this.handleChangePage} />}
             />
             <Route
               path="/support"
               exact
-              render={props => <SupportPage
+              render={() => <SupportPage
+                currentUser={this.state.currentUser}
                 isLogin={this.state.isAuthenticated}
                 onChangePage={this.handleChangePage}
               />}
@@ -219,12 +214,14 @@ class App extends Component {
             <Route
               path="/my-account"
               exact
-              render={props => <PaymentsPage currentUser={this.state.currentUser} />}
+              render={() => (
+                <MyAccountPage currentUser={this.state.currentUser} />
+              )}
             />
             <Route
               path="/add-new-payment"
               exact
-              render={props => (
+              render={() => (
                 <AddPaymentPage currentUser={this.state.currentUser} />
               )}
             />
@@ -234,6 +231,8 @@ class App extends Component {
               render={props => (
                 <UserDashboardPage
                   currentUser={this.state.currentUser}
+                  onLogout={this.handleLogout}
+                  onChangePage={this.handleChangePage}
                   {...props}
                 />
               )}
@@ -255,7 +254,7 @@ class App extends Component {
               )}
             />
             <Route
-              path="/mygroups"
+              path="/my-groups"
               exact
               render={props => <MyGroupsPage {...props} />}
             />

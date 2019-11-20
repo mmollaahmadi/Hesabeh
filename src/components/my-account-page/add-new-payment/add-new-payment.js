@@ -14,14 +14,10 @@ import {
   Card,
   CardHeader,
   CardBody,
-  Collapse,
 } from "reactstrap";
-import Chip from "../../common/chip/chip";
-import "../payments-page.css";
+import "../my-account-page.css";
 import DatePicker from "react-persian-calendar-date-picker";
 import AOS from "aos";
-import GroupUnit from "./group-unit";
-import UserUnit from "./user-unit";
 import SelectionUsers from '../../common/selection-users/selection-users'
 import DefaultExample from './example'
 // import PaymentsTable from '../payments-table/payments-table'
@@ -72,40 +68,35 @@ class AddPaymentPage extends React.Component {
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
-    this.animateCSS = this.animateCSS.bind(this);
-    this.handleBackOrNextStep = this.handleBackOrNextStep.bind(this);
-    this.myCallBack = this.myCallBack.bind(this);
-    this.updateSelectedGroupsList = this.updateSelectedGroupsList.bind(this);
-    this.updateSelectedUsersList = this.updateSelectedUsersList.bind(this);
-    this.updateUsersOfSelectedGroupsList = this.updateUsersOfSelectedGroupsList.bind(
-      this
-    );
     this.handleSelectConsumers = this.handleSelectConsumers.bind(this);
-    this.handleSaveInputvalueCheckbox = this.handleSaveInputvalueCheckbox.bind(this);
+    this.handleSaveInputValueCheckbox = this.handleSaveInputValueCheckbox.bind(this);
     this.resetInputs = this.resetInputs.bind(this);
     this.handleAddPaymentClick = this.handleAddPaymentClick.bind(this);
-    this.setUsers=this.setUsers.bind(this);
+    this.setUsers = this.setUsers.bind(this);
     this.setSelectedDay = this.setSelectedDay.bind(this);
-    this.setFiles=this.setFiles.bind(this);
+    this.setFiles = this.setFiles.bind(this);
     AOS.init();
   }
-  setFiles(files){
+
+  setFiles(files) {
     this.setState({
-      paymentPictures:{
+      paymentPictures: {
         ...this.state.paymentPictures,
-        value:files
+        value: files
       }
     });
   }
-  setSelectedDay(value){
+
+  setSelectedDay(value) {
     this.setState({
-      paymentDate:{
+      paymentDate: {
         ...this.state.paymentDate,
-        value:value
+        value: value
       }
     });
   }
-  setUsers(users){
+
+  setUsers(users) {
     this.setState({
       paymentConsumers: {
         ...this.state.paymentConsumers,
@@ -113,20 +104,21 @@ class AddPaymentPage extends React.Component {
       },
     });
   }
-  handleAddPaymentClick(){
+
+  handleAddPaymentClick() {
     let payments = this.state.payments;
     payments.push({
       name: this.state.paymentName.value,
       cost: this.state.paymentCost.value,
       description: this.state.paymentDescription.value,
       date: this.state.paymentDate.value,
-      consumers:this.state.paymentConsumers.value,
-      pictures:this.state.paymentPictures.value,
+      consumers: this.state.paymentConsumers.value,
+      pictures: this.state.paymentPictures.value,
     });
 
     // this.resetInputs();
     this.setState({
-      payments:payments,
+      payments: payments,
       paymentName: {
         ...this.state.paymentName,
         value: (!this.state.paymentName.isSave ? '' : this.state.paymentName.value)
@@ -152,12 +144,9 @@ class AddPaymentPage extends React.Component {
         value: (!this.state.paymentPictures.isSave ? '' : this.state.paymentPictures.value)
       },
     });
-
-    // this.setState({
-    //   payments:payments
-    // });
   }
-  resetInputs(){
+
+  resetInputs() {
     this.setState({
       paymentName: {
         ...this.state.paymentName,
@@ -185,16 +174,17 @@ class AddPaymentPage extends React.Component {
       },
     });
   }
-  handleSaveInputvalueCheckbox(){
+
+  handleSaveInputValueCheckbox() {
     this.setState({
       saveInputsValue: !this.state.saveInputsValue,
       paymentName: {
         ...this.state.paymentName,
-        isSave: ((this.state.paymentName.value!==''&&!this.state.saveInputsValue) ? true : false)
+        isSave: ((this.state.paymentName.value !== '' && !this.state.saveInputsValue))
       },
       paymentCost: {
         ...this.state.paymentCost,
-        isSave: ((this.state.paymentCost.value!==''&&!this.state.saveInputsValue) ? true : false)
+        isSave: ((this.state.paymentCost.value !== '' && !this.state.saveInputsValue))
       },
       paymentDescription: {
         ...this.state.paymentDescription,
@@ -214,6 +204,7 @@ class AddPaymentPage extends React.Component {
       },
     });
   }
+
   handleSelectConsumers() {
     if (this.state.isAnyGroupSelected && this.state.isAnyUserSelected) {
       let _groupsList = this.state.groupsList;
@@ -223,76 +214,13 @@ class AddPaymentPage extends React.Component {
         });
       });
       this.setState({
-        groupsList:_groupsList,
+        groupsList: _groupsList,
         isSelectedConsumers: true,
         consumersCollapse: false
       });
     }
   }
-  componentDidMount() {
-    let groupsList = [];
-    this.props.currentUser.groups.forEach(group => {
-      let usersList = [];
-      group.users.forEach(user => {
-        usersList.push({
-          ...user,
-          checked: false,
-          selected: false
-        });
-      });
-      groupsList.push({
-        ...group,
-        users: usersList,
-        checked: false
-      });
-    });
-    this.setState({
-      groupsList: groupsList
-      // usersOfGroupsList: usersList
-    });
-  }
-  handleBackOrNextStep() {
-    let fadeAnimation = "fadeOut";
-    if (this.state.isStepOne) {
-      this.animateCSS(".selectGroupCardHeader", fadeAnimation);
-      this.animateCSS(".selectGroupCardBody", fadeAnimation, this.myCallBack);
-      this.updateUsersOfSelectedGroupsList();
-    } else {
-      this.animateCSS(".selectUsersCardHeader", fadeAnimation);
-      this.animateCSS(".selectUsersCardBody", fadeAnimation, this.myCallBack);
-    }
-  }
-  myCallBack() {
-    let fadeInAnimation = "fadeIn";
-    // let fadeAnimation = 'fadeOut';
-    if (this.state.isStepOne) {
-      this.setState({
-        isStepOne: false
-      });
-      this.animateCSS(".selectUsersCardHeader", fadeInAnimation);
-      this.animateCSS(".selectUsersCardBody", fadeInAnimation);
-    } else {
-      this.setState({
-        isStepOne: true
-      });
-      this.animateCSS(".selectGroupCardHeader", fadeInAnimation);
-      this.animateCSS(".selectGroupCardBody", fadeInAnimation);
-    }
-  }
-  animateCSS(element, animationName, callback) {
-    const node = document.querySelector(element);
 
-    node.classList.add("animated", animationName);
-
-    function handleAnimationEnd() {
-      node.classList.remove("animated", animationName);
-      node.removeEventListener("animationend", handleAnimationEnd);
-
-      if (typeof callback === "function") callback();
-    }
-
-    node.addEventListener("animationend", handleAnimationEnd);
-  }
   handleInputChange(event) {
     let name = event.target.name;
     let value = event.target.value;
@@ -304,126 +232,26 @@ class AddPaymentPage extends React.Component {
       }
     });
   }
+
   toggleModal = state => {
     this.setState({
       [state]: !this.state[state],
       isStepOne: true
     });
   };
-  updateSelectedGroupsList(id) {
-    let _groupsList = this.state.groupsList;
-    _groupsList.forEach(group => {
-      if (group.id === id) {
-        group.checked = !group.checked;
-      }
-    });
-
-    let _isAnyGroupSelected = false;
-    _groupsList.forEach(group => {
-      if (group.checked) {
-        _isAnyGroupSelected = true;
-      }
-    });
-    this.setState({
-      groupsList: _groupsList,
-      isAnyGroupSelected: _isAnyGroupSelected
-    });
-  }
-  updateSelectedUsersList(id) {
-    let _groupsList = this.state.groupsList;
-    let _isAnyUserSelected = false;
-
-    _groupsList.forEach(group => {
-      if (group.checked) {
-        group.users.forEach(user => {
-          if (user.id === id) {
-            user.checked = !user.checked;
-          }
-          if (user.checked) _isAnyUserSelected = true;
-        });
-      }
-    });
-    this.setState({
-      groupsList: _groupsList,
-      isAnyUserSelected: _isAnyUserSelected
-    });
-  }
-  updateUsersOfSelectedGroupsList() {
-    let _users = [];
-    this.state.groupsList.forEach(group => {
-      if (group.checked) {
-        group.users.forEach(u => {
-          _users.push(u);
-        });
-      }
-    });
-    this.setState({
-      usersOfSelectedGroupsList: _users
-    });
-  }
 
   render() {
-    // let _groups = this.props.currentUser.groups;
-    let _groups = this.state.groupsList;
-    let groups = [];
-    let users = [];
-    _groups.forEach(group => {
-      groups.push(
-        <GroupUnit
-          group={group}
-          imageUri={require("../../../assets/img/theme/team-4-800x800.jpg")}
-          updateSelectedGroupsList={this.updateSelectedGroupsList}
-        />
-      );
-      if (group.checked) {
-        group.users.forEach(user => {
-          users.push(
-            <UserUnit
-              user={user}
-              imageUri={require("../../../assets/img/theme/team-4-800x800.jpg")}
-              updateSelectedUsersList={this.updateSelectedUsersList}
-            />
-          );
-        });
-      }
-    });
-
-    let consumers = [];
-    if (this.state.isSelectedConsumers) {
-      this.state.groupsList.forEach(group => {
-        group.users.forEach(user => {
-          if (user.selected) {
-            consumers.push(
-              <Chip
-                class="mb-2 ml-2"
-                haveCloseButton="true"
-                avatarSrc={require("../../../assets/img/users/user01.jpg")}
-                label={user.name}
-                // onDelete={() => this.deleteUser()}
-              />
-            );
-          }
-        });
-      });
-    }
-    // Dropzone class:
-    // var myDropzone = new Dropzone("div#myId", { url: "/file/post"});
-
     let payments = this.state.payments;
     let tempTablePayments = null;
-    if(payments.length === 0){
-        tempTablePayments = (
-          <p className="nothing">هیچ هزینه ای اضافه نشده است.</p>
-        );
-    }
-    else {
+    if (payments.length === 0) {
+      tempTablePayments = (
+        <p className="nothing">هیچ هزینه ای اضافه نشده است.</p>
+      );
+    } else {
       tempTablePayments = (
         <TempTable payments={payments}/>
       );
     }
-
-    const dragBody = document.getElementById('image-upload-body');
-
     return (
       <div className="my-body">
         <Container>
@@ -444,7 +272,7 @@ class AddPaymentPage extends React.Component {
                           <InputGroup className="input-group-alternative">
                             <InputGroupAddon addonType="prepend">
                               <InputGroupText>
-                                <i className="fa fa-shopping-basket" />
+                                <i className="fa fa-shopping-basket"/>
                               </InputGroupText>
                             </InputGroupAddon>
 
@@ -466,7 +294,7 @@ class AddPaymentPage extends React.Component {
                               addonType="prepend"
                             >
                               <InputGroupText>
-                                <i className="fa fa-usd" />
+                                <i className="fa fa-usd"/>
                               </InputGroupText>
                             </InputGroupAddon>
 
@@ -485,7 +313,7 @@ class AddPaymentPage extends React.Component {
                           <InputGroup className="input-group-alternative">
                             <InputGroupAddon addonType="prepend">
                               <InputGroupText>
-                                <i className="fa fa-calendar" />
+                                <i className="fa fa-calendar"/>
                               </InputGroupText>
                             </InputGroupAddon>
                             {/*<PersianCalendar />*/}
@@ -507,15 +335,13 @@ class AddPaymentPage extends React.Component {
                           <InputGroup className="input-group-alternative">
                             <InputGroupAddon addonType="prepend">
                               <InputGroupText>
-                                <i className="fa fa-edit" />
+                                <i className="fa fa-edit"/>
                               </InputGroupText>
                             </InputGroupAddon>
 
                             <Input
                               className="audit-input"
-                              placeholder={
-                                this.state.paymentDescription.placeholder
-                              }
+                              placeholder={this.state.paymentDescription.placeholder}
                               name="paymentDescription"
                               value={this.state.paymentDescription.value}
                               onChange={this.handleInputChange}
@@ -525,22 +351,19 @@ class AddPaymentPage extends React.Component {
                         </FormGroup>
                       </Col>
 
+                      <Col lg="12" className="m-0">
+                      </Col>
+
                       <SelectionUsers
-                      currentUser={this.props.currentUser}
-                      title={'*مصرف کنندگان:'}
-                      setUsers={this.setUsers} />
+                        currentUser={this.props.currentUser}
+                        title={'*مصرف کنندگان:'}
+                        setUsers={this.setUsers}/>
 
                       <Col lg="12" className="m-0 mt-2" id="image-upload-body">
                         <div className="example w-100">
                           {/*<Dropzone onFilesAdded={console.log} />*/}
-                           <DefaultExample setFiles={this.setFiles}ii={dragBody}/>
+                          <DefaultExample setFiles={this.setFiles}/>
                         </div>
-                      </Col>
-
-                      <Col lg="12" className="m-0">
-                        <Collapse
-                          isOpen={this.state.consumersCollapse}
-                        ></Collapse>
                       </Col>
 
                       <Row className="m-0 mt-3 d-flex justify-content-center w-100">
@@ -554,7 +377,7 @@ class AddPaymentPage extends React.Component {
                               id=" saveInputsValueCheckbox"
                               type="checkbox"
                               checked={this.saveInputsValue}
-                              onChange={this.handleSaveInputvalueCheckbox}
+                              onChange={this.handleSaveInputValueCheckbox}
                             />
                             <label
                               className="custom-control-label pr-1"
@@ -584,7 +407,7 @@ class AddPaymentPage extends React.Component {
                     </Row>
 
                     <Card
-                      
+
                       className="mt-5 shadow"
                     >
                       <CardHeader>هزینه‌های اضافه شده</CardHeader>
@@ -607,31 +430,4 @@ class AddPaymentPage extends React.Component {
   }
 }
 
-// const PersianCalendar = () => {
-//   const [selectedDay, setSelectedDay] = useState(null);
-//
-//   // render regular HTML input element
-//   // const renderCustomInput = ({ ref, onFocus, onBlur }) => (
-//   //   <input
-//   //     readOnly
-//   //     ref={ref} // necessary
-//   //     onFocus={onFocus} // necessary
-//   //     onBlur={onBlur} // necessary
-//   //     className="input-group-alternative1" // a styling class
-//   //   />
-//   // );
-//
-//   return (
-//     <DatePicker
-//       selectedDay={selectedDay}
-//       onChange={setSelectedDay}
-//       colorPrimary="#01cd9a"
-//       calendarClassName="custom-calendar"
-//       calendarTodayClassName="custom-today-day"
-//       inputPlaceholder="انتخاب روز"
-//       // renderInput={renderCustomInput}
-//       // inputClassName='input-group-alternative1'
-//     />
-//   );
-// };
 export default AddPaymentPage;

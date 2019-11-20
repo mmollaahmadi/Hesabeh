@@ -1,7 +1,24 @@
+.filters-row{
+  display: flex;
+  justify-content: center;
+  margin: auto 2rem;
+  border-bottom: dashed 1px #03091e55;
+  border-top: dashed 1px #03091e55;
+  scroll-behavior: auto;
+}
+.labels-row{
+  display: flex;
+  justify-content: center;
+  margin: auto 2rem;
+  padding: .5rem .3rem;
+  border-bottom: dashed 1px #03091e55;
+}
 .table-filters-btn{
-  margin: auto 2vmin;
-  padding: 0.5vmin 2vmin;
-  background-color: #f0f0f0;
+  /*margin: auto 2vmin;*/
+  /*padding: 0.5vmin 2vmin;*/
+  padding: .2rem 1rem;
+  margin: .5rem .3rem;
+  background-color: transparent;
   box-shadow: none;
       font-size: 0.875rem;
 }

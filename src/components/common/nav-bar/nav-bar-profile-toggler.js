@@ -20,7 +20,6 @@ constructor(props){
       this.props.onLogout();
       this.props.resetPageSelection();
     }
-
   }
   render() {
     return (

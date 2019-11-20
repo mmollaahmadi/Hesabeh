@@ -105,6 +105,9 @@
     display: inline-flex;
     width: fit-content !important;
     margin: .25rem 0 .25rem .5rem !important;
+    background-color: rgba(255, 16, 63, 0.84);
+    padding: .1rem ;
+    border-radius: 10rem;
 }
 
 .account-status-text {
@@ -307,9 +310,9 @@
 }
 
 .sahm-badge {
-    border-radius: 5px;
+    border-radius: 10rem;
     margin: auto .2rem;
-    background-color: rgba(255, 99, 71, 0.95);
+    background-color: #f0f1f1;
     color: #03091e;
     font-size: .8rem;
     font-weight: normal;

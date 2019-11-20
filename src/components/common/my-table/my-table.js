@@ -112,7 +112,7 @@ getCheckStatus(id){
               buttonTitle={this.props.data.toolsButton.title}
               buttonLink={this.props.data.toolsButton.link}
               />
-              <TableFilters data={this.props.data.filters}/>
+              <TableFilters filter={this.props.data.filters}/>
               <Row className="justify-content-center py-1">
                 <MyTableHeader
                 columns = {this.props.data.header.columns}

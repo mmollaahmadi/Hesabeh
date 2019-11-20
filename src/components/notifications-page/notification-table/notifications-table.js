@@ -294,7 +294,7 @@ class NotificationsTable extends React.Component {
               buttonTitle="ایجاد درخواست"
               buttonLink="/create-new-request"
             />
-            <TableFilters data={FILTERS} />
+            <TableFilters filters={FILTERS} />
             <Row className="justify-content-center py-1">
               <NotificationsTableHeader
                 allCheckBoxesChecked={this.state.allCheckBoxesChecked}

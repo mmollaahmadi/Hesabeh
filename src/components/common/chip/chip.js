@@ -14,7 +14,7 @@ class Chip extends React.Component {
           color="link"
           onClick={this.props.onDelete}
         >
-          <i class="fa fa-times chip-close-icon"/>
+          <i className="fa fa-times chip-close-icon"/>
         </Button>
       );
     }

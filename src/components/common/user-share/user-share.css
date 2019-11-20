@@ -1,0 +1,32 @@
+
+.users {
+    display: flex;
+    justify-content: start;
+    margin: 0;
+}
+
+.user-col {
+    display: inline-flex;
+    width: fit-content !important;
+    margin: .25rem 0 .25rem .5rem !important;
+    padding: .1rem ;
+    border-radius: 10rem;
+}
+.suppliers-color{
+    background-color: rgba(112, 255, 20, 0.84);
+}
+.consumers-color{
+    background-color: rgba(255, 16, 63, 0.84);
+}
+.share-badge {
+    display: flex;
+    align-items: center;
+    border-radius: 10rem;
+    margin: auto .2rem;
+    background-color: #f0f1f1;
+    color: #03091e;
+    font-size: .8rem;
+    font-weight: normal;
+    padding: .1rem .5rem;
+    width: fit-content;
+}
