@@ -145,6 +145,7 @@ class PaymentsTable extends React.Component {
                 // handleDelete={this.handleDelete}
               />
               <TableFilters
+                currentUser={this.props.currentUser}
                 filters={FILTERS}
                 labels={this.props.labels}
               />

@@ -5,7 +5,7 @@ import NotificationsTableRow from "./notifications-table-row.js";
 import TableTools from "../../common/table-tools/table-tools";
 import TableFilters from "../../common/table-filters/table-filters";
 import AOS from "aos";
-import { FILTERS } from "../../../constants/constants";
+import { NOTIFICATIONS_FILTERS } from "../../../constants/constants";
 
 class NotificationsTable extends React.Component {
   constructor(props) {
@@ -294,7 +294,10 @@ class NotificationsTable extends React.Component {
               buttonTitle="ایجاد درخواست"
               buttonLink="/create-new-request"
             />
-            <TableFilters filters={FILTERS} />
+            <TableFilters
+              currentUser={this.props.currentUser}
+              filters={NOTIFICATIONS_FILTERS}
+            />
             <Row className="justify-content-center py-1">
               <NotificationsTableHeader
                 allCheckBoxesChecked={this.state.allCheckBoxesChecked}

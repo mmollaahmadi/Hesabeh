@@ -1,0 +1,13 @@
+.selection-labels-label{
+    text-align: center;
+    border: solid 1px #d7d7d6;
+    color: #424242;
+    padding: .4rem 1rem;
+    margin: .5rem .3rem;
+    background-color: transparent;
+    box-shadow: none;
+    font-size: 0.875rem;
+}
+.selection-labels-label:hover{
+    cursor: pointer;
+}

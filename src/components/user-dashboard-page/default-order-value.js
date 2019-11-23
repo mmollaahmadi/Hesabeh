@@ -8,7 +8,7 @@ import {
   CardBody,
   Badge
 } from "reactstrap";
-import { FILTERS } from "../../constants/constants";
+import { FILTERS, NOTIFICATIONS_FILTERS, GROUPS_FILTERS } from "../../constants/constants";
 import TableFilters from "../common/table-filters/table-filters";
 
 class DefaultOrderValue extends React.Component {
@@ -28,7 +28,10 @@ class DefaultOrderValue extends React.Component {
                   <Col lg="12" className="px-4">
                     <FormGroup>
                       <Badge color='dark' className='default-order-label-badge'>ترتیب پیشفرض نمایش گروه‌ها:</Badge>
-                      <TableFilters filters={FILTERS} />
+                      <TableFilters
+                        filters={GROUPS_FILTERS}
+                        currentUser={this.props.currentUser}
+                      />
                       {/*                  <Input type="select" name="select" id="exampleSelect">
                     <option>1</option>
                     <option>2</option>
@@ -43,13 +46,17 @@ class DefaultOrderValue extends React.Component {
                     <FormGroup>
                       <Badge color='dark' className='default-order-label-badge'>ترتیب پیشفرض نمایش خرج‌ها:</Badge>
 
-                      <TableFilters filters={FILTERS} />
+                      <TableFilters
+                        currentUser={this.props.currentUser}
+                        filters={FILTERS} />
                     </FormGroup>
                   </Col>
                   <Col lg="12" className="px-4">
                     <FormGroup>
                       <Badge color='dark' className='default-order-label-badge'>ترتیب پیشفرض نمایش اعلام‌ها:</Badge>
-                      <TableFilters filters={FILTERS} />
+                      <TableFilters
+                        currentUser={this.props.currentUser}
+                        filters={NOTIFICATIONS_FILTERS} />
                     </FormGroup>
                   </Col>
                 </Row>

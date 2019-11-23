@@ -1,5 +1,5 @@
 import React from "react";
-import {Row, Col, Badge, Button, Card} from "reactstrap";
+import {Row, Col, Badge, Button, Card, Collapse} from "reactstrap";
 import Chip from "../../common/chip/chip";
 import Labels from '../../common/labels/labels'
 import Pictures from '../../common/pictures/pictures'
@@ -10,8 +10,16 @@ class PaymentsTableRow extends React.Component {
     super(props);
     this.state = {
       isChecked: false,
+      collapse: false,
     };
     this.handleCheckBoxChange = this.handleCheckBoxChange.bind(this);
+    this.handleCollapse = this.handleCollapse.bind(this);
+  }
+
+  handleCollapse() {
+    this.setState({
+      collapse: !this.state.collapse,
+    })
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -31,6 +39,34 @@ class PaymentsTableRow extends React.Component {
   }
 
   render() {
+    let consumersAvatar = [];
+    this.props.data.consumers.forEach(user => {
+      consumersAvatar.push(
+        <div className={'short-consumer-supplier'}>
+        <img
+          alt=""
+          className="rounded-circle chip-avatar-1 mx-1"
+          src={require("../../../assets/img/users/user01.jpg")}
+        />
+        <span className={'short-consumer-supplier-share consumer'}>{user.share}</span>
+        </div>
+      );
+    });
+
+    let suppliersAvatar = [];
+    this.props.data.suppliers.forEach(user => {
+      suppliersAvatar.push(
+        <div className={'short-consumer-supplier'}>
+          <img
+            alt=""
+            className="rounded-circle chip-avatar-1 mx-1"
+            src={require("../../../assets/img/users/user01.jpg")}
+          />
+          <span className={'short-consumer-supplier-share supplier'}>{user.share}</span>
+        </div>
+      );
+    });
+
     return (
       <div
         className={`px-2 p-lg-0 mx-auto my-masonry-grid_column align-self-start ${this.state.isChecked ? 'checked' : 'un-checked'}`}>
@@ -45,6 +81,28 @@ class PaymentsTableRow extends React.Component {
               className="table-row-col justify-content-lg-center check-width px-lg-0"
             >
               <Badge color={'primary'} className="ml-auto date">{this.props.data.date}</Badge>
+              <div className={'m-auto'}>
+                <Button
+                  className="p-0 plus-btn-circle table-row-col-tools-btn"
+                  color="primary"
+                  onClick={this.handleCollapse}
+                >
+                  <i className="fa fa-eye"/>
+                </Button>
+                <Button
+                  className="p-0 plus-btn-circle table-row-col-tools-btn"
+                  color="primary"
+                  onClick={this.props.onClick}
+                >
+                  <i className="fa fa-edit"/>
+                </Button>
+                <Button
+                  className="plus-btn-circle table-row-col-tools-btn"
+                  color="primary"
+                >
+                  <i className="fa fa-trash"/>
+                </Button>
+              </div>
               <div className="p-0 px-1 custom-control custom-control-alternative custom-checkbox">
                 <input
                   className="custom-control-input"
@@ -88,49 +146,51 @@ class PaymentsTableRow extends React.Component {
               xs="12"
               className="table-row-col justify-content-start d-inline my-auto"
             >
-              <span className="ml-2 title">انجام دهندگان: </span>
-              <UserShare users={this.props.data.suppliers} suppliersOrConsumers={'suppliers'}/>
+              <span className="ml-2 mb-2 title">انجام دهندگان: </span>
+              <Collapse isOpen={!this.state.collapse} className={'d-inline'}>
+                {suppliersAvatar}
+              </Collapse>
+              <Collapse isOpen={this.state.collapse}>
+                <UserShare
+                  users={this.props.data.suppliers}
+                  suppliersOrConsumers={'suppliers'}
+                  onlyAvatar={!this.state.collapse}
+                />
+              </Collapse>
             </Col>
 
             <Col
               xs='12'
               className="table-row-col justify-content-start d-inline my-auto"
             >
-              <span className="ml-2 title">مصرف کنندگان: </span>
-              <UserShare users={this.props.data.consumers} suppliersOrConsumers={'consumers'}/>
+              <span className="ml-2 my-auto title">مصرف کنندگان: </span>
+              <Collapse isOpen={!this.state.collapse} className={'d-inline'}>
+                {consumersAvatar}
+              </Collapse>
+              <Collapse isOpen={this.state.collapse}>
+                <UserShare
+                  users={this.props.data.consumers}
+                  suppliersOrConsumers={'consumers'}
+                  onlyAvatar={!this.state.collapse}
+                />
+              </Collapse>
             </Col>
-            <Col
-              xs='12'
-              className={`table-row-col justify-content-start my-auto ${(!this.props.data.labels || this.props.data.labels.length === 0) ? 'd-none' : ''}`}
-            >
-              <span className="ml-2 title"> برچسبها: </span>
-              <Labels labels={this.props.data.labels}/>
-            </Col>
-            <Col
-              xs='12'
-              className={`table-row-col justify-content-start my-auto ${(!this.props.data.pictures || this.props.data.pictures.length === 0) ? 'd-none' : ''}`}
-            >
-              <span className="ml-2 title">تصاویر:</span>
-              <Pictures pictures={this.props.data.pictures} />
-            </Col>
-            <Col
-              xs='12'
-              className="table-row-col justify-content-center d-flex my-auto"
-            >
-              <Button
-                color={'delete'}
-                className={'table-row-button'}
+            <Collapse isOpen={this.state.collapse}>
+              <Col
+                xs='12'
+                className={`table-row-col justify-content-start my-auto ${(!this.props.data.labels || this.props.data.labels.length === 0 || !this.state.collapse) ? 'd-none' : ''}`}
               >
-                حذف
-              </Button>
-              <Button
-                color={'default'}
-                className={'table-row-button'}
-                onClick={this.props.onClick}
+                <span className="ml-2 title"> برچسبها: </span>
+                <Labels labels={this.props.data.labels}/>
+              </Col>
+              <Col
+                xs='12'
+                className={`table-row-col justify-content-start my-auto ${(!this.props.data.pictures || this.props.data.pictures.length === 0 || !this.state.collapse) ? 'd-none' : ''}`}
               >
-                ویرایش
-              </Button>
-            </Col>
+                <span className="ml-2 title">تصاویر:</span>
+                <Pictures pictures={this.props.data.pictures}/>
+              </Col>
+            </Collapse>
             {/*<Col sm="12" className="table-row-line" />*/}
           </Row>
         </Card>

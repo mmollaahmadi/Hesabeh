@@ -1,18 +1,18 @@
 import React from "react";
-import { Row, Col } from "reactstrap";
+import {Row, Col} from "reactstrap";
 import AOS from 'aos';
 
 class AccountUnit extends React.Component {
-constructor(){
-  super();
-  AOS.init();
-}
+  constructor() {
+    super();
+    AOS.init();
+  }
 
   render() {
-    let accountStatusBgColor='orange';
-    if(this.props._text === "میزان مصرف گروهی")
-      accountStatusBgColor = 'green';
-    if(this.props._text === "وضعیت نهایی")
+    let accountStatusBgColor = 'green';
+    if (this.props._text === "میزان مصرف گروهی")
+      accountStatusBgColor = 'orange';
+    if (this.props._text === "وضعیت نهایی")
       accountStatusBgColor = 'yellow';
 
     return (
@@ -36,7 +36,9 @@ constructor(){
             </span>
           </Col>
           <Col xs="12" className="mt-2 account-status-text">
-            <h3 className={`account-status-value account-status-value-${accountStatusBgColor}`}>{this.props.cost} تومان</h3>
+            <h3
+              className={`account-status-value account-status-value-${accountStatusBgColor}`}>
+              {this.props.cost} تومان</h3>
           </Col>
         </Row>
       </Col>

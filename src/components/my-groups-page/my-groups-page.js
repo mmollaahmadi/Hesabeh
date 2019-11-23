@@ -46,7 +46,10 @@ class MyGroupsPage extends React.Component {
   render() {
     return (
       <div className="my-body">
-        <GroupsTable myGroups={MYGROUPS}/>
+        <GroupsTable
+          currentUser={this.props.currentUser}
+          myGroups={MYGROUPS}
+        />
       </div>
     );
   }

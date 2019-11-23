@@ -22,6 +22,7 @@ import SelectionUsers from '../../common/selection-users/selection-users'
 import DefaultExample from './example'
 // import PaymentsTable from '../payments-table/payments-table'
 import TempTable from './temp-table/temp-table'
+import SelectionLabels from '../../common/selection-labels/selection-labels'
 
 class AddPaymentPage extends React.Component {
   constructor(props) {
@@ -45,6 +46,10 @@ class AddPaymentPage extends React.Component {
       paymentDate: {
         placeholder: "امروز",
         value: "",
+        isSave: false
+      },
+      paymentLabels: {
+        value: [],
         isSave: false
       },
       paymentConsumers: {
@@ -72,6 +77,7 @@ class AddPaymentPage extends React.Component {
     this.handleSaveInputValueCheckbox = this.handleSaveInputValueCheckbox.bind(this);
     this.resetInputs = this.resetInputs.bind(this);
     this.handleAddPaymentClick = this.handleAddPaymentClick.bind(this);
+    this.setLabels = this.setLabels.bind(this);
     this.setUsers = this.setUsers.bind(this);
     this.setSelectedDay = this.setSelectedDay.bind(this);
     this.setFiles = this.setFiles.bind(this);
@@ -96,6 +102,15 @@ class AddPaymentPage extends React.Component {
     });
   }
 
+  setLabels(labels) {
+    this.setState({
+      paymentLabels: {
+        ...this.state.paymentLabels,
+        value: labels,
+      },
+    });
+  }
+
   setUsers(users) {
     this.setState({
       paymentConsumers: {
@@ -109,10 +124,11 @@ class AddPaymentPage extends React.Component {
     let payments = this.state.payments;
     payments.push({
       name: this.state.paymentName.value,
-      cost: this.state.paymentCost.value,
+      value: this.state.paymentCost.value,
       description: this.state.paymentDescription.value,
       date: this.state.paymentDate.value,
       consumers: this.state.paymentConsumers.value,
+      suppliers: this.state.paymentConsumers.value,
       pictures: this.state.paymentPictures.value,
     });
 
@@ -351,13 +367,18 @@ class AddPaymentPage extends React.Component {
                         </FormGroup>
                       </Col>
 
-                      <Col lg="12" className="m-0">
-                      </Col>
-
+                      <SelectionLabels
+                        currentUser={this.props.currentUser}
+                        title={'*برچسبها:'}
+                        justify={'right'}
+                        setLabels={this.setLabels}
+                        hasClose={false}
+                      />
                       <SelectionUsers
                         currentUser={this.props.currentUser}
                         title={'*مصرف کنندگان:'}
-                        setUsers={this.setUsers}/>
+                        setUsers={this.setUsers}
+                      />
 
                       <Col lg="12" className="m-0 mt-2" id="image-upload-body">
                         <div className="example w-100">

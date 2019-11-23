@@ -1,5 +1,5 @@
 import React from "react";
-import {Row, Col, Button} from "reactstrap";
+import {Row, Col, Button, Badge} from "reactstrap";
 import Chip from "../../common/chip/chip.js";
 
 class NotificationsTableRow extends React.Component {
@@ -30,7 +30,7 @@ class NotificationsTableRow extends React.Component {
     let actionCol = null;
     const rowData = this.props.rowData;
 
-    let dateCol = <span>{rowData.dateRequest}</span>;
+    let dateCol = rowData.dateRequest;
 
     if (rowData.type === "buy-list") {
       requestCol = (
@@ -197,7 +197,7 @@ class NotificationsTableRow extends React.Component {
         <Row className="m-0">
           <Col xs='12' lg='auto'
                className="table-row-col justify-content-lg-center check-width px-lg-0">
-            <span className='d-lg-none ml-auto'>{dateCol}</span>
+            <Badge className='d-lg-none ml-auto date'>{dateCol}</Badge>
             <div
               className="p-0 px-1 custom-control custom-control-alternative custom-checkbox">
               <input
@@ -222,7 +222,7 @@ class NotificationsTableRow extends React.Component {
           </Col>
 
           <Col xs='12' lg="8" className="table-row-col my-auto">
-            <span className='d-lg-none ml-2'>درخواست: </span>
+
             <span>
                   {requestCol}
                 </span>

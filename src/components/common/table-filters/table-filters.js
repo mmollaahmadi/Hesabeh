@@ -7,6 +7,7 @@ import {
 } from "reactstrap"
 import './table-filters.css'
 import Labels from '../../common/labels/labels'
+import SelectionLabels from "../selection-labels/selection-labels";
 
 class TableFilters extends React.Component {
   constructor(props) {
@@ -45,8 +46,14 @@ class TableFilters extends React.Component {
           {filters}
         </Row>
 
-        <Row className={`labels-row ${!this.props.labels ? 'd-none' : ''}`}>
-          <Labels labels={this.props.labels} hasClose={false}/>
+        <Row className={`labels-row ${(!this.props.labels || this.props.labels.length === 0) ? 'd-none' : ''}`}>
+          <SelectionLabels
+            currentUser={this.props.currentUser}
+            justify={'center'}
+            setLabels={this.setLabels}
+            hasClose={false}
+          />
+
         </Row>
 
       </>

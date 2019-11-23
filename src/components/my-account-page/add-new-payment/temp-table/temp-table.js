@@ -100,10 +100,10 @@ class TempTable extends React.Component {
         buttonLink="/add-new-payment"
       />
       <Row className="w-100 justify-content-center py-1">
-        <PaymentsTableHeader
+        {/*<PaymentsTableHeader
           allCheckBoxesChecked={this.state.allCheckBoxesChecked}
           handleAllCheckedChange={this.handleAllCheckedChange}
-        />
+        />*/}
         {payments}
       </Row>
       </>

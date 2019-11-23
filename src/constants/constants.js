@@ -310,3 +310,39 @@ export const FILTERS = [
     link: ''
   },
 ];
+export const NOTIFICATIONS_FILTERS=[
+  {
+    value: 'قدیمی ترین',
+    link: ''
+  },
+  {
+    value: 'جدیدترین',
+    link: ''
+  },
+];
+export const GROUPS_FILTERS=[
+  {
+    value: 'قدیمی ترین',
+    link: ''
+  },
+  {
+    value: 'جدیدترین',
+    link: ''
+  },
+  {
+    value: 'ارزان ترین',
+    link: ''
+  },
+  {
+    value: 'گران ترین',
+    link: ''
+  },
+  {
+    value: 'خلوت ترین',
+    link: ''
+  },
+  {
+    value: 'شلوغ ترین',
+    link: ''
+  },
+];

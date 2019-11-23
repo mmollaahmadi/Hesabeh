@@ -233,15 +233,19 @@ class MyAccountPage extends React.Component {
   }
   render() {
     let labels=[];
-    this.props.currentUser.labels.forEach(label => {
-      labels.push(label);
-    });
+    if(this.props.currentUser.labels){
+      this.props.currentUser.labels.forEach(label => {
+        labels.push(label);
+      });
+    }
+
     return (
       <div className="my-body">
         <Account/>
         <PaymentsTable
           payments={PAYMENTS}
           labels={labels}
+          currentUser={this.props.currentUser}
         />
       </div>
     );

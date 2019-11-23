@@ -32,16 +32,18 @@ export default class Pictures extends React.Component{
   }
   render() {
     let pictures = [];
-    this.props.pictures.forEach(pic => {
-      pictures.push(
-        <img
-          className={'pictures-list-img'}
-          alt={''}
-          src={require('../../../assets/img/theme/team-4-800x800.jpg')}
-          onClick={() => this.handleToggleModal(pic.url)}
-        />
-      );
-    });
+    if(this.props.pictures){
+      this.props.pictures.forEach(pic => {
+        pictures.push(
+          <img
+            className={'pictures-list-img'}
+            alt={''}
+            src={require('../../../assets/img/theme/team-4-800x800.jpg')}
+            onClick={() => this.handleToggleModal(pic.url)}
+          />
+        );
+      });
+    }
     return (
       <>
         {pictures}

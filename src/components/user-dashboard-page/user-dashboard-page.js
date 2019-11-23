@@ -21,7 +21,7 @@ class UserDashboardPage extends React.Component {
               onChangePage={this.props.onChangePage}
             />
             <Row>
-              <DefaultOrderValue/>
+              <DefaultOrderValue currentUser={this.props.currentUser}/>
               <LabelManagement currentUser={this.props.currentUser}/>
               <Col lg="12">
                 <ShargeHistory/>

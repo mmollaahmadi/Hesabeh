@@ -240,7 +240,7 @@ class App extends Component {
             <Route
               path="/notifications"
               exact
-              render={props => <NotificationsPage {...props} />}
+              render={props => <NotificationsPage currentUser={this.state.currentUser} {...props} />}
             />
             <Route
               path="/create-new-request"
@@ -256,7 +256,8 @@ class App extends Component {
             <Route
               path="/my-groups"
               exact
-              render={props => <MyGroupsPage {...props} />}
+              render={props => <MyGroupsPage
+                currentUser={this.state.currentUser} {...props} />}
             />
             <Route
               path="/group-dashboard"

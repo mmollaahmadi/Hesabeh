@@ -1,0 +1,76 @@
+import React from 'react'
+import {Badge, Col, Row} from "reactstrap";
+import './selection-labels.css'
+
+export default class SelectionLabels extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedLabelsIDS: [],
+    };
+    this.selectLabel = this.selectLabel.bind(this);
+    this.deselectLabel = this.deselectLabel.bind(this);
+    this.handleClickLabel = this.handleClickLabel.bind(this);
+  }
+
+  handleClickLabel(id) {
+    if (this.state.selectedLabelsIDS.includes(id))
+      this.deselectLabel(id);
+    else
+      this.selectLabel(id);
+  }
+
+  selectLabel(id) {
+    let isSelectedBefore = false;
+    if (this.state.selectedLabelsIDS) {
+      this.state.selectedLabelsIDS.forEach(labelID => {
+        if (labelID === id)
+          isSelectedBefore = true;
+      });
+      if (!isSelectedBefore) {
+        let labels = this.state.selectedLabelsIDS;
+        labels.push(id);
+        this.setState({selectedLabelsIDS: labels});
+      }
+    }
+  }
+
+  deselectLabel(id) {
+    let labels = this.state.selectedLabelsIDS.filter(function (label) {
+      return label !== id;
+    });
+    this.setState({selectedLabelsIDS: labels});
+  }
+
+  render() {
+    let labels = [];
+    if (this.props.currentUser.labels) {
+      this.props.currentUser.labels.forEach(label => {
+        labels.push(
+          <Badge
+            style={this.state.selectedLabelsIDS.includes(label.id) ? {
+              borderColor: 'transparent',
+              background: `rgba(${label.color.r},${label.color.g},${label.color.b},${label.color.a})`,
+              color: `${label.isTextColorDark ? 'rgb(0,0,0,1)' : 'rgb(255,255,255,1)'}`
+            } : {}}
+            color="primary"
+            className="selection-labels-label align-self-center"
+            onClick={() => this.handleClickLabel(label.id)}
+          >
+            {label.name}
+          </Badge>
+        );
+      });
+    }
+    return (
+      <Col lg="12" className="m-0">
+        <Row className={`m-0 d-flex justify-content-${this.props.justify}`}>
+          <p className="p-0 mx-3 my-auto consumers-text">
+            {this.props.title}
+          </p>
+          {labels}
+        </Row>
+      </Col>
+    );
+  }
+}

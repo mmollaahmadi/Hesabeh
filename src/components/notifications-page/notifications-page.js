@@ -59,7 +59,10 @@ class NotificationsPage extends React.Component {
   render() {
     return (
       <div className="my-body">
-        <NotificationsTable notifications={DATA}/>
+        <NotificationsTable
+          currentUser={this.props.currentUser}
+          notifications={DATA}
+        />
       </div>
     );
   }

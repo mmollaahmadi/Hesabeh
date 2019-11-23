@@ -1,5 +1,5 @@
 import React from "react";
-import {Col, Row} from "reactstrap";
+import {Col, Row, Badge} from "reactstrap";
 import Chip from "../../common/chip/chip";
 
 class MyGroupsTableRow extends React.Component {
@@ -42,7 +42,7 @@ class MyGroupsTableRow extends React.Component {
         <Row className="m-0">
           <Col xs='12' lg='auto'
                className="table-row-col justify-content-lg-center check-width px-lg-0">
-            <span className='d-lg-none ml-auto'>{this.props.dataGroup.dateCreation}</span>
+            <Badge className='d-lg-none ml-auto date'>{this.props.dataGroup.dateCreation}</Badge>
             <div
               className="p-0 px-1 custom-control custom-control-alternative custom-checkbox">
               <input
@@ -67,7 +67,7 @@ class MyGroupsTableRow extends React.Component {
           </Col>
 
           <Col xs='auto' lg="3" className="table-row-col justify-content-lg-center my-auto ">
-            <span className='d-lg-none ml-2'>نام گروه: </span>
+            <span className='d-lg-none ml-2 title'>نام گروه: </span>
             <Row className="consumers">
               <Chip
                 link="/group-dashboard"
@@ -80,17 +80,18 @@ class MyGroupsTableRow extends React.Component {
           </Col>
 
           <Col xs='auto' lg="2" className="table-row-col justify-content-lg-center my-auto mx-0">
-            <span className='d-lg-none ml-2'>بودجه: </span>
+            <span className='d-lg-none ml-2 title'>بودجه: </span>
             <span>{this.props.dataGroup.budget}</span>
           </Col>
 
-          <Col xs='12' className="d-lg-none table-row-col justify-content-lg-center my-auto">
-            <span className='d-lg-none ml-2'>توضیح: </span>
+          <Col xs='12'
+               className={`d-lg-none table-row-col justify-content-lg-center my-auto ${!this.props.dataGroup.description ? 'd-none' : ''}`}>
+            <span className='d-lg-none ml-2 title'>توضیح: </span>
             <span>{this.props.dataGroup.description}</span>
           </Col>
 
           <Col lg="4" className="table-row-col justify-content-lg-center my-auto flex-grow-1">
-            <span className='d-lg-none ml-2 w-auto'> کاربران: </span>
+            <span className='d-lg-none ml-2 w-auto title'> کاربران: </span>
             <Row className="consumers">{members}</Row>
           </Col>
 
