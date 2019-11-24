@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col } from "reactstrap";
-import Chip from "../../common/chip/chip";
+import Chip from "../../my-components/chip/chip";
 
 class MyTableRow extends React.Component {
   constructor(props){

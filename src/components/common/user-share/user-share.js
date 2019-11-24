@@ -1,7 +1,7 @@
 import React from 'react'
-import Chip from "../chip/chip";
+import Chip from "../../my-components/chip/chip";
 import './user-share.css'
-import {Row} from "reactstrap";
+import {Button, Row} from "reactstrap";
 
 export default class UserShare extends React.Component {
   render() {
@@ -21,7 +21,7 @@ export default class UserShare extends React.Component {
         this.props.users.forEach(user => {
           users.push(
             <div
-              className={`user-col ${this.props.suppliersOrConsumers === 'suppliers' ? 'suppliers-color' : 'consumers-color'}`}>
+              className={`user-col d-flex align-items-center ${this.props.suppliersOrConsumers === 'suppliers' ? 'suppliers-color' : 'consumers-color'}`}>
               <Chip
                 link="/mollaahmadi.ir"
                 haveCloseButton="false"
@@ -36,6 +36,13 @@ export default class UserShare extends React.Component {
               <span className={'share-badge'}>
                 ۱۰۰۰ تومان
               </span>
+              <Button
+                className={`chip-close-btn ml-2 ${!this.props.deletable ? 'd-none' : ''}`}
+                color="link"
+                // onClick={this.props.onDelete}
+              >
+                <i className="fa fa-times chip-close-icon"/>
+              </Button>
             </div>
           );
         });

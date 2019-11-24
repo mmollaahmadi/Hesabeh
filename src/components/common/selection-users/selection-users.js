@@ -9,11 +9,13 @@ import {
   CardBody,
   Modal
 } from "reactstrap";
-import Chip from "../../common/chip/chip";
+import Chip from "../../my-components/chip/chip";
 import GroupUnit from "./group-unit";
 import UserUnit from "./user-unit";
 import AOS from 'aos'
 import {animateCSS} from "../../../utils/animationUtils";
+import './selection-users.css'
+import UserShare from "../user-share/user-share";
 
 class SelectionUsers extends React.Component {
   constructor(props) {
@@ -41,12 +43,13 @@ class SelectionUsers extends React.Component {
     );
     this.handleSelectConsumers = this.handleSelectConsumers.bind(this);
     this.handleSelectAllConsumersOfGroups = this.handleSelectAllConsumersOfGroups.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
     AOS.init();
 
   }
 
   handleSelectAllConsumersOfGroups() {
-    let selectedUsers = [];
+    let selectedUsers = this.state.selectedUsers;
     if (this.state.isAnyGroupSelected) {
       let _groupsList = this.state.groupsList;
       _groupsList.forEach(group => {
@@ -70,21 +73,21 @@ class SelectionUsers extends React.Component {
   }
 
   handleSelectConsumers() {
-    let selectedUsers = [];
+    let _selectedUsers = this.state.selectedUsers;
     if (this.state.isAnyGroupSelected && this.state.isAnyUserSelected) {
       let _groupsList = this.state.groupsList;
       _groupsList.forEach(group => {
         group.users.forEach(user => {
           user.selected = user.checked;
           if (user.selected)
-            selectedUsers.push(user);
+            _selectedUsers.push(user);
         });
       });
       if (this.props.setUsers) {
-        this.props.setUsers(selectedUsers);
+        this.props.setUsers(_selectedUsers);
       }
       this.setState({
-        selectedUsers: selectedUsers,
+        selectedUsers: _selectedUsers,
         groupsList: _groupsList,
         isSelectedConsumers: true,
         consumersCollapse: false
@@ -109,8 +112,13 @@ class SelectionUsers extends React.Component {
         checked: false
       });
     });
+
+    let _selectedUsers = this.state.selectedUsers;
+    _selectedUsers.push(this.props.currentUser);
+
     this.setState({
-      groupsList: groupsList
+      groupsList: groupsList,
+      selectedUsers: _selectedUsers,
     });
   }
 
@@ -143,12 +151,11 @@ class SelectionUsers extends React.Component {
     }
   }
 
-  toggleModal = state => {
+  toggleModal(){
     this.setState({
-      [state]: !this.state[state],
-      isStepOne: true
+      consumersCollapse: !this.state.consumersCollapse,
     });
-  };
+  }
 
   updateSelectedGroupsList(id) {
     let _groupsList = this.state.groupsList;
@@ -220,6 +227,7 @@ class SelectionUsers extends React.Component {
         group.users.forEach(user => {
           users.push(
             <UserUnit
+              hasShareInput={true}
               user={user}
               imageUri={require("../../../assets/img/theme/team-4-800x800.jpg")}
               updateSelectedUsersList={this.updateSelectedUsersList}
@@ -228,24 +236,18 @@ class SelectionUsers extends React.Component {
         });
       }
     });
-    let consumers = [];
-    if (this.state.isSelectedConsumers) {
-      this.state.groupsList.forEach(group => {
-        group.users.forEach(user => {
-          if (user.selected) {
-            consumers.push(
-              <Chip
-                class="mb-2 ml-2"
-                haveCloseButton="true"
-                avatarSrc={require("../../../assets/img/users/user01.jpg")}
-                label={user.name}
-                // onDelete={() => this.deleteUser()}
-              />
-            );
-          }
-        });
-      });
-    }
+    let consumers = this.state.selectedUsers;
+    // if (this.state.isSelectedConsumers) {
+    //   this.state.groupsList.forEach(group => {
+    //     group.users.forEach(user => {
+    //       if (user.selected) {
+    //         consumers.push(
+    //           user
+    //         );
+    //       }
+    //     });
+    //   });
+    // }
 
     return (
       <Col lg="12" className="m-0 mt-3">
@@ -253,9 +255,14 @@ class SelectionUsers extends React.Component {
           <p className="p-0 mx-3 my-auto consumers-text">
             {this.props.title}
           </p>
-          {consumers}
+          <UserShare
+            users={consumers}
+            suppliersOrConsumers={this.props.suppliersOrConsumers}
+            onlyAvatar={false}
+            deletable={true}
+          />
           <Button
-            className="btn btn-icon payments-btn-lv2 mt-0"
+            className={`btn btn-icon payments-btn-lv2 mt-0 ${this.props.suppliersOrConsumers === 'consumers' ?'add-consumer-btn' : ''}`}
             type="button"
             color="dark-green"
             onClick={() =>
@@ -271,7 +278,7 @@ class SelectionUsers extends React.Component {
           <Modal
             className="modal-dialog-centered"
             isOpen={this.state.consumersCollapse}
-            toggle={() => this.toggleModal("consumersCollapse")}
+            toggle={this.toggleModal}
           >
             <div className="modal-body p-0">
               <Card className="bg-secondary shadow border-0">
@@ -304,7 +311,7 @@ class SelectionUsers extends React.Component {
                   <Row className="text-center my-4">
                     <Col>
                       <Button
-                        className="profile-modal-btn"
+                        className="tight-btn"
                         // className={'continueBtn profile-modal-btn'}
                         color="primary"
                         disabled={
@@ -315,7 +322,7 @@ class SelectionUsers extends React.Component {
                         مرحله بعد
                       </Button>
                       <Button
-                        className="profile-modal-btn"
+                        className="tight-btn"
                         // className={'continueBtn profile-modal-btn'}
                         color="primary"
                         disabled={
@@ -326,7 +333,7 @@ class SelectionUsers extends React.Component {
                         انتخاب
                       </Button>
                       <Button
-                        className="profile-modal-btn"
+                        className="tight-btn"
                         color="default"
                         to="/dashboard"
                         tag={Link}
@@ -345,7 +352,7 @@ class SelectionUsers extends React.Component {
                   <Row className="text-center my-4">
                     <Col>
                       <Button
-                        className="profile-modal-btn"
+                        className="tight-btn"
                         color="primary"
                         disabled={!this.state.isAnyUserSelected}
                         onClick={this.handleSelectConsumers}
@@ -353,14 +360,14 @@ class SelectionUsers extends React.Component {
                         انتخاب
                       </Button>
                       <Button
-                        className="profile-modal-btn"
+                        className="tight-btn"
                         color="default"
                         onClick={this.handleBackOrNextStep}
                       >
                         بازگشت
                       </Button>
                       <Button
-                        className="profile-modal-btn"
+                        className="tight-btn"
                         color="default"
                         to="/dashboard"
                         tag={Link}

@@ -1,14 +1,27 @@
 import React from "react";
-import { Col, Row } from "reactstrap";
+import {Col, Form, FormGroup, Input, InputGroup, InputGroupAddon, InputGroupText, Row} from "reactstrap";
 
 class UserUnit extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       user: null,
-      isChecked: false
+      isChecked: false,
+      share:{
+        placeholder: 'سهم',
+        value:1
+      }
     };
     this.handleCheckedChange = this.handleCheckedChange.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
+  }
+  handleInputChange(event){
+    this.setState({
+      share:{
+        ...this.state.share,
+        value: event.target.value,
+      },
+    });
   }
   handleCheckedChange(id){
     this.props.updateSelectedUsersList(id);
@@ -39,7 +52,7 @@ class UserUnit extends React.Component {
                 className="custom-control-label pr-1"
                 htmlFor={this.props.user ? 'user_'+this.props.user.id : ""}
               >
-                <span className="signin-modal-text mr-3"></span>
+                <span className="signin-modal-text mr-3"/>
               </label>
             </div>
           </Col>
@@ -59,6 +72,26 @@ class UserUnit extends React.Component {
             <span className="group-unit-username-text d-block m-0 mt-1">
               {user ? user.username : "hi"}@
             </span>
+            <Form role="form" className={`audit-form mt-1 ${!this.props.hasShareInput ? 'd-none' : ''}`}>
+              <FormGroup className="">
+              <InputGroup className="input-group-alternative">
+                <InputGroupAddon className={'my-prepend'} addonType="prepend">
+                  <InputGroupText className={'p-0'}>
+                    <i className="fa fa-pie-chart"/>
+                  </InputGroupText>
+                </InputGroupAddon>
+
+                <Input
+                  className="audit-input share-input"
+                  placeholder={this.state.share.placeholder}
+                  name="paymentName"
+                  type={'number'}
+                  value={this.state.share.value}
+                  onChange={this.handleInputChange}
+                />
+              </InputGroup>
+            </FormGroup>
+            </Form>
           </Col>
         </Row>
       </Col>

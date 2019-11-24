@@ -8,6 +8,7 @@ import {
 import './table-filters.css'
 import Labels from '../../common/labels/labels'
 import SelectionLabels from "../selection-labels/selection-labels";
+import ScrollableHorizontal from "../../my-components/scrollable-horizontal/scrollable-horizontal";
 
 class TableFilters extends React.Component {
   constructor(props) {
@@ -43,6 +44,7 @@ class TableFilters extends React.Component {
       <>
         {/*<span>ترتیب نمایش:</span>*/}
         <Row className="filters-row">
+          {/*<ScrollableHorizontal contents={filters}/>*/}
           {filters}
         </Row>
 

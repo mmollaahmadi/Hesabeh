@@ -1,0 +1,7 @@
+.share-input{
+    height: 25px !important;
+}
+.input-group-prepend.my-prepend {
+    min-width: 30px !important;
+    justify-content: center;
+}
