@@ -2,7 +2,7 @@ import React from "react";
 import {Row, Col} from "reactstrap";
 import AOS from 'aos';
 
-class AccountUnit extends React.Component {
+class FinanceAccountUnit extends React.Component {
   constructor() {
     super();
     AOS.init();
@@ -46,4 +46,4 @@ class AccountUnit extends React.Component {
   }
 }
 
-export default AccountUnit;
+export default FinanceAccountUnit;

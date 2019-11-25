@@ -44,8 +44,8 @@ export default class SelectionLabels extends React.Component {
 
   render() {
     let labels = [];
-    if (this.props.currentUser.labels) {
-      this.props.currentUser.labels.forEach(label => {
+    if (this.props.labels) {
+      this.props.labels.forEach(label => {
         labels.push(
           <Badge
             style={this.state.selectedLabelsIDS.includes(label.id) ? {

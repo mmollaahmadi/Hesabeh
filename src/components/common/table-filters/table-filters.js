@@ -6,23 +6,14 @@ import {
   Row
 } from "reactstrap"
 import './table-filters.css'
-import Labels from '../../common/labels/labels'
+// import Labels from '../../common/labels/labels'
 import SelectionLabels from "../selection-labels/selection-labels";
 import ScrollableHorizontal from "../../my-components/scrollable-horizontal/scrollable-horizontal";
 
 class TableFilters extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      selectedItem: 'جدیدترین',
-    };
   }
-
-  selectSort = (val) => {
-    this.setState({
-      selectedItem: val
-    });
-  };
 
   render() {
 
@@ -31,9 +22,9 @@ class TableFilters extends React.Component {
     this.props.filters.forEach(filter => {
       filters.push(
         <Button
-          className={`table-filters-btn ${this.state.selectedItem === filter.value ? 'selected-btn' : ''}`}
+          className={`table-filters-btn ${(this.props._selectedFilterID && this.props._selectedFilterID === filter.id) ? 'selected-btn' : ''}`}
           color='secondary'
-          onClick={() => this.selectSort(filter.value)}
+          onClick={() => this.props.selectSort(filter.id)}
         >
           {filter.value}
         </Button>
@@ -50,6 +41,7 @@ class TableFilters extends React.Component {
 
         <Row className={`labels-row ${(!this.props.labels || this.props.labels.length === 0) ? 'd-none' : ''}`}>
           <SelectionLabels
+            labels={this.props.labels}
             currentUser={this.props.currentUser}
             justify={'center'}
             setLabels={this.setLabels}

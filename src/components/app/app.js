@@ -39,8 +39,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentUser: USERS[0],
-      isAuthenticated: true,
+      currentUser: null,
+      isAuthenticated: false,
       isLoading: false,
       selectedPage: "Hesabeh",
       goto: ""
@@ -89,7 +89,13 @@ class App extends Component {
           u.email === emailOrUsernameOrPhoneNumber) &&
         u.password === password
       ) {
-        user = u;
+        user = {
+          id: u.id,
+          name: u.name,
+          username: u.username,
+          email: u.email,
+          phoneNumber: u.phoneNumber,
+        };
       }
     });
 
@@ -122,6 +128,14 @@ class App extends Component {
   }
 
   componentDidMount() {
+    if(!this.state.isAuthenticated){
+      this.setState({
+        currentUser: null,
+        isAuthenticated: false
+      });
+
+      this.props.history.push('/');
+    }
     // this.loadCurrentUser();
   }
 
@@ -215,14 +229,18 @@ class App extends Component {
               path="/my-account"
               exact
               render={() => (
-                <MyAccountPage currentUser={this.state.currentUser} />
+                <MyAccountPage
+                  currentUser={this.state.currentUser}
+                />
               )}
             />
             <Route
               path="/add-new-payment"
               exact
               render={() => (
-                <AddPaymentPage currentUser={this.state.currentUser} />
+                <AddPaymentPage
+                  currentUser={this.state.currentUser}
+                />
               )}
             />
             <Route

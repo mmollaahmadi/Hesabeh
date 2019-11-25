@@ -10,17 +10,13 @@ import {
   Col,
   FormGroup,
   Form,
-  Input,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroup
 } from "reactstrap";
-import { Link } from "react-router-dom";
 import PaymentsTableRow from "./payments-table-row.js";
 import TableTools from "../../../common/table-tools/table-tools";
 import TableFilters from "../../../common/table-filters/table-filters";
 import { FILTERS } from "../../../../constants/constants";
 import Masonry from "react-masonry-css";
+import {getdefaultOrders, getLabelsOfUsers, getPaymentsOfUsers} from "../../../../utils/apiUtils";
 
 const breakpointColumnsObj = {
   default: 4,
@@ -33,6 +29,9 @@ class PaymentsTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      labels:[],
+      payments:[],
+      defaultOrders:1,
       allCheckBoxesChecked: false,
       checkBoxesStatusList: [],
       deleteModal: false,
@@ -46,7 +45,17 @@ class PaymentsTable extends React.Component {
     this.allCheckBoxesChecked = this.allCheckBoxesChecked.bind(this);
     this.getCheckedStatus = this.getCheckedStatus.bind(this);
     this.handleDeleteModal = this.handleDeleteModal.bind(this);
+    this.selectSort = this.selectSort.bind(this);
   }
+  selectSort(ID) {
+    this.setState({
+      defaultOrders: {
+        ...this.state.defaultOrders,
+        paymentsDefaultOrder:ID,
+      }
+    });
+  };
+
   handleDeleteModal(id) {
     this.setState({
       deleteModal: !this.state.deleteModal,
@@ -54,14 +63,27 @@ class PaymentsTable extends React.Component {
     });
   }
   componentDidMount() {
+    let _labels=[];
+    let _payments=[];
+    let _defaultOrders=1;
+    if(this.props.currentUser){
+      _labels = getLabelsOfUsers(this.props.currentUser.id);
+      _payments = getPaymentsOfUsers(this.props.currentUser.id);
+      _defaultOrders = getdefaultOrders(this.props.currentUser.id);
+    }
+
+
     let _checkedList = [];
-    this.props.payments.forEach(payment => {
+    _payments.forEach(payment => {
       _checkedList.push({
         id: payment.id,
         checked: false
       });
     });
     this.setState({
+      labels: _labels,
+      payments:_payments,
+      defaultOrders: _defaultOrders,
       checkBoxesStatusList: _checkedList
     });
   }
@@ -118,7 +140,7 @@ class PaymentsTable extends React.Component {
   render() {
     let payments = [];
 
-    this.props.payments.forEach(payment => {
+    this.state.payments.forEach(payment => {
       payments.push(
         <PaymentsTableRow
           data={payment}
@@ -148,7 +170,9 @@ class PaymentsTable extends React.Component {
               <TableFilters
                 currentUser={this.props.currentUser}
                 filters={FILTERS}
-                labels={this.props.labels}
+                _selectedFilterID={this.state.defaultOrders.paymentsDefaultOrder}
+                selectSort={this.selectSort}
+                labels={this.state.labels}
               />
             </CardBody>
           </Card>

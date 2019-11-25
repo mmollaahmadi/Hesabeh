@@ -1,5 +1,6 @@
 export const USERS = [
   {
+    id:1,
     name: "محمد ملااحمدی",
     username: "mollaahmadi",
     email: "mollaahmadimohammad@gmail.com",
@@ -102,23 +103,265 @@ export const USERS = [
         },
         isTextColorDark: true
       },
-    ]
+    ],
+    payments: [
+      {
+        id: "1",
+        name: "شامپو تخم مرغی",
+        value: "5400 تومان",
+        date: "شنبه 98/03/21",
+        group: "اتاق 401 کشاورز",
+        labels: [
+          {
+            id: '1',
+            name: 'برچسب',
+            color: {
+              r: '20',
+              g: '200',
+              b: '20',
+              a: '1'
+            },
+            isTextColorDark: true
+          },
+        ],
+        description: 'اگه کسی خواست استفاده کنه',
+        consumers: [
+          {
+            username: "mohammad",
+            share: "1",
+            value: "2700 تومان"
+          },
+          {
+            username: "saadat",
+            share: "1",
+            value: "2700 تومان"
+          }
+        ],
+        suppliers: [
+          {
+            username: "mohammad",
+            share: "1",
+            value: "2700 تومان"
+          },
+          {
+            username: "saadat",
+            share: "1",
+            value: "2700 تومان"
+          }
+        ],
+        pictures: [
+          {
+            url: '../../../assets/img/theme/team-4-800x800.jpg'
+          },
+          {
+            url: '../../../assets/img/theme/team-4-800x800.jpg'
+          },
+        ],
+      },
+      {
+        id: "2",
+        name: "برنج",
+        value: "5400 تومان",
+        date: "شنبه 98/03/21",
+        group: "اتاق 401 کشاورز",
+        description: '',
+        labels: [],
+        consumers: [
+          {
+            username: "mohammad",
+            share: "1",
+            value: "2700 تومان"
+          },
+          {
+            username: "saadat",
+            share: "1",
+            value: "2700 تومان"
+          },
+          {
+            username: "saadat",
+            share: "1",
+            value: "2700 تومان"
+          },
+          {
+            username: "saadat",
+            share: "1",
+            value: "2700 تومان"
+          },
+          {
+            username: "saadat",
+            share: "1",
+            value: "2700 تومان"
+          },
+          {
+            username: "saadat",
+            share: "1",
+            value: "2700 تومان"
+          },
+        ],
+        suppliers: [
+          {
+            username: "mohammad",
+            share: "1",
+            value: "2700 تومان"
+          },
+          {
+            username: "saadat",
+            share: "1",
+            value: "2700 تومان"
+          }
+        ],
+        pictures: [
+          {
+            url: '../../../assets/img/theme/team-4-800x800.jpg'
+          },
+          {
+            url: '../../../assets/img/theme/team-4-800x800.jpg'
+          },
+        ],
+      },
+      {
+        id: "3",
+        name: "برنج",
+        value: "5400 تومان",
+        date: "شنبه 98/03/21",
+        group: "اتاق 401 کشاورز",
+        description: '',
+        labels: [
+          {
+            id: '1',
+            name: 'برچسب ۱',
+            color: {
+              r: '20',
+              g: '200',
+              b: '20',
+              a: '1'
+            },
+            isTextColorDark: true
+          },
+          {
+            id: '1',
+            name: 'برچسب ۲',
+            color: {
+              r: '20',
+              g: '200',
+              b: '20',
+              a: '1'
+            },
+            isTextColorDark: true
+          },
+        ],
+        consumers: [
+          {
+            username: "mohammad",
+            share: "1",
+            value: "2700 تومان"
+          }
+        ],
+        suppliers: [
+          {
+            username: "mohammad",
+            share: "1",
+            value: "2700 تومان"
+          },
+          {
+            username: "saadat",
+            share: "1",
+            value: "2700 تومان"
+          }
+        ],
+        pictures: [],
+      },
+      {
+        id: "4",
+        name: "برنج",
+        value: "5400 تومان",
+        date: "شنبه 98/03/21",
+        group: "اتاق 401 کشاورز",
+        description: '',
+        labels: [],
+        consumers: [
+          {
+            username: "mohammad",
+            share: "1",
+            value: "2700 تومان"
+          }
+        ],
+        suppliers: [
+          {
+            username: "mohammad",
+            share: "1",
+            value: "2700 تومان"
+          }
+        ],
+        pictures: [],
+      },
+      {
+        id: "5",
+        name: "برنج",
+        value: "5400 تومان",
+        date: "شنبه 98/03/21",
+        group: "اتاق 401 کشاورز",
+        description: '',
+        labels: [],
+        consumers: [
+          {
+            username: "mohammad",
+            share: "1",
+            value: "2700 تومان"
+          },
+          {
+            username: "saadat",
+            share: "1",
+            value: "2700 تومان"
+          }
+        ],
+        suppliers: [
+          {
+            username: "mohammad",
+            share: "1",
+            value: "2700 تومان"
+          }
+        ],
+        pictures: [],
+      }
+    ],
+    financeAccount:{
+      privatePayments:1234,
+      groupPayments:4321,
+      groupConsumes:2143,
+      totalSituation:5678
+    },
+    defaultOrders:{
+      groupDefaultOrder:1,
+      notificationsDefaultOrder:2,
+      paymentsDefaultOrder:3
+    },
   },
   {
+    id:2,
     name: "علی پاشایی",
     username: "pashaee",
     email: "alipashae8@yahoo.com",
     phoneNumber: '09360000000',
     password: '8888',
-    groups:[]
+    groups:[],
+    labels:[],
+    payments:[],
+    financeAccount:{},
+    defaultOrders:{},
   },
   {
+    id:3,
     name: 'سعادت عباسی',
     username: 's.abbasi',
     email: 'saadat90417@gmail.com',
     phoneNumber: '09360001159',
     password: 'saadat',
-    groups:[]
+    groups:[],
+    labels:[],
+    payments:[],
+    financeAccount:{},
+    defaultOrders:{},
   }
 ];
 
@@ -154,7 +397,6 @@ export const _USERS = [
     labelsID:['1','2','3'],
   }
 ];
-
 export const GROUPS=[
   {
     id:'1',
@@ -294,54 +536,66 @@ export const NOTIFICATIONS=[
 ];
 export const FILTERS = [
   {
+    id:1,
     value: 'قدیمی ترین',
     link: ''
   },
   {
+    id:2,
     value: 'جدیدترین',
     link: ''
   },
   {
+    id:3,
     value: 'ارزان ترین',
     link: ''
   },
   {
+    id:4,
     value: 'گران ترین',
     link: ''
   },
 ];
 export const NOTIFICATIONS_FILTERS=[
   {
+    id:1,
     value: 'قدیمی ترین',
     link: ''
   },
   {
+    id:2,
     value: 'جدیدترین',
     link: ''
   },
 ];
 export const GROUPS_FILTERS=[
   {
+    id:1,
     value: 'قدیمی ترین',
     link: ''
   },
   {
+    id:2,
     value: 'جدیدترین',
     link: ''
   },
   {
+    id:3,
     value: 'ارزان ترین',
     link: ''
   },
   {
+    id:4,
     value: 'گران ترین',
     link: ''
   },
   {
+    id:5,
     value: 'خلوت ترین',
     link: ''
   },
   {
+    id:6,
     value: 'شلوغ ترین',
     link: ''
   },
