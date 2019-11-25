@@ -103,7 +103,9 @@ class SelectionUsers extends React.Component {
         usersList.push({
           ...user,
           checked: false,
-          selected: false
+          selected: false,
+          // shareNumber: 0,
+          // shareTuman: 0,
         });
       });
       groupsList.push({

@@ -86,6 +86,7 @@ class AddPaymentPage extends React.Component {
     this.setSuppliers = this.setSuppliers.bind(this);
     this.setSelectedDay = this.setSelectedDay.bind(this);
     this.setFiles = this.setFiles.bind(this);
+    this.calculateConsumersShares = this.calculateConsumersShares.bind(this);
     AOS.init();
   }
 
@@ -255,9 +256,20 @@ class AddPaymentPage extends React.Component {
     }
   }
 
+  calculateConsumersShares(){
+    let sumOfShares = 0;
+    this.state.paymentConsumers.forEach(consumer => {
+      sumOfShares += consumer.share;
+    });
+  }
+
   handleInputChange(event) {
     let name = event.target.name;
     let value = event.target.value;
+
+    if(event.target.name==='paymentCost'){
+      this.calculateConsumersShares();
+    }
 
     this.setState({
       [name]: {
@@ -336,6 +348,7 @@ class AddPaymentPage extends React.Component {
                               className="audit-input"
                               placeholder={this.state.paymentCost.placeholder}
                               name="paymentCost"
+                              type={'number'}
                               value={this.state.paymentCost.value}
                               onChange={this.handleInputChange}
                             />

@@ -151,7 +151,7 @@ class PaymentsTableRow extends React.Component {
               xs="12"
               className="table-row-col justify-content-start d-inline my-auto"
             >
-              <span className="ml-2 mb-2 title">انجام دهندگان: </span>
+              <span className="ml-2 mb-2 title">تهیه کنندگان: </span>
               <Collapse isOpen={!this.state.collapse} className={'d-inline'}>
                 {suppliersAvatar}
               </Collapse>
