@@ -23,6 +23,7 @@ import DefaultExample from '../../../my-components/uploader-file/example'
 // import PaymentsTable from '../payments-table/payments-table'
 import TempTable from './temp-table/temp-table'
 import SelectionLabels from '../../../common/selection-labels/selection-labels'
+import {getGroupsOfUsers, getLabelsOfUsers} from "../../../../utils/apiUtils";
 
 class AddPaymentPage extends React.Component {
   constructor(props) {
@@ -52,7 +53,7 @@ class AddPaymentPage extends React.Component {
         value: [],
         isSave: false
       },
-      paymentSuppliers:{
+      paymentSuppliers: {
         value: [],
         isSave: false
       },
@@ -64,16 +65,19 @@ class AddPaymentPage extends React.Component {
         value: [],
         isSave: false
       },
-      payments: [],
+      temporaryAddedPayments: [],
       consumersCollapse: false,
       saveInputsValue: false,
       isStepOne: true,
-      groupsList: [],
+
       usersOfGroupsList: [],
       usersOfSelectedGroupsList: [],
       isAnyGroupSelected: false,
       isAnyUserSelected: false,
-      isSelectedConsumers: false
+      isSelectedConsumers: false,
+
+      groups: [],
+      labels: [],
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -136,12 +140,13 @@ class AddPaymentPage extends React.Component {
   }
 
   handleAddPaymentClick() {
-    let payments = this.state.payments;
+    let payments = this.state.temporaryAddedPayments;
     payments.push({
       name: this.state.paymentName.value,
       value: this.state.paymentCost.value,
       description: this.state.paymentDescription.value,
       date: this.state.paymentDate.value,
+      labels: this.state.paymentLabels.value,
       consumers: this.state.paymentConsumers.value,
       suppliers: this.state.paymentSuppliers.value,
       pictures: this.state.paymentPictures.value,
@@ -149,7 +154,7 @@ class AddPaymentPage extends React.Component {
 
     // this.resetInputs();
     this.setState({
-      payments: payments,
+      temporaryAddedPayments: payments,
       paymentName: {
         ...this.state.paymentName,
         value: (!this.state.paymentName.isSave ? '' : this.state.paymentName.value)
@@ -166,6 +171,10 @@ class AddPaymentPage extends React.Component {
         ...this.state.paymentDate,
         value: (!this.state.paymentDate.isSave ? '' : this.state.paymentDate.value)
       },
+      paymentLabels: {
+        ...this.state.paymentLabels,
+        value: (!this.state.paymentLabels.isSave ? [] : this.state.paymentLabels.value)
+      },
       paymentSuppliers: {
         ...this.state.paymentSuppliers,
         value: (!this.state.paymentSuppliers.isSave ? [] : this.state.paymentSuppliers.value)
@@ -176,7 +185,7 @@ class AddPaymentPage extends React.Component {
       },
       paymentPictures: {
         ...this.state.paymentPictures,
-        value: (!this.state.paymentPictures.isSave ? '' : this.state.paymentPictures.value)
+        value: (!this.state.paymentPictures.isSave ? [] : this.state.paymentPictures.value)
       },
     });
   }
@@ -199,9 +208,17 @@ class AddPaymentPage extends React.Component {
         ...this.state.paymentDate,
         value: (!this.state.paymentDate.isSave ? '' : this.state.paymentDate.value)
       },
+      paymentsLabels: {
+        ...this.state.paymentsLabels,
+        value: (!this.state.paymentsLabels.isSave ? [] : this.state.paymentsLabels.value)
+      },
+      paymentsSuppliers: {
+        ...this.state.paymentsSuppliers,
+        value: (!this.state.paymentsSuppliers.isSave ? [] : this.state.paymentsSuppliers.value)
+      },
       paymentConsumers: {
         ...this.state.paymentConsumers,
-        value: (!this.state.paymentConsumers.isSave ? '' : this.state.paymentConsumers.value)
+        value: (!this.state.paymentConsumers.isSave ? [] : this.state.paymentConsumers.value)
       },
       paymentPictures: {
         ...this.state.paymentPictures,
@@ -229,6 +246,14 @@ class AddPaymentPage extends React.Component {
         ...this.state.paymentDate,
         isSave: !this.state.saveInputsValue
       },
+      paymentLabels: {
+        ...this.state.paymentLabels,
+        isSave: !this.state.saveInputsValue
+      },
+      paymentSuppliers: {
+        ...this.state.paymentSuppliers,
+        isSave: !this.state.saveInputsValue
+      },
       paymentConsumers: {
         ...this.state.paymentConsumers,
         isSave: !this.state.saveInputsValue
@@ -242,32 +267,32 @@ class AddPaymentPage extends React.Component {
 
   handleSelectConsumers() {
     if (this.state.isAnyGroupSelected && this.state.isAnyUserSelected) {
-      let _groupsList = this.state.groupsList;
+      let _groupsList = this.state.groups;
       _groupsList.forEach(group => {
         group.users.forEach(user => {
           user.selected = user.checked;
         });
       });
       this.setState({
-        groupsList: _groupsList,
+        groups: _groupsList,
         isSelectedConsumers: true,
         consumersCollapse: false
       });
     }
   }
 
-  calculateConsumersShares(){
-    let sumOfShares = 0;
-    this.state.paymentConsumers.forEach(consumer => {
-      sumOfShares += consumer.share;
-    });
+  calculateConsumersShares() {
+    // let sumOfShares = 0;
+    // this.state.paymentConsumers.forEach(consumer => {
+    //   sumOfShares += consumer.share;
+    // });
   }
 
   handleInputChange(event) {
     let name = event.target.name;
     let value = event.target.value;
 
-    if(event.target.name==='paymentCost'){
+    if (event.target.name === 'paymentCost') {
       this.calculateConsumersShares();
     }
 
@@ -286,8 +311,23 @@ class AddPaymentPage extends React.Component {
     });
   };
 
+  componentDidMount() {
+    let _groups = [];
+    let _labels = [];
+    if (this.props.currentUser) {
+      _labels = getLabelsOfUsers(this.props.currentUser.id);
+      _groups = getGroupsOfUsers(this.props.currentUser.id);
+    }
+
+    this.setState({
+      labels: _labels,
+      groups: _groups,
+    });
+  }
+
+
   render() {
-    let payments = this.state.payments;
+    let payments = this.state.temporaryAddedPayments;
     let tempTablePayments = null;
     if (payments.length === 0) {
       tempTablePayments = (
@@ -397,24 +437,29 @@ class AddPaymentPage extends React.Component {
                           </InputGroup>
                         </FormGroup>
                       </Col>
-
                       <SelectionLabels
                         currentUser={this.props.currentUser}
+                        labels={this.state.labels}
                         title={'برچسبها:'}
                         justify={'right'}
                         setLabels={this.setLabels}
                         hasClose={false}
                       />
+
                       <SelectionUsers
-                        currentUser={this.props.currentUser}
                         title={'*تهیه کنندگان:'}
-                        setUsers={this.setConsumers}
+                        currentUser={this.props.currentUser}
+                        groups={this.state.groups}
+                        selectedUsers={this.state.paymentSuppliers.value}
+                        setUsers={this.setSuppliers}
                         suppliersOrConsumers={'suppliers'}
                       />
                       <SelectionUsers
-                        currentUser={this.props.currentUser}
                         title={'*مصرف کنندگان:'}
-                        setUsers={this.setSuppliers}
+                        currentUser={this.props.currentUser}
+                        groups={this.state.groups}
+                        selectedUsers={this.state.paymentConsumers.value}
+                        setUsers={this.setConsumers}
                         suppliersOrConsumers={'consumers'}
                       />
 

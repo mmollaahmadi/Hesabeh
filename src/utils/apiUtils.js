@@ -27,7 +27,7 @@ export function getFinanceAccountOfUser(userID) {
   });
   return financeAccount;
 }
-export function getdefaultOrders(userID) {
+export function getDefaultOrders(userID) {
   let defaultOrders = null;
   USERS.forEach(user => {
     if(user.id === userID){
@@ -35,4 +35,27 @@ export function getdefaultOrders(userID) {
     }
   });
   return defaultOrders;
+}
+export function getGroupsOfUsers(userID) {
+  let groups = null;
+  USERS.forEach(user => {
+    if(user.id === userID){
+      groups = user.groups;
+    }
+  });
+  return groups;
+}
+export function getUser(userID) {
+  let _user = null;
+  USERS.forEach(user => {
+    if(user.id === userID){
+      _user = {
+        id: user.id,
+        name: user.name,
+        username: user.username,
+        email: user.email,
+      };
+    }
+  });
+  return _user;
 }

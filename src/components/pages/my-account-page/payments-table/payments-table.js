@@ -16,7 +16,7 @@ import TableTools from "../../../common/table-tools/table-tools";
 import TableFilters from "../../../common/table-filters/table-filters";
 import { FILTERS } from "../../../../constants/constants";
 import Masonry from "react-masonry-css";
-import {getdefaultOrders, getLabelsOfUsers, getPaymentsOfUsers} from "../../../../utils/apiUtils";
+import {getDefaultOrders, getLabelsOfUsers, getPaymentsOfUsers, getGroupsOfUsers} from "../../../../utils/apiUtils";
 
 const breakpointColumnsObj = {
   default: 4,
@@ -32,6 +32,7 @@ class PaymentsTable extends React.Component {
       labels:[],
       payments:[],
       defaultOrders:1,
+      groups:[],
       allCheckBoxesChecked: false,
       checkBoxesStatusList: [],
       deleteModal: false,
@@ -66,12 +67,13 @@ class PaymentsTable extends React.Component {
     let _labels=[];
     let _payments=[];
     let _defaultOrders=1;
+    let _groups=[];
     if(this.props.currentUser){
       _labels = getLabelsOfUsers(this.props.currentUser.id);
       _payments = getPaymentsOfUsers(this.props.currentUser.id);
-      _defaultOrders = getdefaultOrders(this.props.currentUser.id);
+      _defaultOrders = getDefaultOrders(this.props.currentUser.id);
+      _groups = getGroupsOfUsers(this.props.currentUser.id);
     }
-
 
     let _checkedList = [];
     _payments.forEach(payment => {
@@ -80,10 +82,12 @@ class PaymentsTable extends React.Component {
         checked: false
       });
     });
+
     this.setState({
       labels: _labels,
       payments:_payments,
       defaultOrders: _defaultOrders,
+      groups:_groups,
       checkBoxesStatusList: _checkedList
     });
   }

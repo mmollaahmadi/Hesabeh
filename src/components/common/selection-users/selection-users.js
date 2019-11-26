@@ -1,5 +1,4 @@
 import React from "react";
-import {Link} from "react-router-dom";
 import {
   Row,
   Col,
@@ -9,49 +8,123 @@ import {
   CardBody,
   Modal
 } from "reactstrap";
-import Chip from "../../my-components/chip/chip";
+
 import GroupUnit from "./group-unit";
 import UserUnit from "./user-unit";
 import AOS from 'aos'
 import {animateCSS} from "../../../utils/animationUtils";
 import './selection-users.css'
 import UserShare from "../user-share/user-share";
+import {getUser} from "../../../utils/apiUtils";
 
 class SelectionUsers extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      consumersCollapse: false,
+      selectUsersModal: false,
+      isStepOneInModal: true,
+
       saveInputsValue: false,
-      isStepOne: true,
-      groupsList: [],
-      usersOfGroupsList: [],
-      usersOfSelectedGroupsList: [],
-      selectedUsers: [],
+
+      groups: [],
+      temporaryGroups:[],
+      // usersOfGroupsList: [],
+      // usersOfSelectedGroupsList: [],
+      //
+      // selectedUsers: [],
+
       isAnyGroupSelected: false,
       isAnyUserSelected: false,
-      isSelectedConsumers: false
+      isSelectedUser: false
     };
 
     this.handleBackOrNextStep = this.handleBackOrNextStep.bind(this);
     this.myCallBack = this.myCallBack.bind(this);
     this.updateSelectedGroupsList = this.updateSelectedGroupsList.bind(this);
     this.updateSelectedUsersList = this.updateSelectedUsersList.bind(this);
-    this.updateUsersOfSelectedGroupsList = this.updateUsersOfSelectedGroupsList.bind(
-      this
-    );
-    this.handleSelectConsumers = this.handleSelectConsumers.bind(this);
+    // this.updateUsersOfSelectedGroupsList = this.updateUsersOfSelectedGroupsList.bind(
+    //   this
+    // );
+    this.handleSelectUsers = this.handleSelectUsers.bind(this);
     this.handleSelectAllConsumersOfGroups = this.handleSelectAllConsumersOfGroups.bind(this);
     this.toggleModal = this.toggleModal.bind(this);
+    this.updateSelectedUserShare = this.updateSelectedUserShare.bind(this);
     AOS.init();
 
   }
 
+  handleBackOrNextStep() {
+    let fadeAnimation = "fadeOut";
+    if (this.state.isStepOneInModal) {
+      animateCSS(".selectGroupCardHeader", fadeAnimation);
+      animateCSS(".selectGroupCardBody", fadeAnimation, this.myCallBack);
+      // this.updateUsersOfSelectedGroupsList();
+    } else {
+      animateCSS(".selectUsersCardHeader", fadeAnimation);
+      animateCSS(".selectUsersCardBody", fadeAnimation, this.myCallBack);
+    }
+  }
+  myCallBack() {
+    let fadeInAnimation = "fadeIn";
+    if (this.state.isStepOneInModal) {
+      this.setState({
+        isStepOneInModal: false
+      });
+      animateCSS(".selectUsersCardHeader", fadeInAnimation);
+      animateCSS(".selectUsersCardBody", fadeInAnimation);
+    } else {
+      this.setState({
+        isStepOneInModal: true
+      });
+      animateCSS(".selectGroupCardHeader", fadeInAnimation);
+      animateCSS(".selectGroupCardBody", fadeInAnimation);
+    }
+  }
+  toggleModal() {
+    this.setState({
+      selectUsersModal: !this.state.selectUsersModal,
+    });
+  }
+
+  componentDidUpdate(prevProps) {
+    let _groupsList = [];
+    if (prevProps.groups !== this.props.groups) {
+      this.props.groups.forEach(group => {
+        let usersList = [];
+        group.users.forEach(user => {
+          let u = getUser(user.id);
+          usersList.push({
+            ...u,
+            checked: false,
+            selected: false,
+            shareNumber: 1,
+            shareTuman: 0,
+          });
+        });
+        _groupsList.push({
+          ...group,
+          users: usersList,
+          checked: false
+        });
+      });
+
+      this.setState({
+        groups: _groupsList,
+        temporaryGroups: _groupsList,
+      });
+    }
+    // if (prevProps.selectedUsers !== this.props.selectedUsers) {
+    //   this.setState({
+    //     selectedUsers: this.props.selectedUsers,
+    //   });
+    // }
+  }
+
   handleSelectAllConsumersOfGroups() {
-    let selectedUsers = this.state.selectedUsers;
+    let selectedUsers = [];
     if (this.state.isAnyGroupSelected) {
-      let _groupsList = this.state.groupsList;
+      let _groupsList = this.state.temporaryGroups;
       _groupsList.forEach(group => {
         group.users.forEach(user => {
           user.checked = group.checked;
@@ -64,18 +137,16 @@ class SelectionUsers extends React.Component {
         this.props.setUsers(selectedUsers);
       }
       this.setState({
-        selectedUsers: selectedUsers,
-        groupsList: _groupsList,
-        isSelectedConsumers: true,
-        consumersCollapse: false
+        groups: _groupsList,
+        isSelectedUser: true,
+        selectUsersModal: false
       });
     }
   }
-
-  handleSelectConsumers() {
-    let _selectedUsers = this.state.selectedUsers;
+  handleSelectUsers() {
+    let _selectedUsers = [];
     if (this.state.isAnyGroupSelected && this.state.isAnyUserSelected) {
-      let _groupsList = this.state.groupsList;
+      let _groupsList = this.state.temporaryGroups;
       _groupsList.forEach(group => {
         group.users.forEach(user => {
           user.selected = user.checked;
@@ -87,134 +158,115 @@ class SelectionUsers extends React.Component {
         this.props.setUsers(_selectedUsers);
       }
       this.setState({
-        selectedUsers: _selectedUsers,
-        groupsList: _groupsList,
-        isSelectedConsumers: true,
-        consumersCollapse: false
+        groups: _groupsList,
+        isSelectedUser: true,
+        selectUsersModal: false
       });
     }
-  }
-
-  componentDidMount() {
-    let groupsList = [];
-    this.props.currentUser.groups.forEach(group => {
-      let usersList = [];
-      group.users.forEach(user => {
-        usersList.push({
-          ...user,
-          checked: false,
-          selected: false,
-          // shareNumber: 0,
-          // shareTuman: 0,
-        });
-      });
-      groupsList.push({
-        ...group,
-        users: usersList,
-        checked: false
-      });
-    });
-
-    let _selectedUsers = this.state.selectedUsers;
-    _selectedUsers.push(this.props.currentUser);
-
-    this.setState({
-      groupsList: groupsList,
-      selectedUsers: _selectedUsers,
-    });
-  }
-
-  handleBackOrNextStep() {
-    let fadeAnimation = "fadeOut";
-    if (this.state.isStepOne) {
-      animateCSS(".selectGroupCardHeader", fadeAnimation);
-      animateCSS(".selectGroupCardBody", fadeAnimation, this.myCallBack);
-      this.updateUsersOfSelectedGroupsList();
-    } else {
-      animateCSS(".selectUsersCardHeader", fadeAnimation);
-      animateCSS(".selectUsersCardBody", fadeAnimation, this.myCallBack);
-    }
-  }
-
-  myCallBack() {
-    let fadeInAnimation = "fadeIn";
-    if (this.state.isStepOne) {
-      this.setState({
-        isStepOne: false
-      });
-      animateCSS(".selectUsersCardHeader", fadeInAnimation);
-      animateCSS(".selectUsersCardBody", fadeInAnimation);
-    } else {
-      this.setState({
-        isStepOne: true
-      });
-      animateCSS(".selectGroupCardHeader", fadeInAnimation);
-      animateCSS(".selectGroupCardBody", fadeInAnimation);
-    }
-  }
-
-  toggleModal(){
-    this.setState({
-      consumersCollapse: !this.state.consumersCollapse,
-    });
   }
 
   updateSelectedGroupsList(id) {
-    let _groupsList = this.state.groupsList;
+    let _groupsList = this.state.temporaryGroups;
+    let _isAnyGroupSelected = false;
+
     _groupsList.forEach(group => {
       if (group.id === id) {
         group.checked = !group.checked;
       }
-    });
-
-    let _isAnyGroupSelected = false;
-    _groupsList.forEach(group => {
-      if (group.checked) {
+      if(group.checked)
         _isAnyGroupSelected = true;
-      }
     });
     this.setState({
-      groupsList: _groupsList,
+      temporaryGroups: _groupsList,
       isAnyGroupSelected: _isAnyGroupSelected
     });
   }
-
   updateSelectedUsersList(id) {
-    let _groupsList = this.state.groupsList;
+    let _groupsList = this.state.temporaryGroups;
     let _isAnyUserSelected = false;
 
     _groupsList.forEach(group => {
       if (group.checked) {
         group.users.forEach(user => {
-          if (user.id === id) {
+          if (user.id === id)
             user.checked = !user.checked;
-          }
-          if (user.checked) _isAnyUserSelected = true;
+
+          if (user.checked)
+            _isAnyUserSelected = true;
         });
       }
     });
     this.setState({
-      groupsList: _groupsList,
+      temporaryGroups: _groupsList,
       isAnyUserSelected: _isAnyUserSelected
     });
   }
 
-  updateUsersOfSelectedGroupsList() {
-    let _users = [];
-    this.state.groupsList.forEach(group => {
-      if (group.checked) {
-        group.users.forEach(u => {
-          _users.push(u);
+  updateSelectedUserShare(groupID, userID, share) {
+    let _groupsList = [];
+
+    this.state.temporaryGroups.forEach(group => {
+
+      if (group.id === groupID) {
+
+        let usersList = [];
+        group.users.forEach(user => {
+          if (user.id === userID) {
+            // let u = getUser(user.id);
+            usersList.push({
+              ...user,
+              shareNumber: share,
+            });
+          } else {
+            usersList.push(user);
+          }
         });
+        _groupsList.push({
+          ...group,
+          users: usersList,
+        });
+      } else {
+        _groupsList.push(group);
       }
+
     });
+
     this.setState({
-      usersOfSelectedGroupsList: _users
+      temporaryGroups: _groupsList,
+      // selectedUsers: this.props.selectedUsers,
     });
   }
 
+  // updateUsersOfSelectedGroupsList() {
+  //
+  //   let _groups = [];
+  //   this.state.temporaryGroups.forEach(group => {
+  //     let _users = [];
+  //
+  //     if (group.checked) {
+  //       group.users.forEach(u => {
+  //         _users.push({
+  //           ...u,
+  //           checked: true,
+  //           selected: true,
+  //         });
+  //       });
+  //     } else {
+  //       _users = group.users;
+  //     }
+  //
+  //     _groups.push({
+  //       ...group,
+  //       users: _users
+  //     });
+  //   });
+  //   this.setState({
+  //     temporaryGroups: _groups
+  //   });
+  // }
+
   render() {
-    let _groups = this.state.groupsList;
+    let _groups = this.state.groups;
     let groups = [];
     let users = [];
     _groups.forEach(group => {
@@ -229,7 +281,9 @@ class SelectionUsers extends React.Component {
         group.users.forEach(user => {
           users.push(
             <UserUnit
+              updateSelectedUserShare={this.updateSelectedUserShare}
               hasShareInput={true}
+              groupID={group.id}
               user={user}
               imageUri={require("../../../assets/img/theme/team-4-800x800.jpg")}
               updateSelectedUsersList={this.updateSelectedUsersList}
@@ -238,18 +292,16 @@ class SelectionUsers extends React.Component {
         });
       }
     });
-    let consumers = this.state.selectedUsers;
-    // if (this.state.isSelectedConsumers) {
-    //   this.state.groupsList.forEach(group => {
-    //     group.users.forEach(user => {
-    //       if (user.selected) {
-    //         consumers.push(
-    //           user
-    //         );
-    //       }
-    //     });
-    //   });
-    // }
+    let consumers = [];
+    if (this.state.groups) {
+      this.state.groups.forEach(group => {
+        group.users.forEach(user => {
+          if (user.selected) {
+            consumers.push(user);
+          }
+        });
+      });
+    }
 
     return (
       <Col lg="12" className="m-0 mt-3">
@@ -264,7 +316,7 @@ class SelectionUsers extends React.Component {
             deletable={true}
           />
           <Button
-            className={`btn btn-icon payments-btn-lv2 mt-0 ${this.props.suppliersOrConsumers === 'consumers' ?'add-consumer-btn' : ''}`}
+            className={`btn btn-icon payments-btn-lv2 mt-0 ${this.props.suppliersOrConsumers === 'consumers' ? 'add-consumer-btn' : ''}`}
             type="button"
             color="dark-green"
             onClick={() =>
@@ -279,7 +331,7 @@ class SelectionUsers extends React.Component {
 
           <Modal
             className="modal-dialog-centered"
-            isOpen={this.state.consumersCollapse}
+            isOpen={this.state.selectUsersModal}
             toggle={this.toggleModal}
           >
             <div className="modal-body p-0">
@@ -289,14 +341,14 @@ class SelectionUsers extends React.Component {
                   <div className="text-muted  mt-3 mb-2">
                     <h5
                       className={`selectGroupCardHeader my-modal-header ${
-                        this.state.isStepOne ? "" : "d-none"
+                        this.state.isStepOneInModal ? "" : "d-none"
                       }`}
                     >
                       انتخاب گروه
                     </h5>
                     <h5
                       className={`selectUsersCardHeader my-modal-header ${
-                        this.state.isStepOne ? "d-none" : ""
+                        this.state.isStepOneInModal ? "d-none" : ""
                       }`}
                     >
                       انتخاب کاربران
@@ -306,7 +358,7 @@ class SelectionUsers extends React.Component {
                 </CardHeader>
                 <CardBody
                   className={`selectGroupCardBody px-lg-3 py-lg-3 ${
-                    this.state.isStepOne ? "" : "d-none"
+                    this.state.isStepOneInModal ? "" : "d-none"
                   }`}
                 >
                   <Row className={"groups m-0"}>{groups}</Row>
@@ -337,8 +389,7 @@ class SelectionUsers extends React.Component {
                       <Button
                         className="tight-btn"
                         color="default"
-                        to="/dashboard"
-                        tag={Link}
+                        onClick={this.toggleModal}
                       >
                         بیخیال
                       </Button>
@@ -347,7 +398,7 @@ class SelectionUsers extends React.Component {
                 </CardBody>
                 <CardBody
                   className={`selectUsersCardBody px-lg-3 py-lg-3 ${
-                    this.state.isStepOne ? "d-none" : ""
+                    this.state.isStepOneInModal ? "d-none" : ""
                   }`}
                 >
                   <Row className={"groups m-0"}>{users}</Row>
@@ -357,7 +408,7 @@ class SelectionUsers extends React.Component {
                         className="tight-btn"
                         color="primary"
                         disabled={!this.state.isAnyUserSelected}
-                        onClick={this.handleSelectConsumers}
+                        onClick={this.handleSelectUsers}
                       >
                         انتخاب
                       </Button>
@@ -371,8 +422,7 @@ class SelectionUsers extends React.Component {
                       <Button
                         className="tight-btn"
                         color="default"
-                        to="/dashboard"
-                        tag={Link}
+                        onClick={this.toggleModal}
                       >
                         بیخیال
                       </Button>

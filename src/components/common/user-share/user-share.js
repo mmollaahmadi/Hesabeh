@@ -31,7 +31,7 @@ export default class UserShare extends React.Component {
                 // onDelete={() => this.deleteUser()}
               />
               <span className={'share-badge'}>
-                {user.share} سهم
+                {user.shareNumber} سهم
               </span>
               <span className={'share-badge'}>
                 ۱۰۰۰ تومان

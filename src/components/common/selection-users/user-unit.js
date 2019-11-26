@@ -16,6 +16,7 @@ class UserUnit extends React.Component {
     this.handleInputChange = this.handleInputChange.bind(this);
   }
   handleInputChange(event){
+    this.props.updateSelectedUserShare(this.props.groupID,this.props.user.id,event.target.value);
     this.setState({
       share:{
         ...this.state.share,
@@ -57,7 +58,7 @@ class UserUnit extends React.Component {
             </div>
           </Col>
 
-          <Col xs="3" className="px-0">
+          <Col xs="3" className="px-0 d-flex align-items-center">
             <img
               className="rounded-circle group-unit-circle-image"
               top
@@ -72,8 +73,10 @@ class UserUnit extends React.Component {
             <span className="group-unit-username-text d-block m-0 mt-1">
               {user ? user.username : "hi"}@
             </span>
-            <Form role="form" className={`audit-form mt-1 ${!this.props.hasShareInput ? 'd-none' : ''}`}>
-              <FormGroup className="">
+            <Form
+              role="form"
+              className={`audit-form mt-1 ${!this.props.hasShareInput ? 'd-none' : ''}`}>
+              <FormGroup>
               <InputGroup className="input-group-alternative">
                 <InputGroupAddon className={'my-prepend'} addonType="prepend">
                   <InputGroupText className={'p-0'}>
@@ -88,6 +91,7 @@ class UserUnit extends React.Component {
                   type={'number'}
                   value={this.state.share.value}
                   onChange={this.handleInputChange}
+                  disabled={!this.state.isChecked}
                 />
               </InputGroup>
             </FormGroup>
