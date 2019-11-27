@@ -30,6 +30,7 @@ export default class SelectionLabels extends React.Component {
       if (!isSelectedBefore) {
         let labels = this.state.selectedLabelsIDS;
         labels.push(id);
+        this.props.setLabels(labels);
         this.setState({selectedLabelsIDS: labels});
       }
     }
@@ -39,7 +40,18 @@ export default class SelectionLabels extends React.Component {
     let labels = this.state.selectedLabelsIDS.filter(function (label) {
       return label !== id;
     });
+    this.props.setLabels(labels);
     this.setState({selectedLabelsIDS: labels});
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if(this.props.selectedLabels !== prevProps.selectedLabels){
+      let _labels = [];
+      this.props.selectedLabels.forEach(label => {
+        _labels.push(label);
+      });
+      this.setState({selectedLabelsIDS: _labels});
+    }
   }
 
   render() {

@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, } from "reactstrap";
+import {Col, Row,} from "reactstrap";
 import PaymentsTableRow from "../../payments-table/payments-table-row.js";
 // import PaymentsTableHeader from "../../payments-table/payments-table-header";
 import TableTools from '../../../../common/table-tools/table-tools'
@@ -84,11 +84,13 @@ class TempTable extends React.Component {
 
     this.props.payments.forEach(payment => {
       payments.push(
+        <Col xs={'6'}>
         <PaymentsTableRow
           data={payment}
           checked={this.getCheckedStatus(payment.id)}
           updateCheckBoxesStatusList={this.updateCheckBoxesStatusList}
         />
+        </Col>
       );
     });
     return (

@@ -84,7 +84,6 @@ class AddPaymentPage extends React.Component {
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSelectConsumers = this.handleSelectConsumers.bind(this);
     this.handleSaveInputValueCheckbox = this.handleSaveInputValueCheckbox.bind(this);
-    this.resetInputs = this.resetInputs.bind(this);
     this.handleAddPaymentClick = this.handleAddPaymentClick.bind(this);
     this.setLabels = this.setLabels.bind(this);
     this.setConsumers = this.setConsumers.bind(this);
@@ -93,6 +92,8 @@ class AddPaymentPage extends React.Component {
     this.setFiles = this.setFiles.bind(this);
     this.calculateConsumersShares = this.calculateConsumersShares.bind(this);
     AOS.init();
+    this.dateToString = this.dateToString.bind(this);
+    this.getReadyLabels = this.getReadyLabels.bind(this);
   }
 
   setFiles(files) {
@@ -140,14 +141,26 @@ class AddPaymentPage extends React.Component {
     });
   }
 
+  dateToString(date){
+    return (date.year + '/' + date.month + '/' + date.day);
+  }
+  getReadyLabels(labelsID){
+    let labels = [];
+    this.state.labels.forEach(label => {
+      if(labelsID.includes(label.id))
+        labels.push(label);
+    });
+    return labels;
+  }
+
   handleAddPaymentClick() {
     let payments = this.state.temporaryAddedPayments;
     payments.push({
       name: this.state.paymentName.value,
       value: this.state.paymentCost.value,
       description: this.state.paymentDescription.value,
-      date: this.state.paymentDate.value,
-      labels: this.state.paymentLabels.value,
+      date: this.dateToString(this.state.paymentDate.value),
+      labels: this.getReadyLabels(this.state.paymentLabels.value),
       consumers: this.state.paymentConsumers.value,
       suppliers: this.state.paymentSuppliers.value,
       pictures: this.state.paymentPictures.value,
@@ -187,43 +200,6 @@ class AddPaymentPage extends React.Component {
       paymentPictures: {
         ...this.state.paymentPictures,
         value: (!this.state.paymentPictures.isSave ? [] : this.state.paymentPictures.value)
-      },
-    });
-  }
-
-  resetInputs() {
-    this.setState({
-      paymentName: {
-        ...this.state.paymentName,
-        value: (!this.state.paymentName.isSave ? '' : this.state.paymentName.value)
-      },
-      paymentCost: {
-        ...this.state.paymentCost,
-        value: (!this.state.paymentCost.isSave ? '' : this.state.paymentCost.value)
-      },
-      paymentDescription: {
-        ...this.state.paymentDescription,
-        value: (!this.state.paymentDescription.isSave ? '' : this.state.paymentDescription.value)
-      },
-      paymentDate: {
-        ...this.state.paymentDate,
-        value: (!this.state.paymentDate.isSave ? '' : this.state.paymentDate.value)
-      },
-      paymentsLabels: {
-        ...this.state.paymentsLabels,
-        value: (!this.state.paymentsLabels.isSave ? [] : this.state.paymentsLabels.value)
-      },
-      paymentsSuppliers: {
-        ...this.state.paymentsSuppliers,
-        value: (!this.state.paymentsSuppliers.isSave ? [] : this.state.paymentsSuppliers.value)
-      },
-      paymentConsumers: {
-        ...this.state.paymentConsumers,
-        value: (!this.state.paymentConsumers.isSave ? [] : this.state.paymentConsumers.value)
-      },
-      paymentPictures: {
-        ...this.state.paymentPictures,
-        value: (!this.state.paymentPictures.isSave ? '' : this.state.paymentPictures.value)
       },
     });
   }
@@ -452,6 +428,7 @@ class AddPaymentPage extends React.Component {
                       <SelectionLabels
                         currentUser={this.props.currentUser}
                         labels={this.state.labels}
+                        selectedLabels={this.state.paymentLabels.value}
                         title={'برچسبها:'}
                         justify={'right'}
                         setLabels={this.setLabels}
