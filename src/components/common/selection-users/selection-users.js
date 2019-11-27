@@ -25,10 +25,8 @@ class SelectionUsers extends React.Component {
       selectUsersModal: false,
       isStepOneInModal: true,
 
-      saveInputsValue: false,
-
       groups: [],
-      temporaryGroups:[],
+      temporaryGroups: [],
       // usersOfGroupsList: [],
       // usersOfSelectedGroupsList: [],
       //
@@ -36,7 +34,7 @@ class SelectionUsers extends React.Component {
 
       isAnyGroupSelected: false,
       isAnyUserSelected: false,
-      isSelectedUser: false
+      isSelectedUser: false,
     };
 
     this.handleBackOrNextStep = this.handleBackOrNextStep.bind(this);
@@ -65,6 +63,7 @@ class SelectionUsers extends React.Component {
       animateCSS(".selectUsersCardBody", fadeAnimation, this.myCallBack);
     }
   }
+
   myCallBack() {
     let fadeInAnimation = "fadeIn";
     if (this.state.isStepOneInModal) {
@@ -81,13 +80,19 @@ class SelectionUsers extends React.Component {
       animateCSS(".selectGroupCardBody", fadeInAnimation);
     }
   }
+
   toggleModal() {
     this.setState({
       selectUsersModal: !this.state.selectUsersModal,
     });
   }
 
-  componentDidUpdate(prevProps) {
+  // componentDidMount() {
+  // because the parent group change in componentDidUpdate this function do not work
+  // }
+
+  componentDidUpdate(prevProps, prevState) {
+    //in real this will work once
     let _groupsList = [];
     if (prevProps.groups !== this.props.groups) {
       this.props.groups.forEach(group => {
@@ -112,13 +117,46 @@ class SelectionUsers extends React.Component {
       this.setState({
         groups: _groupsList,
         temporaryGroups: _groupsList,
+        // doesReset: !this.props.doesReset,
       });
     }
-    // if (prevProps.selectedUsers !== this.props.selectedUsers) {
-    //   this.setState({
-    //     selectedUsers: this.props.selectedUsers,
-    //   });
-    // }
+
+    // control save check box
+    if (prevProps.selectedUsers !== this.props.selectedUsers) {
+      let _groups = [];
+      this.state.groups.forEach(group => {
+        let _users = [];
+        group.users.forEach(user => {
+
+          let flag = false;
+          this.props.selectedUsers.forEach(su => {
+            if (su.groupID === group.id && su.id === user.id) {
+              _users.push(su);
+              flag = true;
+            }
+          });
+
+          if (!flag) {
+            _users.push({
+              ...user,
+              checked: false,
+              selected: false,
+              shareNumber: 1,
+              shareTuman: 0,
+            });
+          }
+
+        });
+        _groups.push({
+          ...group,
+          users: _users,
+        });
+      });
+      this.setState({
+        groups: _groups,
+        temporaryGroups: _groups,
+      });
+    }
   }
 
   handleSelectAllConsumersOfGroups() {
@@ -130,7 +168,10 @@ class SelectionUsers extends React.Component {
           user.checked = group.checked;
           user.selected = group.checked;
           if (user.selected)
-            selectedUsers.push(user);
+            selectedUsers.push({
+              ...user,
+              groupID: group.id,
+            });
         });
       });
       if (this.props.setUsers) {
@@ -143,6 +184,7 @@ class SelectionUsers extends React.Component {
       });
     }
   }
+
   handleSelectUsers() {
     let _selectedUsers = [];
     if (this.state.isAnyGroupSelected && this.state.isAnyUserSelected) {
@@ -173,7 +215,7 @@ class SelectionUsers extends React.Component {
       if (group.id === id) {
         group.checked = !group.checked;
       }
-      if(group.checked)
+      if (group.checked)
         _isAnyGroupSelected = true;
     });
     this.setState({
@@ -181,6 +223,7 @@ class SelectionUsers extends React.Component {
       isAnyGroupSelected: _isAnyGroupSelected
     });
   }
+
   updateSelectedUsersList(id) {
     let _groupsList = this.state.temporaryGroups;
     let _isAnyUserSelected = false;
@@ -233,6 +276,7 @@ class SelectionUsers extends React.Component {
 
     this.setState({
       temporaryGroups: _groupsList,
+      isAnyUserSelected: true,
       // selectedUsers: this.props.selectedUsers,
     });
   }
@@ -281,12 +325,14 @@ class SelectionUsers extends React.Component {
         group.users.forEach(user => {
           users.push(
             <UserUnit
-              updateSelectedUserShare={this.updateSelectedUserShare}
-              hasShareInput={true}
               groupID={group.id}
               user={user}
               imageUri={require("../../../assets/img/theme/team-4-800x800.jpg")}
+
+              hasShareInput={true}
+
               updateSelectedUsersList={this.updateSelectedUsersList}
+              updateSelectedUserShare={this.updateSelectedUserShare}
             />
           );
         });

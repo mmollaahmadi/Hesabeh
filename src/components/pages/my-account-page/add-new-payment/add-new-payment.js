@@ -77,6 +77,7 @@ class AddPaymentPage extends React.Component {
       isSelectedConsumers: false,
 
       groups: [],
+      temporaryGroups: [],
       labels: [],
     };
 
@@ -317,6 +318,18 @@ class AddPaymentPage extends React.Component {
     if (this.props.currentUser) {
       _labels = getLabelsOfUsers(this.props.currentUser.id);
       _groups = getGroupsOfUsers(this.props.currentUser.id);
+      /*
+      group:{
+        id
+        name
+        username
+        users:[
+          {
+            id
+          }...
+        ]
+      }
+      * */
     }
 
     this.setState({
@@ -324,7 +337,6 @@ class AddPaymentPage extends React.Component {
       groups: _groups,
     });
   }
-
 
   render() {
     let payments = this.state.temporaryAddedPayments;

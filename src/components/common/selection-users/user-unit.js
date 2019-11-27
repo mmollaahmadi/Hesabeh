@@ -5,8 +5,8 @@ class UserUnit extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: null,
-      isChecked: false,
+      // user: null,
+      // isChecked: false,
       share:{
         placeholder: 'سهم',
         value:1
@@ -26,17 +26,31 @@ class UserUnit extends React.Component {
   }
   handleCheckedChange(id){
     this.props.updateSelectedUsersList(id);
-    this.setState({
-      isChecked: !this.state.isChecked
-    });
+    // this.setState({
+    //   isChecked: !this.state.isChecked
+    // });
   }
   componentDidMount() {
     this.setState({
-      user: this.props.user
+      share:{
+        ...this.state.share,
+        value: this.props.user.shareNumber,
+      },
     });
   }
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if(prevProps.user.shareNumber !== this.props.user.shareNumber){
+      this.setState({
+        share:{
+          ...this.state.share,
+          value: this.props.user.shareNumber,
+        },
+      });
+    }
+  }
+
   render() {
-    let user = this.state.user;
+    let user = this.props.user;
     return (
       <Col xs={"12"} sm={"6"} className="my-1 px-1">
         <Row className="py-1 justify-content-center group-unit-card">
@@ -86,12 +100,12 @@ class UserUnit extends React.Component {
 
                 <Input
                   className="audit-input share-input"
-                  placeholder={this.state.share.placeholder}
+                  placeholder={'سهم'}
                   name="paymentName"
                   type={'number'}
                   value={this.state.share.value}
                   onChange={this.handleInputChange}
-                  disabled={!this.state.isChecked}
+                  disabled={!this.props.user.checked}
                 />
               </InputGroup>
             </FormGroup>

@@ -2,14 +2,7 @@ import React from "react";
 import Account from "./finance-account/finance-account.js";
 import PaymentsTable from "./payments-table/payments-table.js";
 
-
-
-
 class MyAccountPage extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className="my-body">

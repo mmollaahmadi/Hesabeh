@@ -1,7 +1,7 @@
 import React from "react";
 import { Row, } from "reactstrap";
 import PaymentsTableRow from "../../payments-table/payments-table-row.js";
-import PaymentsTableHeader from "../../payments-table/payments-table-header";
+// import PaymentsTableHeader from "../../payments-table/payments-table-header";
 import TableTools from '../../../../common/table-tools/table-tools'
 class TempTable extends React.Component {
   constructor(props) {
