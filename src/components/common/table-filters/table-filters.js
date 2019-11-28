@@ -11,9 +11,6 @@ import SelectionLabels from "../selection-labels/selection-labels";
 import ScrollableHorizontal from "../../my-components/scrollable-horizontal/scrollable-horizontal";
 
 class TableFilters extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
 
@@ -29,15 +26,30 @@ class TableFilters extends React.Component {
           {filter.value}
         </Button>
       );
+      filters.push(
+        <Button
+          className={`table-filters-btn ${(this.props._selectedFilterID && this.props._selectedFilterID === filter.id) ? 'selected-btn' : ''}`}
+          color='secondary'
+          onClick={() => this.props.selectSort(filter.id)}
+        >
+          {filter.value}
+        </Button>
+      );
     });
     return (
 
       <>
-        {/*<span>ترتیب نمایش:</span>*/}
-        <Row className="filters-row">
-          {/*<ScrollableHorizontal contents={filters}/>*/}
+        <div className="filters-row">
+          <ScrollableHorizontal contents={filters}/>
+        </div>
+        {/*<div id="container">
+
+        <div className="filters-row" id="content">
+
           {filters}
-        </Row>
+        </div>
+        </div>*/}
+
 
         <Row className={`labels-row ${(!this.props.labels || this.props.labels.length === 0) ? 'd-none' : ''}`}>
           <SelectionLabels

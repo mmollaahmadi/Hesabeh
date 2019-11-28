@@ -17,7 +17,7 @@ class PaymentsTableRow extends React.Component {
     this.handleDeleteModal = this.handleDeleteModal.bind(this);
   }
 
-  handleDeleteModal(id){
+  handleDeleteModal(id) {
     this.props.handleDeleteModal(id);
   }
 
@@ -48,12 +48,12 @@ class PaymentsTableRow extends React.Component {
     this.props.data.consumers.forEach(user => {
       consumersAvatar.push(
         <div className={'short-consumer-supplier'}>
-        <img
-          alt=""
-          className="rounded-circle chip-avatar-1 mx-1"
-          src={require("../../../../assets/img/users/user01.jpg")}
-        />
-        <span className={'short-consumer-supplier-share consumer'}>{user.share}</span>
+          <img
+            alt=""
+            className="rounded-circle chip-avatar-1 mx-1"
+            src={require("../../../../assets/img/users/user01.jpg")}
+          />
+          <span className={'short-consumer-supplier-share consumer'}>{user.shareNumber}</span>
         </div>
       );
     });
@@ -67,7 +67,7 @@ class PaymentsTableRow extends React.Component {
             className="rounded-circle chip-avatar-1 mx-1"
             src={require("../../../../assets/img/users/user01.jpg")}
           />
-          <span className={'short-consumer-supplier-share supplier'}>{user.share}</span>
+          <span className={'short-consumer-supplier-share supplier'}>{user.shareNumber}</span>
         </div>
       );
     });
@@ -76,9 +76,6 @@ class PaymentsTableRow extends React.Component {
       <div
         className={`px-2 p-lg-0 mx-auto my-masonry-grid_column align-self-start ${this.state.isChecked ? 'checked' : 'un-checked'}`}>
         <Card
-          data-aos="fade-up"
-          data-aos-duration="1000"
-          data-aos-delay="200"
           className="card-profile shadow mt-4">
           <Row className="m-0">
             <Col

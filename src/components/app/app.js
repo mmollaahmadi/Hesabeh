@@ -22,7 +22,7 @@ import NewPasswordRequestPage from "../pages/audit-pages/forgot-password-pages/n
 import SupportPage from "../pages/support-page/support-page.js";
 import LoginPage from "../pages/audit-pages/login-page/login-page.js";
 import RegisterPage from "../pages/audit-pages/register-page/register-page.js";
-import MyAccountPage from "../pages/my-account-page/my-account-page.js";
+import MyFinanceAccountPage from "../pages/my-account-page/my-account-page.js";
 import CreateNewGroupPage from "../pages/my-groups-page/create-new-group-page.js";
 import NotificationsPage from "../pages/notifications-page/notifications-page.js";
 import CreateNewRequestPage from "../pages/notifications-page/new-request/create-new-request-page.js";
@@ -229,7 +229,7 @@ class App extends Component {
               path="/my-account"
               exact
               render={() => (
-                <MyAccountPage
+                <MyFinanceAccountPage
                   currentUser={this.state.currentUser}
                 />
               )}

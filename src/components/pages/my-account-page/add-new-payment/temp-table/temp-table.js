@@ -3,6 +3,7 @@ import {Col, Row,} from "reactstrap";
 import PaymentsTableRow from "../../payments-table/payments-table-row.js";
 // import PaymentsTableHeader from "../../payments-table/payments-table-header";
 import TableTools from '../../../../common/table-tools/table-tools'
+
 class TempTable extends React.Component {
   constructor(props) {
     super(props);
@@ -18,6 +19,7 @@ class TempTable extends React.Component {
     this.allCheckBoxesChecked = this.allCheckBoxesChecked.bind(this);
     this.getCheckedStatus = this.getCheckedStatus.bind(this);
   }
+
   componentDidMount() {
     let _checkedList = [];
     this.props.payments.forEach(payment => {
@@ -43,6 +45,7 @@ class TempTable extends React.Component {
       allCheckBoxesChecked: this.allCheckBoxesChecked(_checkedList)
     });
   }
+
   allCheckBoxesChecked(list) {
     let flag = true;
     this.state.checkBoxesStatusList.forEach(el => {
@@ -72,6 +75,7 @@ class TempTable extends React.Component {
       checkBoxesStatusList: _checkedList
     });
   }
+
   getCheckedStatus(id) {
     let flag = false;
     this.state.checkBoxesStatusList.forEach(el => {
@@ -79,35 +83,36 @@ class TempTable extends React.Component {
     });
     return flag;
   }
+
   render() {
     let payments = [];
 
     this.props.payments.forEach(payment => {
       payments.push(
         <Col xs={'6'}>
-        <PaymentsTableRow
-          data={payment}
-          checked={this.getCheckedStatus(payment.id)}
-          updateCheckBoxesStatusList={this.updateCheckBoxesStatusList}
-        />
+          <PaymentsTableRow
+            data={payment}
+            checked={this.getCheckedStatus(payment.id)}
+            updateCheckBoxesStatusList={this.updateCheckBoxesStatusList}
+          />
         </Col>
       );
     });
     return (
       <>
-      <TableTools
-        hasSearch={false}
-        isAnyChecked={this.isAnyCheckBoxTrue()}
-        buttonTitle="تایید و افزودن"
-        buttonLink="/add-new-payment"
-      />
-      <Row className="w-100 justify-content-center py-1">
-        {/*<PaymentsTableHeader
+        <TableTools
+          hasSearch={false}
+          isAnyChecked={this.isAnyCheckBoxTrue()}
+          buttonTitle="تایید و افزودن"
+          buttonLink="/add-new-payment"
+        />
+        <Row className="w-100 justify-content-center py-1">
+          {/*<PaymentsTableHeader
           allCheckBoxesChecked={this.state.allCheckBoxesChecked}
           handleAllCheckedChange={this.handleAllCheckedChange}
         />*/}
-        {payments}
-      </Row>
+          {payments}
+        </Row>
       </>
     );
   }

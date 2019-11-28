@@ -4,6 +4,7 @@
   margin: auto 2rem;
   border-bottom: dashed 1px #03091e55;
   border-top: dashed 1px #03091e55;
+  height: 45px !important;
 }
 .labels-row{
   display: flex;

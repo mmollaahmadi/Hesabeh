@@ -2,7 +2,7 @@ import React from "react";
 import Account from "./finance-account/finance-account.js";
 import PaymentsTable from "./payments-table/payments-table.js";
 
-class MyAccountPage extends React.Component {
+class MyFinanceAccountPage extends React.Component {
   render() {
     return (
       <div className="my-body">
@@ -17,4 +17,4 @@ class MyAccountPage extends React.Component {
   }
 }
 
-export default MyAccountPage;
+export default MyFinanceAccountPage;

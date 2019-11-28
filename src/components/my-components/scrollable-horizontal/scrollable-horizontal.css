@@ -1,0 +1,41 @@
+#container {
+    border: none;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: inherit;
+    height: 45px !important;
+    /*position: absolute;*/
+    z-index: 1;
+}
+#content {
+    background-color: transparent;
+    width: fit-content;
+    white-space: nowrap;
+
+    /*position: absolute;*/
+    /*z-index: 1;*/
+
+}
+.arrow-layer{
+    display: flex;
+    justify-content: space-between;
+    width: fill;
+    height: 45px !important;
+    position: absolute;
+    z-index: 2;
+    padding: 0 1rem;
+}
+.next-prev-btn{
+    background-color: transparent;
+    border: none;
+    -webkit-box-shadow: none;
+    display: inline;
+}
+.next-prev-btn:focus,
+.next-prev-btn:hover{
+    background-color: transparent;
+    -webkit-box-shadow: none;
+}
+.next-prev-btn:active{
+    background-color: #f1f1f1 !important;
+}

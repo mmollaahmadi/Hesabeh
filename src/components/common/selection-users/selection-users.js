@@ -193,7 +193,10 @@ class SelectionUsers extends React.Component {
         group.users.forEach(user => {
           user.selected = user.checked;
           if (user.selected)
-            _selectedUsers.push(user);
+            _selectedUsers.push({
+              ...user,
+              groupID: group.id,
+            });
         });
       });
       if (this.props.setUsers) {

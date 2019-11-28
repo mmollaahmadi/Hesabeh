@@ -29,6 +29,7 @@ class AddPaymentPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      paymentID:0,
       paymentName: {
         placeholder: "نام هزینه",
         value: "",
@@ -156,6 +157,7 @@ class AddPaymentPage extends React.Component {
   handleAddPaymentClick() {
     let payments = this.state.temporaryAddedPayments;
     payments.push({
+      id: this.state.paymentID,
       name: this.state.paymentName.value,
       value: this.state.paymentCost.value,
       description: this.state.paymentDescription.value,
@@ -169,6 +171,7 @@ class AddPaymentPage extends React.Component {
     // this.resetInputs();
     this.setState({
       temporaryAddedPayments: payments,
+      paymentID: this.state.paymentID + 1,
       paymentName: {
         ...this.state.paymentName,
         value: (!this.state.paymentName.isSave ? '' : this.state.paymentName.value)
