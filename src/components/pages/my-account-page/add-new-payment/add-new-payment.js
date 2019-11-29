@@ -29,7 +29,7 @@ class AddPaymentPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      paymentID:0,
+      paymentID: 0,
       paymentName: {
         placeholder: "نام هزینه",
         value: "",
@@ -142,13 +142,14 @@ class AddPaymentPage extends React.Component {
     });
   }
 
-  dateToString(date){
+  dateToString(date) {
     return (date.year + '/' + date.month + '/' + date.day);
   }
-  getReadyLabels(labelsID){
+
+  getReadyLabels(labelsID) {
     let labels = [];
     this.state.labels.forEach(label => {
-      if(labelsID.includes(label.id))
+      if (labelsID.includes(label.id))
         labels.push(label);
     });
     return labels;
@@ -428,16 +429,24 @@ class AddPaymentPage extends React.Component {
                           </InputGroup>
                         </FormGroup>
                       </Col>
-                      <SelectionLabels
-                        currentUser={this.props.currentUser}
-                        labels={this.state.labels}
-                        selectedLabels={this.state.paymentLabels.value}
-                        title={'برچسبها:'}
-                        justify={'right'}
-                        setLabels={this.setLabels}
-                        hasClose={false}
-                      />
-
+                      <Row className={'d-flex w-100'}>
+                      <Col xs={'auto'} className={'d-inline-flex align-items-center'}>
+                        <p className={'p-0 mx-3 my-auto consumers-text'}>
+                          {'برچسبها:'}
+                        </p>
+                      </Col>
+                      <Col xs={'auto'} className="labels-col flex-grow-1 m-0 px-2">
+                        <SelectionLabels
+                          currentUser={this.props.currentUser}
+                          labels={this.state.labels}
+                          selectedLabels={this.state.paymentLabels.value}
+                          title={'برچسبها:'}
+                          justify={'right'}
+                          setLabels={this.setLabels}
+                          hasClose={false}
+                        />
+                      </Col>
+                      </Row>
                       <SelectionUsers
                         title={'*تهیه کنندگان:'}
                         currentUser={this.props.currentUser}

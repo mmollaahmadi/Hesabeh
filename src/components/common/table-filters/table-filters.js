@@ -39,19 +39,15 @@ class TableFilters extends React.Component {
     return (
 
       <>
-        <div className="filters-row">
-          <ScrollableHorizontal contents={filters}/>
-        </div>
-        {/*<div id="container">
+        <Row className="filters-row">
+          <ScrollableHorizontal
+            contents={filters}
+          />
+        </Row>
 
-        <div className="filters-row" id="content">
-
-          {filters}
-        </div>
-        </div>*/}
-
-
-        <Row className={`labels-row ${(!this.props.labels || this.props.labels.length === 0) ? 'd-none' : ''}`}>
+        <Row
+          className={`labels-row ${(!this.props.labels || this.props.labels.length === 0) ? 'd-none' : ''}`}
+        >
           <SelectionLabels
             labels={this.props.labels}
             currentUser={this.props.currentUser}
@@ -59,9 +55,7 @@ class TableFilters extends React.Component {
             setLabels={this.setLabels}
             hasClose={false}
           />
-
         </Row>
-
       </>
     );
   }

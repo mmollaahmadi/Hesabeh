@@ -6,6 +6,7 @@
     height: 45px !important;
     /*position: absolute;*/
     z-index: 1;
+    padding: 0 2rem;
 }
 #content {
     background-color: transparent;
@@ -30,6 +31,7 @@
     border: none;
     -webkit-box-shadow: none;
     display: inline;
+    color: #03091e;
 }
 .next-prev-btn:focus,
 .next-prev-btn:hover{

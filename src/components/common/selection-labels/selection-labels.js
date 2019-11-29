@@ -1,6 +1,7 @@
 import React from 'react'
 import {Badge, Col, Row} from "reactstrap";
 import './selection-labels.css'
+import ScrollableHorizontal from "../../my-components/scrollable-horizontal/scrollable-horizontal";
 
 export default class SelectionLabels extends React.Component {
   constructor(props) {
@@ -45,7 +46,7 @@ export default class SelectionLabels extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
-    if(this.props.selectedLabels !== prevProps.selectedLabels){
+    if (this.props.selectedLabels !== prevProps.selectedLabels) {
       let _labels = [];
       this.props.selectedLabels.forEach(label => {
         _labels.push(label);
@@ -75,14 +76,18 @@ export default class SelectionLabels extends React.Component {
       });
     }
     return (
-      <Col lg="12" className="m-0">
-        <Row className={`m-0 d-flex justify-content-${this.props.justify}`}>
-          <p className="p-0 mx-3 my-auto consumers-text">
+      <>
+        {/*<Col xs={'auto'} className={`d-flex align-items-center ${!this.props.title ? 'd-none' : ''}`}>
+          <p className={'p-0 mx-3 my-auto consumers-text'}>
             {this.props.title}
           </p>
-          {labels}
-        </Row>
-      </Col>
+        </Col>
+        <Col className="m-0">
+          <Row className={`m-0 d-flex justify-content-${this.props.justify}`}>*/}
+            <ScrollableHorizontal contents={labels}/>
+            {/*{labels}*/}
+
+      </>
     );
   }
 }
