@@ -68,9 +68,12 @@ class LabelManagement extends React.Component {
 
   componentDidMount() {
     let _labels = this.state.labels;
-    this.props.currentUser.labels.forEach(label => {
-      _labels.push(label);
-    });
+    if(this.props.currentUser.labels){
+      this.props.currentUser.labels.forEach(label => {
+        _labels.push(label);
+      });
+    }
+
     this.setState({
       labels: _labels
     });

@@ -20,10 +20,11 @@ import {
 import "../../../../assets/css/custom.css";
 import AuditColumnHeader from "../audit-column-header.js";
 import googleIcon from "../../../../assets/img/icons/common/google.svg"
-import {doesExistUser, isCorrectUser} from '../../../../utils/auditUtils'
+import {doesExistUser, isCorrectUser, login} from '../../../../utils/auditUtils'
 import AOS from 'aos'
 import ScrollableAnchor from 'react-scrollable-anchor'
 import AuditColumnFooter from "../audit-column-footer";
+import {ACCESS_TOKEN} from "../../../../constants/constants";
 
 class LoginPage extends React.Component {
   constructor(props) {
@@ -61,28 +62,55 @@ class LoginPage extends React.Component {
 
     if (emailOrUsername !== '') {
       if (password !== '') {
-        if (doesExistUser(emailOrUsername)) {
-          if (isCorrectUser(emailOrUsername, password)) {
-            // this.props.history.push('/my-account');
-            this.props.onLogin(emailOrUsername, password);
-          } else {
-            this.setState({
-              password: {
-                ...this.state.password,
-                errorCollapse: true,
-                errorText: 'گذرواژه اشتباه است.'
-              }
-            });
-          }
-        } else {
-          this.setState({
-            emailOrUsername: {
-              ...this.state.emailOrUsername,
-              errorCollapse: true,
-              errorText: 'کاربری با این مشخصات وجود ندارد.'
-            }
-          });
-        }
+        // if (doesExistUser(emailOrUsername)) {
+        //   if (isCorrectUser(emailOrUsername, password)) {
+
+            // const loginRequest = Object.assign({}, values);
+            const loginRequest = {
+              usernameOrEmail: this.state.emailOrUsername.value,
+              password: this.state.password.value
+            };
+            login(loginRequest)
+              .then(response => {
+                localStorage.setItem(ACCESS_TOKEN, response.accessToken);
+                this.props.onLogin(emailOrUsername, password);
+              })
+              .catch(error => {
+                if (error.status === 401) {
+                  // notification.error({
+                  //   message: "Polling App",
+                  //   description:
+                  //     "Your Username or Password is incorrect. Please try again!"
+                  // });
+                } else {
+                  // notification.error({
+                  //   message: "Polling App",
+                  //   description:
+                  //     error.message ||
+                  //     "Sorry! Something went wrong. Please try again!"
+                  // });
+                }
+              });
+
+
+          // } else {
+          //   this.setState({
+          //     password: {
+          //       ...this.state.password,
+          //       errorCollapse: true,
+          //       errorText: 'گذرواژه اشتباه است.'
+          //     }
+          //   });
+          // }
+        // } else {
+        //   this.setState({
+        //     emailOrUsername: {
+        //       ...this.state.emailOrUsername,
+        //       errorCollapse: true,
+        //       errorText: 'کاربری با این مشخصات وجود ندارد.'
+        //     }
+        //   });
+        // }
       } else {
         this.setState({
           password: {

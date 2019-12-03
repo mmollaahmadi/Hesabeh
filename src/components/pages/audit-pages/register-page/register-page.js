@@ -22,6 +22,20 @@ import AOS from 'aos'
 import ScrollableAnchor from 'react-scrollable-anchor'
 import {animateCSS} from '../../../../utils/animationUtils'
 import AuditColumnFooter from "../audit-column-footer";
+import {
+  register,
+  checkUsernameAvailability,
+  checkEmailAvailability
+} from "../../../../utils/auditUtils";
+import {
+  NAME_MIN_LENGTH,
+  NAME_MAX_LENGTH,
+  USERNAME_MIN_LENGTH,
+  USERNAME_MAX_LENGTH,
+  EMAIL_MAX_LENGTH,
+  PASSWORD_MIN_LENGTH,
+  PASSWORD_MAX_LENGTH
+} from "../../../../constants/constants";
 
 class RegisterPage extends React.Component {
   constructor(props) {
@@ -73,36 +87,60 @@ class RegisterPage extends React.Component {
   }
 
   register() {
-    if (this.state.email.validation &&
-      this.state.password.validation &&
-      this.state.confirmPassword.validation) {
-      this.setState({
-        validationsCollapse: false,
-        success: {
-          message: `لینک تایید به آدرس ${this.state.email.value} ارسال شد.`,
-          collapse: true
-        }
-      });
-    }
+    // if (this.state.email.validation &&
+    //   this.state.password.validation &&
+    //   this.state.confirmPassword.validation) {
 
-    let animationName = 'swing';
+      const registerRequest = {
+        "email": this.state.email.value,
+        "password": this.state.password.value
+      };
+      register(registerRequest)
+        .then(response => {
+          this.setState({
+            validationsCollapse: false,
+            success: {
+              message: `لینک تایید به آدرس ${this.state.email.value} ارسال شد.`,
+              collapse: true
+            }
+          });
+          this.props.history.push("/login");
+        })
+        .catch(error => {
+          // alert.error({
+          //   message: "Polling App",
+          //   description:
+          //     error.message || "Sorry! Something went wrong. Please try again!"
+          // });
+          this.setState({
+            validationsCollapse: false,
+            success: {
+              message:error.message,
+              collapse: true
+            }
+          });
+        });
 
-    if (!this.state.email.validation)
-      animateCSS('.email-validation', animationName);
+    // }
 
-    if (!this.state.password.lengthValidation)
-      animateCSS('.password-length-validation', animationName);
-    if (!this.state.password.signValidation)
-      animateCSS('.password-sign-validation', animationName);
-    if (!this.state.password.numberValidation)
-      animateCSS('.password-number-validation', animationName);
-    if (!this.state.password.uppercaseValidation)
-      animateCSS('.password-uppercase-validation', animationName);
-    if (!this.state.password.lowercaseValidation)
-      animateCSS('.password-lowercase-validation', animationName);
-
-    if (!this.state.confirmPassword.validation)
-      animateCSS('.confirm-password-validation', animationName)
+    // let animationName = 'swing';
+    //
+    // if (!this.state.email.validation)
+    //   animateCSS('.email-validation', animationName);
+    //
+    // if (!this.state.password.lengthValidation)
+    //   animateCSS('.password-length-validation', animationName);
+    // if (!this.state.password.signValidation)
+    //   animateCSS('.password-sign-validation', animationName);
+    // if (!this.state.password.numberValidation)
+    //   animateCSS('.password-number-validation', animationName);
+    // if (!this.state.password.uppercaseValidation)
+    //   animateCSS('.password-uppercase-validation', animationName);
+    // if (!this.state.password.lowercaseValidation)
+    //   animateCSS('.password-lowercase-validation', animationName);
+    //
+    // if (!this.state.confirmPassword.validation)
+    //   animateCSS('.confirm-password-validation', animationName)
 
   }
 

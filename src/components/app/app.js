@@ -34,6 +34,8 @@ import Footer from "../common/footer/footer";
 
 import { goToAnchor, configureAnchors } from "react-scrollable-anchor";
 import { USERS } from "../../constants/constants";
+import ConfirmRegistration from "../pages/audit-pages/confirm-registration/confirm-registration";
+import {getCurrentUser} from "../../utils/auditUtils";
 
 class App extends Component {
   constructor(props) {
@@ -81,50 +83,50 @@ class App extends Component {
     return _user;
   }
   loadCurrentUser(emailOrUsernameOrPhoneNumber, password) {
-    let user = null;
-    // eslint-disable-next-line array-callback-return
-    USERS.map(u => {
-      if (
-        (u.username === emailOrUsernameOrPhoneNumber ||
-          u.email === emailOrUsernameOrPhoneNumber) &&
-        u.password === password
-      ) {
-        user = {
-          id: u.id,
-          name: u.name,
-          username: u.username,
-          email: u.email,
-          phoneNumber: u.phoneNumber,
-        };
-      }
-    });
-
-    if (user)
-      this.setState({
-        currentUser: user,
-        isAuthenticated: true,
-        isLoading: true,
-        selectedPage: "my-account"
-      });
-    else {
-      this.setState({
-        currentUser: user,
-        isAuthenticated: false,
-        isLoading: false
-      });
-    }
-    // getCurrentUser()
-    //   .then(response => {
-    //     this.setState({
-    //       currentUser: response,
-    //       isAuthenticated: true,
-    //       isLoading: false
-    //     });
-    //   }).catch(error => {
+    // let user = null;
+    // // eslint-disable-next-line array-callback-return
+    // USERS.map(u => {
+    //   if (
+    //     (u.username === emailOrUsernameOrPhoneNumber ||
+    //       u.email === emailOrUsernameOrPhoneNumber) &&
+    //     u.password === password
+    //   ) {
+    //     user = {
+    //       id: u.id,
+    //       name: u.name,
+    //       username: u.username,
+    //       email: u.email,
+    //       phoneNumber: u.phoneNumber,
+    //     };
+    //   }
+    // });
+    //
+    // if (user)
     //   this.setState({
+    //     currentUser: user,
+    //     isAuthenticated: true,
+    //     isLoading: true,
+    //     selectedPage: "my-account"
+    //   });
+    // else {
+    //   this.setState({
+    //     currentUser: user,
+    //     isAuthenticated: false,
     //     isLoading: false
     //   });
-    // });
+    // }
+    getCurrentUser()
+      .then(response => {
+        this.setState({
+          currentUser: response,
+          isAuthenticated: true,
+          isLoading: false
+        });
+      }).catch(error => {
+      this.setState({
+        isLoading: false
+      });
+    });
   }
 
   componentDidMount() {
@@ -196,6 +198,11 @@ class App extends Component {
               exact
               render={() => <RegisterPage
                 onChangePage={this.handleChangePage} />}
+            />
+            <Route
+              path="/confirm/token=:token"
+              exact
+              render={(props) => <ConfirmRegistration {...props}/>}
             />
             <Route
               path="/login"
